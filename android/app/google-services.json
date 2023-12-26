@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1030276386601",
+    "project_id": "kivicare-5d319",
+    "storage_bucket": "kivicare-5d319.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030276386601:android:41c50003711161d13ab138",
+        "android_client_info": {
+          "package_name": "com.iqonic.kivicare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030276386601-jmmro6118lff99i2m3kv7cboqopf22qp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwmwUrbDgXy47B7uu5m_5-I42c3v4TFNE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030276386601-jmmro6118lff99i2m3kv7cboqopf22qp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1030276386601-id2had9qtvmsvdslo57iaq1fh38615n6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.iqonic.kivicareFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
