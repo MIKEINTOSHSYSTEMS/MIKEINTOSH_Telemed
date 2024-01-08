@@ -113,8 +113,8 @@ class WeeklyChartComponentState extends State<WeeklyChartComponent> {
             }),
       ),
       titlesData: FlTitlesData(
-        topTitles: AxisTitles(drawBehindEverything: false),
-        rightTitles: AxisTitles(drawBehindEverything: false),
+        topTitles: AxisTitles(drawBelowEverything: false),
+        rightTitles: AxisTitles(drawBelowEverything: false),
         show: true,
         bottomTitles: AxisTitles(
           sideTitles: SideTitles(

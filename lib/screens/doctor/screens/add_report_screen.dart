@@ -110,7 +110,7 @@ class _AddReportScreenState extends State<AddReportScreen> {
                           ? ThemeData.dark()
                           : ThemeData.light().copyWith(
                               primaryColor: Color(0xFF4974dc),
-                              accentColor: const Color(0xFF4974dc),
+                              hintColor: const Color(0xFF4974dc),
                               colorScheme: ColorScheme.light(primary: const Color(0xFF4974dc)),
                             ),
                       child: child!,

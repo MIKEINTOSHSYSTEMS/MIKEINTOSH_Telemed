@@ -64,7 +64,7 @@ class _PDateComponentState extends State<PDateComponent> {
                   return Theme(
                     data: ThemeData.dark().copyWith(
                       primaryColor: Color(0xFF4974dc),
-                      accentColor: const Color(0xFF4974dc),
+                      hintColor: const Color(0xFF4974dc),
                       colorScheme: ColorScheme.light(primary: Color(0xFF4974dc), onSurface: Colors.white),
                     ),
                     child: child!,

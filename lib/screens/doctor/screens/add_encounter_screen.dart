@@ -147,7 +147,7 @@ class _AddEncounterScreenState extends State<AddEncounterScreen> {
               ? ThemeData.dark()
               : ThemeData.light().copyWith(
                   primaryColor: Color(0xFF4974dc),
-                  accentColor: const Color(0xFF4974dc),
+                  hintColor: const Color(0xFF4974dc),
                   colorScheme: ColorScheme.light(primary: const Color(0xFF4974dc)),
                 ),
           child: child!,

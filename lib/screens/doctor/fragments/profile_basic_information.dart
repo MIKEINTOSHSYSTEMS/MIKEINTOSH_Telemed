@@ -410,7 +410,8 @@ class _ProfileBasicInformationState extends State<ProfileBasicInformation> {
   }
 
   Future getImage() async {
-    image = await ImagePicker().getImage(source: ImageSource.gallery, imageQuality: 100);
+    final picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery, imageQuality: 100);
     setState(() {});
   }
 

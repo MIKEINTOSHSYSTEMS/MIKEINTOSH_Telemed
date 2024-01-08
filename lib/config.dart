@@ -1,8 +1,8 @@
-const APP_NAME = 'KiviCare';
-const APP_FIRST_NAME = 'Kivi';
-const APP_SECOND_NAME = 'Care';
+const APP_NAME = 'MomonaTelemed';
+const APP_FIRST_NAME = 'Momona';
+const APP_SECOND_NAME = 'Telemed';
 
-const DOMAIN_URL = '';
+const DOMAIN_URL = 'https://momonahealthcare.com';
 const BASE_URL = '$DOMAIN_URL/wp-json/';
 
 const IQONIC_PACKAGE_NAME = "com.iqonic.kivicare"; // Do not change this Package Name.

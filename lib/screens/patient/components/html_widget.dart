@@ -14,7 +14,7 @@ class HtmlWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Html(
       data: postContent,
-      onLinkTap: (s, _, __, ___) {
+      onLinkTap: (s, _, __) {
         commonLaunchUrl(s!, launchMode: LaunchMode.externalApplication);
       },
       style: {
@@ -42,7 +42,11 @@ class HtmlWidget extends StatelessWidget {
         'body': Style(color: color ?? textPrimaryColorGlobal, fontSize: FontSize(16)),
         'big': Style(color: color ?? textPrimaryColorGlobal, fontSize: FontSize(16)),
         'blockquote': Style(color: color ?? textPrimaryColorGlobal, fontSize: FontSize(16)),
-        'img': Style(width: Width(context.width()), padding: EdgeInsets.only(bottom: 8), fontSize: FontSize(16)),
+        'img': Style(
+          width: Width(context.width()),
+         // padding: HtmlPaddings(bottom: 8), // Use HtmlPaddings constructor
+          fontSize: FontSize(16),
+        ),
       },
       /* customRender: {
         "embed": (RenderContext renderContext, Widget child) {
