@@ -1,7 +1,9 @@
 import 'package:kivicare_flutter/main.dart';
 import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
 
-const DEMO_URL = 'https://kivicare-demo.iqonic.design/';
+//const DEMO_URL = 'https://kivicare-demo.iqonic.design/';
+const DEMO_URL = 'https://sandboxdev.momonahealthcare.com/';
+//const DEMO_URL = 'https://kivicare-demo.iqonic.design/';
 
 // ignore: non_constant_identifier_names
 List<String> RTLLanguage = ['ar'];
@@ -24,12 +26,12 @@ List<String> themeModeList = [locale.lblLight, locale.lblDark, locale.lblSystemD
 double loaderSize = 30;
 
 // EmailsWakelock
-const receptionistEmail = "calvin@kivicare.com";
-const doctorEmail = "doctor@kivicare.com";
-const patientEmail = "mike@kivicare.com";
+const receptionistEmail = "reception@momonahealthcare";
+const doctorEmail = "doctor@momonahealthcare.com";
+const patientEmail = "michaelktd@gmail.com";
 
 //Demo Password
-const loginPassword = "123456";
+const loginPassword = "01234567";
 
 /* Theme Mode Type */
 const THEME_MODE_LIGHT = 0;

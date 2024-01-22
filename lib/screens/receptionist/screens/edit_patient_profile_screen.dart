@@ -189,8 +189,7 @@ class _EditPatientProfileScreenState extends State<EditPatientProfileScreen> {
   }
 
   Future getImage() async {
-    final picker = ImagePicker();
-    final XFile? image = await picker.pickImage(source: ImageSource.gallery, imageQuality: 100);
+    selectedImage = (await ImagePicker().pickImage(source: ImageSource.gallery, imageQuality: 100)) as PickedFile?;
 
     setState(() {});
   }

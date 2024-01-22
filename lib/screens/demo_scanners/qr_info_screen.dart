@@ -94,7 +94,7 @@ class _QrInfoScreenState extends State<QrInfoScreen> {
                 ],
               ),
               64.height,
-              Text('Enjoy! the flawless KiviCare system with ease', style: primaryTextStyle(size: 20, color: primaryColor)),
+              Text('Enjoy! the flawless Momona Healthcare system with ease', style: primaryTextStyle(size: 20, color: primaryColor)),
             ],
           ),
         ),

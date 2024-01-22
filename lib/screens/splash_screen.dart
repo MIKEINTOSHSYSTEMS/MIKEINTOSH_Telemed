@@ -78,7 +78,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Text('v ${packageInfo.versionName.validate()}', style: secondaryTextStyle(size: 16), textAlign: TextAlign.center),
                 8.height,
-                Text('© 2023. Made with love by Iqonic Design', style: secondaryTextStyle(size: 12), textAlign: TextAlign.center),
+                Text('© 2024. Made with love by MIKEINTOSH SYSTEMS', style: secondaryTextStyle(size: 12), textAlign: TextAlign.center),
               ],
             ),
           ),

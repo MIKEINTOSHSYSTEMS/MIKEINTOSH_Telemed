@@ -2,7 +2,7 @@ import 'package:kivicare_flutter/locale/base_language_key.dart';
 
 class LanguageEn extends BaseLanguage {
   @override
-  String get app_name => "KiviCare";
+  String get app_name => "Momona Healthcare";
 
   @override
   String get lblWalkThroughTitle1 => "Welcome";
@@ -18,16 +18,16 @@ class LanguageEn extends BaseLanguage {
 
   @override
   String get lblWalkThroughSubTitle1 =>
-      "KiviCare app is the ready-made and ultimate Electronic Health Record (EHR) solution for Doctors, Medical Professionals, Clinic and Patient Management. Four unique models for doctor, clinic administrators, receptionist and patients.";
+      "Momona Healthcare Telemed app is the ready-made and ultimate Electronic Health Record (EHR) solution for Doctors, Medical Professionals, Clinic and Patient Management. Four unique models for doctor, clinic administrators, receptionist and patients.";
 
   @override
-  String get lblWalkThroughSubTitle2 => "Build your mobile app resourceful by listing doctors. You can find doctor that is nearest to you with this amazing Doctors model. Add and manage doctors list with KiviCare. ";
+  String get lblWalkThroughSubTitle2 => "Build your mobile app resourceful by listing doctors. You can find doctor that is nearest to you with this amazing Doctors model. Add and manage doctors list with Momona Healthcare. ";
 
   @override
-  String get lblWalkThroughSubTitle3 => "Manage appointments at clinic or hospital, schedule patients ahead of time with intelligent KiviCare interface. Avoid any delays or longer waiting in queues";
+  String get lblWalkThroughSubTitle3 => "Manage appointments at clinic or hospital, schedule patients ahead of time with intelligent Momona Healthcare interface. Avoid any delays or longer waiting in queues";
 
   @override
-  String get lblWalkThroughSubTitle4 => "Patients can have direct consulting with the doctor making the first diagnosis accurate and timely. KiviCare’s SMS notification sends alerts on patient’s registered number.";
+  String get lblWalkThroughSubTitle4 => "Patients can have direct consulting with the doctor making the first diagnosis accurate and timely. Momona Healthcare’s SMS notification sends alerts on patient’s registered number.";
 
   @override
   String get lblWalkThroughSkipButton => "Skip";
@@ -114,7 +114,7 @@ class LanguageEn extends BaseLanguage {
   String get lblChangePassword => "Change Password";
 
   @override
-  String get lblCopyRight => "KiviCare 2020 | All rights reserved";
+  String get lblCopyRight => "Momona Healthcare 2024 | All rights reserved";
 
   @override
   String get lblTermsAndCondition => "Terms & Condition";
@@ -210,7 +210,7 @@ class LanguageEn extends BaseLanguage {
   String get lblDone => "Done";
 
   @override
-  String get lblSignUpAsPatient => "Create Your KiviCare Account";
+  String get lblSignUpAsPatient => "Create Your Momona Healthcare Account";
 
   @override
   String get lblAlreadyAMember => "Already a Member?";
@@ -900,7 +900,7 @@ class LanguageEn extends BaseLanguage {
   String get lblClinicTAndC => "Clinic T&C";
 
   @override
-  String get lblAboutKiviCare => "About KiviCare";
+  String get lblAboutKiviCare => "About Momona Healthcare";
 
   @override
   String get lblYourReviewCounts => "Your review counts";
@@ -915,7 +915,7 @@ class LanguageEn extends BaseLanguage {
   String get lblSubmitYourQueriesHere => "Submit your queries here";
 
   @override
-  String get lblShareKiviCare => "Share KiviCare";
+  String get lblShareKiviCare => "Share Momona Healthcare";
 
   @override
   String get lblLogout => "Logout";
@@ -949,7 +949,7 @@ class LanguageEn extends BaseLanguage {
 
   @override
   String get lblAboutUsDes =>
-      "KiviCare is a complete Clinic/Hospital Appointment and Record Management for doctors and Patients app.It helps patients to book their doctor appointment easily at any point of time.Using KiviCare app you can build, manage and track all your patient records such as personal information, medical reports, medication, visit history, clinical notes, patient history and other notes. Appointments for your patients can be easily managed using KiviCare app. All your patient medical records will be available for you to look at it immediately. So no more juggling through papers to see the previous history of your patients, everything is readily available for your diagnosis.";
+      "Momona Healthcare is a complete Clinic/Hospital Appointment and Record Management for doctors and Patients app.It helps patients to book their doctor appointment easily at any point of time.Using Momona Healthcare Telemed app you can build, manage and track all your patient records such as personal information, medical reports, medication, visit history, clinical notes, patient history and other notes. Appointments for your patients can be easily managed using Momona Healthcare app. All your patient medical records will be available for you to look at it immediately. So no more juggling through papers to see the previous history of your patients, everything is readily available for your diagnosis.";
 
   @override
   String get lblPurchase => "Purchase";

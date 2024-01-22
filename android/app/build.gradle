@@ -29,7 +29,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.momona.telemed"
+        applicationId "com.momona.healthcare"
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 17
