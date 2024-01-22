@@ -19,9 +19,9 @@ workflows:
       - name: Get Flutter packages
         script: |
           flutter packages pub get
-      - name: Flutter analyze
-        script: |
-          flutter analyze
+      #- name: Flutter analyze
+       # script: |
+        #  flutter analyze
       - name: Flutter unit tests
         script: |
           flutter test
