@@ -21,8 +21,10 @@ jobs:
             export PATH=$HOME/flutter/bin:$HOME/flutter/bin/cache/dart-sdk/bin:$PATH
             flutter doctor
 
-            # Install Google Cloud SDK without adding the repository
-            curl https://sdk.cloud.google.com | bash
+            # Install Google Cloud SDK manually
+            curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-371.0.0-linux-x86_64.tar.gz
+            tar zxvf google-cloud-sdk-371.0.0-linux-x86_64.tar.gz
+            ./google-cloud-sdk/install.sh
             exec -l $SHELL
             gcloud components install kubectl
 
