@@ -21,14 +21,10 @@ jobs:
             export PATH=$HOME/flutter/bin:$HOME/flutter/bin/cache/dart-sdk/bin:$PATH
             flutter doctor
 
-            # Add GPG key for Google Cloud SDK
-            curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-
-            # Add Google Cloud SDK repository
-            echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-
-            sudo apt-get update
-            sudo apt-get install google-cloud-sdk
+            # Install Google Cloud SDK without adding the repository
+            curl https://sdk.cloud.google.com | bash
+            exec -l $SHELL
+            gcloud components install kubectl
 
       - restore_cache:
           keys:
