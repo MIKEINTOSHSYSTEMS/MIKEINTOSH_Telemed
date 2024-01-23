@@ -1,357 +1,39 @@
-# This code is licensed from CircleCI to the user under the MIT license.
-# See here for details: https://circleci.com/developer/orbs/licensing
 version: 2.1
-description: |
-    Easily install Flutter SDK, package dependencies, run unit test, lint and more on CircleCI. Supports Linux and macOS
-display:
-    home_url: https://flutter.dev
-    source_url: https://github.com/CircleCI-Public/flutter-orb
-commands:
-    install_android_gem:
-        description: |
-            Install your Android Rubygems(mainly fastlane) with automated caching and best practices applied. Requires lock file. https://flutter.dev/docs/deployment/cd
-        parameters:
-            app-dir:
-                default: .
-                description: Path to the directory containing your pubspec.yaml file. Not needed if pubspec.yaml lives in the root.
-                type: string
-            cache-version:
-                default: v1
-                description: Change the default cache version if you need to clear the cache for any reason.
-                type: string
-        steps:
-            - restore_cache:
-                keys:
-                    - bundle-<<parameters.cache-version>>-android-{{ checksum "<< parameters.app-dir >>/android/Gemfile.lock" }}
-            - run:
-                command: |
-                    bundle config set path ./vendor/bundle
-                    bundle install
-                name: Install Dependencies
-                working_directory: <<parameters.app-dir>>/android
-            - save_cache:
-                key: bundle-<<parameters.cache-version>>-android-{{ checksum "<< parameters.app-dir >>/android/Gemfile.lock" }}
-                paths:
-                    - <<parameters.app-dir>>/android/vendor/bundle
-    install_android_gradle_dependencies:
-        description: |
-            Install your Android gradle packages with automated caching and best practices applied. Requires build.gradle file.
-        parameters:
-            app-dir:
-                default: .
-                description: Path to the directory containing your pubspec.yaml file. Not needed if pubspec.yaml lives in the root.
-                type: string
-            cache-version:
-                default: v1
-                description: Change the default cache version if you need to clear the cache for any reason.
-                type: string
-        steps:
-            - restore_cache:
-                key: gradle-<<parameters.cache-version>>-{{ checksum  "<< parameters.app-dir >>/android/app/build.gradle" }}
-            - run:
-                command: gradle androidDependencies
-                name: Installing Android gradle packages
-                working_directory: << parameters.app-dir >>/android
-            - save_cache:
-                key: gradle-<<parameters.cache-version>>-{{ checksum  "<< parameters.app-dir >>/android/app/build.gradle" }}
-                paths:
-                    - ~/.gradle/caches
-                    - ~/.gradle/wrapper
-    install_ios_gem:
-        description: |
-            Install your iOS Rubygems(mainly fastlane) with automated caching and best practices applied. Requires lock file. https://flutter.dev/docs/deployment/cd
-        parameters:
-            app-dir:
-                default: .
-                description: Path to the directory containing your pubspec.yaml file. Not needed if pubspec.yaml lives in the root.
-                type: string
-            cache-version:
-                default: v1
-                description: Change the default cache version if you need to clear the cache for any reason.
-                type: string
-        steps:
-            - restore_cache:
-                keys:
-                    - bundle-<<parameters.cache-version>>-ios-{{ checksum "<< parameters.app-dir >>/ios/Gemfile.lock" }}
-            - run:
-                command: |
-                    bundle config set path ./vendor/bundle
-                    bundle install
-                name: Install Dependencies
-                working_directory: <<parameters.app-dir>>/ios
-            - save_cache:
-                key: bundle-<<parameters.cache-version>>-ios-{{ checksum "<< parameters.app-dir >>/ios/Gemfile.lock" }}
-                paths:
-                    - <<parameters.app-dir>>/ios/vendor/bundle
-    install_ios_pod:
-        description: |
-            Install your iOS cocoapods packages with automated caching and best practices applied. Requires lock file.
-        parameters:
-            app-dir:
-                default: .
-                description: Path to the directory containing your pubspec.yaml file. Not needed if pubspec.yaml lives in the root.
-                type: string
-            cache-version:
-                default: v1
-                description: Change the default cache version if you need to clear the cache for any reason.
-                type: string
-        steps:
-            - restore_cache:
-                keys:
-                    - pod-<<parameters.cache-version>>-{{ checksum "<< parameters.app-dir >>/ios/Podfile.lock" }}
-            - run:
-                command: pod install
-                name: Install Dependencies
-                working_directory: <<parameters.app-dir>>/ios
-            - save_cache:
-                key: pod-<<parameters.cache-version>>-{{ checksum "<< parameters.app-dir >>/ios/Podfile.lock" }}
-                paths:
-                    - <<parameters.app-dir>>/ios/Pods
-    install_pub:
-        description: |
-            Install your flutter packages with automated caching and best practices applied. Requires lock file.
-        parameters:
-            app-dir:
-                default: .
-                description: Path to the directory containing your pubspec.yaml file. Not needed if pubspec.yaml lives in the root.
-                type: string
-            cache-version:
-                default: v1
-                description: Change the default cache version if you need to clear the cache for any reason.
-                type: string
-        steps:
-            - restore_cache:
-                keys:
-                    - pub-<<parameters.cache-version>>-{{ checksum "<< parameters.app-dir >>/pubspec.lock" }}-{{ arch }}
-            - run:
-                command: flutter pub get
-                name: Install Dependencies
-                working_directory: <<parameters.app-dir>>
-            - save_cache:
-                key: pub-<<parameters.cache-version>>-{{ checksum "<< parameters.app-dir >>/pubspec.lock" }}-{{ arch }}
-                paths:
-                    - <<parameters.app-dir>>/.dart_tool
-    install_sdk:
-        description: |
-            Install Flutter SDK
-        parameters:
-            install-location:
-                default: ~/usr/development
-                description: Install path for the Flutter binaries.
-                type: string
-            version:
-                default: 3.0.3
-                description: The target version for the Flutter SDK.
-                type: string
-        steps:
-            - restore_cache:
-                keys:
-                    - flutter-<<parameters.version>>-{{ arch }}
-            - run:
-                command: |+
-                    #!/usr/bin/env bash
 
-                    INSTALL_LOCATION=$(eval "echo $ORB_EVAL_INSTALL_LOCATION")
+orbs:
+  android: circleci/android@2.4.0
+  flutter: circleci/flutter@2.0.2
 
-                    if [ ! -d "$INSTALL_LOCATION/flutter" ]; then
-                      mkdir -p "$INSTALL_LOCATION"
-                      if [ "$(uname)" == 'Darwin' ]; then
-                        curl -o flutter_sdk.zip https://storage.googleapis.com/flutter_infra_release/releases/stable/macos/flutter_macos_$ORB_VAL_FLUTTER_SDK_VERSION-stable.zip
-                        unzip -qq flutter_sdk.zip -d "$INSTALL_LOCATION"
-                        rm flutter_sdk.zip
-                      elif uname -a | grep -q "Linux" ; then
-                        curl -o flutter_sdk.tar.xz https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_$ORB_VAL_FLUTTER_SDK_VERSION-stable.tar.xz
-                        tar xf flutter_sdk.tar.xz -C "$INSTALL_LOCATION"
-                        rm -f flutter_sdk.tar.xz
-                      else
-                        echo "This platform ($(uname -a)) is not supported."
-                        exit 1
-                      fi
-                    fi
-
-                    echo "export PATH=$INSTALL_LOCATION/flutter/bin:\$PATH" >> "$BASH_ENV"
-
-                    # shellcheck source=/dev/null
-                    source "$BASH_ENV"
-                    which flutter
-
-                environment:
-                    ORB_EVAL_INSTALL_LOCATION: <<parameters.install-location>>
-                    ORB_VAL_FLUTTER_SDK_VERSION: <<parameters.version>>
-                name: Install Flutter SDK if it does not exists
-            - run:
-                command: flutter doctor
-                name: Run flutter doctor
-            - save_cache:
-                key: flutter-<<parameters.version>>-{{ arch }}
-                paths:
-                    - <<parameters.install-location>>
-    install_sdk_and_pub:
-        description: |
-            Install Flutter SDK and your flutter packages with automated caching and best practices applied. Requires lock file.
-        parameters:
-            app-dir:
-                default: .
-                description: Path to the directory containing your pubspec.yaml file. Not needed if pubspec.yaml lives in the root.
-                type: string
-            cache-version:
-                default: v1
-                description: Change the default cache version if you need to clear the cache for any reason.
-                type: string
-            install-location:
-                default: ~/development
-                description: Install path for the Flutter binaries.
-                type: string
-            version:
-                default: 3.0.3
-                description: The target version for the Flutter SDK.
-                type: string
-        steps:
-            - install_sdk:
-                install-location: <<parameters.install-location>>
-                version: <<parameters.version>>
-            - install_pub:
-                app-dir: <<parameters.app-dir>>
-                cache-version: <<parameters.app-dir>>
 jobs:
-    lint:
-        description: |
-            Run static analysis(flutter analyze)
-        docker:
-            - image: <<parameters.registry>>/flutter:<<parameters.version>>
-        parameters:
-            app-dir:
-                default: .
-                description: Path to the directory containing your pubspec.yaml file. Not needed if pubspec.yaml lives in the root.
-                type: string
-            cache-version:
-                default: v1
-                description: Change the default cache version if you need to clear the cache for any reason.
-                type: string
-            registry:
-                default: cirrusci
-                description: The registry to get the flutter image from, ghrc.io should be used for all flutter versions > 3.7.7.
-                enum:
-                    - cirrusci
-                    - ghcr.io/cirruslabs
-                type: enum
-            version:
-                default: 3.0.3
-                description: The target version for the Flutter SDK.
-                type: string
-        steps:
-            - checkout
-            - install_pub:
-                app-dir: <<parameters.app-dir>>
-                cache-version: <<parameters.cache-version>>
-            - run:
-                command: flutter analyze lib
-                name: Run static analysis
-                working_directory: <<parameters.app-dir>>
-    unit_test:
-        description: |
-            Run Unit Test
-        docker:
-            - image: <<parameters.registry>>/flutter:<<parameters.version>>
-        parameters:
-            app-dir:
-                default: .
-                description: Path to the directory containing your pubspec.yaml file. Not needed if pubspec.yaml lives in the root.
-                type: string
-            cache-version:
-                default: v1
-                description: Change the default cache version if you need to clear the cache for any reason.
-                type: string
-            registry:
-                default: cirrusci
-                description: The registry to get the flutter image from, ghrc.io should be used for all flutter versions > 3.7.7.
-                enum:
-                    - cirrusci
-                    - ghcr.io/cirruslabs
-                type: enum
-            version:
-                default: 3.0.3
-                description: The target version for the Flutter SDK.
-                type: string
-        steps:
-            - checkout
-            - install_pub:
-                app-dir: <<parameters.app-dir>>
-                cache-version: <<parameters.cache-version>>
-            - run:
-                command: flutter test
-                name: Run Unit Test
-                working_directory: <<parameters.app-dir>>
-examples:
-    install_for_android_machine:
-        description: |
-            Install Flutter SDK and packages for Android machine executor
-        usage:
-            version: "2.1"
-            orbs:
-                android: circleci/android@1.0.3
-                flutter: circleci/flutter@2.0.0
-            jobs:
-                distribute:
-                    executor:
-                        name: android/android-machine
-                    steps:
-                        - flutter/install_sdk_and_pub:
-                            version: 3.0.3
-                        - flutter/install_android_gradle_dependencies
-                        - flutter/install_android_gem
-                        - run:
-                            command: bundle exec fastlane distribute
-                            working_directory: ios
-            workflows:
-                distribute:
-                    jobs:
-                        - distribute
-    install_for_macos:
-        description: |
-            Install Flutter SDK and packages for macOS
-        usage:
-            version: "2.1"
-            orbs:
-                flutter: circleci/flutter@2.0.0
-            jobs:
-                distribute:
-                    macos:
-                        xcode: 12.5.1
-                    steps:
-                        - flutter/install_sdk_and_pub:
-                            version: 3.0.3
-                        - flutter/install_ios_pod
-                        - flutter/install_ios_gem
-                        - run:
-                            command: bundle exec fastlane distribute
-                            working_directory: ios
-            workflows:
-                distribute:
-                    jobs:
-                        - distribute
-    lint:
-        description: |
-            Run static analysis(flutter analyze)
-        usage:
-            version: "2.1"
-            orbs:
-                flutter: circleci/flutter@2.0
-            workflows:
-                test:
-                    jobs:
-                        - flutter/lint:
-                            version: 3.0.3
-    unit_test:
-        description: |
-            Run Unit Test
-        usage:
-            version: "2.1"
-            orbs:
-                flutter: circleci/flutter@2.0
-            workflows:
-                test:
-                    jobs:
-                        - flutter/unit_test:
-                            version: 3.0.3
+  build:
+    executor:
+      name: android/android-machine
+      resource-class: medium
+    
+    steps:
+      - checkout
 
+      - flutter/install_sdk: 
+          version: 3.16.8
+
+      - flutter/install_pub:
+          cache-version: v1
+
+    
+      - run:
+          name: Add Google services to App
+          command: |
+            echo "$GOOGLE_SERVICES" | base64 --decode > android/app/google-services.json
+
+      - run:
+          name: Flutter pub get
+          command: |
+            flutter pub get
+
+      - run:
+          name: Build APK
+          command: |
+            flutter build apk
+
+      - store_artifacts:
+          path: build/app/outputs/flutter-apk/app-release.apk
