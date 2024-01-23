@@ -1,18 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kivicare_flutter/components/body_widget.dart';
-import 'package:kivicare_flutter/config.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/gender_model.dart';
-import 'package:kivicare_flutter/network/patient_list_repository.dart';
-import 'package:kivicare_flutter/screens/auth/components/login_register_widget.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
-import 'package:kivicare_flutter/utils/extensions/date_extensions.dart';
-import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
-import 'package:kivicare_flutter/utils/images.dart';
+import 'package:momona_healthcare/components/body_widget.dart';
+import 'package:momona_healthcare/config.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/gender_model.dart';
+import 'package:momona_healthcare/network/patient_list_repository.dart';
+import 'package:momona_healthcare/screens/auth/components/login_register_widget.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/constants.dart';
+import 'package:momona_healthcare/utils/extensions/date_extensions.dart';
+import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
+import 'package:momona_healthcare/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class SignUpScreen extends StatefulWidget {

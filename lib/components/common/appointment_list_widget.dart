@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/no_data_found_widget.dart';
-import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
-import 'package:kivicare_flutter/screens/patient/components/common_appointment_widget.dart';
+import 'package:momona_healthcare/components/no_data_found_widget.dart';
+import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/screens/patient/components/common_appointment_widget.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class AppointmentListWidget extends StatelessWidget {

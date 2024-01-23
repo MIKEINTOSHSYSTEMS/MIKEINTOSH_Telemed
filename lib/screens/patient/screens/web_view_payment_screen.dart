@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/body_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/utils/app_common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:momona_healthcare/components/body_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
+import 'package:momona_healthcare/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 

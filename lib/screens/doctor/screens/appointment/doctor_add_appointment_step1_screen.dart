@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:kivicare_flutter/components/body_widget.dart';
-import 'package:kivicare_flutter/components/common/appoitment_slots.dart';
-import 'package:kivicare_flutter/components/common/clinic_drop_down.dart';
-import 'package:kivicare_flutter/components/multi_select.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
-import 'package:kivicare_flutter/model/login_response_model.dart';
-import 'package:kivicare_flutter/model/service_model.dart';
-import 'package:kivicare_flutter/screens/doctor/screens/appointment/component/d_date_component.dart';
-import 'package:kivicare_flutter/screens/doctor/screens/appointment/doctor_add_appointment_step2_screen.dart';
-import 'package:kivicare_flutter/utils/app_common.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
-import 'package:kivicare_flutter/utils/images.dart';
+import 'package:momona_healthcare/components/body_widget.dart';
+import 'package:momona_healthcare/components/common/appoitment_slots.dart';
+import 'package:momona_healthcare/components/common/clinic_drop_down.dart';
+import 'package:momona_healthcare/components/multi_select.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/model/login_response_model.dart';
+import 'package:momona_healthcare/model/service_model.dart';
+import 'package:momona_healthcare/screens/doctor/screens/appointment/component/d_date_component.dart';
+import 'package:momona_healthcare/screens/doctor/screens/appointment/doctor_add_appointment_step2_screen.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
+import 'package:momona_healthcare/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DoctorAddAppointmentStep1Screen extends StatefulWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/screens/patient/components/html_widget.dart';
-import 'package:kivicare_flutter/screens/patient/models/news_model.dart';
-import 'package:kivicare_flutter/utils/app_common.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/screens/patient/components/html_widget.dart';
+import 'package:momona_healthcare/screens/patient/models/news_model.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class FeedDetailsScreen extends StatefulWidget {

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:kivicare_flutter/components/side_date_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/patient_encounter_list_model.dart';
-import 'package:kivicare_flutter/model/patient_list_model.dart';
-import 'package:kivicare_flutter/network/encounter_repository.dart';
-import 'package:kivicare_flutter/screens/doctor/screens/add_encounter_screen.dart';
-import 'package:kivicare_flutter/screens/doctor/screens/encounter_dashboard_screen.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
+import 'package:momona_healthcare/components/side_date_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/patient_encounter_list_model.dart';
+import 'package:momona_healthcare/model/patient_list_model.dart';
+import 'package:momona_healthcare/network/encounter_repository.dart';
+import 'package:momona_healthcare/screens/doctor/screens/add_encounter_screen.dart';
+import 'package:momona_healthcare/screens/doctor/screens/encounter_dashboard_screen.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class PatientEncounterListComponent extends StatefulWidget {

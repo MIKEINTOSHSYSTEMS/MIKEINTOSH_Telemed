@@ -1,14 +1,14 @@
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/loader_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/clinic_list_model.dart';
-import 'package:kivicare_flutter/model/login_response_model.dart';
-import 'package:kivicare_flutter/network/clinic_repository.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
-import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
-import 'package:kivicare_flutter/utils/images.dart';
+import 'package:momona_healthcare/components/loader_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/clinic_list_model.dart';
+import 'package:momona_healthcare/model/login_response_model.dart';
+import 'package:momona_healthcare/network/clinic_repository.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/constants.dart';
+import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
+import 'package:momona_healthcare/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 // ignore: must_be_immutable

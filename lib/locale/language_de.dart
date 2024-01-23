@@ -1,4 +1,4 @@
-import 'package:kivicare_flutter/locale/base_language_key.dart';
+import 'package:momona_healthcare/locale/base_language_key.dart';
 
 class LanguageDe extends BaseLanguage {
   @override

@@ -1,4 +1,4 @@
-import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
 
 class AppointmentModel {
   List<UpcomingAppointment>? appointmentData;

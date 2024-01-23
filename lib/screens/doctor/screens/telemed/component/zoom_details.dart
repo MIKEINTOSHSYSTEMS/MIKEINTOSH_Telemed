@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/network/google_repository.dart';
-import 'package:kivicare_flutter/network/telmed_repository.dart';
-import 'package:kivicare_flutter/screens/doctor/screens/telemed/component/zoom_config_guide_component.dart';
-import 'package:kivicare_flutter/screens/doctor/screens/telemed/telemed_screen.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/network/google_repository.dart';
+import 'package:momona_healthcare/network/telmed_repository.dart';
+import 'package:momona_healthcare/screens/doctor/screens/telemed/component/zoom_config_guide_component.dart';
+import 'package:momona_healthcare/screens/doctor/screens/telemed/telemed_screen.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ZoomDetails extends StatefulWidget {

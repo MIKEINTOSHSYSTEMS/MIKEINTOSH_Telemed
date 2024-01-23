@@ -1,6 +1,6 @@
-import 'package:kivicare_flutter/model/prescription_model.dart';
-import 'package:kivicare_flutter/model/send_prescription_mail.dart';
-import 'package:kivicare_flutter/network/network_utils.dart';
+import 'package:momona_healthcare/model/prescription_model.dart';
+import 'package:momona_healthcare/model/send_prescription_mail.dart';
+import 'package:momona_healthcare/network/network_utils.dart';
 
 //Prescription List
 Future<PrescriptionModel> getPrescriptionResponse(String id) async {

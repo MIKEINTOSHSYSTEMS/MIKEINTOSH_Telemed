@@ -3,10 +3,10 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DFileUploadComponent extends StatefulWidget {

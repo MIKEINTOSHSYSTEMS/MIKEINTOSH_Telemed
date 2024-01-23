@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/cached_image_widget.dart';
-import 'package:kivicare_flutter/components/common_row_widget.dart';
-import 'package:kivicare_flutter/components/status_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/login_response_model.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:momona_healthcare/components/cached_image_widget.dart';
+import 'package:momona_healthcare/components/common_row_widget.dart';
+import 'package:momona_healthcare/components/status_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/login_response_model.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ClinicWidget extends StatelessWidget {

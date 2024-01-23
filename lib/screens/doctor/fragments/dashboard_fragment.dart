@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:kivicare_flutter/components/common/appointment_list_widget.dart';
-import 'package:kivicare_flutter/components/loader_widget.dart';
-import 'package:kivicare_flutter/components/no_data_found_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
-import 'package:kivicare_flutter/network/dashboard_repository.dart';
-import 'package:kivicare_flutter/screens/doctor/components/dashboard_count_widget.dart';
-import 'package:kivicare_flutter/screens/doctor/components/weekly_chart_component.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
-import 'package:kivicare_flutter/utils/widgets.dart';
+import 'package:momona_healthcare/components/common/appointment_list_widget.dart';
+import 'package:momona_healthcare/components/loader_widget.dart';
+import 'package:momona_healthcare/components/no_data_found_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/network/dashboard_repository.dart';
+import 'package:momona_healthcare/screens/doctor/components/dashboard_count_widget.dart';
+import 'package:momona_healthcare/screens/doctor/components/weekly_chart_component.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/constants.dart';
+import 'package:momona_healthcare/utils/widgets.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DashboardFragment extends StatefulWidget {

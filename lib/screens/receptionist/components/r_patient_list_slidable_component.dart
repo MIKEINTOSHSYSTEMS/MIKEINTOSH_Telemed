@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:kivicare_flutter/components/cached_image_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/patient_list_model.dart';
-import 'package:kivicare_flutter/network/encounter_repository.dart';
-import 'package:kivicare_flutter/screens/doctor/screens/add_patient_screen.dart';
-import 'package:kivicare_flutter/screens/receptionist/screens/encounter_screen.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
-import 'package:kivicare_flutter/utils/images.dart';
+import 'package:momona_healthcare/components/cached_image_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/patient_list_model.dart';
+import 'package:momona_healthcare/network/encounter_repository.dart';
+import 'package:momona_healthcare/screens/doctor/screens/add_patient_screen.dart';
+import 'package:momona_healthcare/screens/receptionist/screens/encounter_screen.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
+import 'package:momona_healthcare/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class RPatientListSlidableComponent extends StatefulWidget {

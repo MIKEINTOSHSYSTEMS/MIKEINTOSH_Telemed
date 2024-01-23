@@ -1,7 +1,7 @@
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/response_model.dart';
-import 'package:kivicare_flutter/model/user_configuration.dart';
-import 'package:kivicare_flutter/network/network_utils.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/response_model.dart';
+import 'package:momona_healthcare/model/user_configuration.dart';
+import 'package:momona_healthcare/network/network_utils.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 // /kivicare/api/v1/doctor/get-zoom-configuration

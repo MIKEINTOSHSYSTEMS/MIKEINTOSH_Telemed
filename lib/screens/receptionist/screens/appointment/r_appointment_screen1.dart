@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:intl/intl.dart';
-import 'package:kivicare_flutter/components/common/appoitment_slots.dart';
-import 'package:kivicare_flutter/components/multi_select.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
-import 'package:kivicare_flutter/model/doctor_list_model.dart';
-import 'package:kivicare_flutter/model/service_model.dart';
-import 'package:kivicare_flutter/screens/receptionist/components/doctor_drop_down.dart';
-import 'package:kivicare_flutter/screens/receptionist/screens/appointment/component/r_date_component.dart';
-import 'package:kivicare_flutter/screens/receptionist/screens/appointment/r_appointment_screen2.dart';
-import 'package:kivicare_flutter/utils/app_common.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
-import 'package:kivicare_flutter/utils/extensions/date_extensions.dart';
+import 'package:momona_healthcare/components/common/appoitment_slots.dart';
+import 'package:momona_healthcare/components/multi_select.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/model/doctor_list_model.dart';
+import 'package:momona_healthcare/model/service_model.dart';
+import 'package:momona_healthcare/screens/receptionist/components/doctor_drop_down.dart';
+import 'package:momona_healthcare/screens/receptionist/screens/appointment/component/r_date_component.dart';
+import 'package:momona_healthcare/screens/receptionist/screens/appointment/r_appointment_screen2.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/constants.dart';
+import 'package:momona_healthcare/utils/extensions/date_extensions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class RAppointment1Screen extends StatefulWidget {

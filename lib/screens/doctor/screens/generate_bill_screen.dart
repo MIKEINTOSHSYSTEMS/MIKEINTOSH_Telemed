@@ -1,16 +1,16 @@
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/body_widget.dart';
-import 'package:kivicare_flutter/components/loader_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/encounter_dashboard_model.dart';
-import 'package:kivicare_flutter/model/patient_bill_model.dart';
-import 'package:kivicare_flutter/network/bill_repository.dart';
-import 'package:kivicare_flutter/screens/doctor/screens/add_bill_item.dart';
-import 'package:kivicare_flutter/utils/app_common.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:momona_healthcare/components/body_widget.dart';
+import 'package:momona_healthcare/components/loader_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/encounter_dashboard_model.dart';
+import 'package:momona_healthcare/model/patient_bill_model.dart';
+import 'package:momona_healthcare/network/bill_repository.dart';
+import 'package:momona_healthcare/screens/doctor/screens/add_bill_item.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 // ignore: must_be_immutable

@@ -1,11 +1,11 @@
-import 'package:kivicare_flutter/config.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/medical_history_model.dart';
-import 'package:kivicare_flutter/model/patient_encounter_list_model.dart';
-import 'package:kivicare_flutter/model/telemed_status_changed.dart';
-import 'package:kivicare_flutter/network/network_utils.dart';
-import 'package:kivicare_flutter/utils/app_common.dart';
-import 'package:kivicare_flutter/utils/common.dart';
+import 'package:momona_healthcare/config.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/medical_history_model.dart';
+import 'package:momona_healthcare/model/patient_encounter_list_model.dart';
+import 'package:momona_healthcare/model/telemed_status_changed.dart';
+import 'package:momona_healthcare/network/network_utils.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
+import 'package:momona_healthcare/utils/common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 // Start Encounter List

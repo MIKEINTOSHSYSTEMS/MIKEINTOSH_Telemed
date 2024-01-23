@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/cached_image_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/doctor_list_model.dart';
-import 'package:kivicare_flutter/screens/patient/screens/doctor_details_screen.dart';
-import 'package:kivicare_flutter/utils/widgets.dart';
+import 'package:momona_healthcare/components/cached_image_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/doctor_list_model.dart';
+import 'package:momona_healthcare/screens/patient/screens/doctor_details_screen.dart';
+import 'package:momona_healthcare/utils/widgets.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DoctorDashboardWidget extends StatelessWidget {

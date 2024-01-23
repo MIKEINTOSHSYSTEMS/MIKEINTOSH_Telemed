@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:kivicare_flutter/components/cached_image_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/response_model.dart';
-import 'package:kivicare_flutter/network/google_repository.dart';
-import 'package:kivicare_flutter/network/telmed_repository.dart';
-import 'package:kivicare_flutter/screens/doctor/screens/telemed/telemed_screen.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/widgets.dart';
+import 'package:momona_healthcare/components/cached_image_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/response_model.dart';
+import 'package:momona_healthcare/network/google_repository.dart';
+import 'package:momona_healthcare/network/telmed_repository.dart';
+import 'package:momona_healthcare/screens/doctor/screens/telemed/telemed_screen.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/widgets.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class MeetDetails extends StatefulWidget {

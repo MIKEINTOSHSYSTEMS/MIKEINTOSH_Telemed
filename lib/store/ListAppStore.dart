@@ -1,8 +1,8 @@
-import 'package:kivicare_flutter/model/doctor_list_model.dart';
-import 'package:kivicare_flutter/model/login_response_model.dart';
-import 'package:kivicare_flutter/model/patient_bill_model.dart';
-import 'package:kivicare_flutter/model/patient_list_model.dart';
-import 'package:kivicare_flutter/model/static_data_model.dart';
+import 'package:momona_healthcare/model/doctor_list_model.dart';
+import 'package:momona_healthcare/model/login_response_model.dart';
+import 'package:momona_healthcare/model/patient_bill_model.dart';
+import 'package:momona_healthcare/model/patient_list_model.dart';
+import 'package:momona_healthcare/model/static_data_model.dart';
 import 'package:mobx/mobx.dart';
 
 part 'ListAppStore.g.dart';

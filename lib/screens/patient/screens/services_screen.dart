@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/patient_dashboard_model.dart';
-import 'package:kivicare_flutter/screens/patient/components/category_widget.dart';
-import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/patient_dashboard_model.dart';
+import 'package:momona_healthcare/screens/patient/components/category_widget.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ServicesScreen extends StatelessWidget {

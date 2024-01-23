@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/medical_history_model.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/medical_history_model.dart';
+import 'package:momona_healthcare/utils/colors.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class EncounterItemWidget extends StatelessWidget {

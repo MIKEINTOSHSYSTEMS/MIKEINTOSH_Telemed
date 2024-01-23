@@ -1,7 +1,7 @@
-import 'package:kivicare_flutter/model/encounter_dashboard_model.dart';
-import 'package:kivicare_flutter/model/login_response_model.dart';
-import 'package:kivicare_flutter/model/medical_history_model.dart';
-import 'package:kivicare_flutter/model/prescription_model.dart';
+import 'package:momona_healthcare/model/encounter_dashboard_model.dart';
+import 'package:momona_healthcare/model/login_response_model.dart';
+import 'package:momona_healthcare/model/medical_history_model.dart';
+import 'package:momona_healthcare/model/prescription_model.dart';
 
 class PatientEncounterDashboardModel {
   String? added_by;

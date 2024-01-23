@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:intl/intl.dart';
-import 'package:kivicare_flutter/components/loader_widget.dart';
-import 'package:kivicare_flutter/components/no_data_found_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/prescription_model.dart';
-import 'package:kivicare_flutter/network/prescription_repository.dart';
-import 'package:kivicare_flutter/screens/doctor/components/add_prescription_screen.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
-import 'package:kivicare_flutter/utils/extensions/int_extesnions.dart';
+import 'package:momona_healthcare/components/loader_widget.dart';
+import 'package:momona_healthcare/components/no_data_found_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/prescription_model.dart';
+import 'package:momona_healthcare/network/prescription_repository.dart';
+import 'package:momona_healthcare/screens/doctor/components/add_prescription_screen.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/constants.dart';
+import 'package:momona_healthcare/utils/extensions/int_extesnions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class PrescriptionFragment extends StatefulWidget {

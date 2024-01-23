@@ -1,4 +1,4 @@
-import 'package:kivicare_flutter/utils/common.dart';
+import 'package:momona_healthcare/utils/common.dart';
 
 class NewsModel {
   List<NewsData>? newsData;

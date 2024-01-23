@@ -1,7 +1,7 @@
 import 'package:file_picker/file_picker.dart';
-import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
-import 'package:kivicare_flutter/model/doctor_list_model.dart';
-import 'package:kivicare_flutter/model/login_response_model.dart';
+import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/model/doctor_list_model.dart';
+import 'package:momona_healthcare/model/login_response_model.dart';
 import 'package:mobx/mobx.dart';
 
 part 'AppointmentAppStore.g.dart';

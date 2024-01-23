@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/config.dart';
+import 'package:momona_healthcare/config.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class AppLogo extends StatelessWidget {

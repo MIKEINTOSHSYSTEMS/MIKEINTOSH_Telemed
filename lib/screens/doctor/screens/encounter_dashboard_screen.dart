@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/common/encounter_list_widget.dart';
-import 'package:kivicare_flutter/components/loader_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/encounter_dashboard_model.dart';
-import 'package:kivicare_flutter/network/dashboard_repository.dart';
-import 'package:kivicare_flutter/screens/doctor/components/add_prescription_screen.dart';
-import 'package:kivicare_flutter/screens/doctor/fragments/prescription_fragment.dart';
-import 'package:kivicare_flutter/screens/doctor/fragments/profile_detail_fragment.dart';
-import 'package:kivicare_flutter/utils/app_common.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:momona_healthcare/components/common/encounter_list_widget.dart';
+import 'package:momona_healthcare/components/loader_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/encounter_dashboard_model.dart';
+import 'package:momona_healthcare/network/dashboard_repository.dart';
+import 'package:momona_healthcare/screens/doctor/components/add_prescription_screen.dart';
+import 'package:momona_healthcare/screens/doctor/fragments/prescription_fragment.dart';
+import 'package:momona_healthcare/screens/doctor/fragments/profile_detail_fragment.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class EncounterDashboardScreen extends StatefulWidget {

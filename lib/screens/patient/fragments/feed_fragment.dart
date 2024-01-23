@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/cached_image_widget.dart';
-import 'package:kivicare_flutter/components/loader_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/network/patient_list_repository.dart';
-import 'package:kivicare_flutter/screens/patient/models/news_model.dart';
-import 'package:kivicare_flutter/screens/patient/screens/feed_details_screen.dart';
-import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
-import 'package:kivicare_flutter/utils/images.dart';
+import 'package:momona_healthcare/components/cached_image_widget.dart';
+import 'package:momona_healthcare/components/loader_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/network/patient_list_repository.dart';
+import 'package:momona_healthcare/screens/patient/models/news_model.dart';
+import 'package:momona_healthcare/screens/patient/screens/feed_details_screen.dart';
+import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
+import 'package:momona_healthcare/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:share/share.dart';
 

@@ -1,9 +1,9 @@
-import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
-import 'package:kivicare_flutter/model/encounter_dashboard_model.dart';
-import 'package:kivicare_flutter/model/patient_dashboard_model.dart';
-import 'package:kivicare_flutter/model/static_data_model.dart';
-import 'package:kivicare_flutter/network/network_utils.dart';
-import 'package:kivicare_flutter/screens/patient/models/patient_encounter_dashboard_model.dart';
+import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/model/encounter_dashboard_model.dart';
+import 'package:momona_healthcare/model/patient_dashboard_model.dart';
+import 'package:momona_healthcare/model/static_data_model.dart';
+import 'package:momona_healthcare/network/network_utils.dart';
+import 'package:momona_healthcare/screens/patient/models/patient_encounter_dashboard_model.dart';
 
 //Get APis
 

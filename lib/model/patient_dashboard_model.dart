@@ -1,6 +1,6 @@
-import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
-import 'package:kivicare_flutter/model/doctor_list_model.dart';
-import 'package:kivicare_flutter/screens/patient/models/news_model.dart';
+import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/model/doctor_list_model.dart';
+import 'package:momona_healthcare/screens/patient/models/news_model.dart';
 
 class PatientDashboardModel {
   List<DoctorList>? doctor;

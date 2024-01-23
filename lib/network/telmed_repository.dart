@@ -1,5 +1,5 @@
-import 'package:kivicare_flutter/model/telemed_model.dart';
-import 'package:kivicare_flutter/network/network_utils.dart';
+import 'package:momona_healthcare/model/telemed_model.dart';
+import 'package:momona_healthcare/network/network_utils.dart';
 
 //Telemed
 

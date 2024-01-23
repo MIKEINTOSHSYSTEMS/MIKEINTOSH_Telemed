@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/loader_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/network/dashboard_repository.dart';
-import 'package:kivicare_flutter/screens/doctor/screens/bill_details_screen.dart';
-import 'package:kivicare_flutter/screens/patient/components/precription_widget.dart';
-import 'package:kivicare_flutter/screens/patient/components/problem_list_widget.dart';
-import 'package:kivicare_flutter/screens/patient/models/patient_encounter_dashboard_model.dart';
-import 'package:kivicare_flutter/screens/patient/screens/appointment/patient_report_screen.dart';
-import 'package:kivicare_flutter/utils/app_common.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
-import 'package:kivicare_flutter/utils/widgets.dart';
+import 'package:momona_healthcare/components/loader_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/network/dashboard_repository.dart';
+import 'package:momona_healthcare/screens/doctor/screens/bill_details_screen.dart';
+import 'package:momona_healthcare/screens/patient/components/precription_widget.dart';
+import 'package:momona_healthcare/screens/patient/components/problem_list_widget.dart';
+import 'package:momona_healthcare/screens/patient/models/patient_encounter_dashboard_model.dart';
+import 'package:momona_healthcare/screens/patient/screens/appointment/patient_report_screen.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/constants.dart';
+import 'package:momona_healthcare/utils/widgets.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:kivicare_flutter/components/no_data_found_widget.dart';
+import 'package:momona_healthcare/components/no_data_found_widget.dart';
 
 class PatientEncounterDashboardScreen extends StatefulWidget {
   final int? id;

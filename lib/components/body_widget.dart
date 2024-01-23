@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/app_loader.dart';
+import 'package:momona_healthcare/components/app_loader.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class Body extends StatelessWidget {

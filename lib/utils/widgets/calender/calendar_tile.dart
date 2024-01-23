@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import "package:intl/intl.dart";
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/widgets/calender/date_utils.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/widgets/calender/date_utils.dart';
 
 class CalendarTile extends StatelessWidget {
   final VoidCallback? onDateSelected;

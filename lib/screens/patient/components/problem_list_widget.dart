@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/common/encounter_item_widget.dart';
-import 'package:kivicare_flutter/model/medical_history_model.dart';
+import 'package:momona_healthcare/components/common/encounter_item_widget.dart';
+import 'package:momona_healthcare/model/medical_history_model.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 // ignore: must_be_immutable

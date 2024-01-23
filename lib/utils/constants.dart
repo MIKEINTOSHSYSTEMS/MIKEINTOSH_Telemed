@@ -1,5 +1,5 @@
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
 
 //const DEMO_URL = 'https://kivicare-demo.iqonic.design/';
 const DEMO_URL = 'https://sandboxdev.momonahealthcare.com/';

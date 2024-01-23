@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:kivicare_flutter/components/no_data_found_widget.dart';
-import 'package:kivicare_flutter/components/role_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/doctor_list_model.dart';
-import 'package:kivicare_flutter/network/doctor_list_repository.dart';
-import 'package:kivicare_flutter/screens/patient/components/doctor_detail_widget.dart';
-import 'package:kivicare_flutter/screens/receptionist/screens/r_add_new_doctor.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/images.dart';
+import 'package:momona_healthcare/components/no_data_found_widget.dart';
+import 'package:momona_healthcare/components/role_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/doctor_list_model.dart';
+import 'package:momona_healthcare/network/doctor_list_repository.dart';
+import 'package:momona_healthcare/screens/patient/components/doctor_detail_widget.dart';
+import 'package:momona_healthcare/screens/receptionist/screens/r_add_new_doctor.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DoctorDetailScreen extends StatefulWidget {

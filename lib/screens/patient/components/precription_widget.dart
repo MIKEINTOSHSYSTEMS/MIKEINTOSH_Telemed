@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/prescription_model.dart';
-import 'package:kivicare_flutter/screens/patient/models/patient_encounter_dashboard_model.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
-import 'package:kivicare_flutter/utils/extensions/int_extesnions.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/prescription_model.dart';
+import 'package:momona_healthcare/screens/patient/models/patient_encounter_dashboard_model.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/constants.dart';
+import 'package:momona_healthcare/utils/extensions/int_extesnions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 // ignore: must_be_immutable

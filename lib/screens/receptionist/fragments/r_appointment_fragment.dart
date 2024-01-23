@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/app_loader.dart';
-import 'package:kivicare_flutter/components/no_data_found_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
-import 'package:kivicare_flutter/network/appointment_respository.dart';
-import 'package:kivicare_flutter/screens/patient/components/common_appointment_widget.dart';
-import 'package:kivicare_flutter/screens/receptionist/screens/appointment/r_appointment_screen1.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
-import 'package:kivicare_flutter/utils/extensions/date_extensions.dart';
+import 'package:momona_healthcare/components/app_loader.dart';
+import 'package:momona_healthcare/components/no_data_found_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/network/appointment_respository.dart';
+import 'package:momona_healthcare/screens/patient/components/common_appointment_widget.dart';
+import 'package:momona_healthcare/screens/receptionist/screens/appointment/r_appointment_screen1.dart';
+import 'package:momona_healthcare/utils/constants.dart';
+import 'package:momona_healthcare/utils/extensions/date_extensions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class RAppointmentFragment extends StatefulWidget {

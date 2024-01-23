@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:kivicare_flutter/components/loader_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/user_configuration.dart';
-import 'package:kivicare_flutter/network/encounter_repository.dart';
-import 'package:kivicare_flutter/network/google_repository.dart';
-import 'package:kivicare_flutter/screens/doctor/screens/telemed/component/meet_details.dart';
-import 'package:kivicare_flutter/screens/doctor/screens/telemed/component/zoom_details.dart';
-import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:momona_healthcare/components/loader_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/user_configuration.dart';
+import 'package:momona_healthcare/network/encounter_repository.dart';
+import 'package:momona_healthcare/network/google_repository.dart';
+import 'package:momona_healthcare/screens/doctor/screens/telemed/component/meet_details.dart';
+import 'package:momona_healthcare/screens/doctor/screens/telemed/component/zoom_details.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 bool isZoomOn = false;

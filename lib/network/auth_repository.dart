@@ -3,14 +3,14 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/base_response.dart';
-import 'package:kivicare_flutter/model/get_doctor_detail_model.dart';
-import 'package:kivicare_flutter/model/get_user_detail_model.dart';
-import 'package:kivicare_flutter/model/login_response_model.dart';
-import 'package:kivicare_flutter/network/network_utils.dart';
-import 'package:kivicare_flutter/screens/auth/sign_in_screen.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/base_response.dart';
+import 'package:momona_healthcare/model/get_doctor_detail_model.dart';
+import 'package:momona_healthcare/model/get_user_detail_model.dart';
+import 'package:momona_healthcare/model/login_response_model.dart';
+import 'package:momona_healthcare/network/network_utils.dart';
+import 'package:momona_healthcare/screens/auth/sign_in_screen.dart';
+import 'package:momona_healthcare/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 Future<LoginResponseModel> login(Map req) async {

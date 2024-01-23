@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/loader_widget.dart';
-import 'package:kivicare_flutter/components/no_data_found_widget.dart';
-import 'package:kivicare_flutter/components/view_all_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
-import 'package:kivicare_flutter/model/doctor_list_model.dart';
-import 'package:kivicare_flutter/model/patient_dashboard_model.dart';
-import 'package:kivicare_flutter/network/dashboard_repository.dart';
-import 'package:kivicare_flutter/screens/patient/components/category_widget.dart';
-import 'package:kivicare_flutter/screens/patient/components/common_appointment_widget.dart';
-import 'package:kivicare_flutter/screens/patient/components/doctor_dashboard_widget.dart';
-import 'package:kivicare_flutter/screens/patient/components/news_dashboard_widget.dart';
-import 'package:kivicare_flutter/screens/patient/models/news_model.dart';
-import 'package:kivicare_flutter/screens/patient/screens/doctor_list_screen.dart';
-import 'package:kivicare_flutter/screens/patient/screens/services_screen.dart';
+import 'package:momona_healthcare/components/loader_widget.dart';
+import 'package:momona_healthcare/components/no_data_found_widget.dart';
+import 'package:momona_healthcare/components/view_all_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/model/doctor_list_model.dart';
+import 'package:momona_healthcare/model/patient_dashboard_model.dart';
+import 'package:momona_healthcare/network/dashboard_repository.dart';
+import 'package:momona_healthcare/screens/patient/components/category_widget.dart';
+import 'package:momona_healthcare/screens/patient/components/common_appointment_widget.dart';
+import 'package:momona_healthcare/screens/patient/components/doctor_dashboard_widget.dart';
+import 'package:momona_healthcare/screens/patient/components/news_dashboard_widget.dart';
+import 'package:momona_healthcare/screens/patient/models/news_model.dart';
+import 'package:momona_healthcare/screens/patient/screens/doctor_list_screen.dart';
+import 'package:momona_healthcare/screens/patient/screens/services_screen.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class PatientDashBoardFragment extends StatefulWidget {

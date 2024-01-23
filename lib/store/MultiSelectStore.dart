@@ -1,5 +1,5 @@
-import 'package:kivicare_flutter/model/service_model.dart';
-import 'package:kivicare_flutter/model/static_data_model.dart';
+import 'package:momona_healthcare/model/service_model.dart';
+import 'package:momona_healthcare/model/static_data_model.dart';
 import 'package:mobx/mobx.dart';
 
 part 'MultiSelectStore.g.dart';

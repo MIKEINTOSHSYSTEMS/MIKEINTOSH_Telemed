@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/model/patient_dashboard_model.dart';
-import 'package:kivicare_flutter/utils/app_widgets.dart';
+import 'package:momona_healthcare/model/patient_dashboard_model.dart';
+import 'package:momona_healthcare/utils/app_widgets.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class CategoryWidget extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:kivicare_flutter/model/login_response_model.dart';
+import 'package:momona_healthcare/model/login_response_model.dart';
 
 class PatientBillModule {
   String? actual_amount;

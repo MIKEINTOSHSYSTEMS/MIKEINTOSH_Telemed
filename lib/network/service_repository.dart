@@ -1,8 +1,8 @@
 //Start Service API
-import 'package:kivicare_flutter/config.dart';
-import 'package:kivicare_flutter/model/base_response.dart';
-import 'package:kivicare_flutter/model/service_model.dart';
-import 'package:kivicare_flutter/network/network_utils.dart';
+import 'package:momona_healthcare/config.dart';
+import 'package:momona_healthcare/model/base_response.dart';
+import 'package:momona_healthcare/model/service_model.dart';
+import 'package:momona_healthcare/network/network_utils.dart';
 
 Future<ServiceListModel> getServiceResponse({int? id, int? page}) async {
   return ServiceListModel.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/service/get-list?page=$page&limit=$PER_PAGE&doctor_id=${id != null ? id : ''}'))));

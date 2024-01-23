@@ -2,17 +2,17 @@ import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:kivicare_flutter/components/app_logo.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/network/google_repository.dart';
-import 'package:kivicare_flutter/screens/auth/sign_in_screen.dart';
-import 'package:kivicare_flutter/screens/doctor/doctor_dashboard_screen.dart';
-import 'package:kivicare_flutter/screens/patient/p_dashboard_screen.dart';
-import 'package:kivicare_flutter/screens/receptionist/r_dashboard_screen.dart';
-import 'package:kivicare_flutter/screens/walkThrough/walk_through_screen.dart';
-import 'package:kivicare_flutter/utils/colors.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:momona_healthcare/components/app_logo.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/network/google_repository.dart';
+import 'package:momona_healthcare/screens/auth/sign_in_screen.dart';
+import 'package:momona_healthcare/screens/doctor/doctor_dashboard_screen.dart';
+import 'package:momona_healthcare/screens/patient/p_dashboard_screen.dart';
+import 'package:momona_healthcare/screens/receptionist/r_dashboard_screen.dart';
+import 'package:momona_healthcare/screens/walkThrough/walk_through_screen.dart';
+import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class SplashScreen extends StatefulWidget {

@@ -1,9 +1,9 @@
-import 'package:kivicare_flutter/config.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/patient_list_model.dart';
-import 'package:kivicare_flutter/network/network_utils.dart';
-import 'package:kivicare_flutter/screens/patient/models/news_model.dart';
-import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:momona_healthcare/config.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/patient_list_model.dart';
+import 'package:momona_healthcare/network/network_utils.dart';
+import 'package:momona_healthcare/screens/patient/models/news_model.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 Future<List<PatientData>> getPatient() {

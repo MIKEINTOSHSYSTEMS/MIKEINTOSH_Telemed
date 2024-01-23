@@ -1,6 +1,6 @@
-import 'package:kivicare_flutter/model/base_response.dart';
-import 'package:kivicare_flutter/model/holiday_model.dart';
-import 'package:kivicare_flutter/network/network_utils.dart';
+import 'package:momona_healthcare/model/base_response.dart';
+import 'package:momona_healthcare/model/holiday_model.dart';
+import 'package:momona_healthcare/network/network_utils.dart';
 
 //Start Holidays API
 

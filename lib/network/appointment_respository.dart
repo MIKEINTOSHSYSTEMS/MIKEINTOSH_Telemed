@@ -3,18 +3,18 @@ import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:http/http.dart';
-import 'package:kivicare_flutter/config.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/appoinment_model.dart';
-import 'package:kivicare_flutter/model/appointment_slot_model.dart';
-import 'package:kivicare_flutter/model/confirm_appointment_response_model.dart';
-import 'package:kivicare_flutter/model/doctor_dashboard_model.dart';
-import 'package:kivicare_flutter/model/static_data_model.dart';
-import 'package:kivicare_flutter/network/dashboard_repository.dart';
-import 'package:kivicare_flutter/network/network_utils.dart';
-import 'package:kivicare_flutter/screens/patient/models/patient_encounter_model.dart';
-import 'package:kivicare_flutter/utils/app_common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:momona_healthcare/config.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/appoinment_model.dart';
+import 'package:momona_healthcare/model/appointment_slot_model.dart';
+import 'package:momona_healthcare/model/confirm_appointment_response_model.dart';
+import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/model/static_data_model.dart';
+import 'package:momona_healthcare/network/dashboard_repository.dart';
+import 'package:momona_healthcare/network/network_utils.dart';
+import 'package:momona_healthcare/screens/patient/models/patient_encounter_model.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
+import 'package:momona_healthcare/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 Future<List<StaticData?>> getSpecialization() async {

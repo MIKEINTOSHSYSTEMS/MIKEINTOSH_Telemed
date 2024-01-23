@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:kivicare_flutter/components/loader_widget.dart';
-import 'package:kivicare_flutter/main.dart';
-import 'package:kivicare_flutter/model/login_response_model.dart';
-import 'package:kivicare_flutter/network/clinic_repository.dart';
-import 'package:kivicare_flutter/screens/patient/screens/appointment/add_appointment_step2.dart';
-import 'package:kivicare_flutter/screens/patient/screens/appointment/add_appointment_step3.dart';
-import 'package:kivicare_flutter/screens/patient/screens/appointment/component/clinic_widget.dart';
-import 'package:kivicare_flutter/screens/patient/screens/appointment/component/step_progress_indicator.dart';
-import 'package:kivicare_flutter/utils/app_common.dart';
-import 'package:kivicare_flutter/utils/common.dart';
-import 'package:kivicare_flutter/utils/constants.dart';
-import 'package:kivicare_flutter/utils/widgets.dart';
+import 'package:momona_healthcare/components/loader_widget.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/login_response_model.dart';
+import 'package:momona_healthcare/network/clinic_repository.dart';
+import 'package:momona_healthcare/screens/patient/screens/appointment/add_appointment_step2.dart';
+import 'package:momona_healthcare/screens/patient/screens/appointment/add_appointment_step3.dart';
+import 'package:momona_healthcare/screens/patient/screens/appointment/component/clinic_widget.dart';
+import 'package:momona_healthcare/screens/patient/screens/appointment/component/step_progress_indicator.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
+import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/constants.dart';
+import 'package:momona_healthcare/utils/widgets.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class AddAppointmentScreenStep1 extends StatefulWidget {
