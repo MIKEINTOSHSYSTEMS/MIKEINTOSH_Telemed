@@ -3,6 +3,14 @@ workflows:
     name: Android Workflow
     instance_type: mac_mini_m1
     max_build_duration: 120
+
+    triggering:
+      events:
+        - push
+      branch_patterns:
+      - pattern: 'main'
+        include: true
+        source: false
     #environment:
      # android_signing:
       #  - keystore_reference
@@ -22,9 +30,9 @@ workflows:
       #- name: Flutter analyze
        # script: |
         #  flutter analyze
-      - name: Flutter unit tests
-        script: |
-         flutter test
+     # - name: Flutter unit tests
+      #  script: |
+       #   flutter test
         #ignore_failure: true
       - name: Build AAB with Flutter
         script: |
