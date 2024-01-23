@@ -5,7 +5,7 @@ orbs:
   flutter: circleci/flutter@2.0.2
 
 workflows:
-  version: 2
+  
   build:
     jobs:
       - build:
@@ -13,11 +13,11 @@ workflows:
             branches:
               only:
                 - main
+
 jobs:
   build:
-    executor:
-      name: android/android-machine
-      resource-class: medium
+    docker:
+      - image: circleci/android:api-30-node  # Use Docker executor instead of android/android-machine
     
     steps:
       - checkout
@@ -28,7 +28,6 @@ jobs:
       - flutter/install_pub:
           cache-version: v1
 
-    
       - run:
           name: Add Google services to App
           command: |
@@ -46,4 +45,3 @@ jobs:
 
       - store_artifacts:
           path: build/app/outputs/flutter-apk/app-release.apk
-
