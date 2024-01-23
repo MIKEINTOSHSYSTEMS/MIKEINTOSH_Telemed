@@ -1,33 +1,34 @@
-name: CI/CD Flutter App
+name: Flutter CI
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - uses: flutter-actions/setup-flutter@v2
-        with:
-          channel: stable
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.16.8' # Specify the version of Flutter you want to use
 
-      #- run: flutter analyze
+    - name: Install dependencies
+      run: flutter pub get
 
-      #- run: flutter test
+    - name: Run tests
+      run: flutter test
 
-      #- run: flutter test --flutter-widget-tester
+    - name: Build APK
+      run: flutter build apk
 
-      - name: Build Android App
-        run: flutter build apk
-
-      #- name: Build iOS App
-      #  run: flutter build ios
-
-# Add additional steps for deployment based on your needs
-
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: app-release
+        path: build/app/outputs/flutter-apk/app-release.apk
