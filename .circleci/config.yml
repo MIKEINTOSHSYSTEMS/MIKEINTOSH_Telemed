@@ -1,38 +1,53 @@
 version: 2.1
-setup: true
-orbs:
-  orb-tools: circleci/orb-tools@11.1
-  shellcheck: circleci/shellcheck@3.1
 
-filters: &filters
-  tags:
-    only: /.*/
+jobs:
+  build:
+    docker:
+      - image: circleci/android:api-30-node
+
+    steps:
+      - checkout
+
+      - run:
+          name: Setup Flutter
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y \
+              lib32stdc++6 \
+              libstdc++6 \
+              libglu1-mesa
+
+            git clone -b stable https://github.com/flutter/flutter.git $HOME/flutter
+            export PATH=$HOME/flutter/bin:$HOME/flutter/bin/cache/dart-sdk/bin:$PATH
+            flutter doctor
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "pubspec.yaml" }}
+
+      - run:
+          name: Install dependencies
+          command: flutter pub get
+
+      - save_cache:
+          key: v1-dependencies-{{ checksum "pubspec.yaml" }}
+          paths:
+            - .pub-cache
+
+      - run:
+          name: Run tests
+          command: flutter test
+
+      - run:
+          name: Build APK
+          command: flutter build apk
+
+      - store_artifacts:
+          path: build/app/outputs/flutter-apk/app-release.apk
+          destination: /artifacts
 
 workflows:
-  lint-pack:
+  version: 2
+  build:
     jobs:
-      - orb-tools/lint:
-          filters: *filters
-      - orb-tools/pack:
-          filters: *filters
-      - orb-tools/review:
-          exclude: RC008, RC009
-          filters: *filters
-      - shellcheck/check:
-          exclude: SC2148,SC2038,SC2086,SC2002,SC2016
-          filters: *filters
-      - orb-tools/publish:
-          orb-name: circleci/flutter
-          github-token: GHI_TOKEN
-          vcs-type: << pipeline.project.type >>
-          requires:
-            [orb-tools/lint, orb-tools/review, orb-tools/pack, shellcheck/check]
-          # Use a context to hold your publishing token.
-          context: orb-publisher
-          filters: *filters
-      # Triggers the next workflow in the Orb Development Kit.
-      - orb-tools/continue:
-          pipeline-number: << pipeline.number >>
-          vcs-type: << pipeline.project.type >>
-          requires: [orb-tools/publish]
-          filters: *filters
+      - build
