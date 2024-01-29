@@ -2,7 +2,7 @@ const APP_NAME = 'Momona Healthcare';
 const APP_FIRST_NAME = 'Momona';
 const APP_SECOND_NAME = 'Healthcare';
 
-const DOMAIN_URL = 'https://sandboxdev.momonahealthcare.com'; //https://kivicare-demo.iqonic.design
+const DOMAIN_URL = 'https://momonahealthcare.com'; //https://kivicare-demo.iqonic.design
 const BASE_URL = '$DOMAIN_URL/wp-json/';
 
 const IQONIC_PACKAGE_NAME = "com.momona.healthcare"; // Do not change this Package Name.

@@ -38,7 +38,7 @@ class _QrInfoScreenState extends State<QrInfoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBarWidget(
-        "Try It! Buy It!",
+        "Sandbox Access",
         textColor: Colors.white,
         systemUiOverlayStyle: defaultSystemUiOverlayStyle(context),
       ),
@@ -58,7 +58,7 @@ class _QrInfoScreenState extends State<QrInfoScreen> {
                 ],
               ),
               32.height,
-              Text('Try It! Buy It!', style: boldTextStyle(size: 26)),
+              Text('Try It! Get Started!', style: boldTextStyle(size: 26)),
               32.height,
               Text(
                 'You are just one step away from having a hands-on backend demo.',
@@ -77,13 +77,13 @@ class _QrInfoScreenState extends State<QrInfoScreen> {
                 children: [
                   RichTextWidget(
                     list: [
-                      TextSpan(text: 'Open the demo URL in Web. ', style: primaryTextStyle()),
+                      TextSpan(text: 'Open the SANDBOX URL in Web. ', style: primaryTextStyle()),
                       TextSpan(
-                        text: 'https://demo.kivicare.io/',
+                        text: 'https://sandboxdev.momonahealthcare.com/register-login/#register',
                         style: primaryTextStyle(color: primaryColor, decoration: TextDecoration.underline),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            commonLaunchUrl("https://demo.kivicare.io/");
+                            commonLaunchUrl("https://sandboxdev.momonahealthcare.com/register-login/#register");
                           },
                       ),
                     ],

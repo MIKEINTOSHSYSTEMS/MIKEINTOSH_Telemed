@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-const primaryColor = Color(0xFF7093E5);
+const primaryColor = Color(0xFF20A0D8);
 Color appPrimaryColor = primaryColor;
 
-const appSecondaryColor = Color(0xFFF68685);
+const appSecondaryColor = Color(0xFF0B1251);
 const primaryDarkColor = Color(0xff0a0909);
 
 const borderColor = Color(0xFFEBEBEB);

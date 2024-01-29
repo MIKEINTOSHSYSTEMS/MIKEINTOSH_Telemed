@@ -504,7 +504,7 @@ class LanguageEn extends BaseLanguage {
   String get lblEncounterDate => "Encounter date";
 
   @override
-  String get lblClinicName => "Clinic name";
+  String get lblClinicName => "Service Center Name";
 
   @override
   String get lblDoctorName => "Doctor name";
@@ -873,19 +873,19 @@ class LanguageEn extends BaseLanguage {
   String get lblHoliday => "Holiday";
 
   @override
-  String get lblClinicHoliday => "Clinic Holidays";
+  String get lblClinicHoliday => "Service Center Holidays";
 
   @override
   String get lblSessions => "Sessions";
 
   @override
-  String get lblClinicSessions => "Clinic Sessions";
+  String get lblClinicSessions => "Service Center Sessions";
 
   @override
   String get lblClinicServices => "Doctor services";
 
   @override
-  String get lblVideoConsulting => "Video Consulting";
+  String get lblVideoConsulting => "Video Consultation";
 
   @override
   String get lblYourEncounters => "Your encounters";
@@ -897,7 +897,7 @@ class LanguageEn extends BaseLanguage {
   String get lblChooseYourAppTheme => "Choose your app theme";
 
   @override
-  String get lblClinicTAndC => "Clinic T&C";
+  String get lblClinicTAndC => "MHC Statments";
 
   @override
   String get lblAboutKiviCare => "About Momona Healthcare";
@@ -1138,7 +1138,7 @@ class LanguageEn extends BaseLanguage {
   String get lblServicesIsRequired => "Services is required";
 
   @override
-  String get lblClinicDoctor => "Clinic Doctor";
+  String get lblClinicDoctor => "MHC Doctor";
 
   @override
   String get lblRupee => "₹";
@@ -1195,10 +1195,10 @@ class LanguageEn extends BaseLanguage {
   String get lblClinicAppointments => "Clinic Appointments";
 
   @override
-  String get lblClinicDoctors => " Clinic Doctor";
+  String get lblClinicDoctors => " MHC Doctor";
 
   @override
-  String get lblClinicPatient => " CLINIC PATIENT";
+  String get lblClinicPatient => " MHC PATIENT";
 
   @override
   String get lblStep1Of3 => "Step one of three";

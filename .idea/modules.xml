@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/momona_healthcare.iml" filepath="$PROJECT_DIR$/.idea/momona_healthcare.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/momona_healthcare_android.iml" filepath="$PROJECT_DIR$/android/momona_healthcare_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MomonaTelemed.iml" filepath="$PROJECT_DIR$/.idea/MomonaTelemed.iml" />
     </modules>
   </component>
 </project>

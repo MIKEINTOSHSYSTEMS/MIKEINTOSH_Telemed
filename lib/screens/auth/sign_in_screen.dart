@@ -299,7 +299,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   onPressed: () {
                     QrInfoScreen().launch(context);
                   },
-                  child: Text('How to generate QR code?', style: secondaryTextStyle()),
+                  child: Text('How to generate QR code for Testing?', style: secondaryTextStyle()),
                 ),
                 32.height,
               ],

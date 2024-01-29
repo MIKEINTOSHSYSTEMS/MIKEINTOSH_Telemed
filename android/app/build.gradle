@@ -32,8 +32,8 @@ android {
         applicationId "com.momona.healthcare"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 17
-        versionName "6.0.1"
+        versionCode 1
+        versionName "1.0.0"
         multiDexEnabled true
     }
 
