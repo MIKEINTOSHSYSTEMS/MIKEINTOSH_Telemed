@@ -1,3 +1,5 @@
+[![Codemagic build status](https://api.codemagic.io/apps/65b7bdc0300d13db7813d9cb/65b7bdc0300d13db7813d9ca/status_badge.svg)](https://codemagic.io/apps/65b7bdc0300d13db7813d9cb/65b7bdc0300d13db7813d9ca/latest_build)
+
 # MIKEINTOSH_Telemed
 
 A new Flutter application.
@@ -14,3 +16,4 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
