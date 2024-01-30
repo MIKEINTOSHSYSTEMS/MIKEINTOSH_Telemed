@@ -1,5 +1,8 @@
 [![Codemagic build status](https://api.codemagic.io/apps/65b7bdc0300d13db7813d9cb/65b7bdc0300d13db7813d9ca/status_badge.svg)](https://codemagic.io/apps/65b7bdc0300d13db7813d9cb/65b7bdc0300d13db7813d9ca/latest_build)
 
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/6JXK5B3pShwC2R8YXtWPJW/8SWHdMosUqLP58hAKrbaUV/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/6JXK5B3pShwC2R8YXtWPJW/8SWHdMosUqLP58hAKrbaUV/tree/main)
+
 # MIKEINTOSH_Telemed
 
 A new Flutter application.
