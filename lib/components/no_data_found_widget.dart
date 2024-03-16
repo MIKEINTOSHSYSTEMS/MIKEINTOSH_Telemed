@@ -5,30 +5,21 @@ import 'package:nb_utils/nb_utils.dart';
 
 class NoDataFoundWidget extends StatelessWidget {
   final String? text;
+  final String? retryText;
   final double? iconSize;
+  final String? image;
+  final VoidCallback? onRetry;
 
-  NoDataFoundWidget({this.text, this.iconSize});
+  NoDataFoundWidget({this.text, this.image, this.iconSize, this.retryText, this.onRetry});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.asset(
-          appStore.isDarkModeOn ? darkModeNoImage : noDataFound,
-          height: iconSize ?? 180,
-          fit: BoxFit.fitHeight,
-        ),
-        Text(text ?? locale.lblNoMatch, style: boldTextStyle(size: 18)),
-        8.height.visible(false),
-        Text(
-          locale.lblNoDataSubTitle,
-          textAlign: TextAlign.center,
-          style: secondaryTextStyle(),
-        ).visible(false),
-      ],
-    ).paddingAll(16);
+    return NoDataWidget(
+      image: image ?? noDataFound,
+      title: text ?? locale.lblNoMatch,
+      retryText: retryText,
+      onRetry: onRetry,
+      imageSize: Size(iconSize ?? 150, iconSize ?? 150),
+    );
   }
 }

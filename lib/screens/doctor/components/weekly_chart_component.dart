@@ -1,13 +1,12 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
 import 'package:momona_healthcare/utils/colors.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-// ignore: must_be_immutable
 class WeeklyChartComponent extends StatefulWidget {
-  List<WeeklyAppointment>? weeklyAppointment;
+  final List<WeeklyAppointment>? weeklyAppointment;
 
   WeeklyChartComponent({this.weeklyAppointment});
 
@@ -88,25 +87,25 @@ class WeeklyChartComponentState extends State<WeeklyChartComponent> {
               late String weekDay;
               switch (group.x.toInt()) {
                 case 0:
-                  weekDay = 'Mon';
+                  weekDay = locale.lblMon;
                   break;
                 case 1:
-                  weekDay = 'Tue';
+                  weekDay = locale.lblTue;
                   break;
                 case 2:
-                  weekDay = 'Wed';
+                  weekDay = locale.lblWed;
                   break;
                 case 3:
-                  weekDay = 'Thu';
+                  weekDay = locale.lblThu;
                   break;
                 case 4:
-                  weekDay = 'Fri';
+                  weekDay = locale.lblFri;
                   break;
                 case 5:
-                  weekDay = 'Sat';
+                  weekDay = locale.lblSat;
                   break;
                 case 6:
-                  weekDay = 'Sun';
+                  weekDay = locale.lblSun;
                   break;
               }
               return BarTooltipItem(weekDay + '\n' + (rod.toY).toString(), TextStyle(color: primaryColor));

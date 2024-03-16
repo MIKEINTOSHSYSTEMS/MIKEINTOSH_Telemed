@@ -3,7 +3,826 @@ import 'package:flutter/material.dart';
 abstract class BaseLanguage {
   static BaseLanguage of(BuildContext context) => Localizations.of<BaseLanguage>(context, BaseLanguage)!;
 
-  String get app_name;
+  String get lblContinue;
+  String get lblShippingCost;
+  String get lblNoPaymentMethods;
+  String get lblAddOrderNotes;
+  String get lblNotesAboutOrder;
+  String get lblOptional;
+  String get lblCouponRemoved;
+  String get lblBuyThisOnWordpressStore;
+  String get lblChooseFromCollection;
+  String get lblViewCoupons;
+  String get lblExperiencePractitioner;
+  String get lblShopFromWordpress;
+  String get lblShop;
+  String get lblAddressSubTitle;
+
+  String get lblOrders;
+
+  String get lblOrdersSubtitle;
+
+  String get lblCoupons;
+
+  String get lblCouponsSubtitle;
+
+  String get lblAny;
+
+  String get lblProcessing;
+
+  String get lblOnHold;
+
+  String get lblRefunded;
+
+  String get lblFailed;
+
+  String get lblTrash;
+
+  String get lblPermissionDenied;
+
+  String get lblSetAddress;
+
+  String get lblPickAddress;
+
+  String get lblSwipeRightNote;
+
+  String get lblCompany;
+
+  String get lblSale;
+
+  String get lblEnterValidCouponCode;
+
+  String get lblNoProductsFound;
+
+  String get lblCantFindProductYouSearchedFor;
+
+  String get lblAverageRating;
+
+  String get lblPopularity;
+
+  String get lblPrice;
+
+  String get lblReasonForCancellation;
+
+  String get lblCancelOrder;
+
+  String get lblCouponDiscount;
+
+  String get lblReviewHint;
+
+  String get lblViewProducts;
+
+  String get lblPleaseSelectProduct;
+
+  String get lblPleaseAddQuantity;
+
+  String get lblPleaseSelectCountry;
+
+  String get lblCopiedToClipboard;
+
+  String get lblCartUpdated;
+
+  String get lblOrderDeleted;
+
+  String get lblEnterValidBllling;
+
+  String get lblYourCarIsEmpty;
+
+  String get ago;
+
+  String get day;
+
+  String get hour;
+
+  String get minute;
+
+  String get second;
+
+  String get justNow;
+
+  String get currentLocation;
+
+  String get chooseFromMap;
+
+  String get orderCancelledSuccessfully;
+
+  String get cancelOrderConfirmation;
+
+  String get orderStatus;
+
+  String get orderNumber;
+
+  String get paymentMethod;
+
+  String get date;
+
+  String get customerReview;
+
+  String get chooseAnOption;
+
+  String get sku;
+
+  String get category;
+
+  String get reviewAddedSuccessfully;
+
+  String get pleaseAddReview;
+
+  String get pleaseAddRating;
+
+  String get reviews;
+
+  String get editReview;
+
+  String get addAReview;
+
+  String get rating;
+
+  String get writeReview;
+
+  String get reviewUpdatedSuccessfully;
+
+  String get reviewDeletedSuccessfully;
+
+  String get deleteReviewConfirmation;
+
+  String get yourCartIsCurrentlyEmpty;
+
+  String get returnToShop;
+
+  String get cartUpdated;
+
+  String get itemRemovedSuccessfully;
+
+  String get removeFromCartConfirmation;
+
+  String get appliedCoupons;
+
+  String get successfullyAddedToCart;
+
+  String get addToCart;
+
+  String get clickToRefresh;
+
+  String get state;
+
+  String get pleaseEnterDescription;
+
+  String get replyTo;
+
+  String get enterValidCouponCode;
+
+  String get code;
+
+  String get shippingAddress;
+
+  String get billingAndShippingAddresses;
+
+  String get copiedToClipboard;
+
+  String get expiresOn;
+
+  String get off;
+
+  String get myWishlist;
+
+  String get sortBy;
+
+  String get selectCategory;
+
+  String get shop;
+
+  String get outOfStock;
+
+  String get goToCart;
+
+  String get relatedProducts;
+
+  String get additionalInformation;
+
+  String get discount;
+
+  String get couponCode;
+
+  String get applyCoupon;
+
+  String get cartTotals;
+
+  String get proceedToCheckout;
+
+  String get checkout;
+
+  String get products;
+
+  String get qty;
+
+  String get billingAddress;
+
+  String get selectPaymentMethod;
+
+  String get paymentGatewaysNotFound;
+
+  String get placeOrder;
+
+  String get placeOrderText;
+
+  String get orderDetails;
+
+  String get lblOrderCancelledSuccessfully;
+
+  String get lblCancelOrderMessageSix;
+
+  String get lblCancelOrderMessageFive;
+
+  String get lblCancelOrderMessageFour;
+
+  String get lblCancelOrderMessageThree;
+
+  String get lblCancelOrderMessageTwo;
+
+  String get lblCancelOrderMessageOne;
+
+  String get lblBill;
+
+  String get lblStripeTestCredential;
+
+  String get lblTodayIsHoliday;
+
+  String get lblTotalTax;
+
+  String get lblStart;
+
+  String get lblJoin;
+
+  String get lblTotalDoctors;
+
+  String get lblTax;
+
+  String get lblTaxRate;
+
+  String get lblSubTotal;
+
+  String get lblThisServiceAlreadyExistInClinic;
+
+  String get lblPleaseSelectPayment;
+
+  String get lblChargesIsNegative;
+
+  String get lblServiceCategoryIsRequired;
+
+  String get lblServiceNameIsRequired;
+
+  String get lblDurationIsRequired;
+
+  String get lblChargesIsRequired;
+
+  String get lblNoLatestAppointmentFound;
+
+  String get lblNoPendingAppointmentFound;
+
+  String get lblNoCompletedAppointmentFound;
+
+  String get lblNoCancelledAppointmentFound;
+
+  String get clinicIdRequired;
+
+  String get roleIsRequired;
+
+  String get confirmPasswordIsRequired;
+
+  String get passwordIsRequired;
+
+  String get contactNumberIsRequired;
+
+  String get lblSwipeLeftToEdit;
+
+  String get lblNoEncounterFoundAtYourClinic;
+
+  String get lblAvailableAtClinics;
+
+  String get lblClinicsSelected;
+
+  String get lblClinicsAvailable;
+
+  String get lblSelectRole;
+
+  String get lblPwdDoesNotMatch;
+
+  String get lblSelectPaymentMethod;
+
+  String get lblAmount;
+
+  String get lblPaymentId;
+
+  String get lblPaymentMethod;
+
+  String get lblVPA;
+
+  String get lblCardId;
+
+  String get lblTransactionId;
+
+  String get lblReportUpdatedSuccessfully;
+
+  String get lblNoPrescriptionFound;
+
+  String get lblNoNotesFound;
+
+  String get lblNoObservationsFound;
+
+  String get lblNoProblemFound;
+
+  String get lblBookAppointment;
+
+  String get lblDoYouWantToUpdateEncounter;
+
+  String get lblDoYouWantToAddEncounter;
+
+  String get lblDoYouWantToUpdateYourDetails;
+
+  String get lblNoBillsFound;
+
+  String get lblDoYouWantToDeleteProblem;
+
+  String get lblDoYouWantToDeleteObservation;
+
+  String get lblDoYouWantToDeleteNote;
+
+  String get lblDoYouWantToDeleteDoctor;
+
+  String get lblLoginSuccessfullyAsAPatient;
+
+  String get lblLoginSuccessfullyAsAReceptionist;
+
+  String get lblLoginSuccessfullyAsADoctor;
+
+  String get lblSelectEncounterDate;
+
+  String get lblSelectReportDate;
+
+  String get lblSelectBirthDate;
+
+  String get lblDoYouWantToLogout;
+
+  String get lblDoYouWantToDeleteAccountPermanently;
+
+  String get lblDoYouWantToDeleteSession;
+
+  String get lblDoYouWantToAddSession;
+
+  String get lblDoYouWantToUpdateSession;
+
+  String get lblDoYouWantToChangeThePassword;
+
+  String get lblDoYouWantToDeleteReview;
+
+  String get lblDoYouWantToDeleteHolidayOf;
+
+  String get lblDoYouWantToDeleteService;
+
+  String get lblDoYouWantToUpdateService;
+
+  String get lblDoYouWantToAddNewService;
+
+  String get lblDoYouWantToUpdateAppointmentOf;
+
+  String get lblDoYouWantToAddNewAppointmentFor;
+
+  String get lblDoYouWantToDeleteAppointmentOf;
+
+  String get lblDoYouWantToDeleteReport;
+
+  String get lblDoYouWantToUpdateReport;
+
+  String get lblDoYouWantToAddReport;
+
+  String get lblDoYouWantToDeletePrescription;
+
+  String get lblDoYouWantToUpdatePrescription;
+
+  String get lblDoYouWantToAddPrescription;
+
+  String get lblDoYouWantToSwitchYourClinicTo;
+
+  String get lblDoYouWantToUpdatePatientDetails;
+
+  String get lblDoYouWantToSaveNewPatientDetails;
+
+  String get lblDoYouWantToUpdateDoctorDetails;
+
+  String get lblDoYouWantToSaveNewDoctorDetails;
+
+  String get lblDoYouWantToDeleteEncounterDetailsOf;
+
+  String get lblDoYouWantToCheckoutAppointment;
+
+  String get lblMultipleSelectionIsNotAvailableForThisService;
+
+  String get lblTermsConditionSubTitle;
+
+  String get lblYears;
+
+  String get lblDeleteAccountSubTitle;
+
+  String get lblThemeSubTitle;
+
+  String get lblHelpAndSupportSubTitle;
+
+  String get lblRateUsSubTitle;
+
+  String get lblChangePasswordSubtitle;
+
+  String get lblNoArticlesFound;
+
+  String get lblNoSessionAvailable;
+
+  String get lblTelemedServiceAvailable;
+
+  String get lblAvailableDoctor;
+
+  String get lblAvailableDoctors;
+
+  String get lblWeekDaysDataNotFound;
+
+  String get lblPleaseUploadReport;
+
+  String get lblIncorrectPwd;
+
+  String get lblPleaseChoose;
+
+  String get lblPatientList;
+
+  String get lblBillSwipe;
+
+  String get lblViewDoctorMsg;
+
+  String get lblMyAppointments;
+
+  String get lblIsOnLeave;
+
+  String get lblEditHolidayRestriction;
+
+  String get lblNoAppointmentForThisDay;
+
+  String get lblDoctorsSelected;
+
+  String get lblDoctorAvailable;
+
+  String get lblPending;
+
+  String get lblPleaseTryAgainAfterSometimes;
+
+  String get lblTapToSelect;
+
+  String get lblDoctorTapMsg;
+
+  String get lblCantFindClinicYouSearchedFor;
+
+  String get lblCantFindDoctorYouSearchedFor;
+
+  String get lblCantFindPatientYouSearchedFor;
+
+  String get lblCantFindServiceYouSearchedFor;
+
+  String get lblNoActiveClinicAvailable;
+
+  String get lblRecheckPassword;
+
+  String get lblDoctorsAvailable;
+
+  String get lblSessionTapMsg;
+
+  String get lblHolidayTapMsg;
+
+  String get lblYourRating;
+
+  String get lblSearchPatient;
+
+  String get lblStayNotified;
+
+  String get lblNotifications;
+
+  String get lblNotificationSubTitle;
+
+  String get lblGoodAfternoon;
+
+  String get lblGoodEvening;
+
+  String get lblGoodMorning;
+
+  String get lblDr;
+
+  String get lblNoActivePatientAvailable;
+
+  String get lblNoActiveServicesAvailable;
+
+  String get lblNoActiveDoctorAvailable;
+
+  String get lblSearchServices;
+
+  String get lblSearchDoctor;
+
+  String get lblSearchClinic;
+
+  String get lblTapMsg;
+
+  String get lblTryIt;
+
+  String get appName;
+
+  String get lblRevenue;
+
+  String get lblBuyIt;
+
+  String get lblYouAreJustOneStepAwayFromHavingAHandsOnBackendDemo;
+
+  String get lblChooseYourRole;
+
+  String get lblEnterYourEmailAddressAsWellAsTheTemporaryLink;
+
+  String get lblYouWillSeeAQRForAppOptionOnTheRightHandCorner;
+
+  String get lblClickOnThatAndScanItFromTheApp;
+
+  String get lblEnjoyTheFlawlessKivicareSystemWithEase;
+
+  String get lblRemoveImage;
+
+  String get lblCamera;
+
+  String get lblGallery;
+
+  String get lblCanNotBeEmpty;
+
+  String get lblNoConnection;
+
+  String get lblYourInternetConnectionWasInterrupted;
+
+  String get lblPlease;
+
+  String get lblRetry;
+
+  String get lblGood;
+
+  String get lblAfternoon;
+
+  String get lblNight;
+
+  String get lblNoSlotAvailable;
+
+  String get lblPleaseChooseAnotherDay;
+
+  String? get lblPleaseCloseTheEncounterToCheckoutPatient;
+
+  String get lblRemove;
+
+  String get lblAResetPasswordLinkWillBeSentToTheAboveEnteredEmailAddress;
+
+  String get lblEnterYourEmailAddress;
+
+  String get lblHowToGenerateQRCode;
+
+  String get lblStepsToGenerateQRCode;
+
+  String get lblOpenTheDemoUrlInWeb;
+
+  String get lblMore;
+
+  String get lblRatingsAndReviews;
+
+  String get lblViewFile;
+
+  String get lblLoading;
+
+  String get lblAnErrorOccurredWhileCheckingInternetConnectivity;
+
+  String get lblConnecting;
+
+  String get lblYourReviews;
+
+  String get lblNoReviewsFound;
+
+  String get lblMyReports;
+
+  String get lblMyClinic;
+
+  String get lblBloodGroup;
+
+  String get lblPleaseCheckYourNumber;
+
+  String get lblChooseAction;
+
+  String get lblConnected;
+
+  String get lblNetworkStatus;
+
+  String get lblOffline;
+
+  String get lblUnknown;
+
+  String get lblSelectAppointmentDate;
+
+  String get lblScanToTest;
+
+  String get lblAddNewAppointment;
+
+  String get lblPleaseSelectPaymentStatus;
+
+  String get lblWhatYourCustomersSaysAboutYou;
+
+  String get lblPleaseSelectDoctor;
+
+  String get lblChange;
+
+  String get lblChangingStatusFrom;
+
+  String get lblClose;
+
+  String get lblAllTheAppointmentOnSelectedDateWillBeCancelled;
+
+  String get lblToday;
+
+  String get lblTomorrow;
+
+  String get lblYesterday;
+
+  String get lblJan;
+
+  String get lblFeb;
+
+  String get lblMar;
+
+  String get lblApr;
+
+  String get lblMay;
+
+  String get lblJun;
+
+  String get lblJul;
+
+  String get lblAug;
+
+  String get lblSep;
+
+  String get lblOct;
+
+  String get lblNov;
+
+  String get lblDec;
+
+  String get lblEnglish;
+
+  String get lblArabic;
+
+  String get lblHindi;
+
+  String get lblAmharic;
+
+  String get lblFrench;
+
+  String get lblNoQualificationsFound;
+
+  String get lblPaid;
+
+  String get lblUnPaid;
+
+  String get lblOpen;
+
+  String get lblActive;
+
+  String get lblInActive;
+
+  String get lblScheduledHolidays;
+
+  String get lblNotSelected;
+
+  String get lblStatus;
+
+  String get lblMultipleSelection;
+
+  String get lblReport;
+
+  String get lblAddedSuccessfully;
+
+  String get lblMedicalHistoryHasBeen;
+
+  String get lblAdded;
+
+  String get lblSuccessfully;
+
+  String get lblInvalidURL;
+
+  String get lblInvalidDayOfMonth;
+
+  String get lblConnectionReEstablished;
+
+  String get lblToWifi;
+
+  String get lblToMobileData;
+
+  String get lblNote;
+
+  String get lblMultipleSelectionIsAvailableForThisService;
+
+  String get lblToCloseTheEncounterInvoicePaymentIsMandatory;
+
+  String get lblUpdate;
+
+  String get lblBillDetails;
+
+  String get lblChooseImage;
+
+  String get lblMonthly;
+
+  String get lblWeekly;
+
+  String get lblYearly;
+
+  String get lblJanuary;
+
+  String get lblFebruary;
+
+  String get lblMarch;
+
+  String get lblApril;
+
+  String get lblJune;
+
+  String get lblJuly;
+
+  String get lblAugust;
+
+  String get lblSeptember;
+
+  String get lblOctober;
+
+  String get lblNovember;
+
+  String get lblDecember;
+
+  String get lblChangeSignature;
+
+  String get lblClear;
+
+  String get lblUndo;
+
+  String get lblSignature;
+
+  String get lblAdd;
+
+  String get lblSelectYearOfGraduation;
+
+  String get lblSelect;
+
+  String get lblPayBill;
+
+  String get lblPleaseCheckYourEmailInboxToSetNewPassword;
+
+  String get lblReview;
+
+  String get lblBillingRecords;
+
+  String get lblAppointmentCount;
+
+  String get lblNoRecordsFound;
+
+  String get lblNoAppointmentsFound;
+
+  String get lblClosed;
+
+  String get lblSelectPatient;
+
+  String get lblNoReportsFound;
+
+  String get lblSpecialities;
+
+  String get lblKnowWhatYourPatientsSaysAboutYou;
+
+  String get lblSchedule;
+
+  String get lblNo;
+
+  String get lblAllowMultiSelectionWhileBooking;
+
+  String get lblSetStatus;
+
+  String get lblFound;
+
+  String get lblDeletedSuccessfully;
+
+  String get lblDUpdatedSuccessfully;
+
+  String? get lblPleaseGiveYourRating;
+
+  String get lblEnterYourReviews;
+
+  String get lblUnAuthorized;
+
+  String get lblIsThisATelemedService;
+
+  String get lblTelemedService;
+
+  String get lblStayConnected;
 
   String get lblWalkThroughTitle1;
 
@@ -45,7 +864,7 @@ abstract class BaseLanguage {
 
   String get lblSignUp;
 
-  String get lblBasic_Details;
+  String get lblBasicDetails;
 
   String get lblOtherDetails;
 
@@ -59,15 +878,11 @@ abstract class BaseLanguage {
 
   String get lblDOB;
 
-  String get lblGender;
-
-  String get lblBloodGroup;
+  String get lblSelectBloodGroup;
 
   String get lblAddress;
 
   String get lblCity;
-
-  String get lblState;
 
   String get lblCountry;
 
@@ -77,31 +892,13 @@ abstract class BaseLanguage {
 
   String get lblChangePassword;
 
-  String get lblCopyRight;
-
   String get lblTermsAndCondition;
 
-  String get lblPrivacyPolicy;
-
   String get lblLanguage;
-
-  String get lblDarkMode;
-
-  String get lblFAQ;
 
   String get lblAboutUs;
 
   String get lblRateUs;
-
-  String get lblToPrice;
-
-  String get lblFromPrice;
-
-  String get lblFixedPrice;
-
-  String get lblPrevious;
-
-  String get lblNext;
 
   String get lblSave;
 
@@ -115,15 +912,9 @@ abstract class BaseLanguage {
 
   String get lblCancel;
 
-  String get lblEncounterDetail;
-
   String get lblDoctor;
 
-  String get lblStatus;
-
   String get lblDescription;
-
-  String get lblNoData;
 
   String get lblPrescription;
 
@@ -132,8 +923,6 @@ abstract class BaseLanguage {
   String get lblDuration;
 
   String get lblInstruction;
-
-  String get change_avatar;
 
   String get lblSignInToContinue;
 
@@ -165,11 +954,7 @@ abstract class BaseLanguage {
 
   String get lblTotalTodayAppointments;
 
-  String get lblTotalServices;
-
   String get lblWeeklyAppointments;
-
-  String get lblWeeklyTotalAppointments;
 
   String get lblTodaySAppointments;
 
@@ -177,13 +962,7 @@ abstract class BaseLanguage {
 
   String get lblDate;
 
-  String get lblStart;
-
-  String get lblJoin;
-
   String get lblConfirmAppointment;
-
-  String get lblStep2Of2;
 
   String get lblSelectDateTime;
 
@@ -196,8 +975,6 @@ abstract class BaseLanguage {
   String get lblCheckIn;
 
   String get lblCheckOut;
-
-  String get lblUpdateAppointmentStatus;
 
   String get lblAreDeleteAppointment;
 
@@ -213,8 +990,6 @@ abstract class BaseLanguage {
 
   String get lblName;
 
-  String get lblPrescriptionFrequencyIsRequired;
-
   String get lblPrescriptionDurationIsRequired;
 
   String get lblDurationInDays;
@@ -223,25 +998,13 @@ abstract class BaseLanguage {
 
   String get lblEditPrescriptionDetail;
 
-  String get lblAreYouSure;
-
   String get lblDays;
 
   String get lblAppointmentIsConfirmed;
 
   String get lblThanksForBooking;
 
-  String get lblTotalVisitedPatient;
-
   String get lblAppointmentConfirmation;
-
-  String get lblArticles;
-
-  String get lblAddQualification;
-
-  String get lblEditQualification;
-
-  String get lblNotAppointmentForThisDay;
 
   String get lblNoPatientFound;
 
@@ -251,13 +1014,9 @@ abstract class BaseLanguage {
 
   String get lblAreDeleted;
 
-  String get lblEditPatient;
-
   String get lblEncounters;
 
   String get lblDelete;
-
-  String get lblInformationSaved;
 
   String get lblMale;
 
@@ -269,27 +1028,11 @@ abstract class BaseLanguage {
 
   String get lblCurrentAgeIs;
 
-  String get lblDemoEmailCannotBeChanged;
-
-  String get lblContactNumberIsRequired;
-
   String get lblGender1;
 
   String get lblSpecialization;
 
   String get lblExperience;
-
-  String get lblSaveAndContinue;
-
-  String get lblRange;
-
-  String get lblFixed;
-
-  String get lblZoomConfiguration;
-
-  String get lblTelemed;
-
-  String get lblVideoPrice;
 
   String get lblAPIKeyCannotBeEmpty;
 
@@ -299,11 +1042,7 @@ abstract class BaseLanguage {
 
   String get lblAPISecretCannotBeEmpty;
 
-  String get lblZoomConfigurationGuide;
-
   String get lblSignUpOrSignIn;
-
-  String get lblZoomMarketPlacePortal;
 
   String get lbl1;
 
@@ -329,11 +1068,7 @@ abstract class BaseLanguage {
 
   String get lblChangedTo;
 
-  String get lblEncounterClose;
-
   String get lblEncounterWillBeClosed;
-
-  String get lblBillDetails;
 
   String get lblEncounterDate;
 
@@ -343,8 +1078,6 @@ abstract class BaseLanguage {
 
   String get lblDesc;
 
-  String get lblDataSaved;
-
   String get lblAddNewQualification;
 
   String get lblAddBillItem;
@@ -352,8 +1085,6 @@ abstract class BaseLanguage {
   String get lblServiceIsRequired;
 
   String get lblOne;
-
-  String get lblPrice;
 
   String get lblQuantity;
 
@@ -371,15 +1102,11 @@ abstract class BaseLanguage {
 
   String get lblScheduleDate;
 
-  String get lblDateIsRequired;
-
   String get lblLeaveFor;
 
   String get lblAddHoliday;
 
   String get lblEditHolidays;
-
-  String get lblAreYouSureToDelete;
 
   String get lblNewPatientAddedSuccessfully;
 
@@ -387,15 +1114,13 @@ abstract class BaseLanguage {
 
   String get lblBasicInformation;
 
+  String get lblAddressDetail;
+
   String get lblFirstNameIsRequired;
 
   String get lblLastNameIsRequired;
 
   String get lblEmailIsRequired;
-
-  String get lblGenderIsRequired;
-
-  String get lblOtherInformation;
 
   String get lblAddNewPatient;
 
@@ -403,21 +1128,9 @@ abstract class BaseLanguage {
 
   String get lblCategory;
 
-  String get lblServiceCategoryIsRequired;
-
-  String get lblServiceNameIsRequired;
-
-  String get lblServiceChargesIsRequired;
-
   String get lblCharges;
 
   String get lblSelectDoctor;
-
-  String get lblStatusIsRequired;
-
-  String get lblInActive;
-
-  String get lblActive;
 
   String get lblAddService;
 
@@ -495,23 +1208,11 @@ abstract class BaseLanguage {
 
   String get lblServicesSelected;
 
-  String get lblStep1;
-
-  String get lblPleaseSelectDoctor;
-
-  String get lblAppointmentUpdated;
-
-  String get lblStep2;
-
   String get lblPatientNameIsRequired;
 
   String get lblDoctorSessions;
 
   String get lblEditProfile;
-
-  String get lblBasicInfo;
-
-  String get lblBasicSettings;
 
   String get lblQualification;
 
@@ -537,8 +1238,6 @@ abstract class BaseLanguage {
 
   String get lblSaveAndCloseEncounter;
 
-  String get lblHolidayDeleted;
-
   String get lblHolidays;
 
   String get lblClinic;
@@ -553,33 +1252,17 @@ abstract class BaseLanguage {
 
   String get lblNoDataFound;
 
-  String get lblTelemedServicesUpdated;
-
   String get lblOn;
 
   String get lblOff;
-
-  String get lblNameIsMissing;
-
-  String get lblNoRecordsData;
 
   String get lblNoAppointments;
 
   String get lblSelectClinic;
 
-  String get lblClinicIsRequired;
-
-  String get lblAdded;
-
   String get lblEnter;
 
   String get lblFieldIsRequired;
-
-  String get lblAreYouSureYouWantToDelete;
-
-  String get lblAllRecords;
-
-  String get lblAllRecordsDeleted;
 
   String get lblHoliday;
 
@@ -594,6 +1277,16 @@ abstract class BaseLanguage {
   String get lblVideoConsulting;
 
   String get lblYourEncounters;
+
+  String get lblYourReports;
+
+  String get lblYourBills;
+
+  String get lblMyBills;
+
+  String get lblBillRecords;
+
+  String get lblChangeYourClinic;
 
   String get lblSelectTheme;
 
@@ -617,17 +1310,9 @@ abstract class BaseLanguage {
 
   String get lblThanksForVisiting;
 
-  String get lblAreYouSureToLogout;
-
-  String get lblNoImage;
-
   String get lblGeneralSetting;
 
   String get lblAppSettings;
-
-  String get lblHi;
-
-  String get lblKV;
 
   String get lblVersion;
 
@@ -649,31 +1334,13 @@ abstract class BaseLanguage {
 
   String get lblCompleted;
 
+  String get lblComplete;
+
   String get lblCancelled;
-
-  String get lblWhatIsAirbnbPlus;
-
-  String get lblHosting;
-
-  String get lblLoremText;
-
-  String get lblWasAnswerHelpful;
 
   String get lblYes;
 
-  String get lblNo;
-
   String get lblPayment;
-
-  String get lblCoupons;
-
-  String get lblReservation;
-
-  String get lblWaiting;
-
-  String get lblHowCanWeHelp;
-
-  String get lblTopQuestions;
 
   String get lblError;
 
@@ -685,25 +1352,13 @@ abstract class BaseLanguage {
 
   String get lblAppointmentBookedSuccessfully;
 
-  String get lblAvailableSlots;
-
   String get lblSelectedSlots;
-
-  String get lblTimeSlotIsRequired;
 
   String get lblSession;
 
   String get lblTimeSlotIsBooked;
 
   String get lblAppointmentDate;
-
-  String get lblSelectedDate;
-
-  String get lblComments;
-
-  String get lblComment;
-
-  String get lblBookNow;
 
   String get lblViewDetails;
 
@@ -715,9 +1370,9 @@ abstract class BaseLanguage {
 
   String get lblYearsExperience;
 
-  String get lblAvailableOn;
+  String get lblYearsOfExperience;
 
-  String get lblNoServicesForThisDoctor;
+  String get lblAvailableOn;
 
   String get lblHealth;
 
@@ -731,37 +1386,19 @@ abstract class BaseLanguage {
 
   String get lblUpcomingAppointments;
 
-  String get lblTotalUpcoming;
-
-  String get lblTotalUpcomingPatients;
-
   String get lblViewAll;
 
-  String get lblNoUpcomingAppointments;
-
-  String get lblFindOurBestServices;
-
   String get lblTopDoctors;
-
-  String get lblFindTheBestDoctors;
 
   String get lblExpertsHealthTipsAndAdvice;
 
   String get lblArticlesByHighlyQualifiedDoctors;
 
-  String get lblStep1Of1;
-
   String get lblChooseYourDoctor;
-
-  String get lblAddNewAppointment;
 
   String get lblSelectOneDoctor;
 
-  String get lblServicesIsRequired;
-
   String get lblClinicDoctor;
-
-  String get lblRupee;
 
   String get lblPatientDashboard;
 
@@ -771,49 +1408,27 @@ abstract class BaseLanguage {
 
   String get lblNoEncounterFound;
 
-  String get lblDoctorIsRequired;
-
-  String get lblApply;
-
   String get lblSelectSpecialization;
 
-  String get lblSelectedIndex;
-
   String get lblAddDoctorProfile;
-
-  String get lblMoreItems;
-
-  String get lblHello;
-
-  String get lblDoctorAddedSuccessfully;
-
-  String get lblDoctorUpdatedSuccessfully;
 
   String get lblMedicalReport;
 
   String get lblNewMedicalReport;
 
-  String get lblPatientReport;
-
-  String get lblClinicAppointments;
-
-  String get lblClinicDoctors;
-
-  String get lblClinicPatient;
-
-  String get lblStep1Of3;
-
-  String get lblStep2Of3;
-
-  String get lblStep3Of3;
-
-  String get lblStep1Of2;
-
-  String get lblGoogleCalendarConfiguration;
-
   String get lblRememberMe;
 
   String get lblChooseYourClinic;
+
+  String get lblChooseYourFavouriteClinic;
+
+  String get lblServicesYouProvide;
+
+  String get lblGetYourAllBillsHere;
+
+  String get lblYourAllEncounters;
+
+  String get lblAvailableSession;
 
   String get lblAll;
 
@@ -833,23 +1448,13 @@ abstract class BaseLanguage {
 
   String get lblSun;
 
-  String get lblToday;
-
-  String get lblDatePassed;
-
   String get lblNoReportWasSelected;
 
   String get lblAddReportScreen;
 
-  String get lblDatecantBeNull;
+  String get lblDateCantBeNull;
 
   String get lblUploadReport;
-
-  String get lblConnectWithGoogle;
-
-  String get lblDisconnect;
-
-  String get lblAreYouSureYouWantToDisconnect;
 
   String get lblLight;
 
@@ -857,13 +1462,7 @@ abstract class BaseLanguage {
 
   String get lblSystemDefault;
 
-  String get lblViewAllReports;
-
   String get lblNA;
-
-  String get lblOk;
-
-  String get lblPrescriptionRequired;
 
   String get lblAddedNewEncounter;
 
@@ -875,21 +1474,23 @@ abstract class BaseLanguage {
 
   String get lblPast;
 
+  String get lblSunday;
+
+  String get lblMonday;
+
+  String get lblTuesday;
+
+  String get lblWednesday;
+
+  String get lblThursday;
+
+  String get lblFriday;
+
+  String get lblSaturday;
+
   String get lblAddMedicalReport;
 
-  String get lblSend_prescription_on_mail;
-
-  String get lblYouAreConnectedWithTheGoogleCalender;
-
-  String get lblPleaseConnectWithYourGoogleAccountToGetAppointmentsInGoogleCalendarAutomatically;
-
-  String get lblGoogleMeet;
-
-  String get lblYouCanUseOneMeetingServiceAtTheTimeWeAreDisablingZoomService;
-
-  String get lblYouCanUseOneMeetingServiceAtTheTimeWeAreDisablingGoogleMeetService;
-
-  String get lblYourNumber;
+  String get lblSendPrescriptionOnMail;
 
   String get lblFilesSelected;
 
@@ -903,11 +1504,7 @@ abstract class BaseLanguage {
 
   String get lblMedicalReports;
 
-  String get lblSearchDoctor;
-
   String get lblConnectedWith;
-
-  String get lblFor;
 
   String get lblContact;
 
@@ -916,14 +1513,6 @@ abstract class BaseLanguage {
   String get lblLoginSuccessfully;
 
   String get lblWrongUser;
-
-  String get lblTryDemoWithBackendURL;
-
-  String get lblPatientSelected;
-
-  String get lblSpeciality;
-
-  String get lblOpen;
 
   String get lblMorning;
 
@@ -938,4 +1527,16 @@ abstract class BaseLanguage {
   String get lblEdit;
 
   String get lblSwipeMassage;
+
+  String get lblReachUsMore;
+
+  String get lblDeleteAccount;
+
+  String get lblNoInternetMsg;
+
+  String get lblConnectedToInternet;
+
+  String get lblDeleteAccountNote;
+
+  String get lblSomethingWentWrong;
 }

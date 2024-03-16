@@ -1,15 +1,15 @@
-import 'package:momona_healthcare/utils/images.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:momona_healthcare/model/rating_model.dart';
+import 'package:momona_healthcare/model/user_model.dart';
 
 class DoctorListModel {
-  List<DoctorList>? doctorList;
+  List<UserModel>? doctorList;
   int? total;
 
   DoctorListModel({this.doctorList, this.total});
 
   factory DoctorListModel.fromJson(Map<String, dynamic> json) {
     return DoctorListModel(
-      doctorList: json['data'] != null ? (json['data'] as List).map((i) => DoctorList.fromJson(i)).toList() : null,
+      doctorList: json['data'] != null ? (json['data'] as List).map((i) => UserModel.fromJson(i)).toList() : null,
       total: json['total'],
     );
   }
@@ -24,71 +24,79 @@ class DoctorListModel {
   }
 }
 
-class DoctorList {
+class DoctorData {
   String? available;
-  List<String>? clinic_id;
-  String? clinic_name;
-  String? display_name;
+  List<String>? clinicId;
+  String? clinicName;
+  String? displayName;
   String? gender;
   int? iD;
-  String? mobile_number;
-  var no_of_experience;
-  String? profile_image;
+  String? mobileNumber;
+  String? noOfExperience;
+  String? profileImage;
   String? specialties;
-  String? user_email;
-  String? user_status;
+  num? avgRating;
+  String? userEmail;
+  String? userStatus;
   bool isCheck;
+  List<RatingData>? ratingList;
 
-  DoctorList({
+  DoctorData({
     this.available,
-    this.clinic_id,
-    this.clinic_name,
-    this.display_name,
+    this.clinicId,
+    this.clinicName,
+    this.displayName,
+    this.avgRating,
     this.gender,
+    this.ratingList,
     this.iD,
-    this.mobile_number,
-    this.no_of_experience,
-    this.profile_image,
+    this.mobileNumber,
+    this.noOfExperience,
+    this.profileImage,
     this.specialties,
-    this.user_email,
-    this.user_status,
+    this.userEmail,
+    this.userStatus,
     this.isCheck = false,
   });
 
-  String get profileImage => gender.validate().toLowerCase() == "male" ? ic_doctor2 : ic_doctor1;
-
-  factory DoctorList.fromJson(Map<String, dynamic> json) {
-    return DoctorList(
+  factory DoctorData.fromJson(Map<String, dynamic> json) {
+    return DoctorData(
       available: json['available'],
-      clinic_id: json['clinic_id'] != null ? new List<String>.from(json['clinic_id']) : null,
-      clinic_name: json['clinic_name'],
-      display_name: json['display_name'],
+      avgRating: json['avgRating'],
+      clinicId: json['clinic_id'] != null ? new List<String>.from(json['clinic_id']) : null,
+      clinicName: json['clinic_name'],
+      displayName: json['display_name'],
       gender: json['gender'],
       iD: json['ID'],
-      mobile_number: json['mobile_number'],
-      no_of_experience: json['no_of_experience'],
-      profile_image: json['profile_image'],
+      ratingList: json['reviews'] != null ? (json['reviews'] as List).map((i) => RatingData.fromJson(i)).toList() : null,
+      mobileNumber: json['mobile_number'],
+      noOfExperience: json['no_of_experience'].toString(),
+      profileImage: json['profile_image'],
       specialties: json['specialties'],
-      user_email: json['user_email'],
-      user_status: json['user_status'],
+      userEmail: json['user_email'],
+      userStatus: json['user_status'],
     );
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['available'] = this.available;
-    data['clinic_name'] = this.clinic_name;
-    data['display_name'] = this.display_name;
+    data['clinic_name'] = this.clinicName;
+    data['display_name'] = this.displayName;
     data['gender'] = this.gender;
     data['ID'] = this.iD;
-    data['mobile_number'] = this.mobile_number;
-    data['no_of_experience'] = this.no_of_experience;
+    data['mobile_number'] = this.mobileNumber;
+    data['no_of_experience'] = this.noOfExperience;
     // data['profile_image'] = this.profile_image;
     data['specialties'] = this.specialties;
-    data['user_email'] = this.user_email;
-    data['user_status'] = this.user_status;
-    if (this.clinic_id != null) {
-      data['clinic_id'] = this.clinic_id;
+    data['user_email'] = this.userEmail;
+    data['avgRating'] = this.avgRating;
+    data['user_status'] = this.userStatus;
+    if (this.clinicId != null) {
+      data['clinic_id'] = this.clinicId;
+    }
+    if (this.ratingList != null) {
+      data['reviews'] = this.ratingList;
     }
     return data;
   }

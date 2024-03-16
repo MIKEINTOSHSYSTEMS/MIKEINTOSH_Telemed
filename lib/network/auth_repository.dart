@@ -1,57 +1,99 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:momona_healthcare/main.dart';
 import 'package:momona_healthcare/model/base_response.dart';
-import 'package:momona_healthcare/model/get_doctor_detail_model.dart';
-import 'package:momona_healthcare/model/get_user_detail_model.dart';
-import 'package:momona_healthcare/model/login_response_model.dart';
+import 'package:momona_healthcare/model/clinic_list_model.dart';
+import 'package:momona_healthcare/model/user_model.dart';
 import 'package:momona_healthcare/network/network_utils.dart';
-import 'package:momona_healthcare/screens/auth/sign_in_screen.dart';
+import 'package:momona_healthcare/screens/auth/screens/sign_in_screen.dart';
+import 'package:momona_healthcare/store/ShopStore.dart';
+import 'package:momona_healthcare/utils/cached_value.dart';
+import 'package:momona_healthcare/utils/common.dart';
 import 'package:momona_healthcare/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
-Future<LoginResponseModel> login(Map req) async {
-  LoginResponseModel value = LoginResponseModel.fromJson(await (handleResponse(await buildHttpResponse('jwt-auth/v1/token', request: req, method: HttpMethod.POST))));
+import 'clinic_repository.dart';
+import 'google_repository.dart';
 
-  setValue(TOKEN, value.token!);
-  if (value.clinic.validate().isNotEmpty) {
-    appStore.setCurrency(value.clinic!.first.extra!.currency_prefix.validate(), initiliaze: true);
-    setValue(USER_CLINIC, value.clinic!.first.clinic_id.toInt());
-  }
-  setValue(PASSWORD, req['password']);
-  setValue(USER_LOGIN, value.user_nicename.validate());
-  setValue(USER_DATA, jsonEncode(value));
-  setValue(USER_ENCOUNTER_MODULES, jsonEncode(value.enocunter_modules));
-  setValue(USER_PRESCRIPTION_MODULE, jsonEncode(value.prescription_module));
-  setValue(USER_MODULE_CONFIG, jsonEncode(value.module_config));
+Future<UserModel> loginAPI(Map<String, dynamic> req) async {
+  UserModel value = UserModel.fromJson(await handleResponse(await buildHttpResponse(ApiEndPoints.jwtEndPoint, request: req, method: HttpMethod.POST)));
+  cachedUserData = value;
+
+  setValue(TOKEN, value.token.validate());
 
   appStore.setLoggedIn(true);
-  appStore.setUserEmail(value.user_email.validate(), initiliaze: true);
-  appStore.setUserProfile(value.profile_image.validate(), initiliaze: true);
-  appStore.setUserId(value.user_id.validate(), initiliaze: true);
-  appStore.setFirstName(value.first_name.validate(), initiliaze: true);
-  appStore.setLastName(value.last_name.validate(), initiliaze: true);
-  appStore.setRole(value.role.validate(), initiliaze: true);
-  appStore.setUserDisplayName(value.user_display_name.validate(), initiliaze: true);
-  appStore.setUserMobileNumber(value.mobile_number.validate(), initiliaze: true);
-  appStore.setUserGender(value.gender.validate(), initiliaze: true);
-  appStore.setUserProEnabled(value.isKiviCareProOnName.validate(), initiliaze: true);
-  appStore.setUserTelemedOn(value.isTeleMedActive.validate(), initiliaze: true);
-  appStore.setUserEnableGoogleCal(value.is_enable_google_cal.validate(), initiliaze: true);
-  appStore.setUserDoctorGoogleCal(value.is_enable_doctor_gcal.validate(), initiliaze: true);
+  if (value.clinic.validate().isNotEmpty) {
+    Clinic defaultClinic = value.clinic.validate().first;
+    appStore.setCurrency(defaultClinic.extra!.currencyPrefix.validate(), initialize: true);
+    userStore.setClinicId(defaultClinic.id.validate(), initialize: true);
+  }
+
+  setValue(PASSWORD, req['password']);
+  setValue(USER_LOGIN, value.userNiceName.validate());
+  setValue(USER_DATA, jsonEncode(value));
+  setValue(USER_ENCOUNTER_MODULES, jsonEncode(value.encounterModules));
+  setValue(USER_PRESCRIPTION_MODULE, jsonEncode(value.prescriptionModule));
+  setValue(USER_MODULE_CONFIG, jsonEncode(value.moduleConfig));
+
+  appStore.setLoggedIn(true);
+  userStore.setUserEmail(value.userEmail.validate(), initialize: true);
+  userStore.setUserProfile(value.profileImage.validate(), initialize: true);
+  userStore.setUserId(value.userId.validate(), initialize: true);
+  userStore.setFirstName(value.firstName.validate(), initialize: true);
+  userStore.setLastName(value.lastName.validate(), initialize: true);
+  userStore.setRole(value.role.validate(), initialize: true);
+  userStore.setUserDisplayName(value.userDisplayName.validate(), initialize: true);
+  userStore.setUserMobileNumber(value.mobileNumber.validate(), initialize: true);
+  userStore.setUserGender(value.gender.validate(), initialize: true);
+  userStore.setUserData(value, initialize: true);
+
+  if (isReceptionist() || isPatient()) {
+    getSelectedClinicAPI(clinicId: userStore.userClinicId.validate(), isForLogin: true).then((value) {
+      userStore.setUserClinic(value);
+      userStore.setUserClinicImage(value.profileImage.validate(), initialize: true);
+      userStore.setUserClinicName(value.name.validate(), initialize: true);
+      userStore.setUserClinicStatus(value.status.validate(), initialize: true);
+      String clinicAddress = '';
+
+      if (value.city.validate().isNotEmpty) {
+        clinicAddress = value.city.validate();
+      }
+      if (value.country.validate().isNotEmpty) {
+        clinicAddress += ' ,' + value.country.validate();
+      }
+      userStore.setUserClinicAddress(clinicAddress, initialize: true);
+    });
+  }
 
   return value;
 }
 
-Future<BaseResponses> changePassword(Map request) async {
-  return BaseResponses.fromJson(await handleResponse(await buildHttpResponse('kivicare/api/v1/user/change-password', request: request, method: HttpMethod.POST)));
+Future<BaseResponses> changePasswordAPI(Map<String, dynamic> request) async {
+  return BaseResponses.fromJson(await handleResponse(await buildHttpResponse('${ApiEndPoints.userEndpoint}/${EndPointKeys.changePwdEndPointKey}', request: request, method: HttpMethod.POST)));
 }
 
-Future<void> logout(BuildContext context) async {
+Future<BaseResponses> deleteAccountPermanently() async {
+  return BaseResponses.fromJson(await handleResponse(await buildHttpResponse('${ApiEndPoints.authEndPoint}/${EndPointKeys.deleteEndPointKey}', method: HttpMethod.DELETE)));
+}
+
+Future<BaseResponses> logOutApi() async {
+  Map req = {ConstantKeys.playerIdKey: appStore.playerId, ConstantKeys.loggedOutKey: 1};
+  return BaseResponses.fromJson(await handleResponse(await buildHttpResponse('${ApiEndPoints.authEndPoint}/${EndPointKeys.managePlayerIdEndPointKey}', request: req, method: HttpMethod.POST)));
+}
+
+Future<void> logout({bool isTokenExpired = false}) async {
+  if (!isTokenExpired) {
+    await logOutApi().catchError((e) {
+      appStore.setLoading(false);
+      throw e;
+    });
+  }
+
   await removeKey(TOKEN);
+  await removeKey(SharedPreferenceKey.nonceKey);
   await removeKey(USER_ID);
   await removeKey(FIRST_NAME);
   await removeKey(LAST_NAME);
@@ -62,225 +104,214 @@ Future<void> logout(BuildContext context) async {
   await removeKey(USER_GENDER);
   await removeKey(USER_ROLE);
   await removeKey(PASSWORD);
+  await removeKey(USER_DATA);
+  await removeKey(PLAYER_ID);
+  await removeKey(CartKeys.shippingAddress);
+  await removeKey(CartKeys.billingAddress);
 
+  appStore.setPlayerId('');
+  OneSignal.User.pushSubscription.optOut();
+  if (isDoctor()) {
+    cachedDoctorAppointment = null;
+    cachedDoctorAppointment = [];
+    cachedDoctorPatient = [];
+  }
+  if (isReceptionist()) {
+    cachedReceptionistAppointment = null;
+    cachedDoctorList = [];
+    cachedClinicPatient = [];
+  }
+  if (isPatient()) {
+    cachedPatientAppointment = [];
+    cachedPatientAppointment = null;
+  }
+
+  OneSignal.logout();
+  await removeKey(SharedPreferenceKey.cachedDashboardDataKey);
+  removeKey(CartKeys.cartItemCountKey);
+
+  removePermission();
+
+  userStore.setClinicId('');
   appStore.setLoggedIn(false);
   appStore.setLoading(false);
+  paymentMethodList.clear();
+  paymentMethodImages.clear();
+  paymentModeList.clear();
+  shopStore.setCartCount(0);
+
   push(SignInScreen(), isNewTask: true, pageRouteAnimation: PageRouteAnimation.Fade);
 }
 
-Future<GetDoctorDetailModel> getUserProfile(int? id) async {
-  return GetDoctorDetailModel.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/user/get-detail?ID=$id'))));
+void removePermission() {
+  removeKey(USER_PERMISSION);
+  removeKey(SharedPreferenceKey.kiviCareAppointmentAddKey);
+  removeKey(SharedPreferenceKey.kiviCareAppointmentDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCareAppointmentEditKey);
+  removeKey(SharedPreferenceKey.kiviCareAppointmentListKey);
+  removeKey(SharedPreferenceKey.kiviCareAppointmentViewKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientAppointmentStatusChangeKey);
+  removeKey(SharedPreferenceKey.kiviCareAppointmentExportKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientBillAddKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientBillDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientBillEditKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientBillListKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientBillExportKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientBillViewKey);
+  removeKey(SharedPreferenceKey.kiviCareClinicAddKey);
+  removeKey(SharedPreferenceKey.kiviCareClinicDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCareClinicEditKey);
+  removeKey(SharedPreferenceKey.kiviCareClinicListKey);
+  removeKey(SharedPreferenceKey.kiviCareClinicProfileKey);
+  removeKey(SharedPreferenceKey.kiviCareClinicViewKey);
+  removeKey(SharedPreferenceKey.kiviCareMedicalRecordsAddKey);
+  removeKey(SharedPreferenceKey.kiviCareMedicalRecordsDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCareMedicalRecordsEditKey);
+  removeKey(SharedPreferenceKey.kiviCareMedicalRecordsListKey);
+  removeKey(SharedPreferenceKey.kiviCareMedicalRecordsViewKey);
+  removeKey(SharedPreferenceKey.kiviCareDashboardTotalAppointmentKey);
+  removeKey(SharedPreferenceKey.kiviCareDashboardTotalDoctorKey);
+  removeKey(SharedPreferenceKey.kiviCareDashboardTotalPatientKey);
+  removeKey(SharedPreferenceKey.kiviCareDashboardTotalRevenueKey);
+  removeKey(SharedPreferenceKey.kiviCareDashboardTotalTodayAppointmentKey);
+  removeKey(SharedPreferenceKey.kiviCareDashboardTotalServiceKey);
+  removeKey(SharedPreferenceKey.kiviCareDoctorAddKey);
+  removeKey(SharedPreferenceKey.kiviCareDoctorDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCareDoctorEditKey);
+  removeKey(SharedPreferenceKey.kiviCareDoctorDashboardKey);
+  removeKey(SharedPreferenceKey.kiviCareDoctorListKey);
+  removeKey(SharedPreferenceKey.kiviCareDoctorViewKey);
+  removeKey(SharedPreferenceKey.kiviCareDoctorExportKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientEncounterAddKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientEncounterDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientEncounterEditKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientEncounterExportKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientEncounterListKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientEncountersKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientEncounterViewKey);
+  removeKey(SharedPreferenceKey.kiviCareEncountersTemplateAddKey);
+  removeKey(SharedPreferenceKey.kiviCareEncountersTemplateDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCareEncountersTemplateEditKey);
+  removeKey(SharedPreferenceKey.kiviCareEncountersTemplateListKey);
+  removeKey(SharedPreferenceKey.kiviCareEncountersTemplateViewKey);
+  removeKey(SharedPreferenceKey.kiviCareClinicScheduleKey);
+  removeKey(SharedPreferenceKey.kiviCareClinicScheduleAddKey);
+  removeKey(SharedPreferenceKey.kiviCareClinicScheduleDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCareClinicScheduleEditKey);
+  removeKey(SharedPreferenceKey.kiviCareClinicScheduleExportKey);
+  removeKey(SharedPreferenceKey.kiviCareDoctorSessionAddKey);
+  removeKey(SharedPreferenceKey.kiviCareDoctorSessionEditKey);
+  removeKey(SharedPreferenceKey.kiviCareDoctorSessionListKey);
+  removeKey(SharedPreferenceKey.kiviCareDoctorSessionDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCareDoctorSessionExportKey);
+  removeKey(SharedPreferenceKey.kiviCareChangePasswordKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientReviewAddKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientReviewDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientReviewEditKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientReviewGetKey);
+  removeKey(SharedPreferenceKey.kiviCareDashboardKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientAddKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientClinicKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientProfileKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientEditKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientListKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientExportKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientViewKey);
+  removeKey(SharedPreferenceKey.kiviCareReceptionistProfileKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientReportKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientReportAddKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientReportEditKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientReportViewKey);
+  removeKey(SharedPreferenceKey.kiviCarePatientReportDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCarePrescriptionAddKey);
+  removeKey(SharedPreferenceKey.kiviCarePrescriptionDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCarePrescriptionEditKey);
+  removeKey(SharedPreferenceKey.kiviCarePrescriptionViewKey);
+  removeKey(SharedPreferenceKey.kiviCarePrescriptionListKey);
+  removeKey(SharedPreferenceKey.kiviCarePrescriptionExportKey);
+  removeKey(SharedPreferenceKey.kiviCareServiceAddKey);
+  removeKey(SharedPreferenceKey.kiviCareServiceDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCareServiceEditKey);
+  removeKey(SharedPreferenceKey.kiviCareServiceExportKey);
+  removeKey(SharedPreferenceKey.kiviCareServiceListKey);
+  removeKey(SharedPreferenceKey.kiviCareServiceViewKey);
+  removeKey(SharedPreferenceKey.kiviCareStaticDataAddKey);
+  removeKey(SharedPreferenceKey.kiviCareStaticDataDeleteKey);
+  removeKey(SharedPreferenceKey.kiviCareStaticDataEditKey);
+  removeKey(SharedPreferenceKey.kiviCareStaticDataExportKey);
+  removeKey(SharedPreferenceKey.kiviCareStaticDataListKey);
+  removeKey(SharedPreferenceKey.kiviCareStaticDataViewKey);
 }
 
-Future<GetUserDetailModel> getUserDetails(int? id) async {
-  return GetUserDetailModel.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/user/get-detail?ID=$id'))));
-}
-
-//view Profile
-Future<LoginResponseModel> viewUserProfile(int id) async {
-  return LoginResponseModel.fromJson(await (handleResponse(await buildHttpResponse('/kivicare/api/v1/user/get-detail?id=$id'))));
-}
-
-Future validateToken() async {
-  return await handleResponse(await buildHttpResponse('jwt-auth/v1/token/validate', request: {}, method: HttpMethod.POST));
+Future<UserModel> getSingleUserDetailAPI(int? id) async {
+  return UserModel.fromJson(await (handleResponse(await buildHttpResponse('${ApiEndPoints.userEndpoint}/${EndPointKeys.getDetailEndPointKey}?${ConstantKeys.capitalIDKey}=$id'))));
 }
 
 //Post API Change
 
-Future<BaseResponses> forgotPassword(Map<String, dynamic> request) async {
-  return BaseResponses.fromJson(await handleResponse(await buildHttpResponse('kivicare/api/v1/user/forgot-password', request: request, method: HttpMethod.POST)));
+Future<BaseResponses> forgotPasswordAPI(Map<String, dynamic> request) async {
+  return BaseResponses.fromJson(await handleResponse(await buildHttpResponse('${ApiEndPoints.userEndpoint}/${EndPointKeys.forgetPwdEndPointKey}', request: request, method: HttpMethod.POST)));
 }
 
-Future<bool> updateProfile(BuildContext context, Map data, {File? file, String? toastMessage}) async {
-  var multiPartRequest = await getMultiPartRequest('kivicare/api/v1/user/profile-update');
+Future<void> updateProfileAPI({required Map<String, dynamic> data, File? profileImage, File? doctorSignature}) async {
+  var multiPartRequest = await getMultiPartRequest('${ApiEndPoints.userEndpoint}/${EndPointKeys.updateProfileEndPointKey}');
 
-  multiPartRequest.fields['ID'] = data['ID'];
-  multiPartRequest.fields['user_email'] = data['user_email'];
-  multiPartRequest.fields['user_login'] = data['user_login'];
-  multiPartRequest.fields['first_name'] = data['first_name'];
-  multiPartRequest.fields['last_name'] = data['last_name'];
-  multiPartRequest.fields['gender'] = data['gender'];
-  multiPartRequest.fields['dob'] = data['dob'];
-  multiPartRequest.fields['address'] = data['address'];
-  multiPartRequest.fields['city'] = data['city'];
-  multiPartRequest.fields['state'] = data['state'];
-  multiPartRequest.fields['country'] = data['country'];
-  multiPartRequest.fields['postal_code'] = data['postal_code'];
-  multiPartRequest.fields['mobile_number'] = data['mobile_number'];
-  multiPartRequest.fields['qualifications'] = data['qualifications'];
-  multiPartRequest.fields['specialties'] = data['specialties'];
-  multiPartRequest.fields['price_type'] = data['price_type'];
-  if (data['price_type'] == 'range') {
-    multiPartRequest.fields['minPrice'] = data['minPrice'];
-    multiPartRequest.fields['maxPrice'] = data['maxPrice'];
-  } else {
-    multiPartRequest.fields['price'] = data['price'];
-  }
-  multiPartRequest.fields['no_of_experience'] = data['no_of_experience'];
-
-  if (file != null) multiPartRequest.files.add(await MultipartFile.fromPath('profile_image', file.path));
+  multiPartRequest.fields.addAll(await getMultipartFields(val: data));
 
   multiPartRequest.headers.addAll(buildHeaderTokens());
 
-  Response response = await Response.fromStream(await multiPartRequest.send());
+  if (profileImage != null) {
+    multiPartRequest.files.add(await MultipartFile.fromPath('profile_image', profileImage.path));
+  }
 
-  if (response.statusCode.isSuccessful()) {
-    LoginResponseModel data = LoginResponseModel.fromJson(jsonDecode(response.body)['data']);
-    setValue(FIRST_NAME, data.first_name.validate());
-    setValue(LAST_NAME, data.last_name.validate());
-    setValue(USER_DISPLAY_NAME, data.user_display_name.validate());
+  if (doctorSignature != null) {
+    String convertedImage = await convertImageToBase64(doctorSignature);
+    multiPartRequest.files.add(MultipartFile.fromString('signature_img', convertedImage));
+  }
+  appStore.setLoading(true);
 
-    appStore.setFirstName(data.first_name.validate());
-    appStore.setLastName(data.last_name.validate());
-    appStore.setUserDisplayName(data.user_display_name.validate());
+  await sendMultiPartRequest(multiPartRequest, onSuccess: (temp) async {
+    appStore.setLoading(false);
 
-    if (data.profile_image != null) {
-      setValue(PROFILE_IMAGE, data.profile_image!);
-      appStore.setUserProfile(data.profile_image.validate(), initiliaze: true);
+    UserModel data = UserModel.fromJson(temp['data']);
+    cachedUserData = data;
+
+    userStore.setFirstName(data.firstName.validate(), initialize: true);
+    userStore.setLastName(data.lastName.validate(), initialize: true);
+    userStore.setUserMobileNumber(data.mobileNumber.validate(), initialize: true);
+    if (data.profileImage != null) {
+      userStore.setUserProfile(data.profileImage.validate(), initialize: true);
     }
-    toast(toastMessage ?? 'Profile updated successfully');
-    finish(context);
-    return true;
-  } else {
-    log("${response.statusCode} ${response.body}");
-    toast(errorSomethingWentWrong);
-    return false;
-  }
+    toast(temp['message'], print: true);
+    finish(getContext, true);
+  }, onError: (error) {
+    toast(error.toString(), print: true);
+    appStore.setLoading(false);
+  });
 }
 
-Future<bool> addDoctor(Map data, {File? file, String? toastMessage}) async {
-  var multiPartRequest = await getMultiPartRequest('kivicare/api/v1/doctor/add-doctor');
+//region CommonFunctions
+Future<Map<String, String>> getMultipartFields({required Map<String, dynamic> val}) async {
+  Map<String, String> data = {};
 
-  multiPartRequest.fields['user_email'] = data['user_email'];
-  multiPartRequest.fields['first_name'] = data['first_name'];
-  multiPartRequest.fields['last_name'] = data['last_name'];
-  multiPartRequest.fields['gender'] = data['gender'];
-  multiPartRequest.fields['dob'] = data['dob'];
-  multiPartRequest.fields['address'] = data['address'];
-  multiPartRequest.fields['clinic_id'] = data['clinic_id'];
-  multiPartRequest.fields['city'] = data['city'];
-  multiPartRequest.fields['state'] = data['state'];
-  multiPartRequest.fields['country'] = data['country'];
-  multiPartRequest.fields['postal_code'] = data['postal_code'];
-  multiPartRequest.fields['mobile_number'] = data['mobile_number'];
-  multiPartRequest.fields['qualifications'] = data['qualifications'];
-  multiPartRequest.fields['specialties'] = data['specialties'];
-  multiPartRequest.fields['price_type'] = data['price_type'];
-  if (data['price_type'] == 'range') {
-    multiPartRequest.fields['minPrice'] = data['minPrice'];
-    multiPartRequest.fields['maxPrice'] = data['maxPrice'];
-  } else {
-    multiPartRequest.fields['price'] = data['price'];
-  }
-  if (data['enableTeleMed'] == true) {
-    multiPartRequest.fields['enableTeleMed'] = data['enableTeleMed'];
-    multiPartRequest.fields['enableTeleMed'] = data['enableTeleMed'];
-    multiPartRequest.fields['api_key'] = data['api_key'];
-    multiPartRequest.fields['video_price'] = data['video_price'];
-  }
-  multiPartRequest.fields['no_of_experience'] = data['no_of_experience'];
+  val.forEach((key, value) {
+    data[key] = '$value';
+  });
 
-  if (file != null) multiPartRequest.files.add(await MultipartFile.fromPath('profile_image', file.path));
-
-  multiPartRequest.headers.addAll(buildHeaderTokens());
-
-  Response response = await Response.fromStream(await multiPartRequest.send());
-
-  if (response.statusCode.isSuccessful()) {
-    toast(toastMessage ?? 'Doctor Added Successfully');
-
-    return true;
-  } else {
-    toast(errorSomethingWentWrong);
-    return false;
-  }
+  return data;
 }
 
-Future<bool> updateReceptionistDoctor(Map data, {File? file, String? toastMessage}) async {
-  var multiPartRequest = await getMultiPartRequest('kivicare/api/v1/doctor/add-doctor');
+Future<List<MultipartFile>> getMultipartImages({required List<File> files, required String name}) async {
+  List<MultipartFile> multiPartRequest = [];
 
-  multiPartRequest.fields['ID'] = data['ID'];
-  multiPartRequest.fields['user_email'] = data['user_email'];
-  multiPartRequest.fields['first_name'] = data['first_name'];
-  multiPartRequest.fields['last_name'] = data['last_name'];
-  multiPartRequest.fields['gender'] = data['gender'];
-  multiPartRequest.fields['dob'] = data['dob'];
-  multiPartRequest.fields['address'] = data['address'];
-  multiPartRequest.fields['clinic_id'] = data['clinic_id'];
-  multiPartRequest.fields['city'] = data['city'];
-  multiPartRequest.fields['state'] = data['state'];
-  multiPartRequest.fields['country'] = data['country'];
-  multiPartRequest.fields['postal_code'] = data['postal_code'];
-  multiPartRequest.fields['mobile_number'] = data['mobile_number'];
-  multiPartRequest.fields['qualifications'] = data['qualifications'];
-  multiPartRequest.fields['specialties'] = data['specialties'];
-  multiPartRequest.fields['price_type'] = data['price_type'];
-  if (data['price_type'] == 'range') {
-    multiPartRequest.fields['minPrice'] = data['minPrice'];
-    multiPartRequest.fields['maxPrice'] = data['maxPrice'];
-  } else {
-    multiPartRequest.fields['price'] = data['price'];
-  }
-  if (data['enableTeleMed'] == true) {
-    multiPartRequest.fields['enableTeleMed'] = data['enableTeleMed'];
-    multiPartRequest.fields['enableTeleMed'] = data['enableTeleMed'];
-    multiPartRequest.fields['api_key'] = data['api_key'];
-    multiPartRequest.fields['video_price'] = data['video_price'];
-  }
-  multiPartRequest.fields['no_of_experience'] = data['no_of_experience'];
+  await Future.forEach<File>(files, (element) async {
+    int i = files.indexOf(element);
 
-  if (file != null) multiPartRequest.files.add(await MultipartFile.fromPath('profile_image', file.path));
+    multiPartRequest.add(await MultipartFile.fromPath('${'$name' + i.toString()}', element.path));
+  });
 
-  multiPartRequest.headers.addAll(buildHeaderTokens());
-
-  Response response = await Response.fromStream(await multiPartRequest.send());
-
-  if (response.statusCode.isSuccessful()) {
-    toast(toastMessage ?? 'Doctor Updated Successfully');
-
-    return true;
-  } else {
-    toast(errorSomethingWentWrong);
-    return false;
-  }
+  return multiPartRequest;
 }
 
-Future<bool> updatePatientProfile(Map data, {File? file, String? toastMessage}) async {
-  var multiPartRequest = await getMultiPartRequest('kivicare/api/v1/user/profile-update');
-
-  multiPartRequest.fields['ID'] = data['ID'];
-  multiPartRequest.fields['user_email'] = data['user_email'];
-  multiPartRequest.fields['user_login'] = getStringAsync(USER_LOGIN);
-  multiPartRequest.fields['first_name'] = data['first_name'];
-  multiPartRequest.fields['last_name'] = data['last_name'];
-  multiPartRequest.fields['gender'] = data['gender'];
-  multiPartRequest.fields['dob'] = data['dob'];
-  multiPartRequest.fields['address'] = data['address'];
-  multiPartRequest.fields['city'] = data['city'];
-  multiPartRequest.fields['country'] = data['country'];
-  multiPartRequest.fields['postal_code'] = data['postal_code'];
-  multiPartRequest.fields['mobile_number'] = data['mobile_number'];
-
-  if (file != null) multiPartRequest.files.add(await MultipartFile.fromPath('profile_image', file.path));
-
-  multiPartRequest.headers.addAll(buildHeaderTokens());
-
-  Response response = await Response.fromStream(await multiPartRequest.send());
-  if (response.statusCode.isSuccessful()) {
-    LoginResponseModel data = LoginResponseModel.fromJson(jsonDecode(response.body)['data']);
-    appStore.setFirstName(data.first_name.validate());
-    appStore.setLastName(data.last_name.validate());
-    appStore.setUserMobileNumber(data.mobile_number.validate());
-
-    if (data.profile_image != null) {
-      appStore.setUserProfile(data.profile_image.validate(), initiliaze: true);
-    }
-
-    toast(toastMessage ?? 'Profile updated successfully');
-
-    return true;
-  } else {
-    toast(errorSomethingWentWrong);
-    return false;
-  }
-}
+//endregion

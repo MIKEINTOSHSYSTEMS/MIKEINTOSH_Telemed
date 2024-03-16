@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:momona_healthcare/config.dart';
 import 'package:momona_healthcare/locale/app_localizations.dart';
 import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/dashboard_model.dart';
 import 'package:momona_healthcare/utils/colors.dart';
 import 'package:momona_healthcare/utils/constants.dart';
 import 'package:mobx/mobx.dart';
@@ -22,16 +23,25 @@ abstract class AppStoreBase with Store {
   bool isLoading = false;
 
   @observable
+  bool isConnectedToInternet = false;
+
+  @observable
+  bool isTester = false;
+
+  @observable
   bool isLoggedIn = false;
+
+  @observable
+  bool isNotificationsOn = false;
+
+  @observable
+  String playerId = '';
 
   @observable
   bool isBookedFromDashboard = false;
 
   @observable
-  String mStatus = "all";
-
-  @observable
-  String? userEmail;
+  String mStatus = "All";
 
   @observable
   int? restrictAppointmentPost;
@@ -40,56 +50,61 @@ abstract class AppStoreBase with Store {
   int? restrictAppointmentPre;
 
   @observable
-  String? profileImage;
-
-  @observable
-  int? userId;
-
-  @observable
-  String? firstName;
-
-  @observable
-  String? lastName;
-
-  @observable
-  String? userRole;
-
-  @observable
-  String? userDisplayName;
-
-  @observable
-  String? userMobileNumber;
-
-  @observable
-  String? userGender;
-
-  @observable
   String? currency;
+
+  @observable
+  String currencySymbol = '';
+
+  @observable
+  String currencyCode = '';
+
+  @observable
+  bool isRazorPayEnable = false;
+
+  @observable
+  bool isStripePayEnable = false;
+
+  @observable
+  bool isWoocommerceEnable = false;
+
+  @observable
+  bool isPayOffline = false;
+
+  @observable
+  String paymentRazorpay = '';
+
+  @observable
+  String paymentStripe = '';
+
+  @observable
+  String paymentWoocommerce = '';
+
+  @observable
+  String paymentOffline = '';
+
+  @observable
+  String paymentMode = '';
+
+  @observable
+  String? currencyPrefix;
+
+  @observable
+  String? currencyPostfix;
 
   @observable
   String? tempBaseUrl;
 
   @observable
-  bool? userTelemedOn;
-
-  @observable
   bool? userProEnabled;
 
   @observable
-  String? userEnableGoogleCal;
+  bool isGoogleMeetActive = false;
 
   @observable
-  String? userDoctorGoogleCal;
-  @observable
-  String? googleUsername;
+  String? globalDateFormat;
 
   @observable
-  String? googleEmail;
-  @observable
-  String? googlePhotoURL;
-
-  @observable
-  String? telemedType;
+  String? globalUTC;
 
   @observable
   String selectedLanguageCode = DEFAULT_LANGUAGE;
@@ -104,27 +119,95 @@ abstract class AppStoreBase with Store {
   String? demoPatient;
 
   @observable
-  bool? userMeetService;
-
-  @observable
-  bool? zoomService;
-
-  @observable
   String selectedLanguage = DEFAULT_LANGUAGE;
 
   @observable
   List<dynamic> demoEmails = [];
 
+  @observable
+  DashboardModel cachedDashboardData = DashboardModel();
+
+  @observable
+  int? clinicId;
+
+  @observable
+  String nonce = '';
+
+  @observable
+  bool? isLocationEnabled;
   @action
   void setDemoEmails() {
     String temp = FirebaseRemoteConfig.instance.getString(DEMO_EMAILS);
-    log(temp);
 
     if (temp.isNotEmpty && temp.isJson()) {
       demoEmails = jsonDecode(temp) as List<dynamic>;
     } else {
       log('');
     }
+  }
+
+  @action
+  void setGoogleMeetEnabled(bool googleMeetEnable) {
+    isGoogleMeetActive = googleMeetEnable;
+  }
+
+  @action
+  Future<void> setRazorPay(bool value) async {
+    isRazorPayEnable = value;
+  }
+
+  @action
+  Future<void> setStripePay(bool value) async {
+    isStripePayEnable = value;
+  }
+
+  @action
+  Future<void> setOffLinePayment(bool value) async {
+    isPayOffline = value;
+  }
+
+  @action
+  Future<void> setPaymentMode(String value) async {
+    paymentMode = value;
+  }
+
+  @action
+  Future<void> setWoocommerce(bool value) async {
+    isWoocommerceEnable = value;
+  }
+
+  @action
+  Future<void> setRazorPayMethod(String value) async {
+    paymentRazorpay = value;
+  }
+
+  @action
+  Future<void> setStripePayMethod(String value) async {
+    paymentStripe = value;
+  }
+
+  @action
+  Future<void> setOffLinePaymentMethod(String value) async {
+    paymentOffline = value;
+  }
+
+  @action
+  Future<void> setWoocommerceMethod(String value) async {
+    paymentWoocommerce = value;
+  }
+
+  @action
+  Future<void> setCurrencyPosition() async {}
+
+  @action
+  Future<void> setGlobalUTC(String value) async {
+    setValue(GLOBAL_UTC, value);
+    globalUTC = value;
+  }
+
+  @action
+  void setInternetStatus(bool val) {
+    isConnectedToInternet = val;
   }
 
   Future<void> setDarkMode(bool aIsDarkMode) async {
@@ -134,12 +217,12 @@ abstract class AppStoreBase with Store {
       textPrimaryColorGlobal = textPrimaryDarkColor;
       textSecondaryColorGlobal = textSecondaryWhiteColor;
       defaultLoaderBgColorGlobal = cardSelectedColor;
-      selectedColor = Color(0xF4B4A4A);
+      selectedColor = selectedColorDarkMode;
     } else {
       textPrimaryColorGlobal = textPrimaryLightColor;
       textSecondaryColorGlobal = textSecondaryLightColor;
       defaultLoaderBgColorGlobal = Colors.white;
-      selectedColor = getColorFromHex('#e6ecfa');
+      selectedColor = selectedColorLightMode;
     }
   }
 
@@ -153,172 +236,89 @@ abstract class AppStoreBase with Store {
   Future<void> setBookedFromDashboard(bool value) async => isBookedFromDashboard = value;
 
   @action
-  Future<void> setUserEmail(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(USER_EMAIL, value);
-
-    userEmail = value;
-  }
-
-  @action
-  Future<void> setUserProfile(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(PROFILE_IMAGE, value);
-    profileImage = value;
-  }
-
-  @action
-  Future<void> setDemoDoctor(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(DEMO_DOCTOR, value);
+  Future<void> setDemoDoctor(String value, {bool initialize = false}) async {
+    if (initialize) setValue(DEMO_DOCTOR, value);
     demoDoctor = value;
   }
 
   @action
-  Future<void> setDemoReceptionist(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(DEMO_RECEPTIONIST, value);
+  Future<void> setDemoReceptionist(String value, {bool initialize = false}) async {
+    if (initialize) setValue(DEMO_RECEPTIONIST, value);
     demoReceptionist = value;
   }
 
   @action
-  Future<void> setDemoPatient(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(DEMO_PATIENT, value);
+  Future<void> setDemoPatient(String value, {bool initialize = false}) async {
+    if (initialize) setValue(DEMO_PATIENT, value);
     demoPatient = value;
   }
 
   @action
-  Future<void> setGoogleUsername(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(GOOGLE_USER_NAME, value);
-    googleUsername = value;
-  }
-
-  @action
-  Future<void> setGoogleEmail(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(GOOGLE_EMAIL, value);
-    googleEmail = value;
-  }
-
-  @action
-  Future<void> setGooglePhotoURL(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(GOOGLE_PHOTO_URL, value);
-    googlePhotoURL = value;
-  }
-
-  @action
-  Future<void> setRestrictAppointmentPost(int value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(RESTRICT_APPOINTMENT_POST, value);
+  Future<void> setRestrictAppointmentPost(int value, {bool initialize = false}) async {
+    if (initialize) setValue(RESTRICT_APPOINTMENT_POST, value);
     restrictAppointmentPost = value;
   }
 
   @action
-  Future<void> setRestrictAppointmentPre(int value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(RESTRICT_APPOINTMENT_PRE, value);
+  Future<void> setRestrictAppointmentPre(int value, {bool initialize = false}) async {
+    if (initialize) setValue(RESTRICT_APPOINTMENT_PRE, value);
     restrictAppointmentPre = value;
-  }
-
-  @action
-  Future<void> setUserId(int value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(USER_ID, value);
-    userId = value;
-  }
-
-  @action
-  Future<void> setFirstName(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(FIRST_NAME, value);
-    firstName = value;
-  }
-
-  @action
-  Future<void> setLastName(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(LAST_NAME, value);
-
-    lastName = value;
   }
 
   @action
   Future<void> setLoading(bool value) async => isLoading = value;
 
   @action
-  Future<void> setRole(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(USER_ROLE, value);
-
-    userRole = value;
-  }
-
-  @action
-  Future<void> setUserDisplayName(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(USER_DISPLAY_NAME, value);
-
-    userDisplayName = value;
-  }
-
-  @action
-  Future<void> setUserMobileNumber(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(USER_MOBILE, value);
-
-    userMobileNumber = value;
-  }
-
-  @action
-  Future<void> setUserGender(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(USER_GENDER, value);
-
-    userGender = value;
-  }
-
-  @action
-  Future<void> setCurrency(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(CURRENCY, value);
+  Future<void> setCurrency(String value, {bool initialize = false}) async {
+    if (initialize) setValue(CURRENCY, value);
 
     currency = value;
   }
 
   @action
-  Future<void> setBaseUrl(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(SAVE_BASE_URL, value);
+  Future<void> setCurrencySymbol(String val, {bool isInitializing = false}) async {
+    currencySymbol = val;
+    if (!isInitializing) await setValue(CURRENCY_SYMBOL, val);
+  }
+
+  @action
+  Future<void> setCurrencyCode(String val, {bool isInitializing = false}) async {
+    currencyCode = val;
+    if (!isInitializing) await setValue(CURRENCY_CODE, val);
+  }
+
+  @action
+  Future<void> setCurrencyPostfix(String value, {bool initialize = false}) async {
+    if (initialize) setValue(CURRENCY_POST_FIX, value);
+
+    currencyPostfix = value;
+  }
+
+  @action
+  Future<void> setCurrencyPrefix(String value, {bool initialize = false}) async {
+    if (initialize) setValue(CURRENCY_PRE_FIX, value);
+
+    currencyPrefix = value;
+  }
+
+  @action
+  Future<void> setBaseUrl(String value, {bool initialize = false}) async {
+    if (initialize) setValue(SAVE_BASE_URL, value);
     log("Current Base Url :  $value");
     tempBaseUrl = value;
   }
 
   @action
-  Future<void> setUserTelemedOn(bool value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(USER_TELEMED_ON, value);
-
-    userTelemedOn = value;
-  }
-
-  @action
-  Future<void> setUserProEnabled(bool value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(USER_PRO_ENABLED, value);
+  Future<void> setUserProEnabled(bool value, {bool initialize = false}) async {
+    if (initialize) setValue(USER_PRO_ENABLED, value);
 
     userProEnabled = value;
   }
 
-  Future<void> setUserEnableGoogleCal(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(USER_ENABLE_GOOGLE_CAL, value);
+  Future<void> setGlobalDateFormat(String value, {bool initialize = false}) async {
+    if (initialize) setValue(GLOBAL_DATE_FORMAT, value);
 
-    userEnableGoogleCal = value;
-  }
-
-  Future<void> setUserDoctorGoogleCal(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(DOCTOR_ENABLE_GOOGLE_CAL, value);
-
-    userDoctorGoogleCal = value;
-  }
-
-  Future<void> setTelemedType(String value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(SET_TELEMED_TYPE, value);
-
-    telemedType = value;
-  }
-
-  Future<void> setUserMeetService(bool value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(USER_MEET_SERVICE, value);
-
-    userMeetService = value;
-  }
-
-  Future<void> setUserZoomService(bool value, {bool initiliaze = false}) async {
-    if (initiliaze) setValue(USER_ZOOM_SERVICE, value);
-
-    zoomService = value;
+    globalDateFormat = value;
   }
 
   @action
@@ -333,4 +333,21 @@ abstract class AppStoreBase with Store {
 
   @action
   void setStatus(String aStatus) => mStatus = aStatus;
+
+  @action
+  Future<void> setPlayerId(String val, {bool isInitializing = false}) async {
+    playerId = val;
+    if (!isInitializing) await setValue(PLAYER_ID, val);
+  }
+
+  Future<void> setNonce(String val) async {
+    nonce = val;
+    await setValue(SharedPreferenceKey.nonceKey, '$val');
+  }
+
+  @action
+  void setLocationPermission(bool val) {
+    isLocationEnabled = val;
+    setValue(SharedPreferenceKey.locationPermissionKey, isLocationEnabled);
+  }
 }

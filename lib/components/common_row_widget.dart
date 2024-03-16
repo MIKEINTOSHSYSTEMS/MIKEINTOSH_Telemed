@@ -3,12 +3,17 @@ import 'package:nb_utils/nb_utils.dart';
 
 class CommonRowWidget extends StatelessWidget {
   final String title;
+  final Color? titleColor;
   final String value;
   final Color? valueColor;
   final int? valueSize;
+  final int? titleSize;
   final bool isMarquee;
+  final BoxFit? boxFit;
+  final TextStyle? valueStyle;
+  final TextStyle? titleStyle;
 
-  CommonRowWidget({required this.title, required this.value, this.isMarquee = false, this.valueColor, this.valueSize});
+  CommonRowWidget({required this.title, this.valueStyle, this.boxFit, this.titleStyle, required this.value, this.isMarquee = false, this.valueColor, this.titleColor, this.valueSize, this.titleSize});
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +22,17 @@ class CommonRowWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         FittedBox(
-          alignment: Alignment.centerLeft,
+          alignment: Alignment.center,
           clipBehavior: Clip.antiAlias,
-          fit: BoxFit.scaleDown,
-          child: Text(title, style: secondaryTextStyle(size: 14)),
-        ).expand(),
+          fit: boxFit ?? BoxFit.scaleDown,
+          child: Text(title, style: titleStyle ?? secondaryTextStyle(size: titleSize ?? 14, color: titleColor), textAlign: TextAlign.center),
+        ).expand(flex: 1),
+        8.width,
         (isMarquee
                 ? Marquee(
-                    child: Text(value, style: boldTextStyle(color: valueColor)),
+                    child: Text(value, style: valueStyle ?? boldTextStyle(size: 14, color: valueColor)),
                   )
-                : Text(value, style: boldTextStyle(color: valueColor, size: valueSize ?? textBoldSizeGlobal.toInt())))
+                : Text(value, style: valueStyle ?? boldTextStyle(color: valueColor, size: valueSize ?? textBoldSizeGlobal.toInt())))
             .expand(flex: 4),
       ],
     );

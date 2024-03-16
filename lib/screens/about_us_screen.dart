@@ -40,6 +40,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
     return Scaffold(
       appBar: appBarWidget(locale.lblAboutUs, textColor: Colors.white, systemUiOverlayStyle: defaultSystemUiOverlayStyle(context)),
       body: AnimatedScrollView(
+        listAnimationType: ListAnimationType.None,
         padding: EdgeInsets.all(16),
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

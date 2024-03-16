@@ -9,7 +9,9 @@ part of 'AppointmentAppStore.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
-  late final _$selectedAppointmentDateAtom = Atom(name: 'AppointmentAppStoreBase.selectedAppointmentDate', context: context);
+  late final _$selectedAppointmentDateAtom = Atom(
+      name: 'AppointmentAppStoreBase.selectedAppointmentDate',
+      context: context);
 
   @override
   DateTime get selectedAppointmentDate {
@@ -19,27 +21,30 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
 
   @override
   set selectedAppointmentDate(DateTime value) {
-    _$selectedAppointmentDateAtom.reportWrite(value, super.selectedAppointmentDate, () {
+    _$selectedAppointmentDateAtom
+        .reportWrite(value, super.selectedAppointmentDate, () {
       super.selectedAppointmentDate = value;
     });
   }
 
-  late final _$mDoctorSelectedAtom = Atom(name: 'AppointmentAppStoreBase.mDoctorSelected', context: context);
+  late final _$mDoctorSelectedAtom =
+      Atom(name: 'AppointmentAppStoreBase.mDoctorSelected', context: context);
 
   @override
-  DoctorList? get mDoctorSelected {
+  UserModel? get mDoctorSelected {
     _$mDoctorSelectedAtom.reportRead();
     return super.mDoctorSelected;
   }
 
   @override
-  set mDoctorSelected(DoctorList? value) {
+  set mDoctorSelected(UserModel? value) {
     _$mDoctorSelectedAtom.reportWrite(value, super.mDoctorSelected, () {
       super.mDoctorSelected = value;
     });
   }
 
-  late final _$mClinicSelectedAtom = Atom(name: 'AppointmentAppStoreBase.mClinicSelected', context: context);
+  late final _$mClinicSelectedAtom =
+      Atom(name: 'AppointmentAppStoreBase.mClinicSelected', context: context);
 
   @override
   Clinic? get mClinicSelected {
@@ -54,7 +59,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
     });
   }
 
-  late final _$mIsUpdateAtom = Atom(name: 'AppointmentAppStoreBase.mIsUpdate', context: context);
+  late final _$mIsUpdateAtom =
+      Atom(name: 'AppointmentAppStoreBase.mIsUpdate', context: context);
 
   @override
   bool? get mIsUpdate {
@@ -69,7 +75,25 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
     });
   }
 
-  late final _$mPatientSelectedAtom = Atom(name: 'AppointmentAppStoreBase.mPatientSelected', context: context);
+  late final _$mSelectedPaymentMethodAtom = Atom(
+      name: 'AppointmentAppStoreBase.mSelectedPaymentMethod', context: context);
+
+  @override
+  String? get mSelectedPaymentMethod {
+    _$mSelectedPaymentMethodAtom.reportRead();
+    return super.mSelectedPaymentMethod;
+  }
+
+  @override
+  set mSelectedPaymentMethod(String? value) {
+    _$mSelectedPaymentMethodAtom
+        .reportWrite(value, super.mSelectedPaymentMethod, () {
+      super.mSelectedPaymentMethod = value;
+    });
+  }
+
+  late final _$mPatientSelectedAtom =
+      Atom(name: 'AppointmentAppStoreBase.mPatientSelected', context: context);
 
   @override
   String? get mPatientSelected {
@@ -84,7 +108,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
     });
   }
 
-  late final _$mPatientIdAtom = Atom(name: 'AppointmentAppStoreBase.mPatientId', context: context);
+  late final _$mPatientIdAtom =
+      Atom(name: 'AppointmentAppStoreBase.mPatientId', context: context);
 
   @override
   int? get mPatientId {
@@ -99,7 +124,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
     });
   }
 
-  late final _$mStatusSelectedAtom = Atom(name: 'AppointmentAppStoreBase.mStatusSelected', context: context);
+  late final _$mStatusSelectedAtom =
+      Atom(name: 'AppointmentAppStoreBase.mStatusSelected', context: context);
 
   @override
   int? get mStatusSelected {
@@ -114,7 +140,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
     });
   }
 
-  late final _$mSelectedTimeAtom = Atom(name: 'AppointmentAppStoreBase.mSelectedTime', context: context);
+  late final _$mSelectedTimeAtom =
+      Atom(name: 'AppointmentAppStoreBase.mSelectedTime', context: context);
 
   @override
   String? get mSelectedTime {
@@ -129,7 +156,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
     });
   }
 
-  late final _$mDescriptionAtom = Atom(name: 'AppointmentAppStoreBase.mDescription', context: context);
+  late final _$mDescriptionAtom =
+      Atom(name: 'AppointmentAppStoreBase.mDescription', context: context);
 
   @override
   String? get mDescription {
@@ -144,7 +172,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
     });
   }
 
-  late final _$selectedServiceAtom = Atom(name: 'AppointmentAppStoreBase.selectedService', context: context);
+  late final _$selectedServiceAtom =
+      Atom(name: 'AppointmentAppStoreBase.selectedService', context: context);
 
   @override
   ObservableList<int> get selectedService {
@@ -159,7 +188,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
     });
   }
 
-  late final _$selectedDoctorAtom = Atom(name: 'AppointmentAppStoreBase.selectedDoctor', context: context);
+  late final _$selectedDoctorAtom =
+      Atom(name: 'AppointmentAppStoreBase.selectedDoctor', context: context);
 
   @override
   ObservableList<int?> get selectedDoctor {
@@ -174,7 +204,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
     });
   }
 
-  late final _$reportListAtom = Atom(name: 'AppointmentAppStoreBase.reportList', context: context);
+  late final _$reportListAtom =
+      Atom(name: 'AppointmentAppStoreBase.reportList', context: context);
 
   @override
   ObservableList<PlatformFile> get reportList {
@@ -189,11 +220,13 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
     });
   }
 
-  late final _$AppointmentAppStoreBaseActionController = ActionController(name: 'AppointmentAppStoreBase', context: context);
+  late final _$AppointmentAppStoreBaseActionController =
+      ActionController(name: 'AppointmentAppStoreBase', context: context);
 
   @override
   void removeDoctor(DoctorListModel data) {
-    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(name: 'AppointmentAppStoreBase.removeDoctor');
+    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(
+        name: 'AppointmentAppStoreBase.removeDoctor');
     try {
       return super.removeDoctor(data);
     } finally {
@@ -203,7 +236,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
 
   @override
   void clearServices() {
-    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(name: 'AppointmentAppStoreBase.clearServices');
+    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(
+        name: 'AppointmentAppStoreBase.clearServices');
     try {
       return super.clearServices();
     } finally {
@@ -212,8 +246,9 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
   }
 
   @override
-  void setSelectedDoctor(DoctorList? aSelected) {
-    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(name: 'AppointmentAppStoreBase.setSelectedDoctor');
+  void setSelectedDoctor(UserModel? aSelected) {
+    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(
+        name: 'AppointmentAppStoreBase.setSelectedDoctor');
     try {
       return super.setSelectedDoctor(aSelected);
     } finally {
@@ -223,7 +258,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
 
   @override
   void setSelectedClinic(Clinic? aSelected) {
-    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(name: 'AppointmentAppStoreBase.setSelectedClinic');
+    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(
+        name: 'AppointmentAppStoreBase.setSelectedClinic');
     try {
       return super.setSelectedClinic(aSelected);
     } finally {
@@ -233,7 +269,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
 
   @override
   void setSelectedPatient(String? aName) {
-    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(name: 'AppointmentAppStoreBase.setSelectedPatient');
+    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(
+        name: 'AppointmentAppStoreBase.setSelectedPatient');
     try {
       return super.setSelectedPatient(aName);
     } finally {
@@ -243,7 +280,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
 
   @override
   void setSelectedPatientId(int? aStatus) {
-    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(name: 'AppointmentAppStoreBase.setSelectedPatientId');
+    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(
+        name: 'AppointmentAppStoreBase.setSelectedPatientId');
     try {
       return super.setSelectedPatientId(aStatus);
     } finally {
@@ -253,7 +291,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
 
   @override
   void setUpdateValue(bool? aIsUpdate) {
-    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(name: 'AppointmentAppStoreBase.setUpdateValue');
+    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(
+        name: 'AppointmentAppStoreBase.setUpdateValue');
     try {
       return super.setUpdateValue(aIsUpdate);
     } finally {
@@ -263,7 +302,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
 
   @override
   void setStatusSelected(int? aStatus) {
-    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(name: 'AppointmentAppStoreBase.setStatusSelected');
+    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(
+        name: 'AppointmentAppStoreBase.setStatusSelected');
     try {
       return super.setStatusSelected(aStatus);
     } finally {
@@ -273,7 +313,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
 
   @override
   void setSelectedAppointmentDate(DateTime aSelected) {
-    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(name: 'AppointmentAppStoreBase.setSelectedAppointmentDate');
+    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(
+        name: 'AppointmentAppStoreBase.setSelectedAppointmentDate');
     try {
       return super.setSelectedAppointmentDate(aSelected);
     } finally {
@@ -283,7 +324,8 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
 
   @override
   void setSelectedTime(String? aSelected) {
-    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(name: 'AppointmentAppStoreBase.setSelectedTime');
+    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(
+        name: 'AppointmentAppStoreBase.setSelectedTime');
     try {
       return super.setSelectedTime(aSelected);
     } finally {
@@ -293,9 +335,21 @@ mixin _$AppointmentAppStore on AppointmentAppStoreBase, Store {
 
   @override
   void setDescription(String? aSelected) {
-    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(name: 'AppointmentAppStoreBase.setDescription');
+    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(
+        name: 'AppointmentAppStoreBase.setDescription');
     try {
       return super.setDescription(aSelected);
+    } finally {
+      _$AppointmentAppStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void setPaymentMethod(String? paymentMethod) {
+    final _$actionInfo = _$AppointmentAppStoreBaseActionController.startAction(
+        name: 'AppointmentAppStoreBase.setPaymentMethod');
+    try {
+      return super.setPaymentMethod(paymentMethod);
     } finally {
       _$AppointmentAppStoreBaseActionController.endAction(_$actionInfo);
     }
@@ -308,6 +362,7 @@ selectedAppointmentDate: ${selectedAppointmentDate},
 mDoctorSelected: ${mDoctorSelected},
 mClinicSelected: ${mClinicSelected},
 mIsUpdate: ${mIsUpdate},
+mSelectedPaymentMethod: ${mSelectedPaymentMethod},
 mPatientSelected: ${mPatientSelected},
 mPatientId: ${mPatientId},
 mStatusSelected: ${mStatusSelected},

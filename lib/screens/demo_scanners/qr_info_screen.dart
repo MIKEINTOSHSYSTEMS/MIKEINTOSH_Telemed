@@ -1,10 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:momona_healthcare/config.dart';
+import 'package:momona_healthcare/main.dart';
 import 'package:momona_healthcare/utils/app_common.dart';
 import 'package:momona_healthcare/utils/colors.dart';
 import 'package:momona_healthcare/utils/common.dart';
+import 'package:momona_healthcare/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class QrInfoScreen extends StatefulWidget {
@@ -38,65 +39,63 @@ class _QrInfoScreenState extends State<QrInfoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBarWidget(
-        "Sandbox Access",
+        "${locale.lblTryIt}! ${locale.lblBuyIt}",
         textColor: Colors.white,
         systemUiOverlayStyle: defaultSystemUiOverlayStyle(context),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              86.height,
-              Image.asset('images/appIcon.png', height: 108, width: 108).center(),
-              16.height,
-              RichTextWidget(
-                list: [
-                  TextSpan(text: APP_FIRST_NAME, style: boldTextStyle(size: 24, letterSpacing: 1)),
-                  TextSpan(text: APP_SECOND_NAME, style: primaryTextStyle(size: 24, letterSpacing: 1)),
-                ],
-              ),
-              32.height,
-              Text('Try It! Get Started!', style: boldTextStyle(size: 26)),
-              32.height,
-              Text(
-                'You are just one step away from having a hands-on backend demo.',
-                style: secondaryTextStyle(),
-                textAlign: TextAlign.center,
-              ),
-              32.height,
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text('Steps to generate the QR code', style: boldTextStyle(size: 18)),
-              ),
-              16.height,
-              ULNew(
-                symbolType: SymbolType.Numbered,
-                spacing: 16,
-                children: [
-                  RichTextWidget(
-                    list: [
-                      TextSpan(text: 'Open the SANDBOX URL in Web. ', style: primaryTextStyle()),
-                      TextSpan(
-                        text: 'https://sandboxdev.momonahealthcare.com/register-login/#register',
-                        style: primaryTextStyle(color: primaryColor, decoration: TextDecoration.underline),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            commonLaunchUrl("https://sandboxdev.momonahealthcare.com/register-login/#register");
-                          },
-                      ),
-                    ],
-                  ),
-                  Text('Choose your role', style: primaryTextStyle()),
-                  Text('Enter your email address as well as the temporary link', style: primaryTextStyle()),
-                  Text('You will see a QR for App option on the right hand corner, click on that and scan it from the app', style: primaryTextStyle()),
-                ],
-              ),
-              64.height,
-              Text('Enjoy! the flawless Momona Healthcare system with ease', style: primaryTextStyle(size: 20, color: primaryColor)),
-            ],
-          ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            86.height,
+            Image.asset(appIcon, height: 108, width: 108).center(),
+            16.height,
+            RichTextWidget(
+              list: [
+                TextSpan(text: APP_FIRST_NAME, style: boldTextStyle(size: 24, letterSpacing: 1)),
+                TextSpan(text: APP_SECOND_NAME, style: primaryTextStyle(size: 24, letterSpacing: 1)),
+              ],
+            ),
+            32.height,
+            Text('${locale.lblTryIt}! ${locale.lblBuyIt}!', style: boldTextStyle(size: 26)),
+            32.height,
+            Text(
+              locale.lblYouAreJustOneStepAwayFromHavingAHandsOnBackendDemo,
+              style: secondaryTextStyle(),
+              textAlign: TextAlign.center,
+            ),
+            32.height,
+            Align(
+              alignment: Alignment.topLeft,
+              child: Text(locale.lblStepsToGenerateQRCode, style: boldTextStyle(size: 18)),
+            ),
+            16.height,
+            ULNew(
+              symbolType: SymbolType.Numbered,
+              spacing: 16,
+              children: [
+                RichTextWidget(
+                  list: [
+                    TextSpan(text: locale.lblOpenTheDemoUrlInWeb + '\n', style: primaryTextStyle()),
+                    TextSpan(
+                      text: 'https://momonahealthcare.com/',
+                      style: primaryTextStyle(color: primaryColor, decoration: TextDecoration.underline),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          commonLaunchUrl("https://momonahealthcare.com/");
+                        },
+                    ),
+                  ],
+                ),
+                Text(locale.lblChooseYourRole, style: primaryTextStyle()),
+                Text(locale.lblEnterYourEmailAddressAsWellAsTheTemporaryLink, style: primaryTextStyle()),
+                Text('${locale.lblYouWillSeeAQRForAppOptionOnTheRightHandCorner}${locale.lblClickOnThatAndScanItFromTheApp}', style: primaryTextStyle()),
+              ],
+            ),
+            64.height,
+            Text(locale.lblEnjoyTheFlawlessKivicareSystemWithEase, style: primaryTextStyle(size: 20, color: primaryColor)),
+          ],
         ),
       ),
     );

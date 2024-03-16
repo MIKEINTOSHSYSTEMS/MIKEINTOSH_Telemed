@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:momona_healthcare/config.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import 'package:momona_healthcare/utils/images.dart';
+
 class AppLogo extends StatelessWidget {
   final double? size;
 
@@ -12,7 +14,7 @@ class AppLogo extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset('images/appIcon.png', height: size ?? 100, width: size ?? 100).center(),
+        Image.asset(appIcon, height: size ?? 100, width: size ?? 100).center(),
         26.height,
         RichTextWidget(
           list: [
@@ -20,7 +22,7 @@ class AppLogo extends StatelessWidget {
             TextSpan(text: APP_SECOND_NAME, style: primaryTextStyle(size: 32, letterSpacing: 2)),
           ],
         ).center(),
-        26.height,
+        8.height,
       ],
     );
   }

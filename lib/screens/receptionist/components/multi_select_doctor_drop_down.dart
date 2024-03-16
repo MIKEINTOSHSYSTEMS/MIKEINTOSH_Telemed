@@ -1,82 +1,88 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:momona_healthcare/components/loader_widget.dart';
+import 'package:momona_healthcare/components/no_data_found_widget.dart';
 import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/doctor_list_model.dart';
-import 'package:momona_healthcare/network/doctor_list_repository.dart';
-import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/model/user_model.dart';
+import 'package:momona_healthcare/screens/receptionist/screens/doctor/component/doctor_list_component.dart';
+import 'package:momona_healthcare/screens/shimmer/components/doctor_shimmer_component.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
 import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
+import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
+import 'package:momona_healthcare/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:momona_healthcare/network/doctor_repository.dart';
 
-// ignore: must_be_immutable
 class MultiSelectDoctorDropDown extends StatefulWidget {
-  List<String>? selectedServicesId;
+  final int? clinicId;
+  final List<int>? selectedDoctorsId;
 
-  MultiSelectDoctorDropDown({this.selectedServicesId});
+  final Function(int)? refreshMappingTableIdsList;
+
+  final Function(List<UserModel> selectedDoctor)? onSubmit;
+
+  MultiSelectDoctorDropDown({this.clinicId, this.refreshMappingTableIdsList, this.selectedDoctorsId, this.onSubmit});
 
   @override
   _MultiSelectDoctorDropDownState createState() => _MultiSelectDoctorDropDownState();
 }
 
 class _MultiSelectDoctorDropDownState extends State<MultiSelectDoctorDropDown> {
-  TextEditingController search = TextEditingController();
+  Future<List<UserModel>>? future;
 
-  List<DoctorList> searchDoctorList = [];
+  TextEditingController searchCont = TextEditingController();
+  List<UserModel> doctorList = [];
 
-  List<DoctorList> doctorList = [];
+  int page = 1;
+
+  bool isLastPage = false;
+  bool isFirst = true;
+  bool showClear = false;
 
   @override
   void initState() {
     super.initState();
-    init();
+    init(showLoader: false);
   }
 
-  void getData() async {
-    appStore.setLoading(true);
+  Future<void> init({bool showLoader = true, String? searchString}) async {
+    if (showLoader) {
+      appStore.setLoading(true);
+    }
 
-    await getDoctorList(clinicId: isReceptionist() ? getIntAsync(USER_CLINIC) : "" as int?).then((value) {
-      doctorList.addAll(value.doctorList!);
-      searchDoctorList.addAll(value.doctorList!);
-      doctorList.forEach((element) {
-        if (widget.selectedServicesId!.contains(element.iD.toString())) {
-          element.isCheck = true;
-        }
-      });
+    future = getDoctorListWithPagination(
+      clinicId: widget.clinicId,
+      doctorList: doctorList,
+      searchString: searchCont.text,
+      page: page,
+      lastPageCallback: (b) => isLastPage = b,
+    ).then((value) {
+      appStore.setLoading(false);
+      doctorList = value;
+      return value;
+    }).whenComplete(() {
+      if (searchCont.text.isNotEmpty) {
+        showClear = true;
+      } else {
+        showClear = false;
+      }
+      appStore.setLoading(false);
       setState(() {});
     }).catchError((e) {
-      toast(e.toString());
-    });
-    appStore.setLoading(false);
-  }
-
-  List<DoctorList> getSelectedData() {
-    List<DoctorList> selected = [];
-
-    doctorList.forEach((value) {
-      if (value.isCheck == true) {
-        selected.add(value);
-      }
-    });
-    setState(() {});
-    return selected;
-  }
-
-  init() async {
-    getData();
-  }
-
-  onSearchTextChanged(String text) async {
-    doctorList.clear();
-
-    if (text.isEmpty) {
-      doctorList.addAll(searchDoctorList);
+      appStore.setLoading(false);
       setState(() {});
-      return;
-    }
-    searchDoctorList.forEach((element) {
-      if (element.display_name!.toLowerCase().contains(text)) doctorList.add(element);
+      throw e;
     });
-    setState(() {});
+  }
+
+  Future<void> _onSearchClear() async {
+    hideKeyboard(context);
+
+    searchCont.clear();
+    init();
   }
 
   @override
@@ -85,85 +91,133 @@ class _MultiSelectDoctorDropDownState extends State<MultiSelectDoctorDropDown> {
   }
 
   @override
-  void dispose() {
-    // TODO: implement dispose
+  void dispose() async {
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: appStore.isDarkModeOn ? Colors.black : Colors.white,
-      child: SingleChildScrollView(
-        padding: EdgeInsets.fromLTRB(8, 8, 8, 60),
-        child: Column(
+    return Scaffold(
+      appBar: appBarWidget(locale.lblSelectDoctor, textColor: Colors.white, systemUiOverlayStyle: defaultSystemUiOverlayStyle(context)),
+      body: Observer(builder: (context) {
+        return Stack(
           children: [
-            Column(
-              children: [
-                Container(
-                  height: 4,
-                  width: 30,
-                  decoration: BoxDecoration(color: primaryColor, borderRadius: BorderRadius.circular(defaultRadius)),
-                ).center(),
-                8.height,
-                Row(
-                  children: [
-                    Text(locale.lblSelectDoctor, style: boldTextStyle(size: 18)).expand(),
-                    IconButton(
-                      icon: Icon(Icons.done),
-                      onPressed: () {
-                        finish(context, getSelectedData());
-                      },
-                    )
-                  ],
-                ),
-                Divider(),
-                8.height,
-              ],
-            ),
-            Container(
-              margin: EdgeInsets.all(20),
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.grey.withOpacity(0.2)),
-              child: TextField(
-                onChanged: onSearchTextChanged,
-                autofocus: false,
-                textInputAction: TextInputAction.go,
-                controller: search,
-                style: boldTextStyle(size: 20),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  fillColor: Colors.white,
-                  hintText: locale.lblSearch,
-                  hintStyle: secondaryTextStyle(size: 20),
-                  prefixIcon: Icon(Icons.search, size: 25, color: primaryColor),
+            AppTextField(
+              controller: searchCont,
+              textFieldType: TextFieldType.NAME,
+              decoration: inputDecoration(
+                context: context,
+                hintText: locale.lblSearchDoctor,
+                prefixIcon: ic_search.iconImage().paddingAll(16),
+                suffixIcon: !showClear
+                    ? Offstage()
+                    : ic_clear.iconImage().paddingAll(16).appOnTap(
+                        () async {
+                          _onSearchClear();
+                        },
+                      ),
+              ),
+              onChanged: (newValue) {
+                if (newValue.isEmpty) {
+                  showClear = false;
+                  _onSearchClear();
+                } else {
+                  Timer(pageAnimationDuration, () {
+                    init();
+                  });
+                  showClear = true;
+                }
+                setState(() {});
+              },
+              onFieldSubmitted: (searchString) {
+                hideKeyboard(context);
+                init();
+              },
+            ).paddingOnly(left: 16, right: 16, top: 16),
+            SnapHelperWidget<List<UserModel>>(
+              future: future,
+              loadingWidget: AnimatedWrap(
+                runSpacing: 16,
+                spacing: 16,
+                children: List.generate(
+                  4,
+                  (index) => DoctorShimmerComponent(),
                 ),
               ),
-            ),
-            ListView.builder(
-              itemCount: doctorList.length,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                DoctorList data = doctorList[index];
-                return Theme(
-                  data: ThemeData(unselectedWidgetColor: primaryColor),
-                  child: CheckboxListTile(
-                    value: data.isCheck,
-                    title: Text(data.display_name.validate(), maxLines: 2, overflow: TextOverflow.ellipsis, style: primaryTextStyle()),
-                    onChanged: (v) {
-                      data.isCheck = !data.isCheck;
-                      if (v!) {
-                        widget.selectedServicesId!.add(data.iD.toString());
-                      } else {
-                        widget.selectedServicesId!.remove(data.iD.toString());
-                      }
-                      setState(() {});
-                    },
-                  ),
+              onSuccess: (snap) {
+                snap.forEach((element) {
+                  element.firstName = element.displayName.validate().split(' ').first;
+                  element.lastName = element.displayName.validate().split(' ').last;
+                  element.doctorId = element.iD.toString();
+                  element.userId = element.iD;
+                });
+
+                if (widget.selectedDoctorsId != null && isFirst) {
+                  snap.forEach((element) {
+                    if (widget.selectedDoctorsId!.contains(element.iD)) {
+                      element.isCheck = true;
+                    }
+                  });
+                  isFirst = false;
+                }
+
+                if (snap.isEmpty && !appStore.isLoading) {
+                  return SingleChildScrollView(child: NoDataFoundWidget(text: searchCont.text.isEmpty ? locale.lblNoDataFound : locale.lblCantFindDoctorYouSearchedFor)).center();
+                }
+
+                return AnimatedListView(
+                  itemCount: snap.length,
+                  shrinkWrap: true,
+                  physics: AlwaysScrollableScrollPhysics(),
+                  padding: EdgeInsets.only(bottom: 90),
+                  onNextPage: () {
+                    if (!isLastPage) {
+                      setState(() {
+                        page++;
+                      });
+                      init();
+                    }
+                  },
+                  onSwipeRefresh: () async {
+                    setState(() {
+                      page = 1;
+                      isFirst = true;
+                    });
+                    init(showLoader: false);
+
+                    await 1.seconds.delay;
+                  },
+                  itemBuilder: (context, index) {
+                    UserModel userData = snap[index];
+
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          userData.isCheck = !userData.isCheck;
+                        });
+                        if (userData.isCheck == false) {
+                          widget.refreshMappingTableIdsList?.call(userData.doctorId.toInt());
+                        }
+                      },
+                      child: DoctorListComponent(
+                        data: userData,
+                        isSelected: userData.isCheck,
+                      ).paddingSymmetric(vertical: 8),
+                    );
+                  },
                 );
               },
-            ),
+            ).paddingOnly(left: 16, right: 16, top: 80),
+            LoaderWidget().visible(appStore.isLoading).center()
           ],
-        ).visible(!appStore.isLoading, defaultWidget: LoaderWidget()),
+        );
+      }),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.done),
+        onPressed: () async {
+          widget.onSubmit!.call(doctorList.where((element) => element.isCheck == true).toList());
+          finish(context);
+        },
       ),
     );
   }

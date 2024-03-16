@@ -66,10 +66,11 @@ class _ScannerScreenState extends State<ScannerScreen> {
 
                   toast("$url/");
 
-                  appStore.setBaseUrl("$url/wp-json/", initiliaze: true);
-                  appStore.setDemoDoctor("doctor_$username@kivicare.com", initiliaze: true);
-                  appStore.setDemoReceptionist("receptionist_$username@kivicare.com", initiliaze: true);
-                  appStore.setDemoPatient("patient_$username@kivicare.com", initiliaze: true);
+                  userStore.setFirstName(username);
+                  appStore.setBaseUrl("$url/wp-json/", initialize: true);
+                  appStore.setDemoDoctor("doctor_$username@momonahealthcare.com", initialize: true);
+                  appStore.setDemoReceptionist("receptionist_$username@momonahealthcare.com", initialize: true);
+                  appStore.setDemoPatient("patient_$username@momonahealthcare.com", initialize: true);
                 }
                 finish(context, true);
               }

@@ -1,7 +1,6 @@
 class AppointmentSlotModel {
   String? time;
   bool? available;
-  bool isSelected = false;
 
   AppointmentSlotModel({this.time, this.available});
 

@@ -9,7 +9,8 @@ part of 'MultiSelectStore.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$MultiSelectStore on MultiSelectStoreBase, Store {
-  late final _$selectedServiceAtom = Atom(name: 'MultiSelectStoreBase.selectedService', context: context);
+  late final _$selectedServiceAtom =
+      Atom(name: 'MultiSelectStoreBase.selectedService', context: context);
 
   @override
   ObservableList<ServiceData> get selectedService {
@@ -24,11 +25,29 @@ mixin _$MultiSelectStore on MultiSelectStoreBase, Store {
     });
   }
 
-  late final _$MultiSelectStoreBaseActionController = ActionController(name: 'MultiSelectStoreBase', context: context);
+  late final _$taxDataAtom =
+      Atom(name: 'MultiSelectStoreBase.taxData', context: context);
+
+  @override
+  TaxModel? get taxData {
+    _$taxDataAtom.reportRead();
+    return super.taxData;
+  }
+
+  @override
+  set taxData(TaxModel? value) {
+    _$taxDataAtom.reportWrite(value, super.taxData, () {
+      super.taxData = value;
+    });
+  }
+
+  late final _$MultiSelectStoreBaseActionController =
+      ActionController(name: 'MultiSelectStoreBase', context: context);
 
   @override
   void addList(List<ServiceData> data, {bool isClear = true}) {
-    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(name: 'MultiSelectStoreBase.addList');
+    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(
+        name: 'MultiSelectStoreBase.addList');
     try {
       return super.addList(data, isClear: isClear);
     } finally {
@@ -38,7 +57,8 @@ mixin _$MultiSelectStore on MultiSelectStoreBase, Store {
 
   @override
   void addSingleItem(ServiceData data, {bool isClear = true}) {
-    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(name: 'MultiSelectStoreBase.addSingleItem');
+    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(
+        name: 'MultiSelectStoreBase.addSingleItem');
     try {
       return super.addSingleItem(data, isClear: isClear);
     } finally {
@@ -48,7 +68,8 @@ mixin _$MultiSelectStore on MultiSelectStoreBase, Store {
 
   @override
   void removeItem(ServiceData data) {
-    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(name: 'MultiSelectStoreBase.removeItem');
+    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(
+        name: 'MultiSelectStoreBase.removeItem');
     try {
       return super.removeItem(data);
     } finally {
@@ -58,7 +79,8 @@ mixin _$MultiSelectStore on MultiSelectStoreBase, Store {
 
   @override
   void clearList() {
-    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(name: 'MultiSelectStoreBase.clearList');
+    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(
+        name: 'MultiSelectStoreBase.clearList');
     try {
       return super.clearList();
     } finally {
@@ -68,7 +90,8 @@ mixin _$MultiSelectStore on MultiSelectStoreBase, Store {
 
   @override
   void addStaticData(List<StaticData> data, {bool isClear = true}) {
-    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(name: 'MultiSelectStoreBase.addStaticData');
+    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(
+        name: 'MultiSelectStoreBase.addStaticData');
     try {
       return super.addStaticData(data, isClear: isClear);
     } finally {
@@ -78,7 +101,8 @@ mixin _$MultiSelectStore on MultiSelectStoreBase, Store {
 
   @override
   void addSingleStaticItem(StaticData? data, {bool isClear = true}) {
-    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(name: 'MultiSelectStoreBase.addSingleStaticItem');
+    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(
+        name: 'MultiSelectStoreBase.addSingleStaticItem');
     try {
       return super.addSingleStaticItem(data, isClear: isClear);
     } finally {
@@ -88,7 +112,8 @@ mixin _$MultiSelectStore on MultiSelectStoreBase, Store {
 
   @override
   void removeStaticItem(StaticData data) {
-    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(name: 'MultiSelectStoreBase.removeStaticItem');
+    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(
+        name: 'MultiSelectStoreBase.removeStaticItem');
     try {
       return super.removeStaticItem(data);
     } finally {
@@ -98,7 +123,8 @@ mixin _$MultiSelectStore on MultiSelectStoreBase, Store {
 
   @override
   void clearStaticList() {
-    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(name: 'MultiSelectStoreBase.clearStaticList');
+    final _$actionInfo = _$MultiSelectStoreBaseActionController.startAction(
+        name: 'MultiSelectStoreBase.clearStaticList');
     try {
       return super.clearStaticList();
     } finally {
@@ -109,7 +135,8 @@ mixin _$MultiSelectStore on MultiSelectStoreBase, Store {
   @override
   String toString() {
     return '''
-selectedService: ${selectedService}
+selectedService: ${selectedService},
+taxData: ${taxData}
     ''';
   }
 }

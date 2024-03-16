@@ -1,22 +1,32 @@
+import 'package:momona_healthcare/model/base_response.dart';
 import 'package:momona_healthcare/model/prescription_model.dart';
-import 'package:momona_healthcare/model/send_prescription_mail.dart';
 import 'package:momona_healthcare/network/network_utils.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 //Prescription List
-Future<PrescriptionModel> getPrescriptionResponse(String id) async {
+Future<PrescriptionModel> getPrescriptionResponseAPI(String id) async {
   return PrescriptionModel.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/prescription/list?encounter_id=$id'))));
 }
 
-Future<PrescriptionData> savePrescriptionData(Map request) async {
+Future<List<String>> getPrescriptionNameAndFrequencyAPI({required String id, bool isFrequency = false}) async {
+  PrescriptionModel res = PrescriptionModel.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/prescription/list?encounter_id=$id'))));
+
+  if (isFrequency) {
+    return res.prescriptionData!.map((e) => e.frequency.validate()).toList();
+  }
+  return res.prescriptionData!.map((e) => e.name.validate()).toList();
+}
+
+Future<PrescriptionData> savePrescriptionDataAPI(Map request) async {
   return PrescriptionData.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/prescription/save', request: request, method: HttpMethod.POST))));
 }
 
-Future<PrescriptionData> deletePrescriptionData(Map request) async {
+Future<PrescriptionData> deletePrescriptionDataAPI(Map request) async {
   return PrescriptionData.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/prescription/delete', request: request, method: HttpMethod.POST))));
 }
 
-Future<SendPrescriptionMail> sendPrescriptionMail({required int encounterId}) async {
-  return SendPrescriptionMail.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/prescription/prescription-mail', method: HttpMethod.POST, request: {"encounter_id": '$encounterId'}))));
+Future<BaseResponses> sendPrescriptionMailAPI({required int encounterId}) async {
+  return BaseResponses.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/prescription/prescription-mail', method: HttpMethod.POST, request: {"encounter_id": '$encounterId'}))));
 }
 
 // End Prescription

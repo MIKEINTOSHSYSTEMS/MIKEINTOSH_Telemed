@@ -19,23 +19,32 @@ class StaticDataModel {
 }
 
 class StaticData {
-  String? created_at;
+  String? createdAt;
   String? id;
   String? label;
-  String? parent_id;
+  String? parentId;
   String? status;
   String? type;
   String? value;
   bool isSelected;
 
-  StaticData({this.created_at, this.id, this.label, this.parent_id, this.status, this.type, this.value, this.isSelected = false});
+  StaticData({
+    this.createdAt,
+    this.id,
+    this.label,
+    this.parentId,
+    this.status,
+    this.type,
+    this.value,
+    this.isSelected = false,
+  });
 
   factory StaticData.fromJson(Map<String, dynamic> json) {
     return StaticData(
-      created_at: json['created_at'],
+      createdAt: json['created_at'],
       id: json['id'],
       label: json['label'],
-      parent_id: json['parent_id'],
+      parentId: json['parent_id'],
       status: json['status'],
       type: json['type'],
       value: json['value'],
@@ -44,13 +53,13 @@ class StaticData {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['created_at'] = this.created_at;
+    data['created_at'] = this.createdAt;
     data['id'] = this.id;
     data['label'] = this.label;
     data['status'] = this.status;
     data['type'] = this.type;
     data['value'] = this.value;
-    data['parent_id'] = this.parent_id;
+    data['parent_id'] = this.parentId;
     return data;
   }
 }

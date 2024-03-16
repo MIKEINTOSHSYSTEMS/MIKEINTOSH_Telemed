@@ -9,6 +9,6 @@ class LoaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SpinKitSpinningLines(color: primaryColor, size: size ?? 70);
+    return SpinKitSpinningLines(color: primaryColor, size: size ?? 56);
   }
 }

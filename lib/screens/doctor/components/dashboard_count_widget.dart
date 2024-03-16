@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:momona_healthcare/components/price_widget.dart';
 import 'package:momona_healthcare/main.dart';
 import 'package:momona_healthcare/utils/colors.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DashBoardCountWidget extends StatelessWidget {
   final String? title;
-  final String? subTitle;
+
   final int? count;
   final Color? color1;
+  final bool? isPrice;
+  final double? width;
 
-  //final Color? color2;
   final IconData? icon;
 
-  DashBoardCountWidget({this.title, this.subTitle, this.count, this.color1, /*this.color2,*/ this.icon});
+  DashBoardCountWidget({this.title, this.count, this.color1, this.icon, this.isPrice, this.width});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: context.width() / 3 - 20,
+      width: width ?? context.width() / 3 - 20,
       height: 120,
       alignment: Alignment.center,
       decoration: boxDecorationDefault(color: context.cardColor),
@@ -30,7 +32,12 @@ class DashBoardCountWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               24.height,
-              Text(count?.toString() ?? 1.toString(), style: boldTextStyle(size: 24)).expand(),
+              isPrice.validate(value: false)
+                  ? PriceWidget(price: count.validate().toString(), textStyle: boldTextStyle(size: 24))
+                  : Text(
+                      count?.toString() ?? 1.toString(),
+                      style: boldTextStyle(size: 24),
+                    ).expand(),
               5.height,
               Marquee(
                 child: Text(

@@ -18,7 +18,7 @@ class Range {
   Range(this.from, this.to);
 }
 
-class Calendar extends StatefulWidget {
+class CleanCalendar extends StatefulWidget {
   final ValueChanged<DateTime>? onDateSelected;
   final ValueChanged<DateTime>? onMonthChanged;
   final ValueChanged<Range>? onRangeSelected;
@@ -43,16 +43,16 @@ class Calendar extends StatefulWidget {
   final Color? bottomBarColor;
   final String expandableDateFormat;
 
-  Calendar({
+  CleanCalendar({
     this.onMonthChanged,
     this.onDateSelected,
     this.onRangeSelected,
-    this.hideBottomBar: false,
-    this.isExpandable: false,
+    this.hideBottomBar = false,
+    this.isExpandable = false,
     this.events,
     this.dayBuilder,
-    this.hideTodayIcon: false,
-    this.hideArrows: false,
+    this.hideTodayIcon = false,
+    this.hideArrows = false,
     this.selectedColor,
     this.todayColor,
     this.eventColor,
@@ -70,10 +70,10 @@ class Calendar extends StatefulWidget {
   });
 
   @override
-  _CalendarState createState() => _CalendarState();
+  _CleanCalendarState createState() => _CleanCalendarState();
 }
 
-class _CalendarState extends State<Calendar> {
+class _CleanCalendarState extends State<CleanCalendar> {
   final calendarUtils = Utils();
   late List<DateTime> selectedMonthsDays;
   late Iterable<DateTime> selectedWeekDays;
@@ -122,7 +122,7 @@ class _CalendarState extends State<Calendar> {
 
     if (!widget.hideTodayIcon) {
       todayIcon = InkWell(
-        child: Text('Today', style: primaryTextStyle()).paddingOnly(top: 16),
+        child: Text(locale.lblToday, style: primaryTextStyle()).paddingOnly(top: 16),
         onTap: resetToToday,
       );
     } else {
@@ -250,7 +250,7 @@ class _CalendarState extends State<Calendar> {
 
   TextStyle? configureDateStyle(monthStarted, monthEnded) {
     TextStyle? dateStyles;
-    final TextStyle? body1Style = Theme.of(context).textTheme.bodyText2;
+    final TextStyle? body1Style = Theme.of(context).textTheme.bodyMedium;
 
     if (isExpanded) {
       final TextStyle body1StyleDisabled = body1Style!.copyWith(

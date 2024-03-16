@@ -1,45 +1,66 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/user_model.dart';
+import 'package:momona_healthcare/network/doctor_repository.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-class SelectedDoctorWidget extends StatelessWidget {
+class SelectedDoctorWidget extends StatefulWidget {
+  final int clinicId;
+  final int doctorId;
+
+  SelectedDoctorWidget({required this.clinicId, required this.doctorId});
+
+  @override
+  State<SelectedDoctorWidget> createState() => _SelectedDoctorWidgetState();
+}
+
+class _SelectedDoctorWidgetState extends State<SelectedDoctorWidget> {
+  Future<UserModel>? future;
+
+  @override
+  void initState() {
+    super.initState();
+    init();
+  }
+
+  void init() async {
+    future = getSelectedDoctorAPI(
+      clinicId: widget.clinicId.validate(),
+      doctorId: widget.doctorId.validate(),
+    ).catchError((e) {
+      appStore.setLoading(false);
+      toast(e.toString());
+      throw e;
+    });
+  }
+
+  @override
+  void setState(fn) {
+    if (mounted) super.setState(fn);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Observer(builder: (context) {
-      if (appointmentAppStore.mDoctorSelected != null)
+    return FutureBuilder<UserModel>(
+      future: future,
+      builder: (context, snap) {
         return Container(
           decoration: boxDecorationDefault(color: context.cardColor),
           padding: EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Doctor: ', style: secondaryTextStyle()),
+              Text('${locale.lblDoctor}: ', style: secondaryTextStyle()),
               8.height,
-              Marquee(
-                child: Text("${appointmentAppStore.mDoctorSelected?.display_name.validate()}", style: boldTextStyle(size: 18)),
-              ),
+              snap.hasData
+                  ? Marquee(
+                      child: Text("${snap.data!.displayName.validate()}", style: boldTextStyle(size: 18)),
+                    )
+                  : Text('${locale.lblLoading} ${locale.lblDoctor}...', style: secondaryTextStyle()),
             ],
           ),
         );
-
-      return Offstage();
-    });
-    return Container(
-      decoration: boxDecorationDefault(color: context.cardColor),
-      padding: EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Doctor: ', style: secondaryTextStyle()),
-          8.height,
-          Marquee(
-            child: Observer(builder: (context) {
-              return Text("Dr. ${appointmentAppStore.mDoctorSelected!.display_name.validate()}", style: boldTextStyle(size: 18));
-            }),
-          ),
-        ],
-      ),
+      },
     );
   }
 }

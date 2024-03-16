@@ -1,28 +1,54 @@
-import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
-import 'package:momona_healthcare/model/encounter_dashboard_model.dart';
-import 'package:momona_healthcare/model/patient_dashboard_model.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/dashboard_model.dart';
+import 'package:momona_healthcare/model/encounter_model.dart';
 import 'package:momona_healthcare/model/static_data_model.dart';
+import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
 import 'package:momona_healthcare/network/network_utils.dart';
-import 'package:momona_healthcare/screens/patient/models/patient_encounter_dashboard_model.dart';
+import 'package:momona_healthcare/utils/cached_value.dart';
+import 'package:momona_healthcare/utils/constants.dart';
+import 'package:nb_utils/nb_utils.dart';
 
-//Get APis
+Future<DashboardModel> getUserDashBoardAPI() async {
+  if (!appStore.isConnectedToInternet) {
+    return DashboardModel();
+  }
+  appStore.setLoading(true);
 
-Future<DoctorDashboardModel> getDoctorDashBoard() async {
-  return DoctorDashboardModel.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/user/get-dashboard?page=1&limit=5'))));
+  DashboardModel res =
+      DashboardModel.fromJson(await (handleResponse(await buildHttpResponse('${ApiEndPoints.userEndpoint}/${EndPointKeys.getDashboardKey}?${ConstantKeys.pageKey}=1&${ConstantKeys.limitKey}=5'))));
+  appStore.setLoading(false);
+  setValue(SharedPreferenceKey.cachedDashboardDataKey, res.toJson());
+
+  appStore.setCurrencyPostfix(res.currencyPostfix.validate());
+  appStore.setCurrencyPrefix(res.currencyPrefix.validate());
+
+  appStore.setLoading(false);
+  return res;
 }
 
-Future<PatientDashboardModel> getPatientDashBoard() async {
-  return PatientDashboardModel.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/user/get-dashboard?page=1&limit=5'))));
+Future<EncounterModel> getEncounterDetailsDashBoardAPI({required int encounterId}) async {
+  if (!appStore.isConnectedToInternet) {
+    return EncounterModel();
+  }
+  return EncounterModel.fromJson(await (handleResponse(
+    await buildHttpResponse('${ApiEndPoints.encounterEndPoint}/${EndPointKeys.getEncounterDetailEndPointKey}?${ConstantKeys.lowerIdKey}=$encounterId'),
+  )));
 }
 
-Future<EncounterDashboardModel> getEncounterDetailsDashBoard(int id) async {
-  return EncounterDashboardModel.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/encounter/get-encounter-detail?id=$id'))));
+Future<StaticDataModel> getStaticDataResponseAPI(String req, {String? searchString}) async {
+  List<String> param = [];
+  if (searchString.validate().isNotEmpty) param.add('s=$searchString');
+  StaticDataModel data = StaticDataModel.fromJson(
+      await (handleResponse(await buildHttpResponse('${ApiEndPoints.staticDataEndPoint}/${EndPointKeys.getListEndPointKey}?${ConstantKeys.typeKey}=$req&${param.validate().join('&')}'))));
+  if (data.staticData != null) cachedStaticData = data.staticData;
+  return data;
 }
+// get appointment count
 
-Future<PatientEncounterDashboardModel> getPatientEncounterDetailsDashBoard(int id) async {
-  return PatientEncounterDashboardModel.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/encounter/get-encounter-detail?id=$id'))));
-}
+Future<List<WeeklyAppointment>> getAppointmentCountAPI({required Map request}) async {
+  Iterable it = Iterable.empty();
 
-Future<StaticDataModel> getStaticDataResponse(String req) async {
-  return StaticDataModel.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/staticdata/get-list?type=$req'))));
+  it = await handleResponse(await buildHttpResponse('${ApiEndPoints.doctorEndPoint}/${EndPointKeys.getAppointmentCountEndPointKey}', request: request, method: HttpMethod.POST));
+
+  return it.map((e) => WeeklyAppointment.fromJson(e)).toList();
 }

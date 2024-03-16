@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/utils/colors.dart';
 import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
+import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class AppSettingWidget extends StatelessWidget {
@@ -18,23 +21,34 @@ class AppSettingWidget extends StatelessWidget {
       onTap: widget == null
           ? onTap as void Function()?
           : () {
-              widget.launch(context);
+              widget.launch(context, pageRouteAnimation: pageAnimation, duration: pageAnimationDuration).then((value) {
+                setStatusBarColor(
+                  appStore.isDarkModeOn ? context.scaffoldBackgroundColor : appPrimaryColor.withOpacity(0.02),
+                  statusBarIconBrightness: appStore.isDarkModeOn ? Brightness.light : Brightness.dark,
+                );
+              });
             },
-      child: Container(
-        width: context.width() / 2 - 24,
-        padding: EdgeInsets.all(16),
-        decoration: boxDecorationDefault(borderRadius: radius(), color: context.cardColor),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            isLanguage ? Image.asset(image.validate(), height: 34, width: 34) : image.validate().iconImage(size: 34),
-            16.height,
-            Text(name.validate(), style: boldTextStyle(size: 16)),
-            4.height,
-            Text(subTitle.validate(), style: secondaryTextStyle(size: 12)),
-          ],
-        ),
-      ),
+      child: SettingItemWidget(
+          padding: EdgeInsets.only(top: 4, bottom: 4),
+          title: name.validate(),
+          titleTextStyle: primaryTextStyle(),
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          subTitle: subTitle.validate(),
+          leading: isLanguage ? Image.asset(image.validate(), height: 24, width: 24) : image.validate().iconImage(size: 24),
+          trailing: widget != null || onTap != null
+              ? Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: iconColor.withOpacity(0.5),
+                  size: 16,
+                ).paddingOnly(left: 16, right: 4, top: 8, bottom: 8).appOnTap(
+                    widget == null
+                        ? onTap as void Function()?
+                        : () {
+                            widget.launch(context, pageRouteAnimation: pageAnimation, duration: pageAnimationDuration);
+                          },
+                  )
+              : Offstage()),
     );
   }
 }

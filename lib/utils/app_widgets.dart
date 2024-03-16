@@ -1,19 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:momona_healthcare/main.dart';
 import 'package:momona_healthcare/model/demo_login_model.dart';
+import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
+import 'package:momona_healthcare/model/woo_commerce/common_models.dart';
 import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/images.dart';
-import 'package:nb_utils/nb_utils.dart';
-
-List<LanguageDataModel> languageList() {
-  return [
-    LanguageDataModel(id: 0, name: 'English', languageCode: 'en', fullLanguageCode: 'en-US', flag: 'images/flags/ic_us.png'),
-    LanguageDataModel(id: 1, name: 'Arabic', languageCode: 'ar', fullLanguageCode: 'ar-AR', flag: 'images/flags/ic_ar.png'),
-    LanguageDataModel(id: 2, name: 'Hindi', languageCode: 'hi', fullLanguageCode: 'hi-IN', flag: 'images/flags/ic_india.png'),
-    LanguageDataModel(id: 3, name: 'German', languageCode: 'de', fullLanguageCode: 'de-DE', flag: 'images/flags/ic_germany.png'),
-    LanguageDataModel(id: 4, name: 'French', languageCode: 'fr', fullLanguageCode: 'fr-FR', flag: 'images/flags/ic_french.png'),
-  ];
-}
 
 List<DemoLoginModel> demoLoginList() {
   List<DemoLoginModel> demoLoginListData = [];
@@ -24,40 +13,39 @@ List<DemoLoginModel> demoLoginList() {
   return demoLoginListData;
 }
 
-List<String> getServicesImages() {
-  List<String> images = [];
+List<String> bloodGroupList = ['A+', 'B+', 'AB+', 'O+', 'A-', 'B-', 'AB-', 'O-'];
+List<String> userRoleList = [UserRoleDoctor, UserRolePatient, UserRoleReceptionist];
 
-  for (int i = 1; i < 6; i++) {
-    images.add("images/services_icon/services$i.png");
-  }
-  return images;
-}
+List<WeeklyAppointment> emptyGraphListMonthly = [
+  WeeklyAppointment(x: "W1", y: 0),
+  WeeklyAppointment(x: "W2", y: 0),
+  WeeklyAppointment(x: "W3", y: 0),
+  WeeklyAppointment(x: "W4", y: 0),
+  WeeklyAppointment(x: "W5", y: 0),
+];
 
+List<WeeklyAppointment> emptyGraphListYearly = [
+  WeeklyAppointment(x: locale.lblJan, y: 0),
+  WeeklyAppointment(x: locale.lblFeb, y: 0),
+  WeeklyAppointment(x: locale.lblMar, y: 0),
+  WeeklyAppointment(x: locale.lblApr, y: 0),
+  WeeklyAppointment(x: locale.lblMay, y: 0),
+  WeeklyAppointment(x: locale.lblJun, y: 0),
+  WeeklyAppointment(x: locale.lblJul, y: 0),
+  WeeklyAppointment(x: locale.lblAug, y: 0),
+  WeeklyAppointment(x: locale.lblSep, y: 0),
+  WeeklyAppointment(x: locale.lblOct, y: 0),
+  WeeklyAppointment(x: locale.lblNov, y: 0),
+  WeeklyAppointment(x: locale.lblDec, y: 0),
+];
 
-Widget googleCalendar(BuildContext context) {
-  return Container(
-    padding: EdgeInsets.all(16),
-    width: 260,
-    alignment: Alignment.center,
-    decoration: boxDecorationDefault(borderRadius: radius(), color: context.cardColor),
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Image.asset(ic_google_calendar, height: 32, width: 32, fit: BoxFit.cover),
-        16.width,
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              appStore.userDoctorGoogleCal == ON ? '${locale.lblConnectedWith} ${appStore.googleEmail}' : "${locale.lblConnectWithGoogle}",
-              style: secondaryTextStyle(),
-              textAlign: TextAlign.center,
-            ),
-            8.height,
-            Text("${locale.lblGoogleCalendarConfiguration}", style: boldTextStyle(size: 16)),
-          ],
-        ).expand(),
-      ],
-    ),
-  );
+List<FilterModel> getProductFilters() {
+  List<FilterModel> list = [];
+
+  list.add(FilterModel(value: ProductFilters.date, title: locale.lblLatest));
+  list.add(FilterModel(value: ProductFilters.rating, title: locale.lblAverageRating));
+  list.add(FilterModel(value: ProductFilters.popularity, title: locale.lblPopularity));
+  list.add(FilterModel(value: ProductFilters.price, title: locale.lblPrice));
+
+  return list;
 }

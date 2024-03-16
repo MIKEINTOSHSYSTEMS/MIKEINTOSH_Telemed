@@ -1,8 +1,10 @@
 import 'package:file_picker/file_picker.dart';
-import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
 import 'package:momona_healthcare/model/doctor_list_model.dart';
-import 'package:momona_healthcare/model/login_response_model.dart';
+import 'package:momona_healthcare/model/user_model.dart';
 import 'package:mobx/mobx.dart';
+
+import '../model/clinic_list_model.dart';
+import '../model/upcoming_appointment_model.dart';
 
 part 'AppointmentAppStore.g.dart';
 
@@ -13,13 +15,16 @@ abstract class AppointmentAppStoreBase with Store {
   DateTime selectedAppointmentDate = DateTime.now();
 
   @observable
-  DoctorList? mDoctorSelected;
+  UserModel? mDoctorSelected;
 
   @observable
   Clinic? mClinicSelected;
 
   @observable
   bool? mIsUpdate;
+
+  @observable
+  String? mSelectedPaymentMethod;
 
   @observable
   String? mPatientSelected;
@@ -86,7 +91,7 @@ abstract class AppointmentAppStoreBase with Store {
   }
 
   @action
-  void setSelectedDoctor(DoctorList? aSelected) => mDoctorSelected = aSelected;
+  void setSelectedDoctor(UserModel? aSelected) => mDoctorSelected = aSelected;
 
   @action
   void setSelectedClinic(Clinic? aSelected) => mClinicSelected = aSelected;
@@ -111,4 +116,7 @@ abstract class AppointmentAppStoreBase with Store {
 
   @action
   void setDescription(String? aSelected) => mDescription = aSelected;
+
+  @action
+  void setPaymentMethod(String? paymentMethod) => mSelectedPaymentMethod = paymentMethod;
 }

@@ -1,18 +1,19 @@
-import 'dart:async';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:momona_healthcare/components/app_logo.dart';
+import 'package:momona_healthcare/config.dart';
 import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/network/clinic_repository.dart';
 import 'package:momona_healthcare/network/google_repository.dart';
-import 'package:momona_healthcare/screens/auth/sign_in_screen.dart';
-import 'package:momona_healthcare/screens/doctor/doctor_dashboard_screen.dart';
-import 'package:momona_healthcare/screens/patient/p_dashboard_screen.dart';
-import 'package:momona_healthcare/screens/receptionist/r_dashboard_screen.dart';
+import 'package:momona_healthcare/network/network_utils.dart';
+import 'package:momona_healthcare/screens/auth/screens/sign_in_screen.dart';
+import 'package:momona_healthcare/screens/dashboard/screens/doctor_dashboard_screen.dart';
+import 'package:momona_healthcare/screens/dashboard/screens/patient_dashboard_screen.dart';
+import 'package:momona_healthcare/screens/dashboard/screens/receptionist_dashboard_screen.dart';
 import 'package:momona_healthcare/screens/walkThrough/walk_through_screen.dart';
 import 'package:momona_healthcare/utils/colors.dart';
 import 'package:momona_healthcare/utils/common.dart';
 import 'package:momona_healthcare/utils/constants.dart';
+import 'package:momona_healthcare/utils/one_signal_notifications.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -28,35 +29,84 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   init() async {
-    setStatusBarColor(appStore.isDarkModeOn ? scaffoldColorDark : scaffoldColorLight);
-
     afterBuildCreated(() {
       int themeModeIndex = getIntAsync(THEME_MODE_INDEX);
       if (themeModeIndex == THEME_MODE_SYSTEM) {
         appStore.setDarkMode(MediaQuery.of(context).platformBrightness == Brightness.dark);
       }
+      setStatusBarColor(
+        appStore.isDarkModeOn ? context.scaffoldBackgroundColor : appPrimaryColor.withOpacity(0.02),
+        statusBarIconBrightness: appStore.isDarkModeOn ? Brightness.light : Brightness.dark,
+      );
     });
 
     await 2.seconds.delay;
-
-    Timer.periodic(Duration(minutes: 10), (Timer t) {
-      log(t.tick.validate());
-      getConfiguration().catchError((e) {
-        toast(e.toString());
-      });
-    });
+    initializeOneSignal();
+    checkIsAppInReview();
 
     if (!getBoolAsync(IS_WALKTHROUGH_FIRST, defaultValue: false)) {
-      WalkThroughScreen().launch(context, isNewTask: true); // User is for first time.
-    } else if (appStore.isLoggedIn && isDoctor()) {
-      DoctorDashboardScreen().launch(context, isNewTask: true); // User is Doctor
-    } else if (appStore.isLoggedIn && isPatient()) {
-      PatientDashBoardScreen().launch(context, isNewTask: true); // User is Patient
-    } else if (appStore.isLoggedIn && isReceptionist()) {
-      RDashBoardScreen().launch(context, isNewTask: true); // User is Receptionist
+      WalkThroughScreen().launch(context, isNewTask: true, pageRouteAnimation: pageAnimation, duration: pageAnimationDuration); // User is for first time.
     } else {
-      SignInScreen().launch(context, isNewTask: true);
+      if (appStore.isLoggedIn) {
+        getConfigurationAPI().whenComplete(() {
+          if (isReceptionist() || isPatient()) {
+            getSelectedClinicAPI(clinicId: userStore.userClinicId.validate(), isForLogin: true).then((value) {
+              userStore.setUserClinicImage(value.profileImage.validate(), initialize: true);
+              userStore.setUserClinicName(value.name.validate(), initialize: true);
+              userStore.setUserClinicStatus(value.status.validate(), initialize: true);
+
+              String clinicAddress = '';
+
+              if (value.city.validate().isNotEmpty) {
+                clinicAddress = value.city.validate();
+              }
+              if (value.country.validate().isNotEmpty) {
+                clinicAddress += ' ,' + value.country.validate();
+              }
+              userStore.setUserClinic(value);
+              userStore.userClinic?.address = clinicAddress;
+              userStore.setUserClinicAddress(clinicAddress, initialize: true);
+            }).catchError((r) {
+              appStore.setLoading(false);
+              throw r;
+            });
+          }
+          if (isDoctor()) {
+            userStore.setOneSignalTag(ConstantKeys.appTypeKey, ConstantKeys.doctorAppKey);
+            DoctorDashboardScreen().launch(context, isNewTask: true, pageRouteAnimation: pageAnimation, duration: pageAnimationDuration); // User is Doctor
+          } else if (isPatient()) {
+            userStore.setOneSignalTag(ConstantKeys.appTypeKey, ConstantKeys.patientAppKey);
+            PatientDashBoardScreen().launch(context, isNewTask: true, pageRouteAnimation: pageAnimation, duration: pageAnimationDuration); // User is Patient
+          } else {
+            userStore.setOneSignalTag(ConstantKeys.appTypeKey, ConstantKeys.receptionistAppKey);
+            RDashBoardScreen().launch(context, isNewTask: true, pageRouteAnimation: pageAnimation, duration: pageAnimationDuration); // User is Receptionist
+          }
+        }).catchError((r) {
+          appStore.setLoading(false);
+
+          throw r;
+        });
+      } else {
+        SignInScreen().launch(context, isNewTask: true, pageRouteAnimation: pageAnimation, duration: pageAnimationDuration);
+      }
     }
+  }
+
+  Future<void> checkIsAppInReview() async {
+    await setupFirebaseRemoteConfig().then((remoteConfig) async {
+      if (isIOS) {
+        await setValue(SharedPreferenceKey.hasInReviewKey, remoteConfig.getBool(SharedPreferenceKey.hasInReviewAppStore), print: true);
+      } else if (isAndroid) {
+        await setValue(SharedPreferenceKey.hasInReviewKey, remoteConfig.getBool(SharedPreferenceKey.hasInReviewPlayStore), print: true);
+      }
+    }).catchError((e) {
+      toast(e.toString());
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
@@ -78,7 +128,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Text('v ${packageInfo.versionName.validate()}', style: secondaryTextStyle(size: 16), textAlign: TextAlign.center),
                 8.height,
-                Text('© 2024. Made with love by MIKEINTOSH SYSTEMS', style: secondaryTextStyle(size: 12), textAlign: TextAlign.center),
+                Text(COPY_RIGHT_TEXT, style: secondaryTextStyle(size: 12), textAlign: TextAlign.center),
               ],
             ),
           ),

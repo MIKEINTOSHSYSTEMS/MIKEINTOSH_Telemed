@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/body_widget.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:momona_healthcare/components/loader_widget.dart';
 import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/network/network_utils.dart';
+import 'package:momona_healthcare/screens/doctor/fragments/appointment_fragment.dart';
 import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:momona_healthcare/utils/colors.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-// ignore: must_be_immutable
 class WebViewPaymentScreen extends StatefulWidget {
-  String? checkoutUrl;
+  final String? checkoutUrl;
 
-  WebViewPaymentScreen({this.checkoutUrl});
+  final bool isProductDetail;
+
+  WebViewPaymentScreen({this.checkoutUrl, this.isProductDetail = false});
 
   @override
   WebViewPaymentScreenState createState() => WebViewPaymentScreenState();
@@ -19,61 +23,114 @@ class WebViewPaymentScreen extends StatefulWidget {
 class WebViewPaymentScreenState extends State<WebViewPaymentScreen> {
   var mIsError = false;
 
+  WebViewController? controller;
+
   @override
   void initState() {
     super.initState();
+    if (widget.isProductDetail) {
+      setStatusBarColor(
+        Colors.black87,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.light,
+      );
+    }
+    init();
+  }
+
+  void init() async {
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0x00000000))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onProgress: (int progress) {
+            if (progress < 100)
+              appStore.setLoading(true);
+            else {
+              appStore.setLoading(false);
+            }
+            setState(() {});
+          },
+          onPageStarted: (String url) {
+            appStore.setLoading(false);
+          },
+          onPageFinished: (String url) {},
+          onWebResourceError: (WebResourceError error) {
+            mIsError = true;
+          },
+          onNavigationRequest: (NavigationRequest request) {
+            if (mIsError) return NavigationDecision.prevent;
+            if (request.url.contains('checkout/order-received')) {
+              redirectionCase(context, message: locale.lblAppointmentBookedSuccessfully, finishCount: 5);
+              return NavigationDecision.prevent;
+            }
+            return NavigationDecision.navigate;
+          },
+        ),
+      )
+      ..loadRequest(
+        Uri.parse(widget.checkoutUrl.validate()),
+        headers: buildHeaderTokens(),
+      );
+    appStore.setLoading(false);
+    setState(() {});
+  }
+
+  @override
+  void setState(fn) {
+    if (mounted) super.setState(fn);
   }
 
   @override
   void dispose() {
-    super.dispose();
     getDisposeStatusBarColor();
-  }
-
-  void goBack() {
-    if (appStore.isBookedFromDashboard) {
-      finish(context);
-      finish(context);
-      finish(context, true);
-    } else {
-      finish(context, true);
-      LiveStream().emit(APP_UPDATE, true);
-    }
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        appBar: appBarWidget(
-          locale.lblPayment,
-          backWidget: Icon(Icons.arrow_back, color: Colors.white, size: 28).onTap(() {
-            goBack();
-          }),
-          systemUiOverlayStyle: defaultSystemUiOverlayStyle(context),
-        ),
-        body: Body(
-          child: WebView(
-            initialUrl: widget.checkoutUrl,
-            javascriptMode: JavascriptMode.unrestricted,
-            gestureNavigationEnabled: true,
-            onPageFinished: (String url) async {
-              if (mIsError) return;
-              if (url.contains('checkout/order-received')) {
-                appStore.setLoading(true);
-                toast(locale.lblAppointmentBookedSuccessfully);
-                goBack();
-              } else {
-                appStore.setLoading(false);
-              }
-            },
-            onWebResourceError: (s) {
-              mIsError = true;
-            },
-          ),
-        ),
+    if (widget.isProductDetail) {
+      setStatusBarColor(
+        wordpressWebStoreAppbarColor,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.light,
+      );
+    }
+    return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      appBar: widget.isProductDetail
+          ? null
+          : appBarWidget(
+              widget.isProductDetail ? locale.lblShopFromWordpress : locale.lblPayment,
+              textColor: Colors.white,
+              showBack: widget.isProductDetail,
+              systemUiOverlayStyle: defaultSystemUiOverlayStyle(context),
+            ),
+      body: Stack(
+        children: [
+          WebViewWidget(controller: controller!).paddingTop(context.statusBarHeight),
+          Observer(builder: (context) => LoaderWidget().center().visible(appStore.isLoading)),
+        ],
       ),
     );
   }
+}
+
+Future<void> redirectionCase(BuildContext context, {String? message, int finishCount = 4}) async {
+  for (int i = 0; i < finishCount; i++) {
+    finish(context, true);
+  }
+  toast(message);
+  appointmentStreamController.add(true);
+  appointmentAppStore.setDescription(null);
+  appointmentAppStore.setSelectedPatient(null);
+  appointmentAppStore.setSelectedClinic(null);
+  appointmentAppStore.setSelectedAppointmentDate(DateTime.now());
+  appointmentAppStore.setSelectedTime(null);
+  appointmentAppStore.setSelectedPatientId(null);
+  appointmentAppStore.setSelectedDoctor(null);
+  appointmentAppStore.setPaymentMethod(null);
+  appointmentAppStore.clearAll();
+  multiSelectStore.setTaxData(null);
 }

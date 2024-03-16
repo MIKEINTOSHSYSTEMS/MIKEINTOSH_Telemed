@@ -1,17 +1,21 @@
-import 'package:momona_healthcare/model/doctor_schedule_model.dart';
+import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/doctor_session_model.dart';
 import 'package:momona_healthcare/network/network_utils.dart';
+import 'package:momona_healthcare/utils/constants.dart';
 
 //region Doctor Sessions
 
-Future<DoctorSessionModel> getDoctorSessionData({int? clinicData}) async {
-  return DoctorSessionModel.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/setting/get-doctor-clinic-session?clinic_id=${clinicData != null ? clinicData : ''}'))));
+Future<DoctorSessionModel> getDoctorSessionDataAPI({String? clinicId = ''}) async {
+  if (!appStore.isConnectedToInternet) return DoctorSessionModel();
+  return DoctorSessionModel.fromJson(await (handleResponse(
+      await buildHttpResponse('${ApiEndPoints.settingEndPoint}/${EndPointKeys.getDoctorClinicSessionEndPointKey}?${ConstantKeys.clinicIdKey}=${clinicId != null ? clinicId : ''}'))));
 }
 
-Future addDoctorSessionData(Map request) async {
+Future addDoctorSessionDataAPI(Map request) async {
   return await handleResponse(await buildHttpResponse('kivicare/api/v1/setting/save-doctor-clinic-session', request: request, method: HttpMethod.POST));
 }
 
-Future deleteDoctorSessionData(Map request) async {
+Future deleteDoctorSessionDataAPI(Map request) async {
   return await handleResponse(await buildHttpResponse('kivicare/api/v1/setting/delete-doctor-clinic-session', request: request, method: HttpMethod.POST));
 }
 

@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1030276386601-id2had9qtvmsvdslo57iaq1fh38615n6.apps.googleusercontent.com</string>
+	<string>1030276386601-8cb5ck8gctvqhnrhp9jf2jnj53rqh0g3.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1030276386601-id2had9qtvmsvdslo57iaq1fh38615n6</string>
+	<string>com.googleusercontent.apps.1030276386601-8cb5ck8gctvqhnrhp9jf2jnj53rqh0g3</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1030276386601-9cadjosp88kq8cqsarm7nngvg47ohova.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAp5mprMMlwl5WwZKMYTvKux298Zf9g1iQ</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.iqonic.kivicareFlutter</string>
+	<string>com.iqonic.kivicare</string>
 	<key>PROJECT_ID</key>
 	<string>kivicare-5d319</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1030276386601:ios:faa1f68b47001eb83ab138</string>
+	<string>1:1030276386601:ios:c8f9a1a5df8361a83ab138</string>
 </dict>
 </plist>

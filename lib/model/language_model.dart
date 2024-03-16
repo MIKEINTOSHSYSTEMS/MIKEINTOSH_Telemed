@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/images.dart';
+
 class Language {
   int id;
   String name;
@@ -10,11 +12,11 @@ class Language {
 
   static List<Language> getLanguages() {
     return <Language>[
-      Language(0, 'English', 'en', 'images/flags/ic_us.png'),
-      Language(1, 'Arabic', 'ar', 'images/flags/ic_ar.png'),
-      Language(2, 'Hindi', 'hi', 'images/flags/ic_india.png'),
-      Language(3, 'German', 'de', 'images/flags/ic_germany.png'),
-      Language(4, 'French', 'fr', 'images/flags/ic_french.png'),
+      Language(0, 'English', 'en', flagsIcUs),
+      Language(1, 'Amharic', 'am', flagsIcEthiopia),
+      Language(2, 'Arabic', 'ar', flagsIcAr),
+      Language(3, 'French', 'fr', flagsIcFrench),
+      Language(4, 'Hindi', 'hi', flagsIcIndia),
     ];
   }
 

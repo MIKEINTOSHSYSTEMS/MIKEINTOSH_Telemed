@@ -4,6 +4,7 @@ import 'package:momona_healthcare/utils/app_common.dart';
 import 'package:momona_healthcare/utils/colors.dart';
 import 'package:momona_healthcare/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 import '../main.dart';
 
@@ -49,6 +50,11 @@ class LanguageScreenState extends State<LanguageScreen> {
         widgetType: WidgetType.LIST,
         onLanguageChange: (v) {
           appStore.setLanguage(v.languageCode!);
+
+          Map<String, dynamic> request = {ConstantKeys.languageCodeKey: '${v.languageCode}'};
+          //saveLanguageApi(request);
+
+          OneSignal.User.setLanguage(appStore.selectedLanguageCode.validate());
           setState(() {});
           finish(context, true);
         },

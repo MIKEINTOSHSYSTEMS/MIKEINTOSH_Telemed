@@ -1,8 +1,9 @@
 import 'package:momona_healthcare/config.dart';
 import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/medical_history_model.dart';
+import 'package:momona_healthcare/model/base_response.dart';
+import 'package:momona_healthcare/model/encounter_model.dart';
+import 'package:momona_healthcare/model/encounter_type_model.dart';
 import 'package:momona_healthcare/model/patient_encounter_list_model.dart';
-import 'package:momona_healthcare/model/telemed_status_changed.dart';
 import 'package:momona_healthcare/network/network_utils.dart';
 import 'package:momona_healthcare/utils/app_common.dart';
 import 'package:momona_healthcare/utils/common.dart';
@@ -18,15 +19,29 @@ Future deleteEncounterData(Map request) async {
   return await handleResponse(await buildHttpResponse('kivicare/api/v1/encounter/delete', request: request, method: HttpMethod.POST));
 }
 
-Future<List<PatientEncounterData>> getPatientEncounterList(int? patientId, {int? page, required List<PatientEncounterData> encounterList, Function(bool)? lastPageCallback, Function(int)? getTotalPatient}) async {
-  appStore.setLoading(true);
-  List<String> param = [];
-
-  if (!isReceptionist()) {
-    if (patientId != null) param.add('patient_id=$patientId');
+Future<List<EncounterModel>> getPatientEncounterList({
+  int? id,
+  int? page,
+  required List<EncounterModel> encounterList,
+  Function(bool)? lastPageCallback,
+  Function(int)? getTotalPatient,
+}) async {
+  if (!appStore.isConnectedToInternet) {
+    return [];
   }
 
-  PatientEncounterListModel res = PatientEncounterListModel.fromJson(await handleResponse(await buildHttpResponse(getEndPoint(endPoint: 'kivicare/api/v1/encounter/get-encounter-list', page: page, params: param))));
+  List<String> param = [];
+
+  if (id != null) {
+    param.add('patient_id=$id');
+  }
+  if (isReceptionist()) {
+    param.add('clinic_id=${userStore.userClinicId}');
+  }
+  if (isDoctor()) param.add('doctor_id=${userStore.userId}');
+
+  PatientEncounterListModel res =
+      PatientEncounterListModel.fromJson(await handleResponse(await buildHttpResponse(getEndPoint(endPoint: 'kivicare/api/v1/encounter/get-encounter-list', page: page, params: param))));
 
   getTotalPatient?.call(res.total.validate().toInt());
 
@@ -40,44 +55,22 @@ Future<List<PatientEncounterData>> getPatientEncounterList(int? patientId, {int?
   return encounterList;
 }
 
-// Future<PatientEncounterListModel> getPatientEncounterList(int? req, {int? page}) async {
-//   if (isReceptionist()) {
-//     return PatientEncounterListModel.fromJson(
-//       await (handleResponse(await buildHttpResponse('kivicare/api/v1/encounter/get-encounter-list?limit$PER_PAGE&page=$page'))),
-//     );
-//   } else {
-//     return PatientEncounterListModel.fromJson(
-//       await (handleResponse(await buildHttpResponse('kivicare/api/v1/encounter/get-encounter-list?limit$PER_PAGE&page=$page&patient_id=$req'))),
-//     );
-//   }
-// }
-
-Future encounterClose(Map request) async {
-  return await handleResponse(await buildHttpResponse('kivicare/api/v1/encounter/close', request: request, method: HttpMethod.POST));
+Future<BaseResponses> encounterClose(Map request) async {
+  return BaseResponses.fromJson(await handleResponse(await buildHttpResponse('kivicare/api/v1/encounter/close', request: request, method: HttpMethod.POST)));
 }
 
 // End Encounter List
 
-Future deletePatientData(Map request) async {
-  return await handleResponse(await buildHttpResponse('kivicare/api/v1/patient/delete-patient', request: request, method: HttpMethod.POST));
-}
-
-//Encounter Details API
-Future<MedicalHistoryModel> getMedicalHistoryResponse(int id, String type) async {
-  MedicalHistoryModel value = MedicalHistoryModel.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/encounter/get-medical-history?encounter_id=$id&type=$type'))));
-  return value;
+Future<BaseResponses> deletePatientData(Map request) async {
+  return BaseResponses.fromJson(await handleResponse(await buildHttpResponse('kivicare/api/v1/patient/delete-patient', request: request, method: HttpMethod.POST)));
 }
 
 Future<EncounterType> saveMedicalHistoryData(Map request) async {
   return EncounterType.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/patient/save-medical-history', request: request, method: HttpMethod.POST))));
 }
 
-Future<EncounterType> deleteMedicalHistoryData(Map request) async {
-  return EncounterType.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/patient/delete-medical-history', request: request, method: HttpMethod.POST))));
-}
-
-Future<TelemedStatus> changeTelemedType({required Map<String, dynamic> request}) async {
-  return TelemedStatus.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/user/change-telemed-type', request: request, method: HttpMethod.POST))));
+Future<BaseResponses> deleteMedicalHistoryData(Map request) async {
+  return BaseResponses.fromJson(await (handleResponse(await buildHttpResponse('kivicare/api/v1/patient/delete-medical-history', request: request, method: HttpMethod.POST))));
 }
 
 //End of Encounter Details API

@@ -5,7 +5,7 @@ import 'package:nb_utils/nb_utils.dart';
 class LoginRegisterWidget extends StatelessWidget {
   final String? title;
   final String? subTitle;
-  final Function()? onTap;
+  final VoidCallback? onTap;
 
   LoginRegisterWidget({
     Key? key,

@@ -1,51 +1,68 @@
-import 'package:momona_healthcare/model/login_response_model.dart';
+
+import 'clinic_list_model.dart';
 
 class PatientBillModule {
-  String? actual_amount;
+  String? actualAmount;
   List<BillItem>? billItems;
   Clinic? clinic;
-  String? created_at;
+  String? createdAt;
   String? discount;
-  String? encounter_id;
+  String? encounterId;
   String? id;
   Patient? patient;
   PatientEncounter? patientEncounter;
-  String? payment_status;
+  String? paymentStatus;
   String? status;
   String? title;
-  String? total_amount;
+  String? totalAmount;
+  //Extra? extra;
 
-  PatientBillModule({this.actual_amount, this.billItems, this.clinic, this.created_at, this.discount, this.encounter_id, this.id, this.patient, this.patientEncounter, this.payment_status, this.status, this.title, this.total_amount});
+  PatientBillModule({
+    this.actualAmount,
+    this.billItems,
+    this.clinic,
+    this.createdAt,
+    this.discount,
+    this.encounterId,
+    this.id,
+    this.patient,
+    this.patientEncounter,
+    this.paymentStatus,
+    this.status,
+    this.title,
+    this.totalAmount,
+  });
 
   factory PatientBillModule.fromJson(Map<String, dynamic> json) {
     return PatientBillModule(
-      actual_amount: json['actual_amount'],
-      billItems: json['billItems'] != null ? (json['billItems'] as List).map((i) => BillItem.fromJson(i)).toList() : null,
-      clinic: json['clinic'] != null ? Clinic.fromJson(json['clinic']) : null,
-      created_at: json['created_at'],
-      discount: json['discount'],
-      encounter_id: json['encounter_id'],
-      id: json['id'],
-      patient: json['patient'] != null ? Patient.fromJson(json['patient']) : null,
-      patientEncounter: json['patientEncounter'] != null ? PatientEncounter.fromJson(json['patientEncounter']) : null,
-      payment_status: json['payment_status'],
-      status: json['status'],
-      title: json['title'],
-      total_amount: json['total_amount'],
-    );
+        actualAmount: json['actual_amount'],
+        billItems: json['billItems'] != null ? (json['billItems'] as List).map((i) => BillItem.fromJson(i)).toList() : null,
+        clinic: json['clinic'] != null ? Clinic.fromJson(json['clinic']) : null,
+        createdAt: json['created_at'],
+        discount: json['discount'],
+        encounterId: json['encounter_id'],
+        id: json['id'],
+        patient: json['patient'] != null ? Patient.fromJson(json['patient']) : null,
+        patientEncounter: json['patientEncounter'] != null ? PatientEncounter.fromJson(json['patientEncounter']) : null,
+        paymentStatus: json['payment_status'],
+        status: json['status'],
+        title: json['title'],
+        //extra: json['extra'] != null ? Extra.fromJson(json['extra']) : null,
+        totalAmount: json['total_amount']);
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['actual_amount'] = this.actual_amount;
-    data['created_at'] = this.created_at;
+    data['actual_amount'] = this.actualAmount;
+    data['created_at'] = this.createdAt;
     data['discount'] = this.discount;
-    data['encounter_id'] = this.encounter_id;
+    data['encounter_id'] = this.encounterId;
     data['id'] = this.id;
-    data['payment_status'] = this.payment_status;
+    data['payment_status'] = this.paymentStatus;
     data['status'] = this.status;
     data['title'] = this.title;
-    data['total_amount'] = this.total_amount;
+    data['total_amount'] = this.totalAmount;
+    //if (this.extra != null) data['extra'] = this.extra!.toJson();
     if (this.billItems != null) {
       data['billItems'] = this.billItems!.map((v) => v.toJson()).toList();
     }
@@ -63,95 +80,102 @@ class PatientBillModule {
 }
 
 class PatientEncounter {
-  String? added_by;
-  String? appointment_id;
-  String? clinic_id;
-  String? created_at;
+  String? addedBy;
+  String? appointmentId;
+  String? clinicId;
+  String? createdAt;
   String? description;
-  String? doctor_id;
-  String? encounter_date;
+  String? doctorId;
+  String? encounterDate;
   String? id;
-  String? patient_id;
+  String? patientId;
   String? status;
 
-  PatientEncounter({this.added_by, this.appointment_id, this.clinic_id, this.created_at, this.description, this.doctor_id, this.encounter_date, this.id, this.patient_id, this.status});
+  PatientEncounter({this.addedBy, this.appointmentId, this.clinicId, this.createdAt, this.description, this.doctorId, this.encounterDate, this.id, this.patientId, this.status});
 
   factory PatientEncounter.fromJson(Map<String, dynamic> json) {
     return PatientEncounter(
-      added_by: json['added_by'],
-      appointment_id: json['appointment_id'],
-      clinic_id: json['clinic_id'],
-      created_at: json['created_at'],
+      addedBy: json['added_by'],
+      appointmentId: json['appointment_id'],
+      clinicId: json['clinic_id'],
+      createdAt: json['created_at'],
       description: json['description'],
-      doctor_id: json['doctor_id'],
-      encounter_date: json['encounter_date'],
+      doctorId: json['doctor_id'],
+      encounterDate: json['encounter_date'],
       id: json['id'],
-      patient_id: json['patient_id'],
+      patientId: json['patient_id'],
       status: json['status'],
     );
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['added_by'] = this.added_by;
-    data['appointment_id'] = this.appointment_id;
-    data['clinic_id'] = this.clinic_id;
-    data['created_at'] = this.created_at;
+    data['added_by'] = this.addedBy;
+    data['appointment_id'] = this.appointmentId;
+    data['clinic_id'] = this.clinicId;
+    data['created_at'] = this.createdAt;
     data['description'] = this.description;
-    data['doctor_id'] = this.doctor_id;
-    data['encounter_date'] = this.encounter_date;
+    data['doctor_id'] = this.doctorId;
+    data['encounter_date'] = this.encounterDate;
     data['id'] = this.id;
-    data['patient_id'] = this.patient_id;
+    data['patient_id'] = this.patientId;
     data['status'] = this.status;
     return data;
   }
 }
 
 class BillItem {
-  String? bill_id;
+  String? billId;
   String? id;
-  String? item_id;
+  String? itemId;
+
+  String? mappingTableId;
+
   String? label;
   String? price;
   String? qty;
 
-  BillItem({this.bill_id, this.id, this.item_id, this.label, this.price, this.qty});
+  String? serviceId;
+
+  BillItem({this.billId, this.mappingTableId, this.id, this.serviceId, this.itemId, this.label, this.price, this.qty});
 
   factory BillItem.fromJson(Map<String, dynamic> json) {
     return BillItem(
       id: json['id'],
-      bill_id: json['bill_id'],
+      billId: json['bill_id'],
       price: json['price'],
       qty: json['qty'],
-      item_id: json['item_id'],
+      itemId: json['item_id'],
+      serviceId: json['item_id'],
       label: json['label'],
+      mappingTableId: json['mapping_table_id'],
     );
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
-    data['bill_id'] = this.bill_id;
+    data['bill_id'] = this.billId;
     data['price'] = this.price;
     data['qty'] = this.qty;
-    data['item_id'] = this.item_id;
+    data['item_id'] = this.itemId;
     data['label'] = this.label;
     return data;
   }
 }
 
 class Patient {
-  String? display_name;
+  String? displayName;
   String? dob;
   String? email;
   String? gender;
   String? id;
 
-  Patient({this.display_name, this.dob, this.email, this.gender, this.id});
+  Patient({this.displayName, this.dob, this.email, this.gender, this.id});
 
   factory Patient.fromJson(Map<String, dynamic> json) {
     return Patient(
-      display_name: json['display_name'],
+      displayName: json['display_name'],
       dob: json['dob'],
       email: json['email'],
       gender: json['gender'],
@@ -161,7 +185,7 @@ class Patient {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['display_name'] = this.display_name;
+    data['display_name'] = this.displayName;
     data['dob'] = this.dob;
     data['email'] = this.email;
     data['gender'] = this.gender;

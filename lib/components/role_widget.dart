@@ -24,3 +24,22 @@ class RoleWidget extends StatelessWidget {
     return Offstage();
   }
 }
+
+Widget? roleWidgetNull({
+  required Widget child,
+  bool isShowPatient = false,
+  bool isShowDoctor = false,
+  bool isShowReceptionist = false,
+}) {
+  if (isShowPatient && isPatient()) {
+    return child;
+  }
+  if (isShowDoctor && isDoctor()) {
+    return child;
+  }
+  if (isShowReceptionist && isReceptionist()) {
+    return child;
+  }
+
+  return null;
+}

@@ -1,74 +1,170 @@
-import 'dart:core';
+// ignore_for_file: unused_import
+
+import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/common/appointment_widget.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:intl/intl.dart';
+import 'package:momona_healthcare/components/body_widget.dart';
+import 'package:momona_healthcare/components/empty_error_state_component.dart';
 import 'package:momona_healthcare/components/loader_widget.dart';
 import 'package:momona_healthcare/components/no_data_found_widget.dart';
+import 'package:momona_healthcare/config.dart';
 import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
-import 'package:momona_healthcare/network/appointment_respository.dart';
-import 'package:momona_healthcare/screens/doctor/screens/appointment/doctor_add_appointment_step1_screen.dart';
+import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
+import 'package:momona_healthcare/network/appointment_repository.dart';
+import 'package:momona_healthcare/screens/appointment/appointment_functions.dart';
+import 'package:momona_healthcare/screens/doctor/components/appointment_fragment_appointment_component.dart';
+import 'package:momona_healthcare/screens/shimmer/components/appointment_shimmer_component.dart';
+import 'package:momona_healthcare/utils/app_common.dart';
+import 'package:momona_healthcare/utils/cached_value.dart';
 import 'package:momona_healthcare/utils/colors.dart';
+import 'package:momona_healthcare/utils/common.dart';
 import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/widgets/calender/date_utils.dart';
 import 'package:momona_healthcare/utils/extensions/date_extensions.dart';
+import 'package:momona_healthcare/utils/images.dart';
+import 'package:momona_healthcare/utils/widgets/calender/date_utils.dart';
 import 'package:momona_healthcare/utils/widgets/calender/flutter_clean_calendar.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+StreamController appointmentStreamController = StreamController.broadcast();
+
 class AppointmentFragment extends StatefulWidget {
   @override
-  _AppointmentFragmentState createState() => _AppointmentFragmentState();
+  State<AppointmentFragment> createState() => _AppointmentFragmentState();
 }
 
 class _AppointmentFragmentState extends State<AppointmentFragment> {
-  Map<DateTime, List> _events = Map<DateTime, List>();
+  Map<DateTime, List> _events = {};
 
-  List<UpcomingAppointment> filterList = [];
+  Future<List<UpcomingAppointmentModel>>? future;
 
-  String startDate = DateTime(DateTime.now().year, DateTime.now().month, 1).getFormattedDate(CONVERT_DATE);
-  String endDate = DateTime(DateTime.now().year, DateTime.now().month, Utils.lastDayOfMonth(DateTime.now()).day).getFormattedDate(CONVERT_DATE);
+  List<UpcomingAppointmentModel> appointmentList = [];
+
+  int page = 1;
+
+  bool isLastPage = false;
+  bool isRangeSelected = false;
+
+  String startDate = DateTime(DateTime.now().year, DateTime.now().month, 1).getFormattedDate(SAVE_DATE_FORMAT);
+  String endDate = DateTime(DateTime.now().year, DateTime.now().month, Utils.lastDayOfMonth(DateTime.now()).day).getFormattedDate(SAVE_DATE_FORMAT);
+
+  DateTime selectedDate = DateTime.parse(DateFormat(SAVE_DATE_FORMAT).format(DateTime.now()));
+
+  StreamSubscription? updateAppointmentApi;
 
   @override
   void initState() {
     super.initState();
-    LiveStream().on(APP_UPDATE, (isUpdate) {
-      if (isUpdate as bool) {
-        init();
-      }
+
+    updateAppointmentApi = appointmentStreamController.stream.listen((streamData) {
+      page = 1;
+      init(
+        todayDate: selectedDate.getFormattedDate(SAVE_DATE_FORMAT),
+        startDate: null,
+        endDate: null,
+      );
     });
-    init();
+
+    init(startDate: startDate, endDate: endDate, showLoader: false);
   }
 
-  init() async {
-    loadData();
+  Map<DateTime, List<UpcomingAppointmentModel>> groupAppointmentByDates({required List<UpcomingAppointmentModel> appointmentList}) {
+    return groupBy(appointmentList, (UpcomingAppointmentModel appointmentData) => DateFormat(SAVE_DATE_FORMAT).parse(appointmentData.appointmentGlobalStartDate.validate()));
   }
 
-  void loadData() async {
-    appStore.setLoading(true);
-    await getAppointmentData(startDate: startDate, endDate: endDate).then(
-      (value) {
-        value.appointmentData!.forEach(
-          (element) {
-            DateTime date = DateTime.parse(element.appointment_start_date!);
-            _events.addAll(
-              {
-                DateTime(date.year, date.month, date.day): [
-                  {'name': 'Event A', 'isDone': true, 'time': '9 - 10 AM'}
-                ]
-              },
-            );
-          },
-        );
-        setState(() {});
-        if (DateTime.parse(startDate).month == DateTime.now().month) {
-          showData(DateTime.now());
+  Future<void> init({bool showLoader = true, String? todayDate, String? startDate, String? endDate}) async {
+    if (showLoader) appStore.setLoading(true);
+    future = getAppointment(
+      pages: page,
+      perPage: PER_PAGE,
+      appointmentList: appointmentList,
+      lastPageCallback: (b) => isLastPage = b,
+      todayDate: todayDate,
+      startDate: startDate,
+      endDate: endDate,
+    ).then((value) {
+      if (todayDate != null && startDate == null && endDate == null) {
+        if (value.isNotEmpty) {
+          groupAppointmentByDates(appointmentList: value).forEach((key, value) {
+            DateTime date = key;
+            _events.putIfAbsent(DateTime(date.year, date.month, date.day), () => value);
+          });
+        } else {
+          DateTime date = DateFormat(SAVE_DATE_FORMAT).parse(todayDate);
+          if (_events.containsKey(DateTime(date.year, date.month, date.day))) {
+            _events.remove(DateTime(date.year, date.month, date.day));
+          }
         }
-      },
-    ).catchError(
-      (e) {
-        appStore.setLoading(false);
-        toast(e.toString());
-      },
+      }
+
+      if (startDate != null && endDate != null)
+        groupAppointmentByDates(appointmentList: value).forEach((key, value) {
+          DateTime date = key;
+          _events.addAll({
+            DateTime(date.year, date.month, date.day): value,
+          });
+        });
+      setState(() {});
+      appStore.setLoading(false);
+      return value;
+    }).catchError((e) {
+      appStore.setLoading(false);
+      throw e;
+    });
+  }
+
+  Future<void> onSwipeRefresh({bool isFirst = false}) async {
+    setState(() {
+      isRangeSelected = false;
+      page = 1;
+    });
+    appStore.setLoading(true);
+    init(
+      todayDate: selectedDate.getFormattedDate(SAVE_DATE_FORMAT),
+      startDate: null,
+      endDate: null,
+    );
+    return await 1.seconds.delay;
+  }
+
+  void showData(DateTime dateTime) async {
+    appStore.setLoading(true);
+    if (isRangeSelected) {
+      appStore.setLoading(false);
+      return;
+    }
+    800.milliseconds.delay;
+    selectedDate = DateTime.parse(DateFormat(SAVE_DATE_FORMAT).format(dateTime));
+    setState(() {});
+    init(
+      todayDate: dateTime.getFormattedDate(SAVE_DATE_FORMAT),
+      startDate: null,
+      endDate: null,
+    );
+  }
+
+  void onNextPage() {
+    if (!isLastPage) {
+      appStore.setLoading(true);
+      page++;
+      init(
+        todayDate: selectedDate.getFormattedDate(SAVE_DATE_FORMAT),
+        startDate: null,
+        endDate: null,
+        showLoader: true,
+      );
+    }
+  }
+
+  Future<void> onRangeSelected(Range range) async {
+    appStore.setLoading(true);
+    isRangeSelected = true;
+    page = 1;
+    init(
+      todayDate: null,
+      startDate: range.from.getFormattedDate(SAVE_DATE_FORMAT),
+      endDate: range.to.getFormattedDate(SAVE_DATE_FORMAT),
     );
   }
 
@@ -77,66 +173,52 @@ class _AppointmentFragmentState extends State<AppointmentFragment> {
     if (mounted) super.setState(fn);
   }
 
-  void showData(DateTime dateTime) async {
-    appStore.setLoading(true);
-    filterList.clear();
-
-    await getAppointmentInCalender(todayDate: dateTime.getFormattedDate(CONVERT_DATE), page: 1).then((value) {
-      filterList.addAll(value.appointmentData!);
-      setState(() {});
-    }).catchError(((e) {
-      toast(e.toString());
-    }));
-
-    appStore.setLoading(false);
-  }
-
-  void deleteAppointmentById(int id) async {
-    Map<String, dynamic> request = {"id": id};
-
-    await deleteAppointment(request).then((value) {
-      LiveStream().emit(UPDATE, true);
-      LiveStream().emit(APP_UPDATE, true);
-      LiveStream().emit(DELETE, true);
-      toast(locale.lblAppointmentDeleted);
-    }).catchError((e) {
-      toast(e.toString());
-    });
-
-    appStore.setLoading(false);
-  }
-
-  @override
-  void didUpdateWidget(covariant AppointmentFragment oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    setState(() {});
-  }
-
   @override
   void dispose() {
+    if (updateAppointmentApi != null) {
+      updateAppointmentApi!.cancel().then((value) {
+        log("============== Stream Cancelled ==============");
+      });
+    }
     super.dispose();
-    LiveStream().dispose(APP_UPDATE);
   }
 
-  Widget buildBodyWidget() {
-    return SingleChildScrollView(
-      padding: EdgeInsets.fromLTRB(16, 16, 16, 80),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: AnimatedScrollView(
+        padding: EdgeInsets.only(bottom: 60),
+        onSwipeRefresh: onSwipeRefresh,
+        onNextPage: onNextPage,
         children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Text(locale.lblTodaySAppointments, style: boldTextStyle(size: fragmentTextSize)),
+                  8.width,
+                  Marquee(child: Text("(${selectedDate.getDateInString(format: CONFIRM_APPOINTMENT_FORMAT)})", style: boldTextStyle(size: 14, color: context.primaryColor))).expand(),
+                ],
+              ),
+              4.height,
+              Text(locale.lblSwipeMassage, style: secondaryTextStyle(size: 10, color: appSecondaryColor)),
+            ],
+          ).paddingOnly(top: 16, right: 16, left: 16),
           Container(
+            margin: EdgeInsets.all(16),
             decoration: boxDecorationWithRoundedCorners(backgroundColor: context.cardColor),
-            child: Calendar(
+            child: CleanCalendar(
               startOnMonday: true,
               weekDays: [locale.lblMon, locale.lblTue, locale.lblWed, locale.lblThu, locale.lblFri, locale.lblSat, locale.lblSun],
               events: _events,
-              onDateSelected: (e) => showData(e),
+              onDateSelected: (e) {
+                appStore.setLoading(true);
+                showData(e);
+              },
+              initialDate: selectedDate,
               onRangeSelected: (Range range) {
-                startDate = range.from.getFormattedDate(CONVERT_DATE);
-                endDate = range.to.getFormattedDate(CONVERT_DATE);
-                loadData();
+                onRangeSelected(range);
               },
               isExpandable: true,
               locale: appStore.selectedLanguage,
@@ -148,37 +230,71 @@ class _AppointmentFragmentState extends State<AppointmentFragment> {
               dayOfWeekStyle: TextStyle(color: appStore.isDarkModeOn ? Colors.white : Colors.black, fontWeight: FontWeight.w800, fontSize: 11),
             ),
           ),
-          42.height,
-          Text(locale.lblTodaySAppointments, style: boldTextStyle(size: titleTextSize)),
-          4.height,
-          Text(locale.lblSwipeMassage, style: secondaryTextStyle(size: 10, color: appSecondaryColor)),
-          16.height,
-          ListView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: filterList.length,
-            itemBuilder: (BuildContext context, int index) {
-              return AppointmentWidget(upcomingData: filterList[index], index: index).paddingSymmetric(vertical: 8);
+          SnapHelperWidget<List<UpcomingAppointmentModel>>(
+            initialData: cachedDoctorAppointment,
+            future: future,
+            errorBuilder: (error) {
+              return NoDataWidget(
+                imageWidget: Image.asset(
+                  ic_somethingWentWrong,
+                  height: 180,
+                  width: 180,
+                ),
+                title: error.toString(),
+              );
             },
-          ).visible(!appStore.isLoading, defaultWidget: LoaderWidget()),
-          16.height,
-          NoDataFoundWidget(text: locale.lblNotAppointmentForThisDay, iconSize: 130).visible(filterList.isEmpty && !appStore.isLoading).center(),
+            errorWidget: ErrorStateWidget(),
+            loadingWidget: AnimatedWrap(
+              listAnimationType: ListAnimationType.None,
+              runSpacing: 16,
+              spacing: 16,
+              children: [
+                AppointmentShimmerComponent(),
+                AppointmentShimmerComponent(),
+                AppointmentShimmerComponent(),
+              ],
+            ).paddingSymmetric(horizontal: 16),
+            onSuccess: (snap) {
+              return AppointmentFragmentAppointmentComponent(
+                data: groupAppointmentByDates(appointmentList: snap)[selectedDate].validate(),
+                refreshCallForRefresh: () {
+                  onSwipeRefresh(isFirst: true);
+                },
+              ).visible(
+                groupAppointmentByDates(appointmentList: snap)[selectedDate].validate().isNotEmpty,
+                defaultWidget: Observer(
+                  builder: (context) {
+                    if (groupAppointmentByDates(appointmentList: snap)[selectedDate].validate().isEmpty && !appStore.isLoading)
+                      return NoDataFoundWidget(
+                        text:
+                            selectedDate.getFormattedDate(SAVE_DATE_FORMAT) == DateTime.now().getFormattedDate(SAVE_DATE_FORMAT) ? locale.lblNoAppointmentForToday : locale.lblNoAppointmentForThisDay,
+                      ).center();
+                    else if (page > 1 && appStore.isLoading)
+                      return LoaderWidget().center();
+                    else
+                      return AnimatedWrap(
+                        listAnimationType: ListAnimationType.None,
+                        runSpacing: 16,
+                        spacing: 16,
+                        children: [
+                          AppointmentShimmerComponent(),
+                          AppointmentShimmerComponent(),
+                          AppointmentShimmerComponent(),
+                        ],
+                      ).paddingSymmetric(horizontal: 16).visible(appStore.isLoading && snap.isEmpty);
+                  },
+                ),
+              );
+            },
+          ),
         ],
       ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: buildBodyWidget(),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () async {
-          bool? res = await DoctorAddAppointmentStep1Screen(id: getIntAsync(USER_ID)).launch(context);
-          if (res ?? false) setState(() {});
+          appointmentWidgetNavigation(context);
         },
-      ),
+      ).visible(isVisible(SharedPreferenceKey.kiviCareAppointmentAddKey)),
     );
   }
 }

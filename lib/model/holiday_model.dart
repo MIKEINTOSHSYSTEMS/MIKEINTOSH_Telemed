@@ -1,6 +1,8 @@
+import 'package:nb_utils/nb_utils.dart';
+
 class HolidayModel {
   List<HolidayData>? holidayData;
-  String? total;
+  num? total;
 
   HolidayModel({this.holidayData, this.total});
 
@@ -22,40 +24,77 @@ class HolidayModel {
 }
 
 class HolidayData {
-  String? created_at;
+  String? createdAt;
   String? description;
-  String? end_date;
+  String? endDate;
   String? id;
-  String? module_id;
-  String? module_type;
-  String? start_date;
+  String? moduleId;
+  String? moduleType;
+  String? clinicImage;
+  String? clinicName;
+  String? doctorName;
+  String? doctorProfileImage;
+
+  String? startDate;
+  String? holidayEndDate;
+  String? holidayStartDate;
   String? status;
 
-  HolidayData({this.created_at, this.description, this.end_date, this.id, this.module_id, this.module_type, this.start_date, this.status});
+  String get userName => moduleType == "doctor" ? doctorName.validate() : clinicName.validate();
+
+  String get userProfileImage => moduleType == "doctor" ? doctorProfileImage.validate() : clinicImage.validate();
+
+  HolidayData(
+      {this.createdAt,
+      this.description,
+      this.endDate,
+      this.id,
+      this.moduleId,
+      this.moduleType,
+      this.startDate,
+      this.status,
+      this.clinicImage,
+      this.clinicName,
+      this.doctorName,
+      this.doctorProfileImage,
+      this.holidayEndDate,
+      this.holidayStartDate});
 
   factory HolidayData.fromJson(Map<String, dynamic> json) {
     return HolidayData(
-      created_at: json['created_at'],
+      createdAt: json['created_at'],
       description: json['description'],
-      end_date: json['end_date'],
-      id: json['id'],
-      module_id: json['module_id'],
-      module_type: json['module_type'],
-      start_date: json['start_date'],
+      endDate: json['end_date'],
+      holidayEndDate: json['holidat_end_date'],
+      holidayStartDate: json['holiday_start_date'],
+      id: json['ID'],
+      moduleId: json['module_id'],
+      moduleType: json['module_type'],
+      startDate: json['start_date'],
       status: json['status'],
+      clinicImage: json['clinic_image'],
+      clinicName: json['clinic_name'],
+      doctorName: json['doctor_name'],
+      doctorProfileImage: json['doctor_profile_image'],
     );
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['created_at'] = this.created_at;
+    data['created_at'] = this.createdAt;
     data['description'] = this.description;
-    data['end_date'] = this.end_date;
-    data['id'] = this.id;
-    data['module_id'] = this.module_id;
-    data['module_type'] = this.module_type;
-    data['start_date'] = this.start_date;
+    data['end_date'] = this.endDate;
+    data['ID'] = this.id;
+    data['module_id'] = this.moduleId;
+    data['module_type'] = this.moduleType;
+    data['start_date'] = this.startDate;
+    data['clinic_image'] = this.clinicImage;
+    data['clinic_name'] = this.clinicName;
+    data['doctor_name'] = this.doctorName;
+    data['doctor_profile_image'] = this.doctorProfileImage;
     data['status'] = this.status;
+    data['holidat_end_date'] = holidayEndDate;
+    data['holiday_start_date'] = holidayStartDate;
     return data;
   }
 }

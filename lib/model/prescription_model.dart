@@ -22,43 +22,43 @@ class PrescriptionModel {
 }
 
 class PrescriptionData {
-  String? added_by;
-  String? created_at;
+  String? addedBy;
+  String? createdAt;
   String? duration;
-  String? encounter_id;
+  String? encounterId;
   String? frequency;
   String? id;
   String? instruction;
   String? name;
-  String? patient_id;
+  String? patientId;
 
-  PrescriptionData({this.added_by, this.created_at, this.duration, this.encounter_id, this.frequency, this.id, this.instruction, this.name, this.patient_id});
+  PrescriptionData({this.addedBy, this.createdAt, this.duration, this.encounterId, this.frequency, this.id, this.instruction, this.name, this.patientId});
 
   factory PrescriptionData.fromJson(Map<String, dynamic> json) {
     return PrescriptionData(
-      added_by: json['added_by'],
-      created_at: json['created_at'],
+      addedBy: json['added_by'],
+      createdAt: json['created_at'],
       duration: json['duration'],
-      encounter_id: json['encounter_id'],
+      encounterId: json['encounter_id'],
       frequency: json['frequency'],
       id: json['id'],
       instruction: json['instruction'],
       name: json['name'],
-      patient_id: json['patient_id'],
+      patientId: json['patient_id'],
     );
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['added_by'] = this.added_by;
-    data['created_at'] = this.created_at;
+    data['added_by'] = this.addedBy;
+    data['created_at'] = this.createdAt;
     data['duration'] = this.duration;
-    data['encounter_id'] = this.encounter_id;
+    data['encounter_id'] = this.encounterId;
     data['frequency'] = this.frequency;
     data['id'] = this.id;
     data['instruction'] = this.instruction;
     data['name'] = this.name;
-    data['patient_id'] = this.patient_id;
+    data['patient_id'] = this.patientId;
     return data;
   }
 }

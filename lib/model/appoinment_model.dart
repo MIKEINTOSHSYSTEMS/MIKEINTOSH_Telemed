@@ -1,14 +1,14 @@
-import 'package:momona_healthcare/model/doctor_dashboard_model.dart';
+import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
 
 class AppointmentModel {
-  List<UpcomingAppointment>? appointmentData;
+  List<UpcomingAppointmentModel>? appointmentData;
   int? total;
 
   AppointmentModel({this.appointmentData, this.total});
 
   factory AppointmentModel.fromJson(Map<String, dynamic> json) {
     return AppointmentModel(
-      appointmentData: json['data'] != null ? (json['data'] as List).map((i) => UpcomingAppointment.fromJson(i)).toList() : null,
+      appointmentData: json['data'] != null ? (json['data'] as List).map((i) => UpcomingAppointmentModel.fromJson(i)).toList() : null,
       total: json['total'],
     );
   }

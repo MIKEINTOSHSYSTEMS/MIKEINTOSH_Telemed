@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/utils/colors.dart';
 import 'package:momona_healthcare/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
@@ -37,20 +38,16 @@ class ThemeSelectionDialogState extends State<ThemeSelectionDialog> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: context.width(),
-      color: context.cardColor,
-      padding: EdgeInsets.symmetric(vertical: 8),
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: themeModeList.length,
-        itemBuilder: (BuildContext context, int index) {
+    return Column(
+      children: List.generate(
+        themeModeList.length,
+        (int index) {
           return Theme(
-            data: ThemeData(
-              unselectedWidgetColor: context.dividerColor,
-            ),
+            data: ThemeData(unselectedWidgetColor: context.primaryColor),
             child: RadioListTile(
               value: index,
+              dense: true,
+              fillColor: MaterialStatePropertyAll(appPrimaryColor),
               groupValue: currentIndex,
               title: Text(themeModeList[index], style: primaryTextStyle()),
               onChanged: (dynamic val) {
@@ -61,8 +58,10 @@ class ThemeSelectionDialogState extends State<ThemeSelectionDialog> {
                     appStore.setDarkMode(MediaQuery.of(context).platformBrightness == Brightness.dark);
                   } else if (val == THEME_MODE_LIGHT) {
                     appStore.setDarkMode(false);
-                  } else if (val == THEME_MODE_DARK) {
-                    appStore.setDarkMode(true);
+                  } else {
+                    if (val == THEME_MODE_DARK) {
+                      appStore.setDarkMode(true);
+                    }
                   }
 
                   setValue(THEME_MODE_INDEX, val);

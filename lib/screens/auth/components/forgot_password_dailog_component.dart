@@ -18,6 +18,7 @@ class ForgotPasswordDialogComponentState extends State<ForgotPasswordDialogCompo
 
   TextEditingController emailCont = TextEditingController();
   FocusNode emailFocus = FocusNode();
+  bool isFirstTime = true;
 
   @override
   void initState() {
@@ -38,17 +39,22 @@ class ForgotPasswordDialogComponentState extends State<ForgotPasswordDialogCompo
       hideKeyboard(context);
 
       appStore.setLoading(true);
+
       Map<String, dynamic> req = {
         'email': emailCont.text,
       };
-      await forgotPassword(req).then((value) {
+      await forgotPasswordAPI(req).then((value) {
         toast(value.message);
-        finish(context);
+        appStore.setLoading(false);
+        finish(context, true);
       }).catchError((e) {
+        appStore.setLoading(false);
         toast(e.toString());
         finish(context);
       });
-      appStore.setLoading(false);
+    } else {
+      isFirstTime = !isFirstTime;
+      setState(() {});
     }
   }
 
@@ -59,8 +65,6 @@ class ForgotPasswordDialogComponentState extends State<ForgotPasswordDialogCompo
 
   @override
   void dispose() {
-    if (appStore.isLoading) appStore.setLoading(true);
-
     super.dispose();
   }
 
@@ -73,23 +77,20 @@ class ForgotPasswordDialogComponentState extends State<ForgotPasswordDialogCompo
         children: [
           Form(
             key: formKey,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
+            autovalidateMode: isFirstTime ? AutovalidateMode.disabled : AutovalidateMode.onUserInteraction,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text("Enter your email address", style: boldTextStyle(size: 20)),
+                Text(locale.lblEnterYourEmailAddress, style: boldTextStyle(size: 20)),
                 2.height,
-                Text("A reset password link will be sent to the above entered email address", style: secondaryTextStyle()),
+                Text("${locale.lblAResetPasswordLinkWillBeSentToTheAboveEnteredEmailAddress}", style: secondaryTextStyle()),
                 16.height,
                 AppTextField(
                   onChanged: (value) {},
                   controller: emailCont,
                   textFieldType: TextFieldType.EMAIL,
-                  decoration: inputDecoration(
-                    context: context,
-                    labelText: locale.lblEmail,
-                  ).copyWith(suffixIcon: ic_message.iconImage(size: 18, color: context.iconColor).paddingAll(14)),
+                  decoration: inputDecoration(context: context, labelText: locale.lblEmail, suffixIcon: ic_message.iconImage(size: 18, color: context.iconColor).paddingAll(14)),
                 ),
                 32.height,
                 AppButton(

@@ -1,5 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.momona.healthcare">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -25,6 +24,10 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
+            <meta-data
+                android:name="com.onesignal.messaging.default_notification_icon"
+                android:resource="@mipmap/ic_stat_onesignal_default" />
+
 <!--            <meta-data-->
 <!--              android:name="io.flutter.embedding.android.SplashScreenDrawable"-->
 <!--              android:resource="@drawable/launch_background"-->
@@ -34,6 +37,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAwmwUrbDgXy47B7uu5m_5-I42c43TFNE" />
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/body_widget.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:momona_healthcare/components/loader_widget.dart';
 import 'package:momona_healthcare/main.dart';
 import 'package:momona_healthcare/model/static_data_model.dart';
 import 'package:momona_healthcare/network/dashboard_repository.dart';
@@ -7,6 +8,7 @@ import 'package:momona_healthcare/utils/app_common.dart';
 import 'package:momona_healthcare/utils/colors.dart';
 import 'package:momona_healthcare/utils/common.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
 
 // ignore: must_be_immutable
 class MultiSelectSpecialization extends StatefulWidget {
@@ -25,7 +27,6 @@ class _MultiSelectSpecializationState extends State<MultiSelectSpecialization> {
   List<StaticData?> searchSpecializationList = [];
 
   List<StaticData?> specializationList = [];
-  List<StaticData> selectedSpecializationList = [];
 
   @override
   void initState() {
@@ -34,14 +35,14 @@ class _MultiSelectSpecializationState extends State<MultiSelectSpecialization> {
   }
 
   init() async {
-    setStatusBarColor(appStore.isDarkModeOn ? scaffoldDarkColor : primaryColor, statusBarIconBrightness: Brightness.light);
-
     getData();
   }
 
-  void getData() async {
+  void getData({String searchString = ''}) async {
     appStore.setLoading(true);
-    await getStaticDataResponse("specialization").then((value) {
+
+    await getStaticDataResponseAPI('specialization', searchString: searchString).then((value) {
+      appStore.setLoading(false);
       specializationList.addAll(value.staticData!);
       searchSpecializationList.addAll(value.staticData!);
       setState(() {});
@@ -53,10 +54,9 @@ class _MultiSelectSpecializationState extends State<MultiSelectSpecialization> {
         }
       });
     }).catchError((e) {
+      appStore.setLoading(false);
       toast(e.toString());
     });
-
-    appStore.setLoading(false);
   }
 
   @override
@@ -89,74 +89,81 @@ class _MultiSelectSpecializationState extends State<MultiSelectSpecialization> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBarWidget(locale.lblSpecialization, textColor: Colors.white, systemUiOverlayStyle: defaultSystemUiOverlayStyle(context)),
-      body: Body(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(locale.lblSelectSpecialization, style: boldTextStyle(size: 18)),
-              Divider(),
-              8.height,
-              AppTextField(
-                decoration: inputDecoration(context: context, labelText: locale.lblSearch),
-                controller: search,
-                onChanged: onSearchTextChanged,
-                autoFocus: false,
-                textInputAction: TextInputAction.go,
-                textFieldType: TextFieldType.OTHER,
-                suffix: Icon(
-                  Icons.search,
-                  color: appStore.isDarkModeOn ? Colors.grey : Colors.black,
-                  size: 25,
-                ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(locale.lblSelectSpecialization, style: boldTextStyle(size: 18)),
+            Divider(),
+            8.height,
+            AppTextField(
+              decoration: inputDecoration(context: context, labelText: locale.lblSearch),
+              controller: search,
+              onChanged: onSearchTextChanged,
+              autoFocus: false,
+              textInputAction: TextInputAction.done,
+              textFieldType: TextFieldType.OTHER,
+              onFieldSubmitted: (searchString) {},
+              suffix: Icon(
+                Icons.search,
+                color: appStore.isDarkModeOn ? Colors.grey : Colors.black,
+                size: 25,
+              ).appOnTap(
+                () {},
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
               ),
-              8.height,
-              ListView.builder(
-                itemCount: specializationList.length,
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  StaticData data = specializationList[index]!;
-                  return Theme(
-                    data: ThemeData(
-                      unselectedWidgetColor: primaryColor,
-                    ),
-                    child: CheckboxListTile(
-                      controlAffinity: ListTileControlAffinity.leading,
-                      contentPadding: EdgeInsets.all(0),
-                      value: data.isSelected,
-                      onChanged: (v) {
-                        data.isSelected = !data.isSelected;
-                        if (v!) {
-                          multiSelectStore.addSingleStaticItem(data, isClear: false);
-                          widget.selectedServicesId!.add(data.id);
-                        } else {
-                          multiSelectStore.removeStaticItem(data);
-                          widget.selectedServicesId!.remove(data.id);
-                        }
-                        setState(() {});
-                      },
-                      title: Text(data.label.validate(), maxLines: 2, overflow: TextOverflow.ellipsis, style: primaryTextStyle()),
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
+            ),
+            8.height,
+            ListView.builder(
+              itemCount: specializationList.length,
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                StaticData data = specializationList[index]!;
+                return Container(
+                  padding: EdgeInsets.symmetric(horizontal: 6, vertical: 1),
+                  decoration: boxDecorationDefault(boxShadow: [], color: context.cardColor),
+                  child: CheckboxListTile(
+                    splashRadius: 16,
+                    visualDensity: VisualDensity.compact,
+                    controlAffinity: ListTileControlAffinity.leading,
+                    checkboxShape: RoundedRectangleBorder(borderRadius: radius(6)),
+                    contentPadding: EdgeInsets.zero,
+                    value: data.isSelected,
+                    hoverColor: Colors.transparent,
+                    overlayColor: MaterialStateProperty.all(Colors.transparent),
+                    onChanged: (v) {
+                      data.isSelected = !data.isSelected;
+                      if (v!) {
+                        multiSelectStore.addSingleStaticItem(data, isClear: false);
+                        widget.selectedServicesId.validate().add(data.id);
+                      } else {
+                        multiSelectStore.removeStaticItem(data);
+                        widget.selectedServicesId.validate().remove(data.id);
+                      }
+                      setState(() {});
+                    },
+                    title: Text(data.label.validate(), maxLines: 2, overflow: TextOverflow.ellipsis, style: primaryTextStyle()),
+                  ),
+                ).paddingSymmetric(vertical: 8);
+              },
+            ),
+            Observer(
+              builder: (context) => LoaderWidget().visible(appStore.isLoading).center().paddingSymmetric(vertical: 120),
+            )
+          ],
         ),
       ),
-      floatingActionButton: floatingActionButton(),
-    );
-  }
-
-  Widget floatingActionButton() {
-    return FloatingActionButton(
-      backgroundColor: primaryColor,
-      child: Icon(Icons.done, color: Colors.white),
-      onPressed: () {
-        finish(context, true);
-      },
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: primaryColor,
+        child: Icon(Icons.done, color: Colors.white),
+        onPressed: () {
+          finish(context, true);
+        },
+      ),
     );
   }
 }

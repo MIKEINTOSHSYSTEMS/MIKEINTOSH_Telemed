@@ -1,5 +1,6 @@
 import 'package:momona_healthcare/model/service_model.dart';
 import 'package:momona_healthcare/model/static_data_model.dart';
+import 'package:momona_healthcare/model/tax_model.dart';
 import 'package:mobx/mobx.dart';
 
 part 'MultiSelectStore.g.dart';
@@ -10,6 +11,13 @@ abstract class MultiSelectStoreBase with Store {
   @observable
   ObservableList<ServiceData> selectedService = ObservableList<ServiceData>();
   ObservableList<StaticData?> selectedStaticData = ObservableList<StaticData?>();
+
+  @observable
+  TaxModel? taxData;
+
+  void setTaxData(TaxModel? data) {
+    taxData = data;
+  }
 
   @action
   void addList(List<ServiceData> data, {bool isClear = true}) {

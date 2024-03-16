@@ -2,19 +2,25 @@ import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/body_widget.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:intl/intl.dart';
+import 'package:momona_healthcare/components/loader_widget.dart';
 import 'package:momona_healthcare/main.dart';
+import 'package:momona_healthcare/model/report_model.dart';
 import 'package:momona_healthcare/network/report_repository.dart';
 import 'package:momona_healthcare/utils/app_common.dart';
 import 'package:momona_healthcare/utils/common.dart';
 import 'package:momona_healthcare/utils/constants.dart';
 import 'package:momona_healthcare/utils/extensions/date_extensions.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:open_file/open_file.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class AddReportScreen extends StatefulWidget {
   final int? patientId;
+  final ReportData? reportData;
 
-  AddReportScreen({this.patientId});
+  AddReportScreen({this.patientId, this.reportData});
 
   @override
   _AddReportScreenState createState() => _AddReportScreenState();
@@ -31,6 +37,8 @@ class _AddReportScreenState extends State<AddReportScreen> {
   int currentPage = 0;
 
   bool isReady = false;
+  bool isUpdate = false;
+  bool isFirstTime = true;
 
   String errorMessage = '';
 
@@ -46,7 +54,15 @@ class _AddReportScreenState extends State<AddReportScreen> {
   }
 
   init() async {
-    //
+    isUpdate = widget.reportData != null;
+
+    if (isUpdate) {
+      nameCont.text = widget.reportData!.name.validate();
+      if (widget.reportData!.date.validate().isNotEmpty) {
+        current = DateFormat(SAVE_DATE_FORMAT).parse(widget.reportData!.reportDate.validate());
+        dateCont.text = current.getFormattedDate(SAVE_DATE_FORMAT);
+      }
+    }
   }
 
   @override
@@ -54,12 +70,10 @@ class _AddReportScreenState extends State<AddReportScreen> {
     super.dispose();
   }
 
-  void PickSingleFile() async {
+  void pickSingleFile() async {
     result = await FilePicker.platform.pickFiles();
-
     if (result != null) {
       file = File(result!.files.single.path!);
-
       fileCont.text = file!.path.substring(file!.path.lastIndexOf("/") + 1);
       setState(() {});
     } else {
@@ -72,99 +86,36 @@ class _AddReportScreenState extends State<AddReportScreen> {
       formKey.currentState!.save();
       appStore.setLoading(true);
 
-      Map<String, dynamic> res = {
+      Map<String, dynamic> req = {
         "name": "${nameCont.text}",
-        "patient_id": "${widget.patientId}",
-        "date": "${current.getFormattedDate(CONVERT_DATE)}",
+        "patient_id": isPatient() ? userStore.userId : "${widget.patientId}",
+        "date": "${current.getFormattedDate(SAVE_DATE_FORMAT)}",
       };
+      if (isUpdate) {
+        req.putIfAbsent('id', () => widget.reportData!.id.validate().toString());
+      }
 
-      await addReportData(res, file: file != null ? File(file!.path) : null).then((value) {
+      if (!isUpdate && file == null) {
+        toast(locale.lblPleaseUploadReport);
+        return;
+      }
+
+      await addReportDataAPI(req, file: file != null ? File(file!.path) : null).then((value) {
+        if (isUpdate)
+          toast(locale.lblReportUpdatedSuccessfully);
+        else
+          toast(value.message);
+
+        appStore.setLoading(false);
         finish(context, true);
       }).catchError((e) {
-        toast(e.toString());
+        appStore.setLoading(false);
+        toast(e.message);
       });
-
-      appStore.setLoading(false);
+    } else {
+      isFirstTime = !isFirstTime;
+      setState(() {});
     }
-  }
-
-  Widget buildBodyWidget() {
-    return SingleChildScrollView(
-      padding: EdgeInsets.all(16),
-      child: Form(
-        key: formKey,
-        autovalidateMode: AutovalidateMode.onUserInteraction,
-        child: Column(
-          children: [
-            AppTextField(controller: nameCont, textFieldType: TextFieldType.NAME, decoration: inputDecoration(context: context, labelText: locale.lblName)),
-            16.height,
-            AppTextField(
-              onTap: () async {
-                DateTime? dateTime = await showDatePicker(
-                  context: context,
-                  initialDate: current,
-                  firstDate: DateTime(1900),
-                  builder: (BuildContext context, Widget? child) {
-                    return Theme(
-                      data: appStore.isDarkModeOn
-                          ? ThemeData.dark()
-                          : ThemeData.light().copyWith(
-                              primaryColor: Color(0xFF4974dc),
-                              hintColor: const Color(0xFF4974dc),
-                              colorScheme: ColorScheme.light(primary: const Color(0xFF4974dc)),
-                            ),
-                      child: child!,
-                    );
-                  },
-                  lastDate: DateTime.now(),
-                );
-                if (dateTime != null) {
-                  dateCont.text = dateTime.getFormattedDate(APPOINTMENT_DATE_FORMAT);
-                  current = dateTime;
-                }
-              },
-              controller: dateCont,
-              readOnly: true,
-              textFieldType: TextFieldType.OTHER,
-              validator: (s) {
-                if (s!.trim().isEmpty) return locale.lblDatecantBeNull;
-                return null;
-              },
-              decoration: inputDecoration(context: context, labelText: locale.lblDate).copyWith(
-                suffixIcon: Icon(Icons.date_range),
-              ),
-            ),
-            16.height,
-            AppTextField(
-              controller: fileCont,
-              textFieldType: TextFieldType.NAME,
-              decoration: inputDecoration(context: context, labelText: locale.lblUploadReport).copyWith(
-                suffixIcon: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      icon: Icon(Icons.upload_file),
-                      onPressed: () {
-                        PickSingleFile();
-                      },
-                    ),
-                    file == null
-                        ? Offstage()
-                        : IconButton(
-                            icon: Icon(Icons.remove_red_eye_outlined),
-                            onPressed: () {
-                              //
-                            },
-                          ),
-                  ],
-                ),
-              ),
-              readOnly: true,
-            ),
-          ],
-        ),
-      ),
-    );
   }
 
   @override
@@ -176,11 +127,110 @@ class _AddReportScreenState extends State<AddReportScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBarWidget(locale.lblAddReportScreen, textColor: Colors.white, systemUiOverlayStyle: defaultSystemUiOverlayStyle(context)),
-      body: Body(child: buildBodyWidget()),
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            padding: EdgeInsets.all(16),
+            child: Form(
+              key: formKey,
+              autovalidateMode: isFirstTime ? AutovalidateMode.disabled : AutovalidateMode.onUserInteraction,
+              child: Column(
+                children: [
+                  AppTextField(controller: nameCont, textFieldType: TextFieldType.NAME, decoration: inputDecoration(context: context, labelText: locale.lblName)),
+                  16.height,
+                  AppTextField(
+                    keyboardAppearance: appStore.isDarkModeOn ? Brightness.dark : Brightness.light,
+                    selectionControls: EmptyTextSelectionControls(),
+                    onTap: () async {
+                      datePickerComponent(
+                        context,
+                        initialDate: current,
+                        firstDate: DateTime(1900),
+                        lastDate: DateTime.now(),
+                        helpText: locale.lblSelectReportDate,
+                        onDateSelected: (selectedDate) {
+                          if (selectedDate != null) {
+                            current = selectedDate;
+                            dateCont.text = selectedDate.getFormattedDate(SAVE_DATE_FORMAT);
+                            setState(() {});
+                          }
+                        },
+                      );
+                    },
+                    controller: dateCont,
+                    readOnly: true,
+                    textFieldType: TextFieldType.OTHER,
+                    validator: (s) {
+                      if (s!.trim().isEmpty) return locale.lblDateCantBeNull;
+                      return null;
+                    },
+                    decoration: inputDecoration(
+                      context: context,
+                      labelText: locale.lblDate,
+                      suffixIcon: Icon(Icons.date_range),
+                    ),
+                  ),
+                  16.height,
+                  Container(
+                    decoration: boxDecorationDefault(color: context.cardColor),
+                    child: Row(
+                      children: [
+                        Text(
+                          isUpdate
+                              ? file == null
+                                  ? locale.lblUploadReport
+                                  : fileCont.text
+                              : fileCont.text,
+                          style: secondaryTextStyle(),
+                        ).paddingLeft(16).expand(),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            if (isUpdate && file == null && widget.reportData!.uploadReport.validateURL())
+                              TextButton(
+                                onPressed: () {
+                                  commonLaunchUrl(widget.reportData!.uploadReport.validate(), launchMode: LaunchMode.externalApplication);
+                                },
+                                style: ButtonStyle(
+                                  visualDensity: VisualDensity.compact,
+                                  padding: MaterialStateProperty.all(
+                                    EdgeInsets.only(top: 0, right: 8, left: 8, bottom: 0),
+                                  ),
+                                  shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: radius(), side: BorderSide(color: context.scaffoldBackgroundColor))),
+                                ),
+                                child: Text('${locale.lblViewFile}', style: primaryTextStyle(size: 10)),
+                              ),
+                            IconButton(
+                              icon: Icon(Icons.upload_file, color: context.iconColor),
+                              onPressed: () {
+                                pickSingleFile();
+                              },
+                            ),
+                            if (file != null)
+                              IconButton(
+                                icon: Icon(Icons.remove_red_eye_outlined),
+                                onPressed: () {
+                                  if (file != null) {
+                                    OpenFile.open(file?.path);
+                                  }
+                                },
+                              )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Observer(
+            builder: (context) => LoaderWidget().visible(appStore.isLoading).center(),
+          )
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          saveData();
-        },
+        onPressed: saveData,
         child: Icon(Icons.check, color: Colors.white),
       ),
     );

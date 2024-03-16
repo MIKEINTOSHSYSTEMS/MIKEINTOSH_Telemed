@@ -23,9 +23,7 @@ class SimpleGestureDetector extends StatefulWidget {
     this.onSwipeDown,
     this.onSwipeLeft,
     this.onSwipeRight,
-  })  : assert(child != null),
-        assert(swipeConfig != null),
-        super(key: key);
+  }) : super(key: key);
 
   @override
   _SimpleGestureDetectorState createState() => _SimpleGestureDetectorState();
@@ -157,7 +155,5 @@ class SimpleSwipeConfig {
     this.verticalThreshold = 50.0,
     this.horizontalThreshold = 50.0,
     this.swipeDetectionMoment = SwipeDetectionMoment.onEnd,
-  })  : assert(verticalThreshold != null),
-        assert(horizontalThreshold != null),
-        assert(swipeDetectionMoment != null);
+  });
 }

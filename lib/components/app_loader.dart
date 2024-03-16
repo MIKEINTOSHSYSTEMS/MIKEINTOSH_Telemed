@@ -12,8 +12,6 @@ class AppLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Observer(
-      builder: (BuildContext context) => LoaderWidget(size: loaderSize).visible(visibleOn ?? appStore.isLoading),
-    );
+    return LoaderWidget(size: loaderSize).visible(visibleOn ?? appStore.isLoading);
   }
 }
