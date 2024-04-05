@@ -2012,7 +2012,7 @@ class LanguageAr extends BaseLanguage {
   String get lblAmharic => 'الأمهرية';
 
   @override
-  String get lblHindi => 'الهندية';
+  String get lblTigrigna => 'الهندية';
 
   @override
   String get lblJan => 'يناير';

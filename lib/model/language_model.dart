@@ -16,7 +16,7 @@ class Language {
       Language(1, 'Amharic', 'am', flagsIcEthiopia),
       Language(2, 'Arabic', 'ar', flagsIcAr),
       Language(3, 'French', 'fr', flagsIcFrench),
-      Language(4, 'Hindi', 'hi', flagsIcIndia),
+      Language(4, 'Tigrigna', 'tg', flagsIcEthiopia),
     ];
   }
 

@@ -1634,7 +1634,7 @@ class LanguageFr extends BaseLanguage {
   @override
   String get lblAmharic => 'Amharique';
   @override
-  String get lblHindi => 'hindi';
+  String get lblTigrigna => 'ትግርኛ';
   @override
   String get lblJan => 'Jan';
   @override

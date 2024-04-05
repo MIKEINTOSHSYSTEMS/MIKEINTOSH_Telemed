@@ -2022,7 +2022,7 @@ class LanguageEn extends BaseLanguage {
   String get lblAmharic => "Amharic";
 
   @override
-  String get lblHindi => "Hindi";
+  String get lblTigrigna => "Tigrigna";
 
   @override
   String get lblJan => "Jan";

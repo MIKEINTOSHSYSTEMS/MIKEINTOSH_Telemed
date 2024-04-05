@@ -1,6 +1,6 @@
 import 'package:momona_healthcare/locale/base_language_key.dart';
 
-class LanguageHi extends BaseLanguage {
+class LanguageTg extends BaseLanguage {
   @override
   String get appName => 'ኣገልግሎት ጥዕና ሞሞና';
 

@@ -5,7 +5,7 @@ import 'package:nb_utils/nb_utils.dart';
 
 import '../model/upcoming_appointment_model.dart';
 
-const DEMO_URL = 'https://momonahealthcare.com/';
+const DEMO_URL = ''; //const DEMO_URL = 'https://momonahealthcare.com/';
 const RAZOR_URL = 'https://api.razorpay.com/v1';
 
 const DEFAULT_SERVICE_IMAGE_URL =
@@ -33,18 +33,23 @@ List<LanguageDataModel> languageList() {
     LanguageDataModel(id: 1, name: locale.lblAmharic, languageCode: 'am', fullLanguageCode: 'am-ET', flag: flagsIcEthiopia),
     LanguageDataModel(id: 2, name: locale.lblArabic, languageCode: 'ar', fullLanguageCode: 'ar-AR', flag: flagsIcAr),
     LanguageDataModel(id: 3, name: locale.lblFrench, languageCode: 'fr', fullLanguageCode: 'fr-FR', flag: flagsIcFrench),
-    LanguageDataModel(id: 4, name: locale.lblHindi, languageCode: 'hi', fullLanguageCode: 'hi-IN', flag: flagsIcIndia),
+    LanguageDataModel(id: 4, name: locale.lblTigrigna, languageCode: 'tg', fullLanguageCode: 'tg-ET', flag: flagsIcEthiopia),
   ];
 }
 
 // local
-const receptionistEmail = "michaelktd@gmail.com";
-const doctorEmail = "michaelktd@gmail.com";
+const receptionistEmail = "";
+const doctorEmail = "";
+const patientEmail = "";
+/*
+const receptionistEmail = "reception@gmail.com";
+const doctorEmail = "momonahealthcareplc@gmail.com";
 const patientEmail = "michaelktd@gmail.com";
+*/
 
 //Demo Password
-const loginPassword = "0123456";
-
+const loginPassword = "";
+//const loginPassword = "01234567";
 /* Theme Mode Type */
 const THEME_MODE_LIGHT = 0;
 const THEME_MODE_DARK = 1;

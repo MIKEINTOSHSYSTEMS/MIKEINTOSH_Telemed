@@ -12,7 +12,7 @@ const BASE_URL = '$DOMAIN_URL/wp-json/';
 
 const IQONIC_PACKAGE_NAME = "com.momona.healthcare"; // Do not change this Package Name.
 const DEFAULT_LANGUAGE = 'en';
-var COPY_RIGHT_TEXT = '© ${DateTime.now().year}. Made with ♡ by MIKEINTOSH';
+var COPY_RIGHT_TEXT = '© ${DateTime.now().year}. Momona ♡ Healthcare'; //MIKEINTOSH CopyRight
 
 const TERMS_AND_CONDITION_URL = 'https://momonahealthcare.com/terms-and-conditions';
 const PRIVACY_POLICY_URL = 'https://momonahealthcare.com/privacy';
@@ -31,8 +31,8 @@ const STRIPE_TEST_SECRET_KEY = '';
 const STRIPE_TEST_PUBLIC_KEY = '';
 const STRIPE_URL = 'https://api.stripe.com/v1/payment_intents';
 
-const CONSUMER_KEY = '';
-const CONSUMER_SECRET = '';
+const CONSUMER_KEY = 'ck_241de8d3b1b86a99576d20d49ae922e1d5e81d67';
+const CONSUMER_SECRET = 'cs_1dce5eee449e87985e4475a3dc7bf7b9abf5e3ad';
 
 
 

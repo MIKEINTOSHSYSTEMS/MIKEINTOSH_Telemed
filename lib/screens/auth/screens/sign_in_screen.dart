@@ -46,7 +46,7 @@ class _SignInScreenState extends State<SignInScreen> {
   bool isRemember = false;
   bool isFirstTime = true;
 
-  List<DemoLoginModel> demoLoginData = demoLoginList();
+ // List<DemoLoginModel> demoLoginData = demoLoginList();
 
   int? selectedIndex;
 
@@ -161,7 +161,7 @@ class _SignInScreenState extends State<SignInScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
   }
-
+/*
   Widget buildIconicWidget() {
     return SnapHelperWidget<bool>(
       future: isIqonicProduct,
@@ -286,7 +286,7 @@ class _SignInScreenState extends State<SignInScreen> {
       },
     );
   }
-
+*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -389,7 +389,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       SignUpScreen().launch(context, pageRouteAnimation: pageAnimation, duration: pageAnimationDuration);
                     },
                   ),
-                  buildIconicWidget(),
+                  //buildIconicWidget(),
                 ],
               ),
             ),

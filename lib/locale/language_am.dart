@@ -11,1125 +11,1151 @@ class LanguageAm extends BaseLanguage {
   String get lblShippingCost => "ማጓጓዣ";
 
   @override
-  String get lblNoPaymentMethods => "Keine Zahlungsmethoden";
+  String get lblNoPaymentMethods => "ምንም የመክፈያ ምርጫዎች አልተገኙም";
 
   @override
-  String get lblAddOrderNotes => "Bestellnotizen hinzufügen";
+  String get lblAddOrderNotes => "የማዘዣ ማስታወሻዎችን ያክሉ";
 
   @override
-  String get lblNotesAboutOrder => "Anmerkungen zur Bestellung";
+  String get lblNotesAboutOrder => "ስለ ትእዛዞቹ ማስታወሻዎች";
 
   @override
-  String get lblOptional => "Optional";
+  String get lblOptional => "አማራጭ";
 
   @override
-  String get lblCouponRemoved => "Gutschein entfernt";
+  String get lblCouponRemoved => "ኩፖን ተወግዷል";
 
   @override
-  String get lblBuyThisOnWordpressStore => "Kaufen Sie dies im WordPress Swag Store";
+  String get lblBuyThisOnWordpressStore => "ይህንን በመደብር ውስጥ ይግዙ";
 
   @override
-  String get lblChooseFromCollection => "Wählen Sie aus der Sammlung";
+  String get lblChooseFromCollection => "ከስብስቡ ውስጥ ይምረጡ";
 
   @override
-  String get lblViewCoupons => "Gutscheine anzeigen";
+  String get lblViewCoupons => "ኩፖኖችን ይመልከቱ";
 
-  String get lblExperiencePractitioner => "Erfahrener Praktiker seitdem";
+  String get lblExperiencePractitioner => "ጀምሮ ልምድ ያለው ባለሙያ";
 
   @override
-  String get lblShopFromWordpress => "WordPress Swag Store";
+  String get lblShopFromWordpress => "መደብር";
 
   @override
-  String get lblShop => "Geschäft";
+  String get lblShop => "መደብር";
 
   @override
-  String get lblAddressSubTitle => "Lieferort";
+  String get lblAddressSubTitle => "የማድረስ አድራሻ";
+
   @override
-  String get lblOrders => "Aufträge";
+  String get lblOrders => "ትዕዛዞች";
 
   @override
-  String get lblOrdersSubtitle => "Untertitel bestellen";
+  String get lblOrdersSubtitle => "የግዢ አጠቃላይ እይታ";
 
   @override
-  String get lblCoupons => "Gutscheine";
+  String get lblCoupons => "ኩፖኖች";
 
   @override
-  String get lblCouponsSubtitle => "Ihre exklusiven Rabatte";
+  String get lblCouponsSubtitle => "የእርስዎ ልዩ ቅናሾች";
 
   @override
-  String get lblAny => "Beliebig";
+  String get lblAny => "ማንኛውም";
 
   @override
-  String get lblProcessing => "wird bearbeitet";
+  String get lblProcessing => "በማቀነባበር ላይ";
 
   @override
-  String get lblOnHold => "In der Warteschleife";
+  String get lblOnHold => "በመጠባበቂያ መስመር ውስጥ";
 
   @override
-  String get lblRefunded => "Erstattet";
+  String get lblRefunded => "ተተክቷል";
 
   @override
-  String get lblFailed => "Fehlgeschlagen";
+  String get lblFailed => "አልተሳካም";
+
   @override
-  String get lblTrash => "Müll";
+  String get lblTrash => "መጣያ";
+
   @override
-  String get lblPermissionDenied => "Zugriff verweigert";
+  String get lblPermissionDenied => "አይፈቀድም";
 
   @override
-  String get lblSetAddress => "Adresse festlegen";
+  String get lblSetAddress => "አድራሻ ያዘጋጁ";
 
   @override
-  String get lblPickAddress => "Adresse auswählen";
+  String get lblPickAddress => "አድራሻ ይምረጡ";
 
   @override
-  String get lblSwipeRightNote => "HINWEIS: Swipe rechts zum Löschen";
+  String get lblSwipeRightNote => "ማስታወሻ፡ ለመሰረዝ ወደ ቀኝ ያንሸራትቱ";
 
   @override
-  String get lblCompany => "Unternehmen";
+  String get lblCompany => "ድርጅት ወይም ኩባንያ";
 
   @override
-  String get lblSale => "Verkauf";
+  String get lblSale => "ሽያጭ";
 
   @override
-  String get lblEnterValidCouponCode => "Geben Sie einen gültigen Gutscheincode ein";
+  String get lblEnterValidCouponCode => "የሚሰራ የኩፖን ኮድ ያስገቡ";
 
   @override
-  String get lblNoProductsFound => "Keine Produkte gefunden";
+  String get lblNoProductsFound => "ምንም አገልግሎቶች አልተገኙም";
 
   @override
-  String get lblCantFindProductYouSearchedFor => "Entschuldigung ! Ich habe kein Produkt gefunden, das Sie gesucht haben";
+  String get lblCantFindProductYouSearchedFor => "ይቅርታ! የሚፈልጉትን አላገኘሁም";
 
   @override
-  String get lblAverageRating => "Durchschnittliche Bewertung";
+  String get lblAverageRating => "አማካይ ደረጃ";
+
   @override
-  String get lblPopularity => "Popularität";
+  String get lblPopularity => "ተወዳጅነት";
 
   @override
-  String get lblPrice => "Preis";
+  String get lblPrice => "ዋጋ";
 
   @override
-  String get lblReasonForCancellation => "Grund der Stornierung";
+  String get lblReasonForCancellation => "የተሰረዘበት ምክንያት";
 
   @override
-  String get lblCancelOrder => "Bestellung stornieren";
+  String get lblCancelOrder => "ትእዛዝ ሰርዝ";
 
   @override
-  String get lblCouponDiscount => "Gutscheinrabatt";
+  String get lblCouponDiscount => "የኩፖን ቅናሽ";
 
   @override
-  String get lblReviewHint => "Sagen Sie uns Ihre Gedanken";
+  String get lblReviewHint => "ሃሳብዎን ይንገሩን";
 
   @override
-  String get lblViewProducts => "Produkte anzeigen";
+  String get lblViewProducts => "አገልግሎቶቻችንን ይመልከቱ";
 
   @override
-  String get lblPleaseSelectProduct => "Bitte wählen Sie Produkt aus der Liste für die Sammlung aus";
+  String get lblPleaseSelectProduct => "እባክዎ አገልግሎት ይምረጡ";
 
   @override
-  String get lblPleaseAddQuantity => "Bitte fügen Sie die Menge hinzu";
+  String get lblPleaseAddQuantity => "እባክዎን መጠን ይጨምሩ";
 
   @override
-  String get lblPleaseSelectCountry => "Bitte wählen Sie zuerst Land aus";
+  String get lblPleaseSelectCountry => "እባክዎን አገር ይምረጡ";
 
   @override
-  String get lblCopiedToClipboard => "In die Zwischenablage kopiert";
+  String get lblCopiedToClipboard => "ወደ ቅንጥብ ሰሌዳ ተቀድቷል";
 
   @override
-  String get lblCartUpdated => "Cart erfolgreich aktualisiert";
+  String get lblCartUpdated => "ጋሪ ዘምኗል";
 
   @override
-  String get lblOrderDeleted => "Erfolgreich gelöscht";
+  String get lblOrderDeleted => "ትዕዛዝ በተሳካ ሁኔታ ተሰርዟል";
 
   @override
-  String get lblEnterValidBllling => "Bitte geben Sie eine gültige Abrechnung ein";
+  String get lblEnterValidBllling => "እባክዎ ትክክለኛ የሂሳብ አከፋፈል ያስገቡ";
 
   @override
-  String get lblYourCarIsEmpty => "Ihr Warenkorb ist leer";
+  String get lblYourCarIsEmpty => "የእርስዎ ጋሪ ባዶ ነው";
 
   @override
-  String get ago => 'vor';
+  String get ago => 'በፊት';
 
   @override
-  String get day => 'Tag';
+  String get day => 'ቀን';
 
   @override
-  String get hour => 'Stunde';
+  String get hour => 'ሰአት';
 
   @override
-  String get minute => 'Minute';
+  String get minute => 'ደቂቃ';
 
   @override
-  String get second => 'zweite';
+  String get second => 'ሰከንድ';
 
   @override
-  String get justNow => 'gerade jetzt';
+  String get justNow => 'ልክ አሁን';
 
   @override
-  String get currentLocation => "Verwenden Sie den aktuellen Standort";
+  String get currentLocation => "የአሁኑን ቦታ ይጠቀሙ";
+
   @override
-  String get chooseFromMap => "Wählen Sie aus der Karte";
+  String get chooseFromMap => "ከካርታው ውስጥ ይምረጡ";
+
   @override
-  String get orderCancelledSuccessfully => 'Bestellung erfolgreich storniert';
+  String get orderCancelledSuccessfully => 'ትዕዛዝ በተሳካ ሁኔታ ተሰርዟል';
 
   @override
-  String get cancelOrderConfirmation => 'Sind Sie sicher, dass Sie diese Bestellung kündigen möchten?';
+  String get cancelOrderConfirmation => 'እርግጠኛ ነዎት ይህን ትዕዛዝ መሰረዝ ይፈልጋሉ?';
 
   @override
-  String get orderStatus => 'Bestellstatus';
+  String get orderStatus => 'የትዕዛዝ ሁኔታ';
 
   @override
-  String get orderNumber => 'Bestellnummer';
+  String get orderNumber => 'የትእዛዝ ቁጥር';
 
   @override
-  String get paymentMethod => 'Zahlungsmethode';
+  String get paymentMethod => 'የመክፈያ ዘዴ';
 
   @override
-  String get date => 'Datum';
+  String get date => 'ቀን';
 
   @override
-  String get customerReview => 'Kundenbewertung';
+  String get customerReview => 'የደንበኛ ግምገማ';
 
   @override
-  String get chooseAnOption => 'Wähle eine Option';
+  String get chooseAnOption => 'አንድ አማራጭ ይምረጡ';
 
   @override
-  String get sku => 'SKU';
+  String get sku => 'ኤስኬዩ';
 
   @override
-  String get category => 'Kategorie';
+  String get category => 'ምድብ';
 
   @override
-  String get reviewAddedSuccessfully => 'Überprüfung erfolgreich hinzugefügt';
+  String get reviewAddedSuccessfully => 'ማረጋገጫ በተሳካ ሁኔታ ታክሏል';
 
   @override
-  String get pleaseAddReview => 'Bitte fügen Sie die Bewertung hinzu';
+  String get pleaseAddReview => 'እባክዎ ግምገማውን ያክሉ';
 
   @override
-  String get pleaseAddRating => 'Bitte bewerten Sie';
+  String get pleaseAddRating => 'እባክዎን ደረጃ ይስጡ';
 
   @override
-  String get reviews => 'Bewertungen';
+  String get reviews => 'ግምገማዎች';
 
   @override
-  String get editReview => 'Bewertung bearbeiten';
+  String get editReview => 'ግምገማን ማስተካከል';
 
   @override
-  String get addAReview => 'Bewertung hinzufügen';
+  String get addAReview => 'ግምገማ ያክሉ';
 
   @override
-  String get rating => 'Deine Bewertung';
+  String get rating => 'የሰጡት ደረጃ';
 
   @override
-  String get writeReview => 'Deine Bewertung';
+  String get writeReview => 'ግምገማ ጻፍ';
 
   @override
-  String get reviewUpdatedSuccessfully => 'Überprüfung erfolgreich aktualisiert';
+  String get reviewUpdatedSuccessfully => 'ግምገማ በተሳካ ሁኔታ ዘምኗል';
 
   @override
-  String get reviewDeletedSuccessfully => 'Überprüfung erfolgreich gelöscht';
+  String get reviewDeletedSuccessfully => 'ማረጋገጫው በተሳካ ሁኔታ ተሰርዟል';
 
   @override
-  String get deleteReviewConfirmation => 'Sind Sie sicher, dass Sie diese Bewertung löschen möchten?';
+  String get deleteReviewConfirmation => 'እርግጠኛ ነዎት ይህን ግምገማ መሰረዝ ይፈልጋሉ?';
 
   @override
-  String get yourCartIsCurrentlyEmpty => 'Ihr Warenkorb ist derzeit leer.';
+  String get yourCartIsCurrentlyEmpty => 'የእርስዎ ጋሪ በአሁኑ ጊዜ ባዶ ነው';
 
   @override
-  String get returnToShop => 'Kehre zum Laden zurück';
+  String get returnToShop => 'ወደ ሱቁ ተመለስ';
 
+//remaining translations
   @override
-  String get cartUpdated => 'Wagenartikel erfolgreich aktualisiert';
+  String get cartUpdated => 'የጋሪ ንጥል በተሳካ ሁኔታ ተዘምናል.';
 
   @override
-  String get itemRemovedSuccessfully => 'Artikel erfolgreich entfernt';
+  String get itemRemovedSuccessfully => 'ንጥል በተሳካ ሁኔታ ተሰረዘ.';
 
   @override
-  String get removeFromCartConfirmation => 'Sind Sie sicher, dass Sie diesen Artikel aus dem Warenkorb entfernen möchten?';
+  String get removeFromCartConfirmation =>
+      'ከጋሪ ውስጥ ይህን ንጥል ማስወገድ እንደሚፈልጉ እርግጠኛ ነዎት?';
 
   @override
-  String get appliedCoupons => 'Angewandte Gutscheine';
+  String get appliedCoupons => 'ተተገበሩ የቅናሽ ማለያ ገደቦች.';
 
   @override
-  String get successfullyAddedToCart => 'Erfolgreich zum Warenkorb hinzugefügt';
+  String get successfullyAddedToCart => 'ወደ ጋሪ በተሳካ ሁኔታ ተጨምሯል.';
 
   @override
-  String get addToCart => 'In den Warenkorb legen';
+  String get addToCart => 'ወደ ጋሪ መክተብ.';
 
   @override
-  String get clickToRefresh => "Klicken Sie hier, um zu aktualisieren";
+  String get clickToRefresh => "ለማዘመን ጠቅ ያድርጉ.";
 
   @override
-  String get state => 'Bundesland';
+  String get state => 'ክልል';
 
   @override
-  String get pleaseEnterDescription => 'Bitte geben Sie Beschreibung ein';
+  String get pleaseEnterDescription => 'መግለጫ ያስገቡ.';
 
   @override
-  String get replyTo => 'Antwort an';
+  String get replyTo => 'መልስ ለ';
 
   @override
-  String get enterValidCouponCode => 'Geben Sie einen gültigen Gutscheincode ein';
+  String get enterValidCouponCode => 'የተገቢ ቅናሽ ማለያ ኮድ ያስገቡ.';
 
   @override
-  String get code => 'Code';
+  String get code => 'ኮድ';
 
   @override
-  String get shippingAddress => 'Lieferanschrift';
+  String get shippingAddress => 'የመላክት አድራሻ';
 
   @override
-  String get billingAndShippingAddresses => 'Abrechnungs- und Versandadressen sind gleich';
+  String get billingAndShippingAddresses => 'የክፍያ እና የመላክት አድራሻዎች አንድ ናቸው';
 
   @override
-  String get copiedToClipboard => 'In die Zwischenablage kopiert';
+  String get copiedToClipboard => 'ወደ ወደ ቅንጥብ ሰሌዳ ተቀድቷል';
 
   @override
-  String get expiresOn => 'Läuft aus am';
+  String get expiresOn => 'ያበቃበት ቀን';
 
   @override
-  String get off => 'AUS';
+  String get off => 'አይክፈልም';
 
   @override
-  String get myWishlist => 'Meine Wunschliste';
+  String get myWishlist => 'የእኔ ምኞት ዝርዝር';
 
   @override
-  String get sortBy => 'Sortieren nach';
+  String get sortBy => 'በመሠረት አስተካክል';
 
   @override
-  String get selectCategory => 'Kategorie wählen';
+  String get selectCategory => 'መደብ ይምረጡ';
 
   @override
-  String get shop => 'Geschäft';
+  String get shop => 'መደብር';
 
   @override
-  String get outOfStock => 'Ausverkauft';
+  String get outOfStock => 'አልቋል';
 
   @override
-  String get goToCart => 'Zum Einkaufskorb gehen';
+  String get goToCart => 'ወደ ጋሪ ይሂዱ';
 
   @override
-  String get relatedProducts => 'Verwandte Produkte';
+  String get relatedProducts => 'ተዛማጅ ምርቶች';
 
   @override
-  String get additionalInformation => 'zusätzliche Information';
+  String get additionalInformation => 'ተጨማሪ መረጃ';
 
   @override
-  String get discount => 'Rabatt';
+  String get discount => 'ቅናሽ';
 
   @override
-  String get couponCode => 'Gutscheincode';
+  String get couponCode => 'የቅናሽ ማለያ ኮድ';
 
   @override
-  String get applyCoupon => 'Gutschein anwenden';
+  String get applyCoupon => 'ቅናሽ ማለያ ይጠቀሙ';
 
   @override
-  String get cartTotals => 'Wagensummen';
+  String get cartTotals => 'የጋሪ ድምሮች';
 
   @override
-  String get proceedToCheckout => 'Zur Kasse';
+  String get proceedToCheckout => 'ወደ ክፍያ ይቀጥሉ';
 
   @override
-  String get checkout => 'Kasse';
+  String get checkout => 'ክፍያ';
 
   @override
-  String get products => 'Produkte';
+  String get products => 'ምርቶች';
 
   @override
-  String get qty => 'Qty';
+  String get qty => 'ብዛት';
 
   @override
-  String get billingAddress => 'Rechnungsadresse';
+  String get billingAddress => 'የክፍያ አድራሻ';
 
   @override
-  String get selectPaymentMethod => 'Wählen Sie die Zahlungsmethode';
+  String get selectPaymentMethod => 'የክፍያ ዘዴ ይምረጡ';
 
   @override
-  String get paymentGatewaysNotFound => 'Zahlungsgateways nicht gefunden';
+  String get paymentGatewaysNotFound => 'የክፍያ መተላለፊያዎች አልተገኙም';
 
   @override
-  String get placeOrder => 'Bestellung aufgeben';
+  String get placeOrder => 'ትዕዛዝ ያስገቡ';
 
   @override
   String get placeOrderText =>
-      'Ihre personenbezogenen Daten werden verwendet, um Ihre Bestellung zu verarbeiten, Ihre Erfahrungen auf dieser Website zu unterstützen und für andere in unseren Datenschutzrichtlinien beschriebene Zwecke.';
+      'የግል መረጃዎ ትዕዛዝዎን ለማስፈጸም, በዚህ ድርጣቢት ላይ ያለዎት ተሞክሮ ለመደገፍ እና በ የግላዊነት መመሪያችን ውስጥ ተገለツヤል ሌላ ዓላማ.';
 
   @override
-  String get orderDetails => 'Bestelldetails';
+  String get orderDetails => 'የትዕዛዝ ዝርዝር';
 
   @override
-  String get lblOrderCancelledSuccessfully => 'Bestellung erfolgreich storniert';
+  String get lblOrderCancelledSuccessfully => 'ትዕዛዝ በተሳካ ሁኔታ ተሰረዘ';
 
   @override
-  String get lblCancelOrderMessageSix => "Bestellen versehentlich platziert";
-  @override
-  String get lblCancelOrderMessageFive => "Schlechte Bewertung von Freunden/Verwandten nach Bestellung des Produkts.";
+  String get lblCancelOrderMessageSix => "በስህተት ትዕዛዝ ያስገቡ";
 
   @override
-  String get lblCancelOrderMessageFour => "Der Preis des Produkts ist aufgrund von Umsatz/Rabatten gefallen, und der Kunde möchte es zu einem geringeren Preis erhalten";
+  String get lblCancelOrderMessageFive =>
+      "ከምርቱ ትዕዛዝ ከተሰጠ በኋላ ከጓደኞች/ዘመዶች መጥፎ ግምገማ";
 
   @override
-  String get lblCancelOrderMessageThree => "Billigere Alternative zum geringeren Preis erhältlich";
+  String get lblCancelOrderMessageFour =>
+      "የምርት ዋጋ በሽያጭ/ቅናሽ ምክንያት ወርዷል እና ደንበኛ በዝቅተኛ ዋጋ ማግኘት ይፈልጋል";
 
   @override
-  String get lblCancelOrderMessageTwo => "Produkt ist nicht mehr erforderlich";
+  String get lblCancelOrderMessageThree => "በዝቅተኛ ዋጋ አነስተኛ አማራጭ ይገኛል";
 
   @override
-  String get lblBill => "Rechnung";
+  String get lblCancelOrderMessageTwo => "ምርት አይበገኝም";
 
   @override
-  String get lblStripeTestCredential => "Ungültige Menge";
+  String get lblBill => "መክፈያ";
 
   @override
-  String get lblCancelOrderMessageOne => "Das Produkt wird an eine falsche Adresse geliefert";
+  String get lblStripeTestCredential => "የማይሰራ መጠን";
 
   @override
-  String get lblTodayIsHoliday => "Heute ist Ihr Feiertag";
+  String get lblCancelOrderMessageOne => "ምርቱ ወደ ስህተኛ አድራሻ ይላክ ይሆናል";
 
   @override
-  String get lblTotalTax => "Gesamtsteuer";
+  String get lblTodayIsHoliday => "ዛሬ በዓል ቀን ነው";
 
   @override
-  String get lblStart => "Start";
+  String get lblTotalTax => "የድምር ታክስ";
 
   @override
-  String get lblJoin => "Verbinden";
+  String get lblStart => "መጀመር";
 
   @override
-  String get lblTotalDoctors => "Insgesamt Ärzte";
+  String get lblJoin => "መቀላቀል";
 
   @override
-  String get lblTax => "Steuer";
+  String get lblTotalDoctors =>
+      "የጠቅላላ طبيብ"; // "طبيب" (tabīb) used for "doctor"
 
   @override
-  String get lblTaxRate => "Steuersatz";
+  String get lblTax => "ታክስ";
 
   @override
-  String get lblSubTotal => "Zwischensumme";
+  String get lblTaxRate => "የታክስ መጠን";
 
   @override
-  String get lblThisServiceAlreadyExistInClinic => "Dieser Service ist in der ausgewählten Klinik bereits vorhanden";
+  String get lblSubTotal => "የድምር መጠን";
 
   @override
-  String get lblPleaseSelectPayment => "Bitte wählen Sie Zahlungsmethode aus";
+  String get lblThisServiceAlreadyExistInClinic =>
+      "ይህ አገልግሎት በተመረጠው አገልግሎት ማእከል ውስጥ አለ";
 
   @override
-  String get lblChargesIsNegative => "Die Gebühren müssen größer oder gleich 0 sein";
+  String get lblPleaseSelectPayment => "ከእቅ የመክፈያ ዘዴ ይምረጡ";
 
   @override
-  String get lblServiceCategoryIsRequired => "Servicekategorie ist erforderlich";
+  String get lblChargesIsNegative => "ክፍያው ከ 0 እኩል ወይም ከፍ ያለመሆን አለበት";
 
   @override
-  String get lblServiceNameIsRequired => "Servicename ist erforderlich";
+  String get lblServiceCategoryIsRequired => "የአገልግሎት መደብ አስፈላጊ ነው";
 
   @override
-  String get lblDurationIsRequired => "Dauer ist erforderlich";
+  String get lblServiceNameIsRequired => "የአገልግሎት ስም አስፈላጊ ነው";
 
   @override
-  String get lblChargesIsRequired => "Gebühren sind erforderlich";
+  String get lblDurationIsRequired => "مدة አስፈላጊ ነው";
 
   @override
-  String get lblNoLatestAppointmentFound => "Kein jüngster Termin gefunden";
-  @override
-  String get lblNoPendingAppointmentFound => "Kein anstehender Termin gefunden";
-  @override
-  String get lblNoCompletedAppointmentFound => "Kein abgeschlossener Termin gefunden";
-  @override
-  String get lblNoCancelledAppointmentFound => "Kein stornierter Termin gefunden";
+  String get lblChargesIsRequired => "ክፍያ አስፈላጊ ነው";
 
   @override
-  String get clinicIdRequired => "Klinik ist erforderlich";
-  @override
-  String get roleIsRequired => "Rolle ist erforderlich";
+  String get lblNoLatestAppointmentFound => "አዲስ መ 약속 አልተገኘም";
 
   @override
-  String get confirmPasswordIsRequired => "Bestätigen Sie das Passwort erforderlich";
+  String get lblNoPendingAppointmentFound => "በመጠባበቅ ላይ ያለ መ 약속 አልተገኘም";
 
   @override
-  String get passwordIsRequired => "Passwort wird benötigt";
+  String get lblNoCompletedAppointmentFound => "የተፈጸመ መ 약속 አልተገኛም";
 
   @override
-  String get contactNumberIsRequired => "Kontaktnummer ist erforderlich";
+  String get lblNoCancelledAppointmentFound => "የተሰረዘ መ 약속 አልተገኛም";
 
   @override
-  String get lblSwipeLeftToEdit => "Links wischen, um Details zu bearbeiten";
-  @override
-  String get lblNoEncounterFoundAtYourClinic => "Keine Begegnung in Ihrer Klinik gefunden";
+  String get clinicIdRequired => "አገልግሎት ማእከል አስፈላጊ ነው";
 
   @override
-  String get lblAvailableAtClinics => 'Erhältlich in Kliniken';
+  String get roleIsRequired => "ሚና አስፈላጊ ነው";
 
   @override
-  String get lblClinicsSelected => "Kliniken ausgewählt";
+  String get confirmPasswordIsRequired => "የይለፍ ቃል ማረጋገጫ አስፈላጊ ነው";
 
   @override
-  String get lblClinicsAvailable => "Kliniken verfügbar";
+  String get passwordIsRequired => "የይለፍ ቃል አስፈላጊ ነው";
 
   @override
-  String get lblSelectRole => "Rolle auswählen";
+  String get contactNumberIsRequired => "የ தொடርብ ቁጥር አስፈላጊ ነው";
 
   @override
-  String get lblPwdDoesNotMatch => "Passwort stimmt nicht überein";
+  String get lblSwipeLeftToEdit => "ለማስተካከል ግራ በኩል አንሸራትቱ";
 
   @override
-  String get lblSelectPaymentMethod => "Wählen Sie die Zahlungsmethode";
+  String get lblNoEncounterFoundAtYourClinic => "በአገልግሎት ማእከልዎ ውስጥ ምንም አጋጣሚ አልተገኛም";
 
   @override
-  String get lblAmount => "Menge";
+  String get lblAvailableAtClinics => "በአገልግሎት ማእከል ይገኛል";
 
   @override
-  String get lblPaymentId => "Zahlungs -ID";
+  String get lblClinicsSelected => "የተመረጡ አገልግሎት ማእከል";
 
   @override
-  String get lblPaymentMethod => "Bezahlverfahren";
+  String get lblClinicsAvailable => "የሚገኙ የአገልግሎት ማእከላት";
+
+  @override
+  String get lblSelectRole => "ሚና ይምረጡ";
+
+  @override
+  String get lblPwdDoesNotMatch => "የይለፍ ቃል አይጣጣምም";
+
+  @override
+  String get lblSelectPaymentMethod => "የመክፈያ ዘዴ ይምረጡ";
+
+  @override
+  String get lblAmount => "መጠን";
+
+  @override
+  String get lblPaymentId => "የክፍያ መታወቂያ";
+
+  @override
+  String get lblPaymentMethod => "የክፍያ ዘዴ";
 
   @override
   String get lblVPA => "VPA";
 
   @override
-  String get lblCardId => "Ausweiskarte";
+  String get lblCardId => "የአ شناسታ ካርድ";
 
   @override
-  String get lblTransactionId => "Transaktions-ID";
+  String get lblTransactionId => "የልትካ መታወቂያ";
 
   @override
-  String get lblReportUpdatedSuccessfully => "Bericht erfolgreich aktualisiert";
+  String get lblReportUpdatedSuccessfully => "ሪፖርት በተሳካ ሁኔታ ተዘምናል";
 
   @override
-  String get lblNoPrescriptionFound => "Keine Rezepte gefunden";
+  String get lblNoPrescriptionFound => "ምንም የመድብ  Rezepte አልተገኙም";
 
-  @override
-  String get lblNoNotesFound => "Keine Notizen gefunden";
 
   @override
-  String get lblNoObservationsFound => "Keine Beobachtung gefunden";
+  String get lblNoNotesFound => "ምንም ማስታወሻ አልተገኘም";
 
   @override
-  String get lblNoProblemFound => "Keine Probleme gefunden";
+  String get lblNoObservationsFound => "ምንም አवलोकም አልተገኘም";
 
   @override
-  String get lblBookAppointment => "Einen Termin verabreden";
+  String get lblNoProblemFound => "ምንም ችግር አልተገኘም";
 
   @override
-  String get lblDoYouWantToUpdateEncounter => "Möchten Sie die Begegnung aktualisieren?";
+  String get lblBookAppointment => "ቀጠሮዎን ያስይዙ";
 
   @override
-  String get lblDoYouWantToAddEncounter => "Möchten Sie Begegnung hinzufügen?";
+  String get lblDoYouWantToUpdateEncounter => "አጋጣሚውን ማዘመን ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToUpdateYourDetails => "Voulez-vous mettre à jour vos coordonnées?";
+  String get lblDoYouWantToAddEncounter => "አጋጣሚ መ προσθέστε ይፈልጋሉን?";
 
   @override
-  String get lblNoBillsFound => "Keine Rechnungen gefunden";
+  String get lblDoYouWantToUpdateYourDetails => "ዝርዝሮችዎን ማዘመን ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToDeleteProblem => "Möchten Sie Probleme löschen?";
+  String get lblNoBillsFound => "ምንም መክፈያ ደብዳቤ አልተገኘም";
 
   @override
-  String get lblDoYouWantToDeleteObservation => "Möchten Sie Beobachtung löschen?";
+  String get lblDoYouWantToDeleteProblem => "ችግሩን ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToDeleteNote => "Möchten Sie eine Notiz löschen?";
+  String get lblDoYouWantToDeleteObservation => "አवलोकመን ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToDeleteDoctor => "Möchten Sie Arzt löschen?";
+  String get lblDoYouWantToDeleteNote => "ማስታወሻ ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblLoginSuccessfullyAsAPatient => "Als Patient erfolgreich angemeldet";
+  String get lblDoYouWantToDeleteDoctor => "طبيب ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblLoginSuccessfullyAsAReceptionist => "Erfolgreich als Rezeptionistin angemeldet";
+  String get lblLoginSuccessfullyAsAPatient => "በታካሚ መልክ በተሳካ ሁኔታ ገቡ";
 
   @override
-  String get lblLoginSuccessfullyAsADoctor => "Erfolgreich als Arzt angemeldet";
+  String get lblLoginSuccessfullyAsAReceptionist =>
+      "በቀበላ አገልጋይ መልክ በተሳካ ሁኔታ ገቡ";
 
   @override
-  String get lblSelectEncounterDate => "Wählen Sie das Begegnungstermin";
+  String get lblLoginSuccessfullyAsADoctor => "በطبيب መልክ በተሳካ ሁኔታ ገቡ";
 
   @override
-  String get lblSelectReportDate => "Wählen Sie Berichtsdatum";
+  String get lblSelectEncounterDate => "አጋጣሚ ቀን ይምረጡ";
 
   @override
-  String get lblSelectBirthDate => "Wählen Sie Birthdate";
+  String get lblSelectReportDate => "ሪፖርት ቀን ይምረጡ";
 
   @override
-  String get lblDoYouWantToLogout => "Möchten Sie sich abmelden?";
+  String get lblSelectBirthDate => "የልደት ቀን ይምረጡ";
 
   @override
-  String get lblDoYouWantToDeleteAccountPermanently => "Möchten Sie das Konto dauerhaft löschen?";
+  String get lblDoYouWantToLogout => "መውጣት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToDeleteSession => "Möchten Sie Sitzung löschen?";
+  String get lblDoYouWantToDeleteAccountPermanently =>
+      "አካውንትዎን  영구적으로 ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToAddSession => "Möchten Sie eine Sitzung hinzufügen?";
+  String get lblDoYouWantToDeleteSession => "ክፍለ ጊዜ ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToUpdateSession => "Möchten Sie die Sitzung aktualisieren?";
+  String get lblDoYouWantToAddSession => "ክፍለ ጊዜ መ προσθέστε ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToChangeThePassword => "Möchten Sie das Passwort ändern?";
+  String get lblDoYouWantToUpdateSession => "ክፍለ ጊዜውን ማዘመን ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToDeleteReview => "Wilt u uw recensie verwijderen?";
+  String get lblDoYouWantToChangeThePassword => "የይለፍ ቃል መቀየር ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToDeleteHolidayOf => "Möchten Sie Urlaub löschen?";
+  String get lblDoYouWantToDeleteReview => "ግምገmanızን ማጥፋት ይፈልጋሉ?";
 
   @override
-  String get lblDoYouWantToDeleteService => "Möchten Sie Service löschen?";
+  String get lblDoYouWantToDeleteHolidayOf => "በዓል ቀን ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToUpdateService => "Möchten Sie den Dienst aktualisieren?";
+  String get lblDoYouWantToDeleteService => "አገልግሎት ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToAddNewService => "Möchten Sie einen neuen Service hinzufügen?";
+  String get lblDoYouWantToUpdateService => "አገልግሎቱን ማዘመን ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToUpdateAppointmentOf => "Möchten Sie den Termin aktualisieren?";
+  String get lblDoYouWantToAddNewService => "አዲስ አገልግሎት መ προσθέστε ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToAddNewAppointmentFor => "Möchten Sie einen neuen Termin hinzufügen?";
+  String get lblDoYouWantToUpdateAppointmentOf => "መ 약속 ማዘመን ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToDeleteAppointmentOf => "Möchten Sie einen Termin löschen?";
+  String get lblDoYouWantToAddNewAppointmentFor => "አዲስ ቀጠሮ መያዝ ይፈልጋሉ?";
 
   @override
-  String get lblDoYouWantToDeleteReport => "Möchten Sie den Bericht löschen?";
+  String get lblDoYouWantToDeleteAppointmentOf => "መ 약속 ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToUpdateReport => "Möchten Sie den Bericht aktualisieren?";
+  String get lblDoYouWantToDeleteReport => "ሪፖርት ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToAddReport => "Möchten Sie einen neuen Bericht hinzufügen?";
+  String get lblDoYouWantToUpdateReport => "ሪፖርት ማዘመን ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToDeletePrescription => "Möchten Sie Rezept löschen?";
+  String get lblDoYouWantToAddReport => "አዲስ ሪፖርት መ προσθέστε ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToUpdatePrescription => "Möchten Sie das Rezept aktualisieren?";
+  String get lblDoYouWantToDeletePrescription => "መድብ  Rezepte ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToAddPrescription => "Möchten Sie ein neues Rezept hinzufügen?";
+  String get lblDoYouWantToUpdatePrescription => "መድብ  Rezepte ማዘመን ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToSwitchYourClinicTo => "Möchten Sie Ihre Klinik wechseln?";
+  String get lblDoYouWantToAddPrescription =>
+      "አዲስ መድብ  Rezepte መ προσθέστε ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToUpdatePatientDetails => "Möchten Sie die Details des Patienten aktualisieren?";
+  String get lblDoYouWantToSwitchYourClinicTo => "የአገልግሎት ማእከልዎን መቀየር ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToSaveNewPatientDetails => "Möchten Sie neue PateInt -Details einreichen?";
+  String get lblDoYouWantToUpdatePatientDetails => "የታካሚው ዝርዝሮች ማዘመን ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToUpdateDoctorDetails => "Möchten Sie die Details des Arztes aktualisieren?";
+  String get lblDoYouWantToSaveNewPatientDetails =>
+      "አዲስ የታካሚ ዝርዝሮች ማስገባት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToSaveNewDoctorDetails => "Möchten Sie neue Details eines neuen Arztes einreichen?";
+  String get lblDoYouWantToUpdateDoctorDetails => "የطبيብ ዝርዝሮች ማዘመን ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToDeleteEncounterDetailsOf => "Möchten Sie Begegnungendetails löschen?";
+  String get lblDoYouWantToSaveNewDoctorDetails =>
+      "አዲስ የطبيብ ዝርዝሮች ማስገባት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToCheckoutAppointment => "Möchten Sie einen Termin auschecken?";
+  String get lblDoYouWantToDeleteEncounterDetailsOf =>
+      "አጋጣሚ ዝርዝሮች ማጥፋት ይፈልጋሉን?";
 
   @override
+  String get lblDoYouWantToCheckoutAppointment => "መ 약속 ማውጣት ይፈልጋሉን?";
+
   @override
-  String get lblMultipleSelectionIsNotAvailableForThisService => "Für diesen Service ist keine Mehrfachauswahloption verfügbar";
+  String get lblMultipleSelectionIsNotAvailableForThisService =>
+      "ለዚህ አገልግሎት ብዙ ምርጫ አማራጭ አይገኝም";
 
   @override
-  String get lblTermsConditionSubTitle => "Wichtige Informationen erwarten: Blick hinein!";
+  String get lblTermsConditionSubTitle => "አስፈላጊ መረጃ ይጠብቃል: እይታ!";
 
   @override
-  String get lblYears => "Jahre";
+  String get lblYears => "ዓመታት";
 
   @override
-  String get lblDeleteAccountSubTitle => "Gesundheitslinie trennen: Bestätigen?";
+  String get lblDeleteAccountSubTitle => "የመገናኛ መስመር መከፋት: ማረጋገጫ?";
 
   @override
-  String get lblThemeSubTitle => "Färbe deine Erfahrung.";
+  String get lblThemeSubTitle => "ልምድዎን ቀለም ያስጌጡ";
 
   @override
-  String get lblHelpAndSupportSubTitle => "Hier für Sie jeden Schritt.";
+  String get lblHelpAndSupportSubTitle => "በእያንዳንዱ እርምጃ ላይ ለእርስዎ እዚያ አለን";
 
   @override
-  String get lblRateUsSubTitle => "Liebe es? Lass uns wissen!";
+  String get lblRateUsSubTitle => "ይወድዳሉን? አንድ ቃል ይስጡን!";
 
   @override
-  String get lblChangePasswordSubtitle => "Überarbeiten Sie Ihren Zugang. Bleib sicher!";
+  String get lblChangePasswordSubtitle => "የእርስዎ መዳረሻ ይፈተኑ. ደህንነቱን ጠብቁ!";
 
   @override
-  String get lblNoArticlesFound => "Keine Artikel gefunden";
+  String get lblNoArticlesFound => "ምንም መጣጥፎች አልተገኙም";
 
   @override
-  String get lblNoSessionAvailable => "Keine Sitzung verfügbar";
+  String get lblNoSessionAvailable => "ምንም ክፍለ ጊዜ አይገኝም";
 
   @override
-  String get lblTelemedServiceAvailable => "Telemed Service verfügbar";
+  String get lblTelemedServiceAvailable => "Telemed አገልግሎት ይገኛል";
 
   @override
-  String get lblAvailableDoctor => "Verfügbarer Arzt";
+  String get lblAvailableDoctor => "የሚገኝ طبيب";
 
   @override
-  String get lblAvailableDoctors => "Verfügbare Ärzte";
+  String get lblAvailableDoctors => "ያሉ ሐኪሞች";
 
   @override
-  String get lblWeekDaysDataNotFound => "ist nicht verfügbar";
+  String get lblWeekDaysDataNotFound => "አይገኝም";
 
   @override
-  String get lblPleaseUploadReport => "Bitte laden Sie den Bericht hoch";
+  String get lblPleaseUploadReport => "ሪፖርት አስገቡ";
 
   @override
-  String get lblIncorrectPwd => "Das von Ihnen eingegebene Passwort ist falsch";
+  String get lblIncorrectPwd => "የእርስዎ የይለፍ ቃል ትክክል አይደለም";
 
   @override
-  String get lblPleaseChoose => "Bitte wählen Sie für Status/Mehrfachauswahl/Telemed -Service";
+  String get lblPleaseChoose => "ለሁኔታ/ብዙ ምርጫ/የመስመር ላይ የጤና እንክብካቤ ምክክር አገልግሎት ይምረጡ";
 
   @override
-  String get lblPatientList => "Liste des Patienten";
+  String get lblPatientList => "የታካሚዎች ዝርዝር";
 
   @override
-  String get lblBillSwipe => "Links wischen, um die Menge zu bearbeiten oder Sevice aus der Rechnung zu löschen";
+  String get lblBillSwipe =>
+      "ግራ በኩል አንሸራትት ብዛት ለማስተካከል ወይም ክፍያ ከመክፈያ ደብዳቤ ለማስወገድ";
 
   @override
-  String get lblViewDoctorMsg => "Tippen Sie auf, um das Profil des Arztes anzuzeigen";
+  String get lblViewDoctorMsg => "ለማየት መታ ያድርጉ";
 
   @override
-  String get lblMyAppointments => "Meine Termine";
+  String get lblMyAppointments => "ቀጠሮዎቼ";
 
   @override
-  String get lblIsOnLeave => "ist in Urlaub";
+  String get lblIsOnLeave => "በእረፍት ላይ ነው";
 
   @override
-  String get lblEditHolidayRestriction => "Sie können dies jetzt nicht bearbeiten";
+  String get lblEditHolidayRestriction => "አሁን መቀየር አይችሉም";
 
   @override
-  String get lblNoAppointmentForThisDay => "An diesem Tag gibt es keinen Terminplan für einen Termin";
+  String get lblNoAppointmentForThisDay => "በዚህ ቀን ምንም ቀጠሮ የለም";
 
   @override
-  String get lblDoctorsSelected => "Ausgewählte Ärzte";
+  String get lblDoctorsSelected => "የተመረጡ የተመረጡ ሐኪሞች";
 
   @override
-  String get lblDoctorAvailable => "Arzt verfügbar";
+  String get lblDoctorAvailable => " ይገኛሉ";
 
   @override
-  String get lblPending => "Ausstehend";
+  String get lblPending => "በመጠባበቅ ላይ";
 
   @override
-  String get lblPleaseTryAgainAfterSometimes => "Bitte versuchen Sie es manchmal erneut";
+  String get lblPleaseTryAgainAfterSometimes => "አንዳንዴ ዳግመሞክሩ";
 
   @override
-  String get lblTapToSelect => "Tippen Sie auf aus, um auszuwählen";
+  String get lblTapToSelect => "ለመምረጥ መታ ያድርጉ";
 
   @override
-  String get lblDoctorTapMsg => "Tippen Sie auf die folgenden Namen, die das Servicedetail des spezifischen Arztes bearbeiten";
+  String get lblDoctorTapMsg => "የተወሰነ አገልግሎት ዝርዝር ለመቀየር ከታች ስሞች ላይ መታ ያድርጉ";
 
   @override
-  String get lblCantFindClinicYouSearchedFor => 'Kann keine Klinik finden, nach der Sie gesucht haben';
+  String get lblCantFindClinicYouSearchedFor => "የፈለጉት የአገልግሎት ማእከል አልተገኘም";
 
   @override
-  String get lblCantFindDoctorYouSearchedFor => 'Ich kann keinen Arzt finden, nach dem Sie gesucht haben';
+  String get lblCantFindDoctorYouSearchedFor => "የፈለጉት ሐኪም አልተገኘም";
 
   @override
-  String get lblCantFindPatientYouSearchedFor => 'Ich kann keinen Patienten finden, nach dem Sie gesucht haben';
+  String get lblCantFindPatientYouSearchedFor => "የፈለጉት ታካሚ አልተገኘም";
 
   @override
-  String get lblCantFindServiceYouSearchedFor => 'Ich kann keinen Service finden, nach dem Sie gesucht haben';
+  String get lblCantFindServiceYouSearchedFor => "የፈለጉት አገልግሎት አልተገኘም";
 
   @override
-  String get lblNoActiveClinicAvailable => 'Alle Kliniken sind geschlossen';
+  String get lblNoActiveClinicAvailable => "ምንም ንቁ የአገልግሎት ማእከል የለም";
 
   @override
-  String get lblRecheckPassword => "Bitte überprüfen Sie das neue Passwort und bestätigen Sie";
+  String get lblRecheckPassword => "አዲስ የይለፍ ቃል ዳግመው ያጣራና ያረጋግጡ";
 
   @override
-  String get lblDoctorsAvailable => "Ärzte verfügbar";
+  String get lblDoctorsAvailable => "ሐኪሞች አሉ";
 
   @override
-  String get lblSessionTapMsg => "Tippen Sie auf die Sitzung zum Bearbeiten";
+  String get lblSessionTapMsg => "ለመቀየር ክፍለ ጊዜ ላይ መታ";
 
   @override
-  String get lblHolidayTapMsg => "Tippen Sie auf den Urlaub, um zu bearbeiten";
+  String get lblHolidayTapMsg => "ለመቀየር በዓል ላይ መታ";
 
   @override
-  String get lblYourRating => "Deine Bewertung";
+  String get lblYourRating => "የእርስዎ ግምገማ";
 
   @override
-  String get lblSearchPatient => 'Patienten suchen';
+  String get lblSearchPatient => 'ታካሚ ፈልግ';
 
   @override
-  String get lblStayNotified => "Bleib benachrichtigt";
+  String get lblStayNotified => "የተገናዘበ ሁን";
 
   @override
-  String get lblNotificationSubTitle => "Verpassen Sie niemals einen Schlag, behalten Sie Benachrichtigungen weiter!";
+  String get lblNotificationSubTitle => "አንድ ምት አትዘንጉ, ማሳወቂያዎችን ቀጥሉ!";
 
   @override
-  String get lblNotifications => "Benachrichtigungen";
+  String get lblNotifications => "ማሳወቂያዎች";
 
   @override
-  String get lblGoodAfternoon => "Guten Tag";
+  String get lblGoodAfternoon => "አንደምን ዋሉ";
 
   @override
-  String get lblGoodEvening => "Guten Abend";
+  String get lblGoodEvening => "አንደምን አመሹ";
 
   @override
-  String get lblGoodMorning => "Guten Morgen";
+  String get lblGoodMorning => "እንደምን አደሩ";
 
   @override
-  String get lblDr => "DR";
+  String get lblDr => "ዶር";
 
   @override
-  String get lblNoActivePatientAvailable => "Kein aktiver Patient verfügbar";
+  String get lblNoActivePatientAvailable => "ምንም ተንቀሳቃሽ ታካሚ አይገኝም";
 
   @override
-  String get lblNoActiveServicesAvailable => "Keine aktiven Dienste verfügbar";
+  String get lblNoActiveServicesAvailable => "ምንም ተንቀሳቃሽ አገልግሎቶች አይገኙም";
 
   @override
-  String get lblNoActiveDoctorAvailable => "Kein aktiver Arzt verfügbar";
+  String get lblNoActiveDoctorAvailable => "ምንም ተንቀሳቃሽ ሐኪም አይገኝም";
 
   @override
-  String get lblSearchServices => "Suchdienste";
+  String get lblSearchServices => "አገልግሎቶችን ይፈልጉ";
 
   @override
-  String get lblSearchDoctor => "Sucharzt";
+  String get lblSearchDoctor => "ዶክተሮችን ይፈልጉ";
 
   @override
-  String get lblSearchClinic => "Suchklinik";
+  String get lblSearchClinic => "የአገልግሎት ማዕከሎችን ይፈልጉ";
 
   @override
-  String get lblTapMsg => "Tippen Sie auf den Dienst, um sie zu bearbeiten";
+  String get lblTapMsg => "እሱን ለማርትዕ አገልግሎቱን ነካ ያድርጉ";
 
   @override
-  String get lblWalkThroughTitle1 => 'Willkommen';
+  String get lblWalkThroughTitle1 => 'እንኳን በደህና መጡ';
 
   @override
-  String get lblWalkThroughTitle2 => 'Ärzte finden';
+  String get lblWalkThroughTitle2 => 'ሐኪሞችን ያግኙ';
 
   @override
-  String get lblWalkThroughTitle3 => 'Wartenzeit vermeiden';
+  String get lblWalkThroughTitle3 => 'የመጠባበቂያ ጊዜን ያስወግዱ';
 
   @override
-  String get lblWalkThroughTitle4 => 'Sprechen Sie mit Ärzten';
+  String get lblWalkThroughTitle4 => 'ከዶክተሮች ጋር ይነጋገሩ';
 
   @override
   String get lblWalkThroughSubTitle1 =>
-      '""Die Kivicare-App ist die EHR-Lösung für die vorbereitete und ultimative elektronische Gesundheitsakten (ELEPONISIERUNGSBEDEUTUNG) für Ärzte, Mediziner, Klinik und Patientenmanagement. Vier einzigartige Modelle für Arzt, Klinikadministratoren, Empfangsanlagen und Patienten.';
+      '"የክቪካር አፕ እናቶችን ለተመረጠው እና መጠቀሚያ የጤና አቀማመጦች (እስክንድርያዊውንና ውጤቱን ኤሌክትሮኒክ አንድን) እንደሚመረጥ የጤና ኤሌክትሮኒክ መጠቀሚያ ነው። ከልዩ አካባቢዎች ለማድረግና ለመንፈሳዊ እቅድ አስተናግዷል።"';
 
   @override
   String get lblWalkThroughSubTitle2 =>
-      'Erstellen Sie Ihre mobile App einfallsreich, indem Sie Ärzte auflisten. Sie können einen Arzt finden, der Ihnen mit diesem erstaunlichen Ärztemodell am nächsten liegt. Fügen Sie die Ärzteliste mit Kivicare hinzu und verwalten Sie sie.';
+      'በሚኒስቴሩዎች ምንዛሬ አፕ እንዲሁም ምንዛሬ አፕዎችን መድረስ ተጠቃሚዎችን በሚጠቀም እንደሚቀርበው የተጠናከረውን የተጠቃሚ መደብ፣ ከዚያ በሚል ምንዛሬ አፕዎችን ያክላል። በክርስቲያን እና በቀንበር እቅዶችን እንዲለው እናሳውቃለን።';
 
   @override
   String get lblWalkThroughSubTitle3 =>
-      'Verwalten Sie Termine in der Klinik oder im Krankenhaus und planen Sie Patienten im Voraus mit intelligenter Kivicare -Schnittstelle. Vermeiden Sie Verzögerungen oder längeres Warten in Warteschlangen';
+      'በየአገልግሎት ማእከል ወይም በሀማችን ማህበራዊ አሰብ፣ ለእርስዎና ለመረጃዎችዎ የተነጠለውን ቅንጅቶችን በተለያዩ እቅድ እናቅርብ የሚችል አሰባስበን ይመልከቱ';
 
   @override
   String get lblWalkThroughSubTitle4 =>
-      'Patienten können direkt mit dem Arzt konsultieren, was die erste Diagnose genau und rechtzeitig darstellt. Die SMS -Benachrichtigung von Kivicare sendet Benachrichtigungen über die registrierte Nummer des Patienten.';
+      'ተመሳሳይ ምክንያትን እና በተለያዩ ጊዜ ሀይል ለእርስዎ ተጠንቀቁ። በተለያዩ ተከታዮች ከቀኑ በፊት በሚገኙበት ወቅታዊ ቁጥር ላይ ተመልሳለሁ እናለው ብለዋል።';
 
   @override
-  String get lblWalkThroughSkipButton => 'Überspringen';
+  String get lblWalkThroughSkipButton => 'ቀጥል';
 
   @override
-  String get lblWalkThroughNextButton => 'Nächste';
+  String get lblWalkThroughNextButton => 'ቀጣይ';
 
   @override
-  String get lblWalkThroughGetStartedButton => 'Loslegen';
+  String get lblWalkThroughGetStartedButton => 'ለመጀመሪያ';
 
   @override
-  String get lblSignIn => 'Anmelden';
+  String get lblSignIn => 'ግባ';
 
   @override
-  String get lblLogOut => 'Ausloggen';
+  String get lblLogOut => 'ውጣ';
 
   @override
-  String get lblEmail => 'Email';
+  String get lblEmail => 'ኢሜይል';
 
   @override
-  String get lblPassword => 'Passwort';
+  String get lblPassword => 'የይለፍ ቃል';
 
   @override
-  String get lblOldPassword => 'Altes Passwort';
+  String get lblOldPassword => 'የታላቁ የይለፍ ቃል';
 
   @override
-  String get lblNewPassword => 'Neues Kennwort';
+  String get lblNewPassword => 'አዲስ የይለፍ ቃል';
 
   @override
-  String get lblConfirmPassword => 'Bestätige das Passwort';
+  String get lblConfirmPassword => 'የይለፍ ቃል ይረጋግጡ';
 
   @override
-  String get lblForgotPassword => 'Passwort vergessen?';
+  String get lblForgotPassword => 'የይለፍ ቃል የማረጋገጥ?';
 
   @override
-  String get lblSignUp => 'Anmeldung';
+  String get lblSignUp => 'ተመዝገብ';
 
   @override
-  String get lblBasicDetails => 'Grundlegende Details';
+  String get lblBasicDetails => 'መሰረታዊ ዝርዝር';
 
   @override
-  String get lblOtherDetails => 'Andere Details';
+  String get lblOtherDetails => 'ሌሎች ዝርዝርዎች';
 
   @override
-  String get lblSubmit => 'Einreichen';
+  String get lblSubmit => 'አስገባ';
 
   @override
-  String get lblFirstName => 'Vorname';
+  String get lblFirstName => 'ስም';
 
   @override
-  String get lblLastName => 'Familienname, Nachname';
+  String get lblLastName => 'የአባት ስም';
 
   @override
-  String get lblContactNumber => 'Kontakt Nummer';
+  String get lblContactNumber => 'አድራሻ ቁጥር';
 
   @override
-  String get lblDOB => 'Dob';
+  String get lblDOB => 'ልደት ቀን';
 
   @override
-  String get lblSelectBloodGroup => 'Wählen Sie Blutgruppe';
+  String get lblSelectBloodGroup => 'የእናት ምልክት ይምረጡ';
 
   @override
-  String get lblAddress => 'Adresse';
+  String get lblAddress => 'አድራሻ';
 
   @override
-  String get lblCity => 'Stadt';
+  String get lblCity => 'ከተማ';
 
   @override
   String get lblCountry => 'Land';
 
   @override
-  String get lblPostalCode => 'Postleitzahl';
+  String get lblPostalCode => 'የፖስታ መላኪያ ኮድ';
 
   @override
-  String get lblSettings => 'Einstellungen';
+  String get lblSettings => 'ቅንብሮች';
 
   @override
-  String get lblChangePassword => 'Kennwort ändern';
+  String get lblChangePassword => 'የሚስጥር ቁልፍ ይቀይሩ';
 
   @override
-  String get lblTermsAndCondition => 'Terms & Bedingungen';
+  String get lblTermsAndCondition => 'ደንቦች እና ሁኔታዎች';
 
   @override
-  String get lblLanguage => 'Sprache';
+  String get lblLanguage => 'ቋንቋ';
 
   @override
-  String get lblAboutUs => 'Über uns';
+  String get lblAboutUs => 'ስለ እኛ';
 
   @override
-  String get lblRateUs => 'Bewerten Sie uns';
+  String get lblRateUs => 'ደረጃ ይስጡን';
 
   @override
-  String get lblSave => 'Speichern';
+  String get lblSave => 'አስቀምጥ';
 
   @override
-  String get lblDegree => 'Grad';
+  String get lblDegree => 'ዲግሪ';
 
   @override
-  String get lblUniversity => 'Universität';
+  String get lblUniversity => 'ዩኒቨርሲቲ';
 
   @override
-  String get lblYear => 'Jahr';
+  String get lblYear => 'ዓመት';
 
   @override
-  String get lblSearch => 'Suchen';
+  String get lblSearch => 'ይፈልጉ';
 
   @override
-  String get lblCancel => 'Stornieren';
+  String get lblCancel => 'ሰርዝ';
 
   @override
-  String get lblDoctor => 'Arzt';
+  String get lblDoctor => 'ሐኪም';
 
   @override
-  String get lblDescription => 'Beschreibung';
+  String get lblDescription => 'ገለፃ';
 
   @override
-  String get lblPrescription => 'Verschreibung';
+  String get lblPrescription => 'የመድሃኒት ማዘዣ';
 
   @override
-  String get lblFrequency => 'Frequenz';
+  String get lblFrequency => 'ድግግሞሽ';
 
   @override
-  String get lblDuration => 'Dauer';
+  String get lblDuration => 'ቆይታ';
 
   @override
-  String get lblInstruction => 'Anweisung';
+  String get lblInstruction => 'መመሪያ';
 
   @override
-  String get lblSignInToContinue => 'Willkommen zurück, melden Sie sich in Ihrem Konto an';
+  String get lblSignInToContinue => 'እንኳን ደህና መጡ፣ ወደ መለያዎ ይግቡ';
 
   @override
-  String get lblNewMember => 'Sie haben kein Konto?';
+  String get lblNewMember => 'እርስዎ መለያ የለዎትም? ወይም አዲስ ተጠቃሚ ነዎት?';
 
   @override
-  String get lblDone => 'Erledigt';
+  String get lblDone => 'ተከናውኗል';
 
   @override
-  String get lblSignUpAsPatient => 'Erstellen Sie Ihr Kivicare -Konto';
+  String get lblSignUpAsPatient => 'የሞሞና መለያዎን ይፍጠሩ';
 
   @override
-  String get lblAlreadyAMember => 'Schon ein Mitglied?';
+  String get lblAlreadyAMember => 'አስቀድመው አባል ነዎት?';
 
   @override
-  String get lblLogin => 'Anmeldung';
+  String get lblLogin => 'ይግቡ';
 
   @override
-  String get lblDashboard => 'Armaturenbrett';
+  String get lblDashboard => 'ዳሽቦርድ';
 
   @override
-  String get lblAppointments => 'Termine';
+  String get lblAppointments => 'ቀጠሮዎች';
 
   @override
-  String get lblPatients => 'Patienten';
+  String get lblPatients => 'ታካሚዎች';
 
   @override
-  String get lblTotalPatient => 'Totaler Patient';
+  String get lblTotalPatient => 'ጠቅላላ ታካሚዎች';
 
   @override
-  String get lblTotalVisitedPatients => 'Gesamt besuchte Patienten';
+  String get lblTotalVisitedPatients => 'አጠቃላይ የተጎበኙ ታካሚዎች';
 
   @override
-  String get lblTotalAppointment => 'Totalernen Sie.';
+  String get lblTotalAppointment => 'አጠቃላይ ቀጠሮዎች';
 
   @override
-  String get lblTotalVisitedAppointment => 'Total besuchter Termin';
+  String get lblTotalVisitedAppointment => 'አጠቃላይ የተጎበኙ ቀጠሮዎች';
 
   @override
-  String get lblTodayAppointments => 'Heute ernennen.';
+  String get lblTodayAppointments => 'የዛሬ ቀጠሮዎች';
 
   @override
-  String get lblTotalTodayAppointments => 'Insgesamt heute Termine';
+  String get lblTotalTodayAppointments => 'አጠቃላይ የዛሬዎች ቀጠሮዎች';
 
   @override
-  String get lblWeeklyAppointments => 'Wöchentliche Termine';
+  String get lblWeeklyAppointments => 'ሳምንታዊ ቀጠሮዎች';
 
   @override
-  String get lblTodaySAppointments => 'Ihre Termine';
+  String get lblTodaySAppointments => 'የዛሬ ቀጠሮ';
 
   @override
-  String get lblAppointmentDeleted => 'Termin gelöscht';
+  String get lblAppointmentDeleted => 'ቀጠሮ ተሰርዟል';
 
   @override
-  String get lblDate => 'Datum';
+  String get lblDate => 'ቀን';
 
   @override
-  String get lblConfirmAppointment => 'Termin bestätigen';
+  String get lblConfirmAppointment => 'ቀጠሮን ያረጋግጡ';
 
   @override
-  String get lblSelectDateTime => 'Wählen Sie Datum und Uhrzeit auswählen';
+  String get lblSelectDateTime => 'ቀን እና ሰዓት ይምረጡ';
 
   @override
-  String get lblSelectServices => 'Dienste auswählen';
+  String get lblSelectServices => 'አገልግሎቶችን ይምረጡ';
 
   @override
-  String get lblBook => 'Buch';
+  String get lblBook => 'ቀጠሮ ይያዙ';
 
   @override
-  String get lblNoAppointmentForToday => 'Kein Termin für heute';
+  String get lblNoAppointmentForToday => 'ለዛሬ ምንም አይነት ቀጠሮ የለም';
 
   @override
-  String get lblCheckIn => 'Einchecken';
+  String get lblCheckIn => 'ይጀምሩ';
 
   @override
-  String get lblCheckOut => 'Kasse';
+  String get lblCheckOut => 'ጨርሰው ይውጡ';
 
   @override
-  String get lblAreDeleteAppointment => 'Sind Sie sicher, dass Sie einen Termin löschen möchten?';
+  String get lblAreDeleteAppointment => 'እርግጠኛ ነዎት ቀጠሮ መሰረዝ ይፈልጋሉ?';
 
   @override
-  String get lblYouCannotStart => 'Sie können nicht anfangen';
+  String get lblYouCannotStart => 'መጀመር አይችሉም';
 
   @override
-  String get lblPrescriptionAdded => 'Rezept hinzugefügt';
+  String get lblPrescriptionAdded => 'የመድሃኒት ማዘዣ ታክሏል';
 
   @override
-  String get lblUpdatedSuccessfully => 'Erfolgreich geupdated';
+  String get lblUpdatedSuccessfully => 'በተሳካ ሁኔታ ዘምኗል';
 
   @override
-  String get lblPrescriptionDeleted => 'Verschreibungspflichtig gelöscht';
+  String get lblPrescriptionDeleted => 'የመድሃኒት ማዘዣው ተሰርዟል።';
 
   @override
-  String get lblAddPrescription => 'Rezept hinzufügen';
+  String get lblAddPrescription => 'የመድሃኒት ማዘዣ ያክሉ';
 
   @override
-  String get lblName => 'Name';
+  String get lblName => 'ስም';
 
   @override
-  String get lblPrescriptionDurationIsRequired => 'Verschreibungsdauer ist erforderlich';
+  String get lblPrescriptionDurationIsRequired => 'የመድኃኒት ማዘዣ ቆይታ ያስፈልጋል';
 
   @override
-  String get lblDurationInDays => 'Dauer (in Tagen)';
+  String get lblDurationInDays => 'የሚቆይበት ጊዜ (በቀናት)';
 
   @override
-  String get lblAddNewPrescription => 'Neues Rezept hinzufügen';
+  String get lblAddNewPrescription => 'አዲስ የመድኃኒት ማዘዣን ያክሉ';
 
   @override
-  String get lblEditPrescriptionDetail => 'Verschreibungsdetails bearbeiten';
+  String get lblEditPrescriptionDetail => 'የመድሃኒት ማዘዣ ዝርዝር';
 
   @override
-  String get lblDays => 'Tage';
+  String get lblDays => 'ቀናት';
 
   @override
-  String get lblAppointmentIsConfirmed => 'Ihr Termin ist bestätigt';
+  String get lblAppointmentIsConfirmed => 'ቀጠሮ ተረጋግጧል';
 
   @override
-  String get lblThanksForBooking => 'Danke fürs Buchung';
+  String get lblThanksForBooking => 'ቀጠሮ ስለያዙ እናመሰግናለን';
 
   @override
-  String get lblAppointmentConfirmation => 'Wir haben Sie für Ihren Termin bestätigt';
+  String get lblAppointmentConfirmation => 'የቀጠሮ ማረጋገጫ';
 
   @override
-  String get lblNoPatientFound => 'Kein Patient gefunden';
+  String get lblNoPatientFound => 'ምንም ታካሚ አልተገኘም';
 
   @override
-  String get lblDeleteRecordConfirmation => 'Sind Sie sicher, dass Sie alle Datensätze löschen möchten';
+  String get lblDeleteRecordConfirmation => 'እትም ተጠቃሚዎችን እንደሚያስወግድ ነው እንዲህ አሉ';
 
   @override
-  String get lblAllRecordsFor => 'Alle Aufzeichnungen für';
+  String get lblAllRecordsFor => 'ለሁሉም መረጃዎች';
 
   @override
-  String get lblAreDeleted => 'werden gelöscht';
+  String get lblAreDeleted => 'አያውቁም';
 
   @override
-  String get lblEncounters => 'Begegnungen';
+  String get lblEncounters => 'አስገባቶች';
 
   @override
-  String get lblDelete => 'Löschen';
+  String get lblDelete => 'ሰርዝ';
 
   @override
-  String get lblMale => 'Männlich';
+  String get lblMale => 'ወንድ';
 
   @override
-  String get lblFemale => 'Weiblich';
+  String get lblFemale => 'ሴት';
 
   @override
-  String get lblOther => 'Andere';
+  String get lblOther => 'ሌላ';
 
   @override
-  String get lblMinimumAgeRequired => 'Das erforderliche Mindestalter beträgt 18.';
+  String get lblMinimumAgeRequired => 'የሚፈጠር በመጠን፣ 18 ነው።';
 
   @override
-  String get lblCurrentAgeIs => 'Ihr aktuelles Alter ist';
+  String get lblCurrentAgeIs => 'የወራት እናትዎ';
 
   @override
-  String get lblGender1 => 'Geschlecht';
+  String get lblGender1 => 'ጾታ';
 
   @override
-  String get lblSpecialization => 'Spezialisierung';
+  String get lblSpecialization => 'ስፖርት';
 
   @override
-  String get lblExperience => 'Erfahrung';
+  String get lblExperience => 'ዕድገት';
 
   @override
-  String get lblAPIKeyCannotBeEmpty => 'API -Schlüssel kann nicht leer sein';
+  String get lblAPIKeyCannotBeEmpty => 'API ቅርጸት መጠን መረጠ አይችልም';
 
   @override
-  String get lblAPIKey => 'API-Schlüssel';
+  String get lblAPIKey => 'API ቅርጸት';
 
   @override
-  String get lblAPISecret => 'API -Geheimnis';
+  String get lblAPISecret => 'API ምልክት';
 
   @override
-  String get lblAPISecretCannotBeEmpty => 'API -Geheimnis kann nicht leer sein';
+  String get lblAPISecretCannotBeEmpty => 'API ምልክት መጠን መረጠ አይችልም';
 
   @override
-  String get lblSignUpOrSignIn => 'Melden Sie sich hier an oder melden Sie sich an:';
+  String get lblSignUpOrSignIn => 'ይመዝገቡ ወይም ይግቡ:';
 
   @override
   String get lbl1 => '1';
@@ -1138,1185 +1164,1208 @@ class LanguageAm extends BaseLanguage {
   String get lbl2 => '2';
 
   @override
-  String get lblClickOnDevelopButton => 'Klicken Sie auf die Schaltfläche Entwickeln auf der Navigationsleiste auf die Schaltfläche ""Entwickeln"" und klicken Sie auf die Build -App';
+  String get lblClickOnDevelopButton =>
+      'እትም "እንደሚለው እንደመላክ በመላክ፣ ተስተካክላችሁ "አፕ እንዲሁም ተንሳፋፊ የእንስሳውን አፕ ለመኖር የመላክ ማሳየት ይችላሉ።';
 
   @override
-  String get lblCreateApp => 'App erstellen';
+  String get lblCreateApp => 'አፕ ፍጠር';
 
   @override
   String get lb13 => '3';
 
   @override
-  String get lblChooseAppTypeToJWT => 'Wählen Sie Ihren App -Typ in JWT aus';
+  String get lblChooseAppTypeToJWT => 'JWT የአፕ አይነትን ይምረጡ';
 
   @override
   String get lbl4 => '4';
 
   @override
-  String get lblMandatoryMessage => 'Füllen Sie die obligatorischen Informationen aus und im Tag -Tag -Tag können Sie den API -Schlüssel und das API -Geheimnis sehen.';
+  String get lblMandatoryMessage =>
+      'ማስጠንቀቂያዎችን ማሳያ ያለበትን መረጃ ይስጡ፣ እና በተጨማሪ መረጃ በሚገኘው ተካንያን የAPI ቅርጸት እና API ምልክት ይከናወን።';
 
   @override
   String get lbl5 => '5';
 
   @override
-  String get lblCopyAndPasteAPIKey => 'Kopieren Sie die API -Taste und das API -Geheimnis hier und klicken Sie hier auf die Schaltfläche Speichern. Sie sind bereit zu gehen.';
+  String get lblCopyAndPasteAPIKey =>
+      'ይህንን የAPI ቅርጸትና የAPI ምልክት ስንጽፍ፣ የተጨማሪ ተመልከቱ፣ ከገንዘብ ተመልከቱ።';
 
   @override
-  String get lblEncounterClosed => 'Begegnung geschlossen';
+  String get lblEncounterClosed => 'አስገባት ምንዛሬ ነበር';
 
   @override
-  String get lblChangedTo => 'Gewechselt zu';
+  String get lblChangedTo => 'ተሰርዟል እስከ';
 
   @override
-  String get lblEncounterWillBeClosed => 'Begegnung wird geschlossen';
+  String get lblEncounterWillBeClosed => 'አስገባት ምንዛሬ ይሆናል';
 
   @override
-  String get lblEncounterDate => 'Begegnung Datum';
+  String get lblEncounterDate => 'አስገባት ቀን';
 
   @override
-  String get lblClinicName => 'Klinikname';
+  String get lblClinicName => 'የአገልግሎት ማእከል ስም';
 
   @override
-  String get lblDoctorName => 'Arztname';
+  String get lblDoctorName => 'የጤና ሰራተኛ ስም';
 
   @override
-  String get lblDesc => 'Vor';
+  String get lblDesc => 'የመጠቀሚያ';
 
   @override
-  String get lblAddNewQualification => 'Neue Qualifikation hinzufügen';
+  String get lblAddNewQualification => 'አዲስ ቅል አክል';
 
   @override
-  String get lblAddBillItem => 'Artikel hinzufügen';
+  String get lblAddBillItem => 'የክፍያ መጠየቂያ ንጥል ነገር ያክሉ';
 
   @override
-  String get lblServiceIsRequired => 'Service ist erforderlich';
+  String get lblServiceIsRequired => 'አገልግሎት ይላኩ';
 
   @override
   String get lblOne => '1';
 
   @override
-  String get lblQuantity => 'Menge';
+  String get lblQuantity => 'ብዛት';
 
   @override
-  String get lblTotal => 'Gesamt';
+  String get lblTotal => 'ጠቅላላ';
 
   @override
-  String get lblEncounterUpdated => 'Begegnung aktualisiert';
+  String get lblEncounterUpdated => 'አስገባት የተደረገ';
 
   @override
-  String get lblAddNewEncounter => 'Fügen Sie eine neue Begegnung hinzu';
+  String get lblAddNewEncounter => 'አዲስ አስገባት አክል';
 
   @override
-  String get lblEditEncounterDetail => 'Bearbeiten von Begegnungen Details';
+  String get lblEditEncounterDetail => 'አስገባት የተሰራ ዝርዝር አስተካክል';
 
   @override
-  String get lblHolidayOf => 'Urlaub von';
+  String get lblHolidayOf => 'በተለያዩ ቀን';
 
   @override
-  String get lblModuleIsRequired => 'Modul ist erforderlich';
+  String get lblModuleIsRequired => 'ሞዴል ይላኩ';
 
   @override
-  String get lblScheduleDate => 'Zeitplandatum';
+  String get lblScheduleDate => 'ተንቀሳቃሽ ቀን';
 
   @override
-  String get lblLeaveFor => 'Auflassen';
+  String get lblLeaveFor => 'ለምሳሌ';
 
   @override
-  String get lblAddHoliday => 'Fügen Sie Urlaub hinzu';
+  String get lblAddHoliday => 'ቀን አክል';
 
   @override
-  String get lblEditHolidays => 'Feiertage bearbeiten';
+  String get lblEditHolidays => 'ቀን አስተካክል';
 
   @override
-  String get lblNewPatientAddedSuccessfully => 'Neuer Patient fügte erfolgreich hinzu';
+  String get lblNewPatientAddedSuccessfully => 'አዲስ የሰው ባለሞያ ተሳክቷል';
 
   @override
-  String get lblPatientDetailUpdatedSuccessfully => 'Patientendetails erfolgreich aktualisiert';
+  String get lblPatientDetailUpdatedSuccessfully => 'የሰው መረጃዎች ተዘምኑ';
 
   @override
-  String get lblBasicInformation => 'Grundinformation';
+  String get lblBasicInformation => 'መሰረታዊ መረጃ';
 
   @override
-  String get lblFirstNameIsRequired => 'Vorname ist erforderlich';
+  String get lblFirstNameIsRequired => 'ስም ይላኩ';
 
   @override
-  String get lblLastNameIsRequired => 'Nachname ist erforderlich';
+  String get lblLastNameIsRequired => 'የአባት ስም ይላኩ';
 
   @override
-  String get lblEmailIsRequired => 'E-Mail ist erforderlich';
+  String get lblEmailIsRequired => 'ኢሜይል ይላኩ';
 
   @override
-  String get lblAddNewPatient => 'Neuen Patienten hinzufügen';
+  String get lblAddNewPatient => 'አዲስ ሰው አክል';
 
   @override
-  String get lblEditPatientDetail => 'Patientendetail bearbeiten';
+  String get lblEditPatientDetail => 'የሰው መረጃዎችን አስተካክል';
 
   @override
-  String get lblCategory => 'Kategorie';
+  String get lblCategory => 'ምድብ';
 
   @override
-  String get lblCharges => 'Aufladung';
+  String get lblCharges => 'ክፍያዎች';
 
   @override
-  String get lblSelectDoctor => 'Arzt auswählen';
+  String get lblSelectDoctor => 'ሐኪም ይምረጡ';
 
   @override
-  String get lblAddService => 'Neuen Service hinzufügen';
+  String get lblAddService => 'አዲስ አገልግሎት አክል';
 
   @override
-  String get lblEditService => 'Service bearbeiten';
+  String get lblEditService => 'አገልግሎት አስተካክል';
 
   @override
-  String get lblSelectWeekdays => 'Wochentage auswählen';
+  String get lblSelectWeekdays => 'ሳምንት ምረጥ';
 
   @override
-  String get lblSessionAddedSuccessfully => 'Sitzung erfolgreich hinzugefügt';
+  String get lblSessionAddedSuccessfully => 'ሥርዓት ተሳክቷል';
 
   @override
-  String get lblSessionUpdatedSuccessfully => 'Sitzung erfolgreich aktualisiert';
+  String get lblSessionUpdatedSuccessfully => 'ሥርዓት ተስተካክለው ነበር';
 
   @override
-  String get lblSessionDeleted => 'Sitzung gelöscht';
+  String get lblSessionDeleted => 'ሥርዓት ሰርዘው ነበር';
 
   @override
-  String get lblPleaseSelectTime => 'Bitte wählen Sie Zeit';
+  String get lblPleaseSelectTime => 'እባኮ ሰዓት ይምረጡ';
 
   @override
-  String get lblStartAndEndTimeNotSame => 'Start- und Endzeit kann nicht dasselbe sein';
+  String get lblStartAndEndTimeNotSame => 'አይጀምሩም፣ ሰዓት እና መጨረሻ አይመሳሱም';
 
   @override
-  String get lblTimeNotBeforeMorningStartTime => 'Die Zeit kann nicht vor dem Morgenstart sein';
+  String get lblTimeNotBeforeMorningStartTime =>
+      'ሰዓት ቀን እናቱ ቅዱስ ቀን ለመነሳት አይሰራም';
 
   @override
-  String get lblTimeNotBeforeEveningStartTime => 'Die Zeit kann nicht vor dem Abend für den Abend sein';
+  String get lblTimeNotBeforeEveningStartTime => 'ሰዓት ማህፀን ቀን እናቱ ለመነሳት አይሰራም';
 
   @override
-  String get lblTimeShouldBeInMultiplyOf5 => 'Die Zeit sollte sich in 5 multiplizieren';
+  String get lblTimeShouldBeInMultiplyOf5 => 'ሰዓት በ5 ብዛት ይሆናል';
 
   @override
-  String get lblTimeSlotInMinute => 'Zeitfenster (in Minute)';
+  String get lblTimeSlotInMinute => 'ሰዓት ማብራሪ (በደቂቃ)';
 
   @override
-  String get lblTimeSlotRequired => 'Zeitfenster erforderlich';
+  String get lblTimeSlotRequired => 'ሰዓት ማብራሪ ይላኩ';
 
   @override
-  String get lblWeekDays => 'Wochentage';
+  String get lblWeekDays => 'ሳምንት';
 
   @override
-  String get lblMorningSession => 'Morgensitzung';
+  String get lblMorningSession => 'የጠዋት ሥርዓት';
 
   @override
-  String get lblStartTime => 'Startzeit';
+  String get lblStartTime => 'ሰዓት በኋላ';
 
   @override
-  String get lblEndTime => 'Endzeit';
+  String get lblEndTime => 'ሰዓት በመጨረሻ';
 
   @override
-  String get lblSelectStartTimeFirst => 'Wählen Sie zuerst die Startzeit aus';
+  String get lblSelectStartTimeFirst => 'በመጀመሪያ ሰዓት ምረጥዋት';
 
   @override
-  String get lblEveningSession => 'Abendsitzung';
+  String get lblEveningSession => 'የማቅረብ ሥርዓት';
 
   @override
-  String get lblAddSession => 'Sitzung hinzufügen';
+  String get lblAddSession => 'ሥርዓት አክል';
 
   @override
-  String get lblEditSession => 'Sitzung bearbeiten';
+  String get lblEditSession => 'ሥርዓት አስተካክል';
 
   @override
-  String get lblInvoiceDetail => 'Rechnungsdetail';
+  String get lblInvoiceDetail => 'አስተዳዳሪ ዝርዝር';
 
   @override
-  String get lblClinicDetails => 'Klinikdetails';
+  String get lblClinicDetails => 'የአገልግሎት ማእከል ዝርዝርዎች';
 
   @override
-  String get lblPatientDetails => 'Patientendetails';
+  String get lblPatientDetails => 'የሰው ዝርዝርዎች';
 
   @override
-  String get lblServices => 'Dienstleistungen';
+  String get lblServices => 'አገልግሎቶች';
 
   @override
-  String get lblDiscount => 'Rabatt';
+  String get lblDiscount => 'ቅናሹ';
 
   @override
-  String get lblAmountDue => 'Offener Betrag';
+  String get lblAmountDue => 'ክፍያ መክፈያ';
 
   @override
-  String get lblInvoiceId => 'Rechnungs -ID';
+  String get lblInvoiceId => 'ክፍያ መለያ ቁጥር';
 
   @override
-  String get lblCreatedAt => 'Hergestellt in';
+  String get lblCreatedAt => 'በዚህ ገንዘብ';
 
   @override
-  String get lblPaymentStatus => 'Zahlungsstatus';
+  String get lblPaymentStatus => 'የክፍያ ሁኔታ';
 
   @override
-  String get lblPatientName => 'Patientenname';
+  String get lblPatientName => 'የሰው ስም';
 
   @override
-  String get lblGender2 => 'Geschlecht';
+  String get lblGender2 => 'ጾታ';
 
   @override
-  String get lblSRNo => 'Sr -Nr';
+  String get lblSRNo => 'ስ/ቅ';
 
   @override
-  String get lblItemName => 'ARTIKELNAME';
+  String get lblItemName => 'የንጥል ስም';
 
   @override
-  String get lblPRICE => 'PREIS';
+  String get lblPRICE => 'ዋጋ';
 
   @override
-  String get lblQUANTITY => 'MENGE';
+  String get lblQUANTITY => 'ብዛት';
 
   @override
-  String get lblTOTAL => 'GESAMT';
+  String get lblTOTAL => 'ጠቅላላ';
 
   @override
-  String get lblServicesSelected => 'Dienste ausgewählt';
+  String get lblServicesSelected => 'የሚቀየሩ አገልግሎቶች';
 
   @override
-  String get lblPatientNameIsRequired => 'Der Patientenname ist erforderlich';
+  String get lblPatientNameIsRequired => 'የሰው ስም ይላኩ';
 
   @override
-  String get lblDoctorSessions => 'Alle Sitzung';
+  String get lblDoctorSessions => 'ሁሉንም ሥርዓቶች';
 
   @override
-  String get lblEditProfile => 'Profil bearbeiten';
+  String get lblEditProfile => 'ፕሮፋይል አስተካክል';
 
   @override
-  String get lblQualification => 'Qualifikation';
+  String get lblQualification => 'ተቋማት';
 
   @override
-  String get lblEncounterDashboard => 'Begegnung Das Dashboard';
+  String get lblEncounterDashboard => 'ስለ እነዚህ ስለሚገኝ ደረጃ';
 
   @override
-  String get lblEncounterDetails => 'Begegnung mit Details';
+  String get lblEncounterDetails => 'አስገባት ዝርዝር';
 
   @override
-  String get lblProblems => 'Problem';
+  String get lblProblems => 'ችግሮች';
 
   @override
-  String get lblObservation => 'Überwachung';
+  String get lblObservation => 'ዝርዝር';
 
   @override
-  String get lblNotes => 'Anmerkungen';
+  String get lblNotes => 'ማስታወሻዎች';
 
   @override
-  String get lblBillAddedSuccessfully => 'Bill fügte erfolgreich hinzu';
+  String get lblBillAddedSuccessfully => 'ቢል በተሳካ ሁኔታ ታክሏል';
 
   @override
-  String get lblAtLeastSelectOneBillItem => 'Um mindestens einen Rechnungselement zu sparen';
+  String get lblAtLeastSelectOneBillItem => 'ቢያንስ አንድ የክፍያ መጠየቂያ ንጥል ይምረጡ';
 
   @override
-  String get lblGenerateInvoice => 'Rechnung erstellen';
+  String get lblGenerateInvoice => 'ክፍያ እንዴት ማስነሳት';
 
   @override
-  String get lblSERVICES => 'DIENSTLEISTUNGEN';
+  String get lblSERVICES => 'አገልግሎቶች';
 
   @override
-  String get lblPayableAmount => 'Zu zahlender Betrag';
+  String get lblPayableAmount => 'የሚከፈል መጠን';
 
   @override
-  String get lblSaveAndCloseEncounter => 'Speichern & Schließung begegnen';
+  String get lblSaveAndCloseEncounter => 'የታካሚ ግኝቶችን ያስቀምጡ እና ይዝጉ';
 
   @override
-  String get lblHolidays => 'Feiertage';
+  String get lblHolidays => 'የስራ ቀናት ያልሆኑ';
 
   @override
-  String get lblClinic => 'Klinik';
+  String get lblClinic => 'የአገልግሎት ማእከል';
 
   @override
-  String get lblAfter => 'Nach';
+  String get lblAfter => 'በኋላ';
 
   @override
-  String get lblWasOffFor => 'War ausgeschaltet für';
+  String get lblWasOffFor => 'ለመጠበቅ ነበር';
 
   @override
-  String get lblYourHolidays => 'Deine Ferien';
+  String get lblYourHolidays => 'የምርት ቀንቶችህ';
 
   @override
-  String get lblNoServicesFound => 'Keine Dienste gefunden';
+  String get lblNoServicesFound => 'የሚከተለው አገልግሎት አልተገኘም';
 
   @override
-  String get lblNoDataFound => 'Keine Daten gefunden';
+  String get lblNoDataFound => 'የሚመረጡት መረጃ አልተገኘም';
 
   @override
-  String get lblOn => 'An';
+  String get lblOn => 'ከፈተ';
 
   @override
-  String get lblOff => 'Aus';
+  String get lblOff => 'ከልተል';
 
   @override
-  String get lblNoAppointments => 'Keine Termine';
+  String get lblNoAppointments => 'ምንም ክፍያ የለም';
 
   @override
-  String get lblSelectClinic => 'Klinik auswählen';
+  String get lblSelectClinic => 'ከኪሊክ ምረጥ';
 
   @override
-  String get lblEnter => 'Eingeben';
+  String get lblEnter => 'ይጫኑ';
 
   @override
-  String get lblFieldIsRequired => 'Feld ist erforderlich';
+  String get lblFieldIsRequired => 'በመሆን የሚጠቀሙ ቦታዎች';
 
   @override
-  String get lblHoliday => 'Urlaub';
+  String get lblHoliday => 'ቀንበር';
 
   @override
-  String get lblClinicHoliday => 'Klinikurlaub';
+  String get lblClinicHoliday => 'ከኪሊክ ቀንበር';
 
   @override
-  String get lblSessions => 'Sitzungen';
+  String get lblSessions => 'ክፍለ ጊዜ';
 
   @override
-  String get lblClinicSessions => 'Kliniksitzungen';
+  String get lblClinicSessions => 'ኪሊኒክ ሥርዓቶች';
 
   @override
-  String get lblClinicServices => 'Dienstleistungen';
+  String get lblClinicServices => 'አገልግሎቶቻችን';
 
   @override
-  String get lblVideoConsulting => 'Videoberatung';
+  String get lblVideoConsulting => 'ቪዲዮ አስከባሪ';
 
   @override
-  String get lblYourEncounters => 'Ihre Begegnungen';
+  String get lblYourEncounters => 'የምርመር ማስታወሻዎችህ';
 
   @override
-  String get lblSelectTheme => 'Thema wählen';
+  String get lblSelectTheme => 'ገጽታ ይምረጡ';
 
   @override
-  String get lblChooseYourAppTheme => 'Wählen Sie Ihr App -Thema aus';
+  String get lblChooseYourAppTheme => 'የእርስዎን መተግበሪያ ገጽታ ይምረጡ';
 
   @override
-  String get lblClinicTAndC => 'Klinik T & C';
+  String get lblClinicTAndC => 'ደምብ እና ሁኔታ';
 
   @override
-  String get lblAboutKiviCare => 'Über Kivicare';
+  String get lblAboutKiviCare => 'ስለ ሞሞና የጤና እንክብካቤ';
 
   @override
-  String get lblYourReviewCounts => 'Ihre Bewertung zählt';
+  String get lblYourReviewCounts => 'የእርስዎ አስተያየት ግምገማ ለእኛ አስፈላጊ ነው!';
 
   @override
-  String get lblAppVersion => 'App Version';
+  String get lblAppVersion => 'የመተግበሪያ ሥሪት';
 
   @override
-  String get lblHelpAndSupport => 'Hilfe Unterstützung';
+  String get lblHelpAndSupport => 'እርዳታ እና ድጋፍ';
 
   @override
-  String get lblSubmitYourQueriesHere => 'Senden Sie hier Ihre Fragen';
+  String get lblSubmitYourQueriesHere => 'ጥያቄዎችዎን እዚህ ያቅርቡ';
 
   @override
-  String get lblShareKiviCare => 'Teile Kivicare';
+  String get lblShareKiviCare => 'ሞሞናን ለጓደኞችዎ ያጋሩ';
 
   @override
-  String get lblLogout => 'Ausloggen';
+  String get lblLogout => 'ውጣ';
 
   @override
-  String get lblThanksForVisiting => 'Danke für den Besuch';
+  String get lblThanksForVisiting => 'ለጉብኝቱ እናመሰግናለን';
 
   @override
-  String get lblGeneralSetting => 'Allgemeine Einstellungen';
+  String get lblGeneralSetting => 'አጠቃላይ ቅንብሮች';
 
   @override
-  String get lblAppSettings => 'App Einstellungen';
+  String get lblAppSettings => 'የመተግበሪያ ቅንብሮች';
 
   @override
-  String get lblVersion => 'Ausführung';
+  String get lblVersion => 'ቅርጸት';
 
   @override
-  String get lblContactUs => 'Kontaktiere uns';
+  String get lblContactUs => 'ያግኙን';
 
   @override
   String get lblAboutUsDes =>
-      '""Kivicare ist eine vollständige Klinik-/Krankenhaustermin- und Rekordmanagement für Ärzte und Patienten App. Es hilft den Patienten, ihren Arzttermin zu jedem Zeitpunkt leicht zu buchen Informationen, medizinische Berichte, Medikamente, Besuch der Geschichte, klinische Notizen, Patientenanamnese und andere Notizen. Termine für Ihre Patienten können einfach mit der Kivicare -App verwaltet werden. Alle Ihre medizinischen Unterlagen für Patienten können Sie sofort betrachten. Also nicht mehr Wenn Sie durch Papiere jonglieren, um die Vorgeschichte Ihrer Patienten zu sehen, ist alles für Ihre Diagnose verfügbar.';
+      'ሞሞና ሄልዝኬር ለዶክተሮች እና ለታካሚዎች የቀጠሮ እና የመመዝገቢያ አስተዳደር ያለው የተሟላ የጤና እንክብካቤ ቴሌሜዲሲን መተግበሪያ ነው ። ታካሚዎች በማንኛውም ጊዜ በቀላሉ የሐኪም ቀጠሮ ለመያዝ ይረዳሉ ። የሞሞና ጤና አጠባበቅ መተግበሪያን በመጠቀም ሁሉንም የታካሚ መዝገቦችን መገንባት ፣ ማስተዳደር እና መከታተል ይችላሉ ። እንደ የግል መረጃ፣ የህክምና ዘገባዎች፣ መድሃኒቶች፣ የጉብኝት ታሪክ፣ ክሊኒካዊ ማስታወሻዎች፣ የታካሚ ታሪክ እና ሌሎች ማስታወሻዎች። ለታካሚዎችዎ ቀጠሮዎች የእኛን መተግበሪያ በመጠቀም በቀላሉ ማስተዳደር ይችላሉ። ሁሉም የታካሚዎ የሕክምና መዝገቦች ወዲያውኑ እንዲመለከቱት ዝግጁ ይሆናሉ። ስለዚህ ከዚህ በኋላ የታካሚዎችዎን የቀድሞ ታሪክ ለማየት በወረቀት ላይ መሮጥ አይቻልም፣ ሁሉም ነገር ለምርመራዎ ዝግጁ ነው።';
 
   @override
-  String get lblPurchase => 'Kaufen';
+  String get lblPurchase => 'አገልግሎቶቻችንን እና ምርቶቻችንን ይጠቀሙ';
 
   @override
-  String get lblDemoUserPasswordNotChanged => 'Demo -Benutzer -Passwort kann nicht geändert werden';
+  String get lblDemoUserPasswordNotChanged => 'የይለፍ ቃል መቀየር አይቻልም';
 
   @override
-  String get lblPasswordLengthMessage => 'Passwortlänge sollte mehr als sein';
+  String get lblPasswordLengthMessage => 'የይለፍ ቃል ርዝመት ከተጠቀሰው በላይ መሆን አለበት!';
 
   @override
-  String get lblBothPasswordMatched => 'Beide Passwort sollten übereinstimmen';
+  String get lblBothPasswordMatched => 'ሁለቱም የይለፍ ቃሎች መመሳሰል አለባቸው';
 
   @override
-  String get lblVisited => 'hat besucht';
+  String get lblVisited => 'ጎብኝተዋል';
 
   @override
-  String get lblBooked => 'Gebucht';
+  String get lblBooked => 'ተይዟል';
 
   @override
-  String get lblCompleted => 'Vollendet';
+  String get lblCompleted => 'የተጠናቀቁ';
 
   @override
-  String get lblCancelled => 'Abgesagt';
+  String get lblCancelled => 'የተሰረዙ';
 
   @override
-  String get lblYes => 'Ja';
+  String get lblYes => 'አዎ';
 
   @override
-  String get lblPayment => 'Woocommerce -Zahlung';
+  String get lblPayment => 'ክፍያ';
 
   @override
-  String get lblError => 'Fehler';
+  String get lblError => 'ስህተት';
 
   @override
-  String get lblRegisteredSuccessfully => 'Erfolgreich registriert';
+  String get lblRegisteredSuccessfully => 'በተሳካ ሁኔታ ላይ መመዝገብ አለበት';
 
   @override
-  String get lblBirthDateIsRequired => 'Geburtsdatum ist erforderlich';
+  String get lblBirthDateIsRequired =>
+      'ልደት የሚያስፈልጋቸው በመሆን የልደት ቀን ይህንን መረጃ ማግኘት ይችላል';
 
   @override
-  String get lblBloodGroupIsRequired => 'Blutgruppe ist erforderlich';
+  String get lblBloodGroupIsRequired =>
+      'የድንቅ ጉዳይ ከሆነ በመሆን የድንቅ ጉዳይ ቦታ እንደሚያስፈልጋቸው በመሆን ይጠቀሙ';
 
   @override
-  String get lblAppointmentBookedSuccessfully => 'Termin erfolgreich gebucht, lesen Sie bitte Ihre E -Mails.';
+  String get lblAppointmentBookedSuccessfully =>
+      'በተሳካ ሁኔታ ላይ በቀላሉ መጠቀም አስተያየት። እባኮት እስከዚያ ኢሜል ይጠቀሙ።';
 
   @override
-  String get lblSelectedSlots => 'Ausgewählte Slots';
+  String get lblSelectedSlots => 'የተመረጡ ክፍተቶች';
 
   @override
-  String get lblSession => 'Sitzung';
+  String get lblSession => 'ክፍለ-ጊዜ';
 
   @override
-  String get lblTimeSlotIsBooked => 'Zeitfenster ist gebucht';
+  String get lblTimeSlotIsBooked => 'የሰዓት ቀንሽ ተቀመጪ።';
 
   @override
-  String get lblAppointmentDate => 'Termin';
+  String get lblAppointmentDate => 'የቀጠሮ ቀን';
 
   @override
-  String get lblViewDetails => 'Sicht';
+  String get lblViewDetails => 'ዝርዝሮችን ይመልከቱ';
 
   @override
-  String get lblDoctorDetails => 'Doktionsdetails';
+  String get lblDoctorDetails => 'የዶክተር ዝርዝርዎች';
 
   @override
-  String get lblAreYouWantToDeleteDoctor => 'Sind Sie sicher, dass Sie Arzt löschen möchten?';
+  String get lblAreYouWantToDeleteDoctor => 'እርግጠኛ ነዎት ዶክተርን መሰረዝ ይፈልጋሉ?';
 
   @override
-  String get lblDoctorDeleted => 'Arzt gelöscht';
+  String get lblDoctorDeleted => 'ዶክተር ተሰርዟል';
 
   @override
-  String get lblYearsExperience => 'Jahr';
+  String get lblYearsExperience => 'የዓመታት ልምድ';
 
   @override
-  String get lblYearsOfExperience => 'langjährige Erfahrung';
+  String get lblYearsOfExperience => 'ዓመታት ልምድ';
 
   @override
-  String get lblAvailableOn => 'Verfügbar für diese Wochentage:';
+  String get lblAvailableOn => 'በዚህ ቀን ይገኛሉ';
 
   @override
-  String get lblHealth => 'Gesundheit';
+  String get lblHealth => 'ጤና';
 
   @override
-  String get lblReadMore => '  Weiterlesen';
+  String get lblReadMore => ' ተጨማሪ ያንብቡ';
 
   @override
-  String get lblReadLess => '  Lese weniger';
+  String get lblReadLess => 'ያነሰ ያንብቡ';
 
   @override
-  String get lblBy => 'von';
+  String get lblBy => 'በ';
 
   @override
-  String get lblNews => 'Nachricht';
+  String get lblNews => 'ዜና';
 
   @override
-  String get lblUpcomingAppointments => 'Bevorstehende Termine';
+  String get lblUpcomingAppointments => 'መጪ ቀጠሮዎች';
 
   @override
-  String get lblViewAll => 'Alle ansehen';
+  String get lblViewAll => 'ሁሉንም ይመልከቱ';
 
   @override
-  String get lblTopDoctors => 'Top -Ärzte';
+  String get lblTopDoctors => 'ምርጥ ዶክተሮች';
 
   @override
-  String get lblExpertsHealthTipsAndAdvice => 'Experten gesundheitliche Tipps und Ratschläge';
+  String get lblExpertsHealthTipsAndAdvice => 'የመጠበቅ እና የጤና እውነተኛ መረጃዎች';
 
   @override
-  String get lblArticlesByHighlyQualifiedDoctors => 'Artikel von hochqualifizierten Ärzten über die alltägliche Gesundheit.';
+  String get lblArticlesByHighlyQualifiedDoctors =>
+      'የምትከተለው የሰርዓቱን ምርጫ በሙሉ ከዝርዝር የሚገኙ የማያውቁ ሳይንስና የሚገኙ የቤተመንጃ ጤና በዘላቂ ጊዜዎች።';
 
+
   @override
-  String get lblChooseYourDoctor => 'Wählen Sie Ihren Arzt';
+  String get lblChooseYourDoctor => 'ሐኪምዎን ይምረጡ';
 
   @override
-  String get lblAddNewAppointment => 'Neuen Termin hinzufügen';
+  String get lblAddNewAppointment => 'አዲስ ቀጠሮ ይያዙ';
 
   @override
-  String get lblSelectOneDoctor => 'Wählen Sie einen Arzt aus';
+  String get lblSelectOneDoctor => 'አንድ ሐኪም ይምረጡ';
 
   @override
-  String get lblClinicDoctor => 'Klinikarzt';
+  String get lblClinicDoctor => 'የአገልግሎት ማእከል ሐኪም ወይም ባለሙያ';
 
   @override
-  String get lblPatientDashboard => 'Armaturenbrett';
+  String get lblPatientDashboard => 'የታካሚ ዳሽቦርድ';
 
   @override
-  String get lblFeedsAndArticles => 'Feeds & Artikel';
+  String get lblFeedsAndArticles => 'ዜና እና ጽሑፎች';
 
   @override
-  String get lblPatientsEncounter => 'Patienten begegnen';
+  String get lblPatientsEncounter => 'የታካሚ ግኝቶች';
 
   @override
-  String get lblNoEncounterFound => 'Keine Begegnung gefunden';
+  String get lblNoEncounterFound => 'ምንም የታካሚ ግኝቶች አልተገኙም።';
 
   @override
-  String get lblSelectSpecialization => 'Wählen Sie Spezialisierung';
+  String get lblSelectSpecialization => 'ስፔሻላይዜሽን ይምረጡ';
 
   @override
-  String get lblAddDoctorProfile => 'Arztprofil hinzufügen';
+  String get lblAddDoctorProfile => 'የዶክተር መገለጫ አክል';
 
   @override
-  String get lblMedicalReport => 'Medizinischer Bericht';
+  String get lblMedicalReport => 'የሕክምና ሪፖርት';
 
   @override
-  String get lblNewMedicalReport => 'Neuer medizinischer Bericht';
+  String get lblNewMedicalReport => 'አዲስ የሕክምና ሪፖርት';
 
   @override
-  String get lblRememberMe => 'Mich erinnern';
+  String get lblRememberMe => 'አስታውሰኝ';
 
   @override
-  String get lblChooseYourClinic => 'Wählen Sie Ihre Klinik';
+  String get lblChooseYourClinic => 'የአገልግሎት ማእከልን ይምረጡ';
 
   @override
-  String get lblAll => 'Alle';
+  String get lblAll => 'ሁሉም';
 
   @override
-  String get lblLatest => 'Neueste';
+  String get lblLatest => 'የቅርብ ጊዜ';
 
   @override
-  String get lblMon => 'Mon';
+  String get lblMon => 'ሰኞ';
 
   @override
-  String get lblTue => 'Di';
+  String get lblTue => 'ማክሰኞ';
 
   @override
-  String get lblWed => 'Heiraten';
+  String get lblWed => 'ረቡዕ';
 
   @override
-  String get lblThu => 'Do';
+  String get lblThu => 'ሐሙስ';
 
   @override
-  String get lblFri => 'Fr';
+  String get lblFri => 'አርብ';
 
   @override
-  String get lblSat => 'Sa';
+  String get lblSat => 'ቅዳሜ';
 
   @override
-  String get lblSun => 'Sonne';
+  String get lblSun => 'እሁድ';
 
   @override
-  String get lblNoReportWasSelected => 'Es wurde kein Bericht ausgewählt';
+  String get lblNoReportWasSelected => 'ምንም ሪፖርት አልተመረጠም';
 
   @override
-  String get lblAddReportScreen => 'Bericht hinzufügen';
+  String get lblAddReportScreen => 'የስህተት ስክን ጨምር';
 
   @override
-  String get lblDateCantBeNull => 'Datum kann nicht leer sein';
+  String get lblDateCantBeNull => 'ቀን ባዶ አይደለም';
 
   @override
-  String get lblUploadReport => 'Bericht hochladen';
+  String get lblUploadReport => 'ስህተት ይጫኑ';
 
   @override
-  String get lblLight => 'Licht';
+  String get lblLight => 'ብርሃን';
 
   @override
-  String get lblDark => 'Dunkel';
+  String get lblDark => 'ጨለማ';
 
   @override
-  String get lblSystemDefault => 'Systemfehler';
+  String get lblSystemDefault => 'የስልክ መተግበሪያ';
 
   @override
-  String get lblNA => 'N / A';
+  String get lblNA => 'አ/ማ';
 
   @override
-  String get lblAddedNewEncounter => 'Neue Begegnung hinzugefügt';
+  String get lblAddedNewEncounter => 'አዲስ ስህተት ተጨማሪ';
 
   @override
-  String get lblCantEditDate => 'Sie können das bereits übergebene Datum bearbeiten';
+  String get lblCantEditDate => 'ቀን ማለት ከፈለጉ አልተቻለም';
 
   @override
-  String get lblNoTitle => 'Kein Titel';
+  String get lblNoTitle => 'ምንም ርዝመት የሉም';
 
   @override
-  String get lblSelectOneClinic => 'Wählen Sie eine Klinik aus';
+  String get lblSelectOneClinic => 'ኪኒክ አንድ ይምረጡ';
 
   @override
-  String get lblPast => 'Vergangenheit';
+  String get lblPast => 'የበፊት';
 
   @override
-  String get lblAddMedicalReport => 'Medizinischen Bericht hinzufügen';
+  String get lblAddMedicalReport => 'የሕክምና ሪፖርት ካለ ያክሉ';
 
   @override
-  String get lblSendPrescriptionOnMail => 'Rezept per Post senden';
+  String get lblSendPrescriptionOnMail => 'ሳጥን በርትዒት ይላኩ';
 
   @override
-  String get lblFilesSelected => 'Dateien ausgewählt';
+  String get lblFilesSelected => 'ፋይሎች ተመረጡ';
 
   @override
-  String get lblService => 'Service';
+  String get lblService => 'አገልግሎት';
 
   @override
-  String get lblTime => 'Zeit';
+  String get lblTime => 'ሰዓት';
 
   @override
-  String get lblAppointmentSummary => 'Terminzusammenfassung';
+  String get lblAppointmentSummary => 'የቀጠሮ ማጠቃለያ';
 
   @override
-  String get lblEncounter => 'Begegnen';
+  String get lblEncounter => 'ግኝቶች';
 
   @override
-  String get lblMedicalReports => 'Medizinischer Bericht';
+  String get lblMedicalReports => 'የሕክምና ሪፖርቶች';
 
   @override
-  String get lblConnectedWith => 'Verbunden mit';
+  String get lblConnectedWith => 'ጋር ተገናኝቷል።';
 
   @override
-  String get lblContact => 'Kontakt';
+  String get lblContact => 'መገኛ';
 
   @override
-  String get lblQrScanner => 'QR -Scanner';
+  String get lblQrScanner => 'QR-ሃገር';
 
   @override
-  String get lblLoginSuccessfully => 'Anmeldung erfolgreich';
+  String get lblLoginSuccessfully => 'በተሳካ በሽታ ማከማቻ';
 
   @override
-  String get lblWrongUser => 'Falscher Benutzer';
+  String get lblWrongUser => 'ተጠቃሚ የሆነው ተጠቃሚ';
 
   @override
-  String get lblMorning => 'Morgen';
+  String get lblMorning => 'ጥዋት';
 
   @override
-  String get lblEvening => 'Abend';
+  String get lblEvening => 'ምሽት';
 
   @override
-  String get lblShare => 'Aktie';
+  String get lblShare => 'አገናኝ';
 
   @override
-  String get lblNoMatch => 'Keine passenden Ansichten';
+  String get lblNoMatch => 'ምንም አይነት አልተከሰተም';
 
   @override
-  String get lblNoDataSubTitle => 'Wir konnten nichts mit Ihrer Suche finden';
+  String get lblNoDataSubTitle => 'በዚህ ውጤታማ ላይ ምንም አልተመረጠም';
 
   @override
-  String get lblEdit => 'Bearbeiten';
+  String get lblEdit => 'አስተካክል';
 
   @override
-  String get lblSwipeMassage => 'Links wischen, um zu bearbeiten oder zu löschen';
+  String get lblSwipeMassage => 'ለአስተካክል ወደሚከሳሽው ለአስተካክል';
 
   @override
-  String get lblReachUsMore => 'Erreichen Sie uns mehr';
+  String get lblReachUsMore => 'እንዴት እንደምንችል ሊደርስበት ይጠቀሙ';
 
   @override
-  String get lblAddressDetail => 'Adressen Details';
+  String get lblAddressDetail => 'አድራሻ ዝርዝር';
 
   @override
-  String get lblChangeYourClinic => 'Ändern Sie Ihre Klinik';
+  String get lblChangeYourClinic => 'በምንቸት ኪኒክ ማስተካከል';
 
   @override
-  String get lblYourBills => 'Holen Sie sich alle Rechnungsdetails';
+  String get lblYourBills => 'እኛን የሚከተሉ ካርዶችዎ';
 
   @override
-  String get lblYourReports => 'Finden Sie Ihre hochgeladenen Berichte';
+  String get lblYourReports => 'የምርጫዎ ስህተቶች';
 
   @override
-  String get lblBillRecords => 'Bill Records';
+  String get lblBillRecords => 'ካርዶ መረጃዎች';
 
   @override
-  String get lblMyBills => 'Meine Rechnungen';
+  String get lblMyBills => 'የእኔ ካርዶች';
 
   @override
-  String get lblRevenue => 'Einnahmen';
+  String get lblRevenue => 'ለበለጠ';
 
   @override
-  String get lblBuyIt => 'Kauf es';
+  String get lblBuyIt => 'አስቀምጥ';
 
   @override
-  String get lblTryIt => 'Versuch es';
+  String get lblTryIt => 'በግልጽ ይግባኝ';
 
   @override
-  String get lblYouAreJustOneStepAwayFromHavingAHandsOnBackendDemo => 'Sie sind nur einen Schritt von einer praktischen Backend-Demo entfernt.';
+  String get lblYouAreJustOneStepAwayFromHavingAHandsOnBackendDemo =>
+      'እኛን በሙሉ አሁኑኑ በእንደምትታወቀው በአሁኑ በእንግሊዝኛ መነሻ ያለን';
 
   @override
-  String get lblChooseYourRole => 'Wählen Sie Ihre Rolle';
+  String get lblChooseYourRole => 'የስራውን ምክንያት ይምረጡ';
 
   @override
-  String get lblEnterYourEmailAddressAsWellAsTheTemporaryLink => 'Geben Sie Ihre E -Mail -Adresse sowie den temporären Link ein';
+  String get lblEnterYourEmailAddressAsWellAsTheTemporaryLink =>
+      'የማንኛውንም ኢሜይል እና የሚከተሉ መረጃዎችን ለማስተካከል አንድ ቅሬታ ያለውን በራስ ያሉ የማረጋገጫ ሊንክ ያስተካከሉ';
 
   @override
-  String get lblClickOnThatAndScanItFromTheApp => 'Klicken Sie darauf und scannen Sie es aus der App';
+  String get lblClickOnThatAndScanItFromTheApp =>
+      'ይህንን እና ከመቀነስ የተጫነውን ሊንክ አስተካክሉ።';
 
   @override
-  String get lblYouWillSeeAQRForAppOptionOnTheRightHandCorner => 'Sie sehen eine QR für App -Option in der rechten Ecke.';
+  String get lblYouWillSeeAQRForAppOptionOnTheRightHandCorner =>
+      'በቀኝ ላይ የእንግሊዝኛ የመታየት አማራጭ ውስጥ እንደተመለሱ ተገኘዋል';
 
   @override
-  String get lblEnjoyTheFlawlessKivicareSystemWithEase => 'Genießen! Das makellose Kivicare -System mit Leichtigkeit.';
+  String get lblEnjoyTheFlawlessKivicareSystemWithEase =>
+      'እንዴት እንደምንችል ከቢዝነስ እንደምትገኘው ካርዶ ስህተትን በመቀነስ ይገናኙ';
 
   @override
-  String get lblCamera => 'Kamera';
+  String get lblCamera => 'ካሜራ';
 
   @override
-  String get lblGallery => 'Galerie';
+  String get lblGallery => 'የምስል ቦታ';
 
   @override
-  String get lblRemoveImage => 'Entferne Bild';
+  String get lblRemoveImage => 'ምስል አስወግድ';
 
   @override
-  String get lblCanNotBeEmpty => 'Kann nicht leer sein';
+  String get lblCanNotBeEmpty => 'አልተመረጠም';
 
   @override
-  String get lblNoConnection => 'Keine Verbindung';
+  String get lblNoConnection => 'አይግቡ';
 
   @override
-  String get lblYourInternetConnectionWasInterrupted => 'Ihre Internetverbindung wurde unterbrochen';
+  String get lblYourInternetConnectionWasInterrupted => 'እኛን የግል በዓል ተከታታይ ነበር';
 
   @override
-  String get lblPlease => 'Bitte';
+  String get lblPlease => 'እባክዎ';
 
   @override
-  String get lblRetry => 'wiederholen';
+  String get lblRetry => 'ደጋፊ';
 
   @override
-  String get lblAfternoon => 'Guten Tag';
+  String get lblAfternoon => 'እንደምን አረፈደዋል';
 
   @override
-  String get lblGood => 'Gut';
+  String get lblGood => 'መልካም';
 
   @override
-  String get lblNight => 'Gute Nacht';
+  String get lblNight => 'መልካም ምሽት';
 
   @override
-  String get lblNoSlotAvailable => 'Kein Slot verfügbar';
+  String get lblNoSlotAvailable => 'ምንም እቆማለሁ አይደለም';
 
   @override
-  String get lblPleaseChooseAnotherDay => 'Bitte wählen Sie einen weiteren Tag';
+  String get lblPleaseChooseAnotherDay => 'እባክዎ ሌላ ቀን ይምረጡ';
 
   @override
-  String get lblPleaseCloseTheEncounterToCheckoutPatient => 'Bitte schließen Sie die Begegnung, um Patient zu überprüfen';
+  String get lblPleaseCloseTheEncounterToCheckoutPatient =>
+      'እባክዎ ከሰርቻለው ጋር ተመኖርታዊ እንደክርክር ያስገቡ';
 
   @override
-  String get lblRemove => 'entfernen';
+  String get lblRemove => 'አጥፋ';
 
   @override
-  String get lblAResetPasswordLinkWillBeSentToTheAboveEnteredEmailAddress => 'Ein Link zum Zurücksetzen des Kennworts wird an die oben eingegebene E -Mail -Adresse gesendet';
+  String get lblAResetPasswordLinkWillBeSentToTheAboveEnteredEmailAddress =>
+      'ከታች ያገኙትን ኢሜል እንደሚያስገቡ የምርመራ ሌንክ በመላክ በላይ በመሆን አስቀምጦታል';
 
   @override
-  String get lblEnterYourEmailAddress => 'Geben sie ihre E-Mailadresse ein';
+  String get lblEnterYourEmailAddress => 'የኢሜል አድራሻን ያስገቡ';
 
   @override
-  String get lblHowToGenerateQRCode => 'Wie generiere ich QR -Code?';
+  String get lblHowToGenerateQRCode => 'እንዴት እንደሚከተለው QR -ኮድ ይክፈሉ?';
 
   @override
-  String get lblStepsToGenerateQRCode => 'Schritte zum Generieren des QR -Code';
+  String get lblStepsToGenerateQRCode => 'እንዴት እንደሚከተለው QR -ኮድ ይክፈሉ';
 
   @override
-  String get lblOpenTheDemoUrlInWeb => 'Öffnen Sie die Demo -URL im Web';
+  String get lblOpenTheDemoUrlInWeb => 'የድምፅ ድርጅት ይክፈሉ በድምፅ በመጫን ከታች ይግቡ';
 
   @override
-  String get lblMore => 'Mehr';
+  String get lblMore => 'ተጨማሪ';
 
   @override
-  String get lblRatingsAndReviews => 'Bewertungen und Bewertungen';
+  String get lblRatingsAndReviews => 'ምዝገባዎች እና መረጃዎች';
 
   @override
-  String get lblViewFile => 'Datei ansehen';
+  String get lblViewFile => 'ፋይል ይመልከቱ';
 
   @override
-  String get lblLoading => 'Wird geladen';
+  String get lblLoading => 'በመጫን ላይ';
 
   @override
-  String get lblAnErrorOccurredWhileCheckingInternetConnectivity => 'Bei der Überprüfung der Internetkonnektivität trat ein Fehler auf';
+  String get lblAnErrorOccurredWhileCheckingInternetConnectivity =>
+      'እባክዎን ስህተት በድጋሚ ያልተፈጠረ ላልተከተሉ ተጠናቋል';
 
   @override
-  String get lblBloodGroup => 'Blutgruppe';
+  String get lblBloodGroup => 'የደም አይነት';
 
   @override
-  String get lblChooseAction => 'Aktion wählen';
+  String get lblChooseAction => 'እባክዎ እርምጃ ይምረጡ';
 
   @override
-  String get lblConnecting => 'Verbinden';
+  String get lblConnecting => 'በመገናኘት ላይ';
 
   @override
-  String get lblMyClinic => 'Meine Klinik';
+  String get lblMyClinic => 'የእኔ አገልግሎት ማእከል';
 
   @override
-  String get lblMyReports => 'Meine Berichte';
+  String get lblMyReports => 'የእኔን ሪፖርቶች';
 
   @override
-  String get lblNoReviewsFound => 'Keine Bewertungen gefunden';
+  String get lblNoReviewsFound => 'ምንም መረጃ አልተገኘም';
 
   @override
-  String get lblPleaseCheckYourNumber => 'Bitte überprüfen Sie Ihre Nummer';
+  String get lblPleaseCheckYourNumber => 'እባክዎን ሂደት ይምረጡ';
 
   @override
-  String get lblYourReviews => 'Ihre Bewertungen';
+  String get lblYourReviews => 'የእኔን መረጃዎች';
 
   @override
-  String get lblConnected => 'In Verbindung gebracht';
+  String get lblConnected => 'ተጠናቋል';
 
   @override
-  String get lblNetworkStatus => 'Netzwerkstatus';
+  String get lblNetworkStatus => 'የኔትዎርክ ሁኔታ';
 
   @override
-  String get lblOffline => 'Offline';
+  String get lblOffline => 'ከመስመር ውጭ';
 
   @override
-  String get lblUnknown => 'Unbekannt';
+  String get lblUnknown => 'የማይታወቅ';
 
   @override
-  String get lblSelectAppointmentDate => 'Wählen Sie Termindatum';
+  String get lblSelectAppointmentDate => 'የቀጠሮ ቀን ይምረጡ';
 
   @override
-  String get lblScanToTest => 'Scannen, um zu testen';
+  String get lblScanToTest => 'ማፍረስ ለመረዳት';
 
   @override
-  String get lblPleaseSelectPaymentStatus => 'Bitte wählen Sie den Zahlungsstatus zuerst aus';
+  String get lblPleaseSelectPaymentStatus => 'እባክዎ የክፍያ ሁኔታን ይምረጡ';
 
   @override
-  String get lblWhatYourCustomersSaysAboutYou => 'Was Ihre Kunden über Sie sagen';
+  String get lblWhatYourCustomersSaysAboutYou =>
+      'ስለሚከተለው ምን እንደሚነካ ወደዚህ ተስተካክሏል';
 
   @override
-  String get lblFriday => 'Freitag';
+  String get lblFriday => 'እሁድ';
 
   @override
-  String get lblMonday => 'Montag';
+  String get lblMonday => 'ሰኞ';
 
   @override
-  String get lblSaturday => 'Samstag';
+  String get lblSaturday => 'ቅዳሜ';
 
   @override
-  String get lblSunday => 'Sonntag';
+  String get lblSunday => 'እሁድ';
 
   @override
-  String get lblThursday => 'Donnerstag';
+  String get lblThursday => 'ሐሙስ';
 
   @override
-  String get lblTuesday => 'Dienstag';
+  String get lblTuesday => 'ማክሰኞ';
 
   @override
-  String get lblWednesday => 'Mittwoch';
+  String get lblWednesday => 'ረቡዕ';
 
   @override
-  String get lblChange => 'Ändern';
+  String get lblChange => 'ቀይር';
 
   @override
-  String get lblChangingStatusFrom => 'Status ändern von';
+  String get lblChangingStatusFrom => 'ሁኔታን ከ ይለውጡ';
 
   @override
-  String get lblPleaseSelectDoctor => 'Bitte wählen Sie Arzt';
+  String get lblPleaseSelectDoctor => 'እባክዎን ሐኪም ይምረጡ';
 
   @override
-  String get lblClose => 'Schließen';
+  String get lblClose => 'ይዝጉ';
 
   @override
-  String get lblAllTheAppointmentOnSelectedDateWillBeCancelled => 'Der gesamte Termin am ausgewählten Datum wird storniert.';
+  String get lblAllTheAppointmentOnSelectedDateWillBeCancelled =>
+      'በተመረጠው ቀን ላይ ያለው አጠቃላይ ቀጠሮ ይሰረዛል';
 
   @override
-  String get lblApr => 'Apr';
+  String get lblApr => 'ሚያዚያ';
 
   @override
-  String get lblArabic => 'Arabisch';
+  String get lblArabic => 'ዓረብኛ';
 
   @override
-  String get lblAug => 'August';
+  String get lblAug => 'ነሐሴ';
 
   @override
-  String get lblDec => 'Dez';
+  String get lblDec => 'ዲሴ';
 
   @override
-  String get lblEnglish => 'Englisch';
+  String get lblEnglish => 'እንግሊዝኛ';
 
   @override
-  String get lblFeb => 'Feb';
+  String get lblFeb => 'የካቲት';
 
   @override
-  String get lblFrench => 'Französisch';
+  String get lblFrench => 'ፈረንሳይኛ';
 
   @override
   String get lblAmharic => 'አማርኛ';
 
   @override
-  String get lblHindi => 'Hindi';
+  String get lblTigrigna => 'ትግርኛ';
 
   @override
-  String get lblJan => 'Jan';
+  String get lblJan => 'ጥር';
 
   @override
-  String get lblJul => 'Jul';
+  String get lblJul => 'ሀምሌ';
 
   @override
-  String get lblJun => 'Jun';
+  String get lblJun => 'ሰኔ';
 
   @override
-  String get lblMar => 'Beschädigen';
+  String get lblMar => 'መጋቢት';
 
   @override
-  String get lblMay => 'Dürfen';
+  String get lblMay => 'ግንቦት';
 
   @override
-  String get lblNov => 'Nov.';
+  String get lblNov => 'ህዳር.';
 
   @override
-  String get lblOct => 'Oktober';
+  String get lblOct => 'ጥቅምት';
 
   @override
-  String get lblSep => 'Sep';
+  String get lblSep => 'መስከረም';
 
   @override
-  String get lblToday => 'Heute';
+  String get lblToday => 'ዛሬ';
 
   @override
-  String get lblTomorrow => 'Morgen';
+  String get lblTomorrow => 'ነገ';
 
   @override
-  String get lblYesterday => 'Gestern';
+  String get lblYesterday => 'ትናንት';
 
   @override
-  String get lblNoQualificationsFound => 'Keine Qualifikationen gefunden';
+  String get lblNoQualificationsFound => 'ምንም መመዘኛዎች አልተገኙም።';
 
   @override
-  String get lblActive => 'Aktiv';
+  String get lblActive => 'እንደገና';
 
   @override
-  String get lblInActive => 'Inaktiv';
+  String get lblInActive => 'ለማግኘት አልተፈቀደም';
 
   @override
-  String get lblOpen => 'Offen';
+  String get lblOpen => 'ክፍት ነው';
 
   @override
-  String get lblPaid => 'Bezahlt';
+  String get lblPaid => 'ተከፍሏል';
 
   @override
-  String get lblUnPaid => 'Unbezahlt';
+  String get lblUnPaid => 'ያልተከፈለ';
 
   @override
-  String get lblComplete => 'Vollständig';
+  String get lblComplete => 'ተጠናቋል';
 
   @override
-  String get lblClosed => 'Geschlossen';
+  String get lblClosed => 'ሕክምናው አልቋል';
 
   @override
-  String get lblChooseYourFavouriteClinic => 'Wählen Sie Ihre Lieblingsklinik';
+  String get lblChooseYourFavouriteClinic => 'የሚወዱትን የአገልግሎት ማእከል ይምረጡ';
 
   @override
-  String get lblAvailableSession => 'Verfügbare Sitzungsdetails';
+  String get lblAvailableSession => 'የሚገኙ ክፍለ ጊዜዎች';
 
   @override
-  String get lblGetYourAllBillsHere => 'Geschichte aller Bill Records';
+  String get lblGetYourAllBillsHere => 'የምርመራውን ተጨማሪ ከሆነ ይግቡ';
 
   @override
-  String get lblServicesYouProvide => 'Dienstleistungen, die Sie anbieten';
+  String get lblServicesYouProvide => 'እርስዎ የሚያቀርቡት አገልግሎቶች';
 
   @override
-  String get lblYourAllEncounters => 'Geschichte aller Begegnungen';
+  String get lblYourAllEncounters => 'ሁሉም የምርመራ ግኝቶችነ';
 
   @override
-  String get lblScheduledHolidays => 'Geplante Feiertage';
+  String get lblScheduledHolidays => 'የታቀዱ በዓላት እና የእረፍት ቀናት';
 
   @override
-  String get lblNotSelected => 'Nicht ausgewählt';
+  String get lblNotSelected => 'አልተመረቀም';
 
   @override
-  String get lblStatus => 'Status';
+  String get lblStatus => 'ሁኔታ';
 
   @override
-  String get lblMultipleSelection => 'Mehrfachauswahl';
+  String get lblMultipleSelection => 'ቁጥር ይምረጡ';
 
   @override
-  String get lblAdded => 'Hinzugefügt';
+  String get lblAdded => 'አገልግሎት ተጨማሪ';
 
   @override
-  String get lblAddedSuccessfully => 'Erfolgreich hinzugefügt';
+  String get lblAddedSuccessfully => 'ተጨማሪ አገልግሎት';
 
   @override
-  String get lblInvalidURL => 'Ungültige URL:';
+  String get lblInvalidURL => 'አይነት URL:';
 
   @override
-  String get lblMedicalHistoryHasBeen => 'Krankengeschichte war';
+  String get lblMedicalHistoryHasBeen => 'የሚጠበቀው ምስጋና ልብ ነበር';
 
   @override
-  String get lblReport => 'Bericht';
+  String get lblReport => 'ስህተት';
 
   @override
-  String get lblSuccessfully => 'Erfolgreich';
+  String get lblSuccessfully => 'ተሳክቶ ተሳክቷል';
 
   @override
-  String get lblInvalidDayOfMonth => 'Ungültiger Tag des Monats';
+  String get lblInvalidDayOfMonth => 'የቀን ቀን አይነት';
 
   @override
-  String get lblConnectionReEstablished => 'Verbindung wieder hergestellt';
+  String get lblConnectionReEstablished => 'በመተንግስት ያለበት ተጠናቋል';
 
   @override
-  String get lblToMobileData => 'mobile Daten';
+  String get lblToMobileData => 'ወደ መተግበር ዳታ';
 
   @override
-  String get lblToWifi => 'nach WiFi';
+  String get lblToWifi => 'ወደ WiFi';
 
   @override
-  String get lblMultipleSelectionIsAvailableForThisService => 'Für diesen Service steht eine Option mit mehreren Auswahlmöglichkeiten zur Verfügung';
+  String get lblMultipleSelectionIsAvailableForThisService =>
+      'ለዚ አገልግሎት ባለ ብዙ ምርጫ መምረጥ ይቻላል';
 
   @override
-  String get lblNote => 'Notiz';
+  String get lblNote => 'ማስታወሻ';
 
   @override
-  String get lblToCloseTheEncounterInvoicePaymentIsMandatory => 'Um die Begegnung zu schließen, ist die Rechnungszahlung obligatorisch';
+  String get lblToCloseTheEncounterInvoicePaymentIsMandatory =>
+      'ማስታወሻን የስነ-ምግባር ክፍያ ተመዝግቦ ነበር';
 
   @override
-  String get lblUpdate => 'Aktualisieren';
+  String get lblUpdate => 'አዘናጋቸው';
 
   @override
-  String get lblBillDetails => 'Rechnungsdetails';
+  String get lblBillDetails => 'የሂሳብ ዝርዝር';
 
   @override
-  String get lblChooseImage => 'Wählen Sie Bild';
+  String get lblChooseImage => 'ምስል ይምረጡ';
 
   @override
-  String get lblApril => 'April';
+  String get lblApril => 'ሚያዚያ';
 
   @override
-  String get lblAugust => 'August';
+  String get lblAugust => 'ነሐሴ';
 
   @override
-  String get lblDecember => 'Dezember';
+  String get lblDecember => 'ህዳር';
 
   @override
-  String get lblFebruary => 'Februar';
+  String get lblFebruary => 'ሐምሌ';
 
   @override
-  String get lblJanuary => 'Januar';
+  String get lblJanuary => 'ሰኔ';
 
   @override
-  String get lblJuly => 'Juli';
+  String get lblJuly => 'ሐምሌ';
 
   @override
-  String get lblJune => 'Juni';
+  String get lblJune => 'ሰኔ';
 
   @override
-  String get lblMarch => 'Marsch';
+  String get lblMarch => 'መጋቢት';
 
   @override
-  String get lblMonthly => 'Monatlich';
+  String get lblMonthly => 'ወራትታለች';
 
   @override
-  String get lblNovember => 'November';
+  String get lblNovember => 'ነሐሴ';
 
   @override
-  String get lblOctober => 'Oktober';
+  String get lblOctober => 'ጥቅምት';
 
   @override
-  String get lblSeptember => 'September';
+  String get lblSeptember => 'መስከረም';
 
   @override
-  String get lblWeekly => 'Wöchentlich';
+  String get lblWeekly => 'ሳህዳር';
 
   @override
-  String get lblYearly => 'Jährlich';
+  String get lblYearly => 'ዓመትን';
 
   @override
-  String get lblChangeSignature => 'Signatur ändern';
+  String get lblChangeSignature => 'የምርጫ አሰራር ቀይር';
 
   @override
-  String get lblClear => 'Klar';
+  String get lblClear => 'አጽዳ';
 
   @override
-  String get lblUndo => 'Rückgängig machen';
+  String get lblUndo => 'እንደገና እንደመስራት';
 
   @override
-  String get lblSignature => 'Unterschrift';
+  String get lblSignature => 'አሰራር';
 
   @override
-  String get lblAdd => 'Hinzufügen';
+  String get lblAdd => 'አክል';
 
   @override
-  String get lblSelectYearOfGraduation => 'Wählen Sie das Abschlussjahr aus';
+  String get lblSelectYearOfGraduation => 'የስልጠና ዓመት ይምረጡ';
 
   @override
-  String get lblSelect => 'Wählen';
+  String get lblSelect => 'ምረጥ';
 
   @override
-  String get lblPayBill => 'Rechnung bezahlen';
+  String get lblPayBill => 'ክፍያ ክፈት';
 
   @override
-  String get lblPleaseCheckYourEmailInboxToSetNewPassword => 'Bitte überprüfen Sie Ihren E -Mail -Posteingang, um ein neues Passwort festzulegen';
+  String get lblPleaseCheckYourEmailInboxToSetNewPassword =>
+      'እባኮትን እንደኢሜል ያለፈውን ቃል በመጠቀም እባኮት ለማዘጋጀት እባኮት ሜልያን በመጠቀም ይጠቀሙ';
 
   @override
-  String get lblReview => 'Rezension';
+  String get lblReview => 'ስትራት';
 
   @override
-  String get lblBillingRecords => 'Abrechnungsunterlagen';
+  String get lblBillingRecords => 'የክፍያ መግለጫዎች';
 
   @override
-  String get lblAppointmentCount => 'Terminzahl';
+  String get lblAppointmentCount => 'የእርስዎ ቅሬታ';
 
   @override
-  String get lblNoRecordsFound => 'Keine Aufzeichnungen gefunden';
+  String get lblNoRecordsFound => 'ምንም መግለጫ አልተገኘም';
 
   @override
-  String get lblNoAppointmentsFound => 'Keine Termine gefunden';
+  String get lblNoAppointmentsFound => 'ምንም ተላላፊ አልተገኘም';
 
   @override
-  String get lblSelectPatient => 'Patienten auswählen';
+  String get lblSelectPatient => 'ሰውን ይምረጡ';
 
   @override
-  String get lblNoReportsFound => 'Keine Berichte gefunden';
+  String get lblNoReportsFound => 'ምንም ሪፖርት አልተገኘም';
 
   @override
-  String get lblSpecialities => 'Spezialitäten';
+  String get lblSpecialities => 'ስፋት';
 
   @override
-  String get lblKnowWhatYourPatientsSaysAboutYou => 'Wissen Sie, was Ihre Patienten über Sie sagen';
+  String get lblKnowWhatYourPatientsSaysAboutYou => 'ስወግድ ማህበረሰብን ማጣት እንችላለን';
 
   @override
-  String get lblSchedule => 'Zeitplan';
+  String get lblSchedule => 'ሪፖርት';
 
   @override
-  String get lblAllowMultiSelectionWhileBooking => 'Multi Selection während der Buchung zulassen?';
+  String get lblAllowMultiSelectionWhileBooking =>
+      'ለመታዘዝ የሚቀመጡትን መረጃዎች አቅርባለሁ?';
 
   @override
-  String get lblNo => 'NEIN';
+  String get lblNo => 'አይ';
 
   @override
-  String get lblSetStatus => 'Status festlegen';
+  String get lblSetStatus => 'ሁኔታዎን ይጠቀሙ';
 
   @override
-  String get lblFound => 'gefunden';
+  String get lblFound => 'ተገኝተዋል';
 
   @override
-  String get lblDUpdatedSuccessfully => 'Erfolgreich geupdated';
+  String get lblDUpdatedSuccessfully => 'በተሳካ ማድረግ';
 
   @override
-  String get lblDeletedSuccessfully => 'Erfolgreich gelöscht';
+  String get lblDeletedSuccessfully => 'በተሳካ ማድረግ';
 
   @override
-  String get lblPleaseGiveYourRating => 'Bitte geben Sie Ihre Bewertung an';
+  String get lblPleaseGiveYourRating => 'እባኮት ያስተዋልኩት ይጠቀሙ';
 
   @override
-  String get lblEnterYourReviews => 'Geben Sie Ihre Bewertung ein (optional)';
+  String get lblEnterYourReviews => 'ያስተዋልኩትን ይጠቀሙ (ምሳሌ)';
 
   @override
-  String get lblUnAuthorized => "Demo-Benutzer kann nicht für diese Aktion gewährt werden";
+  String get lblUnAuthorized => "የምሳሌ-ተጠቃሚ የሚቀመጡ በርሄ አይጠቀሙ";
 
   @override
-  String get lblIsThisATelemedService => 'Is dit een Telemed-service?';
+  String get lblIsThisATelemedService => 'ይህ ቴሌሜድ ስራ ነው ይህን ይመስላል?';
 
   @override
-  String get lblTelemedService => 'Kiezen Telemed Service mag of niet?';
+  String get lblTelemedService => 'ቴሌሜድ ስራ ማለት አለው ይህ ነው ያልኩ?';
 
   @override
-  String get lblDeleteAccount => 'Konto löschen';
+  String get lblDeleteAccount => 'መለያ አጥፋ';
 
   @override
-  String get lblStayConnected => 'In Verbindung bleiben';
+  String get lblStayConnected => 'በአገልግሎታችን አቆማላችኋል';
 
   @override
-  String get lblConnectedToInternet => 'Sie sind jetzt mit dem Internet verbunden';
+  String get lblConnectedToInternet => 'እንደሚሆን በመሣሪያ ነው';
 
   @override
-  String get lblNoInternetMsg => 'Sie sind nicht mit dem Internet verbunden';
+  String get lblNoInternetMsg => 'በእኛ ላይ አይደለም';
 
   @override
-  String get lblDeleteAccountNote => 'Deine Gesundheit ist kostbar - halte an deinem Konto fest';
+  String get lblDeleteAccountNote => 'የጤናማ አቅጣጫ በተከፈተ በርሄ ስንት እንኳን በመለያ ይጥፋል';
 
   @override
-  String get lblSomethingWentWrong => 'Etwas ist schiefgegangen';
+  String get lblSomethingWentWrong => 'ምንም ስህተት ተረትተው ነበር';
 }
