@@ -36,8 +36,8 @@ android {
         applicationId "com.momona.healthcare"
         minSdkVersion 25
         targetSdkVersion 34
-        versionCode 6
-        versionName "1.1.4"
+        versionCode 7
+        versionName "1.1.5"
         multiDexEnabled true
     }
 
@@ -104,4 +104,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
 
     implementation 'androidx.multidex:multidex:2.0.1'
+    //implementation 'androidx.browser:browser:1.8.0'
 }

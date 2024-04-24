@@ -17,10 +17,10 @@ class AppLocalizations extends LocalizationsDelegate<BaseLanguage> {
         return LanguageEn();
       case 'am':
         return LanguageAm();
-      //case 'ar':
-      //  return LanguageAr();
-      //case 'fr':
-      //  return LanguageFr();
+      case 'ar':
+        return LanguageAr();
+      case 'fr':
+        return LanguageFr();
       case 'tg':
         return LanguageTg();
 

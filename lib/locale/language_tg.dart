@@ -43,7 +43,7 @@ class LanguageTg extends BaseLanguage {
   String get lblShop => "ድኳን";
 
   @override
-  String get lblAddressSubTitle => "वितरण गंतव्य";
+  String get lblAddressSubTitle => "ኣድራሻ";
   @override
   String get lblOrders => "መስርዕ";
 

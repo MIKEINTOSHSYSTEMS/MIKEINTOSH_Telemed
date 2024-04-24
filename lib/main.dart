@@ -37,6 +37,19 @@ import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 import 'utils/app_common.dart';
 
+/*
+
+import 'package:appwrite/appwrite.dart';
+
+Client client = Client();
+client
+    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setProject('661429cd4db7e3215ec6')
+    .setSelfSigned(status: true); // For self signed certificates, only use for development
+
+ */
+
+
 late PackageInfoData packageInfo;
 
 late StreamSubscription<ConnectivityResult> _connectivitySubscription;
