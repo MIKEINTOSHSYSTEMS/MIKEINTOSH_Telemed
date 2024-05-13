@@ -2,16 +2,16 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:momona_healthcare/config.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
-import 'package:momona_healthcare/network/appointment_repository.dart';
-import 'package:momona_healthcare/screens/doctor/fragments/appointment_fragment.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/date_extensions.dart';
-import 'package:momona_healthcare/utils/widgets/calender/date_utils.dart';
-import 'package:momona_healthcare/utils/widgets/calender/flutter_clean_calendar.dart';
+import 'package:kivicare_flutter/config.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/upcoming_appointment_model.dart';
+import 'package:kivicare_flutter/network/appointment_repository.dart';
+import 'package:kivicare_flutter/screens/doctor/fragments/appointment_fragment.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/date_extensions.dart';
+import 'package:kivicare_flutter/utils/widgets/calender/date_utils.dart';
+import 'package:kivicare_flutter/utils/widgets/calender/flutter_clean_calendar.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class RAppointentCalenderComponent extends StatefulWidget {

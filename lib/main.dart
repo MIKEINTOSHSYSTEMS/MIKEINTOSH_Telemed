@@ -8,47 +8,34 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/app_theme.dart';
-import 'package:momona_healthcare/config.dart';
-import 'package:momona_healthcare/locale/app_localizations.dart';
-import 'package:momona_healthcare/locale/base_language_key.dart';
-import 'package:momona_healthcare/locale/language_en.dart';
-import 'package:momona_healthcare/model/language_model.dart';
-import 'package:momona_healthcare/model/user_permission.dart';
-import 'package:momona_healthcare/network/auth_repository.dart';
-import 'package:momona_healthcare/network/google_repository.dart';
-import 'package:momona_healthcare/network/services/default_firebase_config.dart';
-import 'package:momona_healthcare/screens/patient/store/patient_store.dart';
-import 'package:momona_healthcare/screens/splash_screen.dart';
-import 'package:momona_healthcare/store/AppStore.dart';
-import 'package:momona_healthcare/store/AppointmentAppStore.dart';
-import 'package:momona_healthcare/screens/doctor/store/DoctorAppStore.dart';
-import 'package:momona_healthcare/store/ListAppStore.dart';
-import 'package:momona_healthcare/store/MultiSelectStore.dart';
-import 'package:momona_healthcare/screens/receptionist/store/ReceptionistAppStore.dart';
-import 'package:momona_healthcare/store/PermissionStore.dart';
-import 'package:momona_healthcare/store/ShopStore.dart';
-import 'package:momona_healthcare/store/UserStore.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/app_theme.dart';
+import 'package:kivicare_flutter/config.dart';
+import 'package:kivicare_flutter/locale/app_localizations.dart';
+import 'package:kivicare_flutter/locale/base_language_key.dart';
+import 'package:kivicare_flutter/locale/language_en.dart';
+import 'package:kivicare_flutter/model/language_model.dart';
+import 'package:kivicare_flutter/model/user_permission.dart';
+import 'package:kivicare_flutter/network/auth_repository.dart';
+import 'package:kivicare_flutter/network/google_repository.dart';
+import 'package:kivicare_flutter/network/services/default_firebase_config.dart';
+import 'package:kivicare_flutter/screens/patient/store/patient_store.dart';
+import 'package:kivicare_flutter/screens/splash_screen.dart';
+import 'package:kivicare_flutter/store/AppStore.dart';
+import 'package:kivicare_flutter/store/AppointmentAppStore.dart';
+import 'package:kivicare_flutter/screens/doctor/store/DoctorAppStore.dart';
+import 'package:kivicare_flutter/store/ListAppStore.dart';
+import 'package:kivicare_flutter/store/MultiSelectStore.dart';
+import 'package:kivicare_flutter/screens/receptionist/store/ReceptionistAppStore.dart';
+import 'package:kivicare_flutter/store/PermissionStore.dart';
+import 'package:kivicare_flutter/store/ShopStore.dart';
+import 'package:kivicare_flutter/store/UserStore.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 import 'utils/app_common.dart';
-
-/*
-
-import 'package:appwrite/appwrite.dart';
-
-Client client = Client();
-client
-    .setEndpoint('https://cloud.appwrite.io/v1')
-    .setProject('661429cd4db7e3215ec6')
-    .setSelfSigned(status: true); // For self signed certificates, only use for development
-
- */
-
 
 late PackageInfoData packageInfo;
 

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/components/cached_image_widget.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/components/price_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/woo_commerce/order_model.dart';
-import 'package:momona_healthcare/network/shop_repository.dart';
-import 'package:momona_healthcare/screens/shimmer/screen/order_detail_shimmer_screen.dart';
-import 'package:momona_healthcare/screens/woocommerce/component/cancel_order_form_component.dart';
-import 'package:momona_healthcare/screens/woocommerce/component/order_status_component.dart';
-import 'package:momona_healthcare/screens/woocommerce/screens/product_detail_screen.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/cached_image_widget.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/components/price_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/woo_commerce/order_model.dart';
+import 'package:kivicare_flutter/network/shop_repository.dart';
+import 'package:kivicare_flutter/screens/shimmer/screen/order_detail_shimmer_screen.dart';
+import 'package:kivicare_flutter/screens/woocommerce/component/cancel_order_form_component.dart';
+import 'package:kivicare_flutter/screens/woocommerce/component/order_status_component.dart';
+import 'package:kivicare_flutter/screens/woocommerce/screens/product_detail_screen.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class OrderDetailScreen extends StatefulWidget {

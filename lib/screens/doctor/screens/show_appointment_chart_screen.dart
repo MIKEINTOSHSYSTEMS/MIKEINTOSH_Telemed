@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/drop_down_options_class.dart';
-import 'package:momona_healthcare/network/dashboard_repository.dart';
-import 'package:momona_healthcare/screens/doctor/components/monthly_chart_component.dart';
-import 'package:momona_healthcare/screens/doctor/components/weekly_chart_component.dart';
-import 'package:momona_healthcare/screens/doctor/components/yearly_chart_component.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/app_widgets.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/drop_down_options_class.dart';
+import 'package:kivicare_flutter/network/dashboard_repository.dart';
+import 'package:kivicare_flutter/screens/doctor/components/monthly_chart_component.dart';
+import 'package:kivicare_flutter/screens/doctor/components/weekly_chart_component.dart';
+import 'package:kivicare_flutter/screens/doctor/components/yearly_chart_component.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/app_widgets.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
+import 'package:kivicare_flutter/model/upcoming_appointment_model.dart';
 
 class ShowAppointmentChartScreen extends StatefulWidget {
   const ShowAppointmentChartScreen({Key? key}) : super(key: key);

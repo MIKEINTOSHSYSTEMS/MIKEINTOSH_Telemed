@@ -1,16 +1,16 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/custom_image_picker.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/service_duration_model.dart';
-import 'package:momona_healthcare/model/service_model.dart';
-import 'package:momona_healthcare/model/static_data_model.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/extensions/enums.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/custom_image_picker.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/service_duration_model.dart';
+import 'package:kivicare_flutter/model/service_model.dart';
+import 'package:kivicare_flutter/model/static_data_model.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/extensions/enums.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ServiceDataFormComponent extends StatefulWidget {

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/report_model.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/report_model.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:momona_healthcare/utils/common.dart';
+import 'package:kivicare_flutter/utils/common.dart';
 
 class PatientReportComponent extends StatelessWidget {
   final List<ReportData> reportList;

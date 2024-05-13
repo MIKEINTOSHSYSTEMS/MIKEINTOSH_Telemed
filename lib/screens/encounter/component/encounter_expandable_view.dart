@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/role_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/encounter_model.dart';
-import 'package:momona_healthcare/network/encounter_repository.dart';
-import 'package:momona_healthcare/network/prescription_repository.dart';
-import 'package:momona_healthcare/network/report_repository.dart';
-import 'package:momona_healthcare/screens/doctor/screens/add_prescription_screen.dart';
-import 'package:momona_healthcare/screens/doctor/screens/add_report_screen.dart';
-import 'package:momona_healthcare/screens/encounter/component/encounter_type_list_component.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/enums.dart';
-import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
+import 'package:kivicare_flutter/components/role_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/encounter_model.dart';
+import 'package:kivicare_flutter/network/encounter_repository.dart';
+import 'package:kivicare_flutter/network/prescription_repository.dart';
+import 'package:kivicare_flutter/network/report_repository.dart';
+import 'package:kivicare_flutter/screens/doctor/screens/add_prescription_screen.dart';
+import 'package:kivicare_flutter/screens/doctor/screens/add_report_screen.dart';
+import 'package:kivicare_flutter/screens/encounter/component/encounter_type_list_component.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/enums.dart';
+import 'package:kivicare_flutter/utils/extensions/widget_extentions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class EncounterExpandableView extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/utils/extensions/double_extension.dart';
-import 'package:momona_healthcare/utils/extensions/int_extensions.dart';
+import 'package:kivicare_flutter/utils/extensions/double_extension.dart';
+import 'package:kivicare_flutter/utils/extensions/int_extensions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DisabledRatingBarWidget extends StatelessWidget {

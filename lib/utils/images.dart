@@ -96,9 +96,10 @@ const ic_orderList = 'images/icons/ic_orderList.png';
 const ic_checkList = 'images/icons/ic_checklist.png';
 const ic_noProduct = 'images/ic_no_product.jpg';
 //Flags
+const String flagsIcEthiopia = 'images/flags/icEthiopia.png';
 const String flagsIcAr = 'images/flags/icAr.png';
 const String flagsIcFrench = 'images/flags/icFrench.png';
-const String flagsIcEthiopia = 'images/flags/icEthiopia.png';
+const String flagsIcGermany = 'images/flags/icGermany.png';
 const String flagsIcIndia = 'images/flags/icIndia.png';
 const String flagsIcUs = 'images/flags/icUS.png';
 

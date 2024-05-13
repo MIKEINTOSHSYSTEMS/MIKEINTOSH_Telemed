@@ -1,4 +1,4 @@
-import 'package:momona_healthcare/locale/base_language_key.dart';
+import 'package:kivicare_flutter/locale/base_language_key.dart';
 
 class LanguageAm extends BaseLanguage {
   @override
@@ -300,13 +300,13 @@ class LanguageAm extends BaseLanguage {
   String get myWishlist => 'የእኔ ምኞት ዝርዝር';
 
   @override
-  String get sortBy => 'በመሠረት አስተካክል';
+  String get sortBy => 'በመደብ አደራደር መሠረት ያስተካከሉ';
 
   @override
   String get selectCategory => 'መደብ ይምረጡ';
 
   @override
-  String get shop => 'መደብር';
+  String get shop => 'የምርት እና የአገልግሎት መደብር';
 
   @override
   String get outOfStock => 'አልቋል';
@@ -315,7 +315,7 @@ class LanguageAm extends BaseLanguage {
   String get goToCart => 'ወደ ጋሪ ይሂዱ';
 
   @override
-  String get relatedProducts => 'ተዛማጅ ምርቶች';
+  String get relatedProducts => 'ተዛማጅ ምርቶች እና አገልግሎቶች';
 
   @override
   String get additionalInformation => 'ተጨማሪ መረጃ';
@@ -339,7 +339,7 @@ class LanguageAm extends BaseLanguage {
   String get checkout => 'ክፍያ';
 
   @override
-  String get products => 'ምርቶች';
+  String get products => 'ምርቶች እና አገልግሎቶች';
 
   @override
   String get qty => 'ብዛት';
@@ -402,7 +402,7 @@ class LanguageAm extends BaseLanguage {
   String get lblStart => "መጀመር";
 
   @override
-  String get lblJoin => "መቀላቀል";
+  String get lblJoin => "ከሐኪሙ ጋር ምክክሩን ይቀላቀሉ";
 
   @override
   String get lblTotalDoctors =>
@@ -434,22 +434,22 @@ class LanguageAm extends BaseLanguage {
   String get lblServiceNameIsRequired => "የአገልግሎት ስም አስፈላጊ ነው";
 
   @override
-  String get lblDurationIsRequired => "مدة አስፈላጊ ነው";
+  String get lblDurationIsRequired => "አስፈላጊ ነው";
 
   @override
   String get lblChargesIsRequired => "ክፍያ አስፈላጊ ነው";
 
   @override
-  String get lblNoLatestAppointmentFound => "አዲስ መ 약속 አልተገኘም";
+  String get lblNoLatestAppointmentFound => "አዲስ አልተገኘም";
 
   @override
-  String get lblNoPendingAppointmentFound => "በመጠባበቅ ላይ ያለ መ 약속 አልተገኘም";
+  String get lblNoPendingAppointmentFound => "በመጠባበቅ ላይ ያለ አልተገኘም";
 
   @override
-  String get lblNoCompletedAppointmentFound => "የተፈጸመ መ 약속 አልተገኛም";
+  String get lblNoCompletedAppointmentFound => "የተፈጸመ መ አልተገኛም";
 
   @override
-  String get lblNoCancelledAppointmentFound => "የተሰረዘ መ 약속 አልተገኛም";
+  String get lblNoCancelledAppointmentFound => "የተሰረዘ መ አልተገኛም";
 
   @override
   String get clinicIdRequired => "አገልግሎት ማእከል አስፈላጊ ነው";
@@ -464,7 +464,7 @@ class LanguageAm extends BaseLanguage {
   String get passwordIsRequired => "የይለፍ ቃል አስፈላጊ ነው";
 
   @override
-  String get contactNumberIsRequired => "የ தொடርብ ቁጥር አስፈላጊ ነው";
+  String get contactNumberIsRequired => "የ ቁጥር አስፈላጊ ነው";
 
   @override
   String get lblSwipeLeftToEdit => "ለማስተካከል ግራ በኩል አንሸራትቱ";
@@ -503,7 +503,7 @@ class LanguageAm extends BaseLanguage {
   String get lblVPA => "VPA";
 
   @override
-  String get lblCardId => "የአ شناسታ ካርድ";
+  String get lblCardId => "የአ ታ ካርድ";
 
   @override
   String get lblTransactionId => "የልትካ መታወቂያ";
@@ -549,17 +549,17 @@ class LanguageAm extends BaseLanguage {
   String get lblDoYouWantToDeleteNote => "ማስታወሻ ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToDeleteDoctor => "طبيب ማጥፋት ይፈልጋሉን?";
+  String get lblDoYouWantToDeleteDoctor => " ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblLoginSuccessfullyAsAPatient => "በታካሚ መልክ በተሳካ ሁኔታ ገቡ";
+  String get lblLoginSuccessfullyAsAPatient => "በተሳካ ሁኔታ ገብተዋል";
 
   @override
   String get lblLoginSuccessfullyAsAReceptionist =>
-      "በቀበላ አገልጋይ መልክ በተሳካ ሁኔታ ገቡ";
+      "በተሳካ ሁኔታ ገብተዋል";
 
   @override
-  String get lblLoginSuccessfullyAsADoctor => "በطبيب መልክ በተሳካ ሁኔታ ገቡ";
+  String get lblLoginSuccessfullyAsADoctor => "በተሳካ ሁኔታ ገብተዋል";
 
   @override
   String get lblSelectEncounterDate => "አጋጣሚ ቀን ይምረጡ";
@@ -575,13 +575,13 @@ class LanguageAm extends BaseLanguage {
 
   @override
   String get lblDoYouWantToDeleteAccountPermanently =>
-      "አካውንትዎን  영구적으로 ማጥፋት ይፈልጋሉን?";
+      "አካውንትዎን ማጥፋት ይፈልጋሉን?";
 
   @override
   String get lblDoYouWantToDeleteSession => "ክፍለ ጊዜ ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToAddSession => "ክፍለ ጊዜ መ προσθέστε ይፈልጋሉን?";
+  String get lblDoYouWantToAddSession => "ክፍለ ጊዜ መጨመር ይፈልጋሉን?";
 
   @override
   String get lblDoYouWantToUpdateSession => "ክፍለ ጊዜውን ማዘመን ይፈልጋሉን?";
@@ -590,7 +590,7 @@ class LanguageAm extends BaseLanguage {
   String get lblDoYouWantToChangeThePassword => "የይለፍ ቃል መቀየር ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToDeleteReview => "ግምገmanızን ማጥፋት ይፈልጋሉ?";
+  String get lblDoYouWantToDeleteReview => "ግምገማን ማጥፋት ይፈልጋሉ?";
 
   @override
   String get lblDoYouWantToDeleteHolidayOf => "በዓል ቀን ማጥፋት ይፈልጋሉን?";
@@ -602,16 +602,16 @@ class LanguageAm extends BaseLanguage {
   String get lblDoYouWantToUpdateService => "አገልግሎቱን ማዘመን ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToAddNewService => "አዲስ አገልግሎት መ προσθέστε ይፈልጋሉን?";
+  String get lblDoYouWantToAddNewService => "አዲስ አገልግሎት መጨመር ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToUpdateAppointmentOf => "መ 약속 ማዘመን ይፈልጋሉን?";
+  String get lblDoYouWantToUpdateAppointmentOf => "ቀጠሮን ማዘመን ይፈልጋሉን?";
 
   @override
   String get lblDoYouWantToAddNewAppointmentFor => "አዲስ ቀጠሮ መያዝ ይፈልጋሉ?";
 
   @override
-  String get lblDoYouWantToDeleteAppointmentOf => "መ 약속 ማጥፋት ይፈልጋሉን?";
+  String get lblDoYouWantToDeleteAppointmentOf => "ቀጠሮ ማጥፋት ይፈልጋሉን?";
 
   @override
   String get lblDoYouWantToDeleteReport => "ሪፖርት ማጥፋት ይፈልጋሉን?";
@@ -620,17 +620,17 @@ class LanguageAm extends BaseLanguage {
   String get lblDoYouWantToUpdateReport => "ሪፖርት ማዘመን ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToAddReport => "አዲስ ሪፖርት መ προσθέστε ይፈልጋሉን?";
+  String get lblDoYouWantToAddReport => "አዲስ ሪፖርት መጨመር ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToDeletePrescription => "መድብ  Rezepte ማጥፋት ይፈልጋሉን?";
+  String get lblDoYouWantToDeletePrescription => "መድብ  ሐኪም ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToUpdatePrescription => "መድብ  Rezepte ማዘመን ይፈልጋሉን?";
+  String get lblDoYouWantToUpdatePrescription => "የመድሃኒት ማዘዣ ማዘመን ይፈልጋሉን?";
 
   @override
   String get lblDoYouWantToAddPrescription =>
-      "አዲስ መድብ  Rezepte መ προσθέστε ይፈልጋሉን?";
+      "አዲስ የመድሃኒት ማዘዣ ማከል ይፈልጋሉ?";
 
   @override
   String get lblDoYouWantToSwitchYourClinicTo => "የአገልግሎት ማእከልዎን መቀየር ይፈልጋሉን?";
@@ -643,18 +643,18 @@ class LanguageAm extends BaseLanguage {
       "አዲስ የታካሚ ዝርዝሮች ማስገባት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToUpdateDoctorDetails => "የطبيብ ዝርዝሮች ማዘመን ይፈልጋሉን?";
+  String get lblDoYouWantToUpdateDoctorDetails => "የሐኪም ዝርዝሮች ማዘመን ይፈልጋሉን?";
 
   @override
   String get lblDoYouWantToSaveNewDoctorDetails =>
-      "አዲስ የطبيብ ዝርዝሮች ማስገባት ይፈልጋሉን?";
+      "አዲስ ሐኪም ዝርዝሮች ማስገባት ይፈልጋሉን?";
 
   @override
   String get lblDoYouWantToDeleteEncounterDetailsOf =>
       "አጋጣሚ ዝርዝሮች ማጥፋት ይፈልጋሉን?";
 
   @override
-  String get lblDoYouWantToCheckoutAppointment => "መ 약속 ማውጣት ይፈልጋሉን?";
+  String get lblDoYouWantToCheckoutAppointment => "ቀጠሮን ማየት ይፈልጋሉን?";
 
   @override
   String get lblMultipleSelectionIsNotAvailableForThisService =>
@@ -688,10 +688,10 @@ class LanguageAm extends BaseLanguage {
   String get lblNoSessionAvailable => "ምንም ክፍለ ጊዜ አይገኝም";
 
   @override
-  String get lblTelemedServiceAvailable => "Telemed አገልግሎት ይገኛል";
+  String get lblTelemedServiceAvailable => "የቴሌሜዲኬሽን አገልግሎት ይገኛል";
 
   @override
-  String get lblAvailableDoctor => "የሚገኝ طبيب";
+  String get lblAvailableDoctor => "የሚገኝ ሐኪም";
 
   @override
   String get lblAvailableDoctors => "ያሉ ሐኪሞች";
@@ -731,7 +731,7 @@ class LanguageAm extends BaseLanguage {
   String get lblNoAppointmentForThisDay => "በዚህ ቀን ምንም ቀጠሮ የለም";
 
   @override
-  String get lblDoctorsSelected => "የተመረጡ የተመረጡ ሐኪሞች";
+  String get lblDoctorsSelected => "የተመረጡ ሐኪሞች";
 
   @override
   String get lblDoctorAvailable => " ይገኛሉ";
@@ -830,26 +830,26 @@ class LanguageAm extends BaseLanguage {
   String get lblWalkThroughTitle2 => 'ሐኪሞችን ያግኙ';
 
   @override
-  String get lblWalkThroughTitle3 => 'የመጠባበቂያ ጊዜን ያስወግዱ';
+  String get lblWalkThroughTitle3 => 'የመጠባበቂያ ጊዜና ወረፋ ከእንግዲህ የለም';
 
   @override
-  String get lblWalkThroughTitle4 => 'ከዶክተሮች ጋር ይነጋገሩ';
+  String get lblWalkThroughTitle4 => 'ከዶክተሮች ጋር በቀጥታ ይነጋገሩ';
 
   @override
   String get lblWalkThroughSubTitle1 =>
-      '"የክቪካር አፕ እናቶችን ለተመረጠው እና መጠቀሚያ የጤና አቀማመጦች (እስክንድርያዊውንና ውጤቱን ኤሌክትሮኒክ አንድን) እንደሚመረጥ የጤና ኤሌክትሮኒክ መጠቀሚያ ነው። ከልዩ አካባቢዎች ለማድረግና ለመንፈሳዊ እቅድ አስተናግዷል።"';
+      '"ሞሞና የጤና እንክብካቤ መተግበሪያ ለዶክተሮች ፣ ለህክምና ባለሙያዎች ፣ ለክሊኒክ እና ለታካሚ አስተዳደር ዝግጁ-የተሰራ እና ዘመናዊ የኤሌክትሮኒክስ የጤና መዝገብ እና የቴሌሜዲኬን መተግበሪያ ነው።"';
 
   @override
   String get lblWalkThroughSubTitle2 =>
-      'በሚኒስቴሩዎች ምንዛሬ አፕ እንዲሁም ምንዛሬ አፕዎችን መድረስ ተጠቃሚዎችን በሚጠቀም እንደሚቀርበው የተጠናከረውን የተጠቃሚ መደብ፣ ከዚያ በሚል ምንዛሬ አፕዎችን ያክላል። በክርስቲያን እና በቀንበር እቅዶችን እንዲለው እናሳውቃለን።';
+      'ለአጠቃቀም ቀላል እና በሚገርም መተግበሪያ ለእርስዎ ቅርብ የሆኑ የተለያዩ ልዩ ልዩ ባለሙያዎችን ምርጥ ዶክተሮችን እና የጤና እንክብካቤ አቅራቢዎችን ማግኘት ይችላሉ።';
 
   @override
   String get lblWalkThroughSubTitle3 =>
-      'በየአገልግሎት ማእከል ወይም በሀማችን ማህበራዊ አሰብ፣ ለእርስዎና ለመረጃዎችዎ የተነጠለውን ቅንጅቶችን በተለያዩ እቅድ እናቅርብ የሚችል አሰባስበን ይመልከቱ';
+      'ወረፋ ላይ ማንኛውንም መዘግየት ወይም ረዘም ላለ ጊዜ መጠበቅን ያስወግዱ። በእኛ አጠቃላይ የሞሞና የጤና እንክብካቤ መተግበሪያ አማካኝነት ቀጠሮዎችን በእጅዎ ያቀናብሩ።';
 
   @override
   String get lblWalkThroughSubTitle4 =>
-      'ተመሳሳይ ምክንያትን እና በተለያዩ ጊዜ ሀይል ለእርስዎ ተጠንቀቁ። በተለያዩ ተከታዮች ከቀኑ በፊት በሚገኙበት ወቅታዊ ቁጥር ላይ ተመልሳለሁ እናለው ብለዋል።';
+      'የመጀመሪያው ምርመራ ትክክለኛ እና ወቅታዊ እንዲሆን ታካሚዎች ከዶክተሮች ጋር ቀጥተኛ ምክክር ማድረግ ይችላሉ. የሞሞና የጤና እንክብካቤ የኤስኤምኤስ ማሳወቂያ በታካሚው የተመዘገበ ቁጥር ላይ ማንቂያዎችን ይልካል።';
 
   @override
   String get lblWalkThroughSkipButton => 'ቀጥል';
@@ -1266,19 +1266,19 @@ class LanguageAm extends BaseLanguage {
   String get lblBasicInformation => 'መሰረታዊ መረጃ';
 
   @override
-  String get lblFirstNameIsRequired => 'ስም ይላኩ';
+  String get lblFirstNameIsRequired => 'ስም አስፈላጊ ነው';
 
   @override
-  String get lblLastNameIsRequired => 'የአባት ስም ይላኩ';
+  String get lblLastNameIsRequired => 'የአባት ስም አስፈላጊ ነው';
 
   @override
-  String get lblEmailIsRequired => 'ኢሜይል ይላኩ';
+  String get lblEmailIsRequired => 'ኢሜይል አስፈላጊ ነው';
 
   @override
-  String get lblAddNewPatient => 'አዲስ ሰው አክል';
+  String get lblAddNewPatient => 'አዲስ ታካሚ አክል';
 
   @override
-  String get lblEditPatientDetail => 'የሰው መረጃዎችን አስተካክል';
+  String get lblEditPatientDetail => 'የታካሚ መረጃዎችን አስተካክል';
 
   @override
   String get lblCategory => 'ምድብ';
@@ -1299,26 +1299,26 @@ class LanguageAm extends BaseLanguage {
   String get lblSelectWeekdays => 'ሳምንት ምረጥ';
 
   @override
-  String get lblSessionAddedSuccessfully => 'ሥርዓት ተሳክቷል';
+  String get lblSessionAddedSuccessfully => 'ክፍለ ጊዜ ታክሏል';
 
   @override
-  String get lblSessionUpdatedSuccessfully => 'ሥርዓት ተስተካክለው ነበር';
+  String get lblSessionUpdatedSuccessfully => 'ክፍለ ጊዜ ዘምኗል';
 
   @override
-  String get lblSessionDeleted => 'ሥርዓት ሰርዘው ነበር';
+  String get lblSessionDeleted => 'ክፍለ ጊዜ ተሰርዟል';
 
   @override
   String get lblPleaseSelectTime => 'እባኮ ሰዓት ይምረጡ';
 
   @override
-  String get lblStartAndEndTimeNotSame => 'አይጀምሩም፣ ሰዓት እና መጨረሻ አይመሳሱም';
+  String get lblStartAndEndTimeNotSame => 'መጀመሪያ እና ማብቂያ ጊዜ ተመሳሳይ መሆን የለበትም';
 
   @override
   String get lblTimeNotBeforeMorningStartTime =>
-      'ሰዓት ቀን እናቱ ቅዱስ ቀን ለመነሳት አይሰራም';
+      'ጊዜው ከጠዋቱ መጀመሪያ ሰዓት በፊት መሆን የለበትም';
 
   @override
-  String get lblTimeNotBeforeEveningStartTime => 'ሰዓት ማህፀን ቀን እናቱ ለመነሳት አይሰራም';
+  String get lblTimeNotBeforeEveningStartTime => 'ጊዜው ከምሽቱ መጀመሪያ ሰዓት በፊት መሆን የለበትም';
 
   @override
   String get lblTimeShouldBeInMultiplyOf5 => 'ሰዓት በ5 ብዛት ይሆናል';
@@ -1327,7 +1327,7 @@ class LanguageAm extends BaseLanguage {
   String get lblTimeSlotInMinute => 'ሰዓት ማብራሪ (በደቂቃ)';
 
   @override
-  String get lblTimeSlotRequired => 'ሰዓት ማብራሪ ይላኩ';
+  String get lblTimeSlotRequired => 'ሰዓት አስፈላጊ ነው';
 
   @override
   String get lblWeekDays => 'ሳምንት';
@@ -1336,25 +1336,25 @@ class LanguageAm extends BaseLanguage {
   String get lblMorningSession => 'የጠዋት ሥርዓት';
 
   @override
-  String get lblStartTime => 'ሰዓት በኋላ';
+  String get lblStartTime => 'የመነሻ ጊዜ';
 
   @override
-  String get lblEndTime => 'ሰዓት በመጨረሻ';
+  String get lblEndTime => 'የማለቂያ ጊዜ';
 
   @override
-  String get lblSelectStartTimeFirst => 'በመጀመሪያ ሰዓት ምረጥዋት';
+  String get lblSelectStartTimeFirst => 'በመጀመሪያ ሰዓት ምረጥ';
 
   @override
-  String get lblEveningSession => 'የማቅረብ ሥርዓት';
+  String get lblEveningSession => 'የምሽት ክፍለ ጊዜ';
 
   @override
-  String get lblAddSession => 'ሥርዓት አክል';
+  String get lblAddSession => 'ክፍለ ጊዜ አክል';
 
   @override
-  String get lblEditSession => 'ሥርዓት አስተካክል';
+  String get lblEditSession => 'ክፍለ ጊዜ አስተካክል';
 
   @override
-  String get lblInvoiceDetail => 'አስተዳዳሪ ዝርዝር';
+  String get lblInvoiceDetail => 'የክፍያ ዝርዝር';
 
   @override
   String get lblClinicDetails => 'የአገልግሎት ማእከል ዝርዝርዎች';
@@ -1375,7 +1375,7 @@ class LanguageAm extends BaseLanguage {
   String get lblInvoiceId => 'ክፍያ መለያ ቁጥር';
 
   @override
-  String get lblCreatedAt => 'በዚህ ገንዘብ';
+  String get lblCreatedAt => 'የተፈጠረ በ';
 
   @override
   String get lblPaymentStatus => 'የክፍያ ሁኔታ';
@@ -1613,7 +1613,7 @@ class LanguageAm extends BaseLanguage {
   String get lblSession => 'ክፍለ-ጊዜ';
 
   @override
-  String get lblTimeSlotIsBooked => 'የሰዓት ቀንሽ ተቀመጪ።';
+  String get lblTimeSlotIsBooked => 'በተመረጠው ሰዓት ምንም አገልግሎት የለም: እባክዎ ሌላ የጊዜ ክፍተት ይምረጡ!';
 
   @override
   String get lblAppointmentDate => 'የቀጠሮ ቀን';
@@ -1661,14 +1661,14 @@ class LanguageAm extends BaseLanguage {
   String get lblViewAll => 'ሁሉንም ይመልከቱ';
 
   @override
-  String get lblTopDoctors => 'ምርጥ ዶክተሮች';
+  String get lblTopDoctors => 'የእኛ ምርጥ የጤና አገልግሎት ሰጪዎች እና ሐኪሞች';
 
   @override
-  String get lblExpertsHealthTipsAndAdvice => 'የመጠበቅ እና የጤና እውነተኛ መረጃዎች';
+  String get lblExpertsHealthTipsAndAdvice => 'የጤና ባለሙያዎቻቸን ጠቃሚ ምክሮች እና መረጃዎች';
 
   @override
   String get lblArticlesByHighlyQualifiedDoctors =>
-      'የምትከተለው የሰርዓቱን ምርጫ በሙሉ ከዝርዝር የሚገኙ የማያውቁ ሳይንስና የሚገኙ የቤተመንጃ ጤና በዘላቂ ጊዜዎች።';
+      'የሚከተሉት ጽሑፎች የሚዘጋጁት ከፍተኛ ብቃት ባላቸው የጤና እንክብካቤ አገልግሎት ሰጪዎች ነው';
 
 
   @override
@@ -1813,7 +1813,7 @@ class LanguageAm extends BaseLanguage {
   String get lblQrScanner => 'QR-ሃገር';
 
   @override
-  String get lblLoginSuccessfully => 'በተሳካ በሽታ ማከማቻ';
+  String get lblLoginSuccessfully => 'በተሳካ ሁኔታ ገብተዋል';
 
   @override
   String get lblWrongUser => 'ተጠቃሚ የሆነው ተጠቃሚ';
@@ -1933,7 +1933,7 @@ class LanguageAm extends BaseLanguage {
 
   @override
   String get lblPleaseCloseTheEncounterToCheckoutPatient =>
-      'እባክዎ ከሰርቻለው ጋር ተመኖርታዊ እንደክርክር ያስገቡ';
+      'የታካሚ ምርመራውን ለማጠናቀቅ እባክዎንምርመራውን ይዝጉ';
 
   @override
   String get lblRemove => 'አጥፋ';
@@ -1968,7 +1968,7 @@ class LanguageAm extends BaseLanguage {
 
   @override
   String get lblAnErrorOccurredWhileCheckingInternetConnectivity =>
-      'እባክዎን ስህተት በድጋሚ ያልተፈጠረ ላልተከተሉ ተጠናቋል';
+      'የበይነመረብ ግንኙነትን በመፈተሽ ጊዜ ስህተት ተፈጥሯል';
 
   @override
   String get lblBloodGroup => 'የደም አይነት';
@@ -2010,7 +2010,7 @@ class LanguageAm extends BaseLanguage {
   String get lblSelectAppointmentDate => 'የቀጠሮ ቀን ይምረጡ';
 
   @override
-  String get lblScanToTest => 'ማፍረስ ለመረዳት';
+  String get lblScanToTest => 'ለመፈተሽ ይቃኙ';
 
   @override
   String get lblPleaseSelectPaymentStatus => 'እባክዎ የክፍያ ሁኔታን ይምረጡ';
@@ -2073,6 +2073,12 @@ class LanguageAm extends BaseLanguage {
 
   @override
   String get lblFeb => 'የካቲት';
+
+  @override
+  String get lblGerman => 'ጀርመንኛ';
+
+  @override
+  String get lblHindi => 'ሂንዲ';
 
   @override
   String get lblFrench => 'ፈረንሳይኛ';
@@ -2165,7 +2171,7 @@ class LanguageAm extends BaseLanguage {
   String get lblStatus => 'ሁኔታ';
 
   @override
-  String get lblMultipleSelection => 'ቁጥር ይምረጡ';
+  String get lblMultipleSelection => 'ባለብዙ ምርጫ';
 
   @override
   String get lblAdded => 'አገልግሎት ተጨማሪ';
@@ -2174,32 +2180,32 @@ class LanguageAm extends BaseLanguage {
   String get lblAddedSuccessfully => 'ተጨማሪ አገልግሎት';
 
   @override
-  String get lblInvalidURL => 'አይነት URL:';
+  String get lblInvalidURL => 'ልክ ያልሆነ ዩአርኤል URL:';
 
   @override
   String get lblMedicalHistoryHasBeen => 'የሚጠበቀው ምስጋና ልብ ነበር';
 
   @override
-  String get lblReport => 'ስህተት';
+  String get lblReport => 'ሪፖርት';
 
   @override
-  String get lblSuccessfully => 'ተሳክቶ ተሳክቷል';
+  String get lblSuccessfully => 'በተሳካ ሁኔታ';
 
   @override
-  String get lblInvalidDayOfMonth => 'የቀን ቀን አይነት';
+  String get lblInvalidDayOfMonth => 'ልክ ያልሆነ የወሩ ቀን';
 
   @override
-  String get lblConnectionReEstablished => 'በመተንግስት ያለበት ተጠናቋል';
+  String get lblConnectionReEstablished => 'ግንኙነት ተመስርቷል';
 
   @override
-  String get lblToMobileData => 'ወደ መተግበር ዳታ';
+  String get lblToMobileData => 'ወደ የሞባይል ዳታ';
 
   @override
-  String get lblToWifi => 'ወደ WiFi';
+  String get lblToWifi => 'ወደ ዋይፋይ WiFi';
 
   @override
   String get lblMultipleSelectionIsAvailableForThisService =>
-      'ለዚ አገልግሎት ባለ ብዙ ምርጫ መምረጥ ይቻላል';
+      'ለዚ አገልግሎት ብዙ ምርጫ መምረጥ ይቻላል';
 
   @override
   String get lblNote => 'ማስታወሻ';
@@ -2209,7 +2215,7 @@ class LanguageAm extends BaseLanguage {
       'ማስታወሻን የስነ-ምግባር ክፍያ ተመዝግቦ ነበር';
 
   @override
-  String get lblUpdate => 'አዘናጋቸው';
+  String get lblUpdate => 'አዘምን';
 
   @override
   String get lblBillDetails => 'የሂሳብ ዝርዝር';
@@ -2285,22 +2291,22 @@ class LanguageAm extends BaseLanguage {
 
   @override
   String get lblPleaseCheckYourEmailInboxToSetNewPassword =>
-      'እባኮትን እንደኢሜል ያለፈውን ቃል በመጠቀም እባኮት ለማዘጋጀት እባኮት ሜልያን በመጠቀም ይጠቀሙ';
+      'አዲስ የይለፍ ቃል ለማዘጋጀት እባክዎ የኢሜል ሳጥንዎን ያረጋግጡ';
 
   @override
-  String get lblReview => 'ስትራት';
+  String get lblReview => 'ግምገማ';
 
   @override
   String get lblBillingRecords => 'የክፍያ መግለጫዎች';
 
   @override
-  String get lblAppointmentCount => 'የእርስዎ ቅሬታ';
+  String get lblAppointmentCount => 'የቀጠሮ ብዛት';
 
   @override
-  String get lblNoRecordsFound => 'ምንም መግለጫ አልተገኘም';
+  String get lblNoRecordsFound => 'ምንም መዝገቦች/መግለጫ አልተገኘም';
 
   @override
-  String get lblNoAppointmentsFound => 'ምንም ተላላፊ አልተገኘም';
+  String get lblNoAppointmentsFound => 'ምንም ቀጠሮ አልተገኘም';
 
   @override
   String get lblSelectPatient => 'ሰውን ይምረጡ';
@@ -2309,41 +2315,41 @@ class LanguageAm extends BaseLanguage {
   String get lblNoReportsFound => 'ምንም ሪፖርት አልተገኘም';
 
   @override
-  String get lblSpecialities => 'ስፋት';
+  String get lblSpecialities => 'ስፔሻሊቲዎች';
 
   @override
-  String get lblKnowWhatYourPatientsSaysAboutYou => 'ስወግድ ማህበረሰብን ማጣት እንችላለን';
+  String get lblKnowWhatYourPatientsSaysAboutYou => 'ታካሚዎችዎ ስለእርስዎ የሚናገሩትን ይወቁ';
 
   @override
   String get lblSchedule => 'ሪፖርት';
 
   @override
   String get lblAllowMultiSelectionWhileBooking =>
-      'ለመታዘዝ የሚቀመጡትን መረጃዎች አቅርባለሁ?';
+      'በቀጠሮ ጊዜ ብዙ ምርጫን ፍቀድ';
 
   @override
   String get lblNo => 'አይ';
 
   @override
-  String get lblSetStatus => 'ሁኔታዎን ይጠቀሙ';
+  String get lblSetStatus => 'ሁኔታዎን አዘጋጅ';
 
   @override
   String get lblFound => 'ተገኝተዋል';
 
   @override
-  String get lblDUpdatedSuccessfully => 'በተሳካ ማድረግ';
+  String get lblDUpdatedSuccessfully => 'በተሳካ ዘምኗል';
 
   @override
-  String get lblDeletedSuccessfully => 'በተሳካ ማድረግ';
+  String get lblDeletedSuccessfully => 'በተሳካ ተሰርዟል';
 
   @override
-  String get lblPleaseGiveYourRating => 'እባኮት ያስተዋልኩት ይጠቀሙ';
+  String get lblPleaseGiveYourRating => 'እባክዎን አስተያየትዎን እና ደረጃዎ ይስጡኝ';
 
   @override
-  String get lblEnterYourReviews => 'ያስተዋልኩትን ይጠቀሙ (ምሳሌ)';
+  String get lblEnterYourReviews => 'ግምገማዎችዎን ያስገቡ';
 
   @override
-  String get lblUnAuthorized => "የምሳሌ-ተጠቃሚ የሚቀመጡ በርሄ አይጠቀሙ";
+  String get lblUnAuthorized => "ያልተፈቀደ";
 
   @override
   String get lblIsThisATelemedService => 'ይህ ቴሌሜድ ስራ ነው ይህን ይመስላል?';
@@ -2358,10 +2364,10 @@ class LanguageAm extends BaseLanguage {
   String get lblStayConnected => 'በአገልግሎታችን አቆማላችኋል';
 
   @override
-  String get lblConnectedToInternet => 'እንደሚሆን በመሣሪያ ነው';
+  String get lblConnectedToInternet => 'ከኢንተርኔት ጋር ተገናኝተዋል!';
 
   @override
-  String get lblNoInternetMsg => 'በእኛ ላይ አይደለም';
+  String get lblNoInternetMsg => 'እባክዎ የበይነመረብ ግንኙነትዎን ያረጋግጡ 😔 ከእኛ አይደለም';
 
   @override
   String get lblDeleteAccountNote => 'የጤናማ አቅጣጫ በተከፈተ በርሄ ስንት እንኳን በመለያ ይጥፋል';

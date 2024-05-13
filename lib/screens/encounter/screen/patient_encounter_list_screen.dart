@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/components/empty_error_state_component.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/components/no_data_found_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/encounter_model.dart';
-import 'package:momona_healthcare/model/user_model.dart';
-import 'package:momona_healthcare/network/encounter_repository.dart';
-import 'package:momona_healthcare/screens/shimmer/screen/encounter_shimmer_screen.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/components/empty_error_state_component.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/components/no_data_found_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/encounter_model.dart';
+import 'package:kivicare_flutter/model/user_model.dart';
+import 'package:kivicare_flutter/network/encounter_repository.dart';
+import 'package:kivicare_flutter/screens/shimmer/screen/encounter_shimmer_screen.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import 'package:momona_healthcare/screens/encounter/screen/add_encounter_screen.dart';
-import 'package:momona_healthcare/screens/encounter/component/encounter_list_component.dart';
+import 'package:kivicare_flutter/screens/encounter/screen/add_encounter_screen.dart';
+import 'package:kivicare_flutter/screens/encounter/component/encounter_list_component.dart';
 
 class PatientEncounterListScreen extends StatefulWidget {
   final UserModel? patientData;

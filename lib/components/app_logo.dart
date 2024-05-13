@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/config.dart';
+import 'package:kivicare_flutter/config.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 
 class AppLogo extends StatelessWidget {
   final double? size;

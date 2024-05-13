@@ -1,4 +1,4 @@
-import 'package:momona_healthcare/locale/base_language_key.dart';
+import 'package:kivicare_flutter/locale/base_language_key.dart';
 
 class LanguageEn extends BaseLanguage {
   @override
@@ -791,25 +791,25 @@ class LanguageEn extends BaseLanguage {
   String get lblWalkThroughTitle2 => "Find Doctors";
 
   @override
-  String get lblWalkThroughTitle3 => "Avoid Waiting Time";
+  String get lblWalkThroughTitle3 => "Avoid Waiting Time and Queues";
 
   @override
   String get lblWalkThroughTitle4 => "Talk with Doctors";
 
   @override
   String get lblWalkThroughSubTitle1 =>
-      "Momona Healthcare app is the ready-made and ultimate Electronic Health Record (EHR) solution for Doctors, Medical Professionals, Clinic and Patient Management. Four unique models for doctor, clinic administrators, receptionist and patients.";
+      "Momona Healthcare app is the ready-made and modern Electronic Health Record and Telemedicine Application for Doctors, Medical Professionals, Clinic and Patient Management.";
 
   @override
   String get lblWalkThroughSubTitle2 =>
-      "Build your mobile app resourceful by listing doctors. You can find doctor that is nearest to you with this amazing Doctors model. Add and manage doctors list with Momona Healthcare. ";
+      "By using our application, you can find the best Doctors and Healthcare providers with variety of specializations that are nearest to you with our easy to use and amazing application. ";
 
   @override
-  String get lblWalkThroughSubTitle3 => "Manage appointments at clinic or hospital, schedule patients ahead of time with intelligent Momona Healthcare interface. Avoid any delays or longer waiting in queues";
+  String get lblWalkThroughSubTitle3 => "Avoid any delays or longer waiting in queues. Manage appointments at the palm of your hand with our comprehensive Momona Healthcare application.";
 
   @override
   String get lblWalkThroughSubTitle4 =>
-      "Patients can have direct consulting with the doctor making the first diagnosis accurate and timely. Momona Healthcare’s SMS notification sends alerts on patient’s registered number.";
+      "Patients can have direct consulting with the doctors making the first diagnosis accurate and timely. Momona Healthcare’s SMS notification sends alerts on patient’s registered number.";
 
   @override
   String get lblWalkThroughSkipButton => "Skip";
@@ -2016,13 +2016,16 @@ class LanguageEn extends BaseLanguage {
   String get lblFeb => "Feb";
 
   @override
+  String get lblAmharic => "አማርኛ";
+
+  @override
   String get lblFrench => "French";
 
   @override
-  String get lblAmharic => "Amharic";
+  String get lblGerman => "German";
 
   @override
-  String get lblTigrigna => "Tigrigna";
+  String get lblHindi => "Hindi";
 
   @override
   String get lblJan => "Jan";

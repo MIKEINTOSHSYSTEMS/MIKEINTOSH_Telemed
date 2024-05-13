@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';

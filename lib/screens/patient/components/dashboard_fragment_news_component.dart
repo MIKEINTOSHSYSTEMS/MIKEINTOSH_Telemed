@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/view_all_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/screens/patient/components/news_dashboard_widget.dart';
-import 'package:momona_healthcare/screens/patient/models/news_model.dart';
+import 'package:kivicare_flutter/components/view_all_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/screens/patient/components/news_dashboard_widget.dart';
+import 'package:kivicare_flutter/screens/patient/models/news_model.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DashBoardFragmentNewsComponent extends StatelessWidget {

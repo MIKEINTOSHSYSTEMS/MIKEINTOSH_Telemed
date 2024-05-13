@@ -1,9 +1,9 @@
-import 'package:momona_healthcare/config.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/base_response.dart';
-import 'package:momona_healthcare/model/rating_model.dart';
-import 'package:momona_healthcare/network/network_utils.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
+import 'package:kivicare_flutter/config.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/base_response.dart';
+import 'package:kivicare_flutter/model/rating_model.dart';
+import 'package:kivicare_flutter/network/network_utils.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 Future<BaseResponses> updateReviewAPI(Map<String, dynamic> request) async {

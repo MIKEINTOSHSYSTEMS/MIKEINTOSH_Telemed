@@ -1,7 +1,7 @@
-import 'package:momona_healthcare/model/prescription_model.dart';
-import 'package:momona_healthcare/model/prescription_module.dart';
-import 'package:momona_healthcare/model/report_model.dart';
-import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
+import 'package:kivicare_flutter/model/prescription_model.dart';
+import 'package:kivicare_flutter/model/prescription_module.dart';
+import 'package:kivicare_flutter/model/report_model.dart';
+import 'package:kivicare_flutter/model/upcoming_appointment_model.dart';
 
 import 'encounter_module.dart';
 import 'encounter_type_model.dart';

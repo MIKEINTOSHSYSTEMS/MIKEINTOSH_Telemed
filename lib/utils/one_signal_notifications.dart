@@ -1,5 +1,5 @@
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/utils/common.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/utils/common.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 

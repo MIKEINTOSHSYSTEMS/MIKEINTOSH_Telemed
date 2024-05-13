@@ -1,19 +1,19 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:momona_healthcare/config.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/appoinment_model.dart';
-import 'package:momona_healthcare/model/appointment_slot_model.dart';
-import 'package:momona_healthcare/model/confirm_appointment_response_model.dart';
-import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
-import 'package:momona_healthcare/network/auth_repository.dart';
-import 'package:momona_healthcare/network/network_utils.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/cached_value.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/config.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/appoinment_model.dart';
+import 'package:kivicare_flutter/model/appointment_slot_model.dart';
+import 'package:kivicare_flutter/model/confirm_appointment_response_model.dart';
+import 'package:kivicare_flutter/model/upcoming_appointment_model.dart';
+import 'package:kivicare_flutter/network/auth_repository.dart';
+import 'package:kivicare_flutter/network/network_utils.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/cached_value.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:momona_healthcare/model/encounter_model.dart';
+import 'package:kivicare_flutter/model/encounter_model.dart';
 
 Future<List<UpcomingAppointmentModel>> getPatientAppointmentList(
   int? patientId, {

@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
-import 'package:momona_healthcare/components/step_progress_indicator.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
-import 'package:momona_healthcare/screens/appointment/screen/step1_clinic_selection_screen.dart';
-import 'package:momona_healthcare/screens/appointment/screen/step2_doctor_selection_screen.dart';
-import 'package:momona_healthcare/screens/appointment/screen/step3_final_selection_screen.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/components/step_progress_indicator.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/upcoming_appointment_model.dart';
+import 'package:kivicare_flutter/screens/appointment/screen/step1_clinic_selection_screen.dart';
+import 'package:kivicare_flutter/screens/appointment/screen/step2_doctor_selection_screen.dart';
+import 'package:kivicare_flutter/screens/appointment/screen/step3_final_selection_screen.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 Widget stepCountWidget({String? name, int? totalCount, int? currentCount, double percentage = 0.33, bool showSteps = true}) {

@@ -1,23 +1,23 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/empty_error_state_component.dart';
-import 'package:momona_healthcare/components/internet_connectivity_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/network/dashboard_repository.dart';
-import 'package:momona_healthcare/screens/patient/components/dashboard_fragment_news_component.dart';
-import 'package:momona_healthcare/screens/patient/screens/dashboard_fragment_doctor_service_component.dart';
-import 'package:momona_healthcare/screens/patient/components/dashboard_fragment_top_doctor_component.dart';
-import 'package:momona_healthcare/screens/patient/components/dashboard_fragment_upcoming_appointment_component.dart';
-import 'package:momona_healthcare/screens/patient/screens/patient_service_list_screen.dart';
-import 'package:momona_healthcare/screens/shimmer/screen/patient_dashboard_shimmer_screen.dart';
-import 'package:momona_healthcare/utils/cached_value.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/empty_error_state_component.dart';
+import 'package:kivicare_flutter/components/internet_connectivity_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/network/dashboard_repository.dart';
+import 'package:kivicare_flutter/screens/patient/components/dashboard_fragment_news_component.dart';
+import 'package:kivicare_flutter/screens/patient/screens/dashboard_fragment_doctor_service_component.dart';
+import 'package:kivicare_flutter/screens/patient/components/dashboard_fragment_top_doctor_component.dart';
+import 'package:kivicare_flutter/screens/patient/components/dashboard_fragment_upcoming_appointment_component.dart';
+import 'package:kivicare_flutter/screens/patient/screens/patient_service_list_screen.dart';
+import 'package:kivicare_flutter/screens/shimmer/screen/patient_dashboard_shimmer_screen.dart';
+import 'package:kivicare_flutter/utils/cached_value.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import 'package:momona_healthcare/model/dashboard_model.dart';
+import 'package:kivicare_flutter/model/dashboard_model.dart';
 
 class PatientDashBoardFragment extends StatefulWidget {
   @override

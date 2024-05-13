@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/date_extensions.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/date_extensions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 extension StExt on String {

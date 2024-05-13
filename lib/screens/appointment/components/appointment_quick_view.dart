@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/common_row_widget.dart';
-import 'package:momona_healthcare/components/price_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/components/common_row_widget.dart';
+import 'package:kivicare_flutter/components/price_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/upcoming_appointment_model.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 

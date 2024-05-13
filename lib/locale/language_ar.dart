@@ -1,4 +1,4 @@
-import 'package:momona_healthcare/locale/base_language_key.dart';
+import 'package:kivicare_flutter/locale/base_language_key.dart';
 
 class LanguageAr extends BaseLanguage {
   @override
@@ -788,18 +788,18 @@ class LanguageAr extends BaseLanguage {
   String get lblWalkThroughTitle4 => 'تحدث مع الأطباء';
 
   @override
-  String get lblWalkThroughSubTitle1 => '""تطبيق Kivicare هو حل السجلات الصحية الإلكترونية الجاهزة والمطلقة (EHR) للأطباء والمهنيين الطبيين وإدارة العيادة وإدارة المرضى.';
+  String get lblWalkThroughSubTitle1 => '""تطبيق Momona Healthcare هو حل السجلات الصحية الإلكترونية الجاهزة والمطلقة (EHR) للأطباء والمهنيين الطبيين وإدارة العيادة وإدارة المرضى.';
 
   @override
   String get lblWalkThroughSubTitle2 =>
-      'قم ببناء تطبيق الهاتف المحمول الخاص بك عن طريق سرد الأطباء. يمكنك العثور على طبيب أقرب إليك مع نموذج الأطباء المذهلين هذا. إضافة وإدارة قائمة الأطباء مع Kivicare.';
+      'قم ببناء تطبيق الهاتف المحمول الخاص بك عن طريق سرد الأطباء. يمكنك العثور على طبيب أقرب إليك مع نموذج الأطباء المذهلين هذا. إضافة وإدارة قائمة الأطباء مع Momona Healthcare.';
 
   @override
-  String get lblWalkThroughSubTitle3 => 'إدارة المواعيد في العيادة أو المستشفى ، أو جدولة المرضى في وقت مبكر مع واجهة Kivicare الذكية. تجنب أي تأخيرات أو أكثر في الانتظار في قوائم الانتظار';
+  String get lblWalkThroughSubTitle3 => 'إدارة المواعيد في العيادة أو المستشفى ، أو جدولة المرضى في وقت مبكر مع واجهة Momona Healthcare الذكية. تجنب أي تأخيرات أو أكثر في الانتظار في قوائم الانتظار';
 
   @override
   String get lblWalkThroughSubTitle4 =>
-      'يمكن للمرضى الحصول على استشارات مباشرة مع الطبيب الذي يجعل التشخيص الأول دقيق وفي الوقت المناسب. يرسل إشعار الرسائل القصيرة من Kivicare تنبيهات على الرقم المسجل للمريض.';
+      'يمكن للمرضى الحصول على استشارات مباشرة مع الطبيب الذي يجعل التشخيص الأول دقيق وفي الوقت المناسب. يرسل إشعار الرسائل القصيرة من Momona Healthcare تنبيهات على الرقم المسجل للمريض.';
 
   @override
   String get lblWalkThroughSkipButton => 'يتخطى';
@@ -937,7 +937,7 @@ class LanguageAr extends BaseLanguage {
   String get lblDone => 'منتهي';
 
   @override
-  String get lblSignUpAsPatient => 'إنشاء حساب Kivicare الخاص بك';
+  String get lblSignUpAsPatient => 'إنشاء حساب Momona Healthcare الخاص بك';
 
   @override
   String get lblAlreadyAMember => 'عضوا فعلا؟';
@@ -1480,7 +1480,7 @@ class LanguageAr extends BaseLanguage {
   String get lblSubmitYourQueriesHere => 'أرسل استفساراتك هنا';
 
   @override
-  String get lblShareKiviCare => 'مشاركة Kivicare';
+  String get lblShareKiviCare => 'مشاركة Momona Healthcare';
 
   @override
   String get lblLogout => 'تسجيل خروج';
@@ -1502,7 +1502,7 @@ class LanguageAr extends BaseLanguage {
 
   @override
   String get lblAboutUsDes =>
-      '""Kivicare هو موعد كامل للعيادة/المستشفى وإدارة السجلات للأطباء والمرضى. إنه يساعد المرضى على حجز مواعيد الطبيب الخاصة بهم بسهولة في أي وقت المعلومات ، والتقارير الطبية ، والأدوية ، وتاريخ زيارة ، والملاحظات السريرية ، تاريخ المريض وغيرها يتنقل كل شيء من خلال الأوراق لرؤية التاريخ السابق لمرضاك ، كل شيء متاح بسهولة لتشخيصك.';
+      '""Momona Healthcare هو موعد كامل للعيادة/المستشفى وإدارة السجلات للأطباء والمرضى. إنه يساعد المرضى على حجز مواعيد الطبيب الخاصة بهم بسهولة في أي وقت المعلومات ، والتقارير الطبية ، والأدوية ، وتاريخ زيارة ، والملاحظات السريرية ، تاريخ المريض وغيرها يتنقل كل شيء من خلال الأوراق لرؤية التاريخ السابق لمرضاك ، كل شيء متاح بسهولة لتشخيصك.';
 
   @override
   String get lblPurchase => 'شراء';
@@ -1826,7 +1826,7 @@ class LanguageAr extends BaseLanguage {
   String get lblYouWillSeeAQRForAppOptionOnTheRightHandCorner => 'سترى خيار QR للتطبيق في الزاوية اليمنى ،';
 
   @override
-  String get lblEnjoyTheFlawlessKivicareSystemWithEase => 'يتمتع! نظام Kivicare الذي لا تشوبه شائبة بسهولة.';
+  String get lblEnjoyTheFlawlessKivicareSystemWithEase => 'يتمتع! نظام Momona Healthcare الذي لا تشوبه شائبة بسهولة.';
 
   @override
   String get lblCamera => 'آلة تصوير';
@@ -2006,13 +2006,16 @@ class LanguageAr extends BaseLanguage {
   String get lblFeb => 'فبراير';
 
   @override
+  String get lblAmharic => "አማርኛ";
+
+  @override
   String get lblFrench => 'فرنسي';
 
   @override
-  String get lblAmharic => 'الأمهرية';
+  String get lblGerman => 'ألمانية';
 
   @override
-  String get lblTigrigna => 'الهندية';
+  String get lblHindi => 'الهندية';
 
   @override
   String get lblJan => 'يناير';

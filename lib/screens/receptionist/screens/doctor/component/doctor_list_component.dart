@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/image_border_component.dart';
-import 'package:momona_healthcare/model/user_model.dart';
-import 'package:momona_healthcare/screens/receptionist/screens/doctor/doctor_details_screen.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/common.dart';
+import 'package:kivicare_flutter/components/image_border_component.dart';
+import 'package:kivicare_flutter/model/user_model.dart';
+import 'package:kivicare_flutter/screens/receptionist/screens/doctor/doctor_details_screen.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import 'package:momona_healthcare/main.dart';
+import 'package:kivicare_flutter/main.dart';
 
 class DoctorListComponent extends StatelessWidget {
   final UserModel data;

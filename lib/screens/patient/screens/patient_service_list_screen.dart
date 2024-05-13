@@ -2,21 +2,21 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/components/empty_error_state_component.dart';
-import 'package:momona_healthcare/model/service_model.dart';
-import 'package:momona_healthcare/screens/patient/screens/view_service_detail_screen.dart';
-import 'package:momona_healthcare/screens/shimmer/screen/patient_service_list_shimmer_screen.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/empty_error_state_component.dart';
+import 'package:kivicare_flutter/model/service_model.dart';
+import 'package:kivicare_flutter/screens/patient/screens/view_service_detail_screen.dart';
+import 'package:kivicare_flutter/screens/shimmer/screen/patient_service_list_shimmer_screen.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/components/no_data_found_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/network/service_repository.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/screens/patient/components/category_widget.dart';
+import 'package:kivicare_flutter/utils/extensions/widget_extentions.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/components/no_data_found_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/network/service_repository.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/screens/patient/components/category_widget.dart';
 
 class PatientServiceListScreen extends StatefulWidget {
   const PatientServiceListScreen({Key? key}) : super(key: key);

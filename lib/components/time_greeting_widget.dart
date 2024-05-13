@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import 'package:momona_healthcare/main.dart';
+import 'package:kivicare_flutter/main.dart';
 
 class TimeGreetingWidget extends StatelessWidget {
   final String? morningText;

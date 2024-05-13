@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/app_common_dialog.dart';
-import 'package:momona_healthcare/components/app_setting_widget.dart';
-import 'package:momona_healthcare/components/theme_selection_dialog.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/screens/auth/screens/change_password_screen.dart';
-import 'package:momona_healthcare/screens/language_screen.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/app_common_dialog.dart';
+import 'package:kivicare_flutter/components/app_setting_widget.dart';
+import 'package:kivicare_flutter/components/theme_selection_dialog.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/screens/auth/screens/change_password_screen.dart';
+import 'package:kivicare_flutter/screens/language_screen.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class AppSettingComponent extends StatelessWidget {

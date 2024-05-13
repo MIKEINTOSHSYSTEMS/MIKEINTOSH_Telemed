@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:momona_healthcare/network/doctor_sessions_repository.dart';
-import 'package:momona_healthcare/screens/doctor/screens/sessions/add_session_screen.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/network/doctor_sessions_repository.dart';
+import 'package:kivicare_flutter/screens/doctor/screens/sessions/add_session_screen.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
+import 'package:kivicare_flutter/utils/extensions/widget_extentions.dart';
 
-import 'package:momona_healthcare/components/cached_image_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/doctor_session_model.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/cached_image_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/doctor_session_model.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 
 class SessionWidget extends StatelessWidget {
   final SessionData data;

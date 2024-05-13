@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:momona_healthcare/components/status_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/encounter_model.dart';
-import 'package:momona_healthcare/screens/doctor/screens/bill_details_screen.dart';
-import 'package:momona_healthcare/screens/encounter/screen/add_encounter_screen.dart';
-import 'package:momona_healthcare/screens/encounter/screen/encounter_dashboard_screen.dart';
-import 'package:momona_healthcare/screens/encounter/screen/patient_encounter_dashboard_screen.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
+import 'package:kivicare_flutter/components/status_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/encounter_model.dart';
+import 'package:kivicare_flutter/screens/doctor/screens/bill_details_screen.dart';
+import 'package:kivicare_flutter/screens/encounter/screen/add_encounter_screen.dart';
+import 'package:kivicare_flutter/screens/encounter/screen/encounter_dashboard_screen.dart';
+import 'package:kivicare_flutter/screens/encounter/screen/patient_encounter_dashboard_screen.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/widget_extentions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class EncounterComponent extends StatelessWidget {

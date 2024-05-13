@@ -1,7 +1,7 @@
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/doctor_session_model.dart';
-import 'package:momona_healthcare/network/network_utils.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/doctor_session_model.dart';
+import 'package:kivicare_flutter/network/network_utils.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 
 //region Doctor Sessions
 

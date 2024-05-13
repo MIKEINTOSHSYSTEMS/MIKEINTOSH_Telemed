@@ -1,4 +1,4 @@
-import 'package:momona_healthcare/model/links.dart';
+import 'package:kivicare_flutter/model/links.dart';
 
 class CountryModel {
   Links? links;

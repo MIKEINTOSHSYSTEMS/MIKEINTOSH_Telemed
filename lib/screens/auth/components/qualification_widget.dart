@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/qualification_model.dart';
-import 'package:momona_healthcare/screens/doctor/screens/add_qualification_screen.dart';
-import 'package:momona_healthcare/screens/receptionist/components/qualification_item_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/qualification_model.dart';
+import 'package:kivicare_flutter/screens/doctor/screens/add_qualification_screen.dart';
+import 'package:kivicare_flutter/screens/receptionist/components/qualification_item_widget.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class QualificationWidget extends StatefulWidget {

@@ -2,16 +2,16 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/base_response.dart';
-import 'package:momona_healthcare/model/clinic_list_model.dart';
-import 'package:momona_healthcare/model/user_model.dart';
-import 'package:momona_healthcare/network/network_utils.dart';
-import 'package:momona_healthcare/screens/auth/screens/sign_in_screen.dart';
-import 'package:momona_healthcare/store/ShopStore.dart';
-import 'package:momona_healthcare/utils/cached_value.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/base_response.dart';
+import 'package:kivicare_flutter/model/clinic_list_model.dart';
+import 'package:kivicare_flutter/model/user_model.dart';
+import 'package:kivicare_flutter/network/network_utils.dart';
+import 'package:kivicare_flutter/screens/auth/screens/sign_in_screen.dart';
+import 'package:kivicare_flutter/store/ShopStore.dart';
+import 'package:kivicare_flutter/utils/cached_value.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/dashboard_model.dart';
-import 'package:momona_healthcare/screens/doctor/components/dashboard_count_widget.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/dashboard_model.dart';
+import 'package:kivicare_flutter/screens/doctor/components/dashboard_count_widget.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DashboardFragmentAnalyticsComponent extends StatelessWidget {

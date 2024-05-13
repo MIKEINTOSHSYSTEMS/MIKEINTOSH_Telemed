@@ -2,21 +2,21 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/components/empty_error_state_component.dart';
-import 'package:momona_healthcare/components/internet_connectivity_widget.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/bill_list_model.dart';
-import 'package:momona_healthcare/network/bill_repository.dart';
-import 'package:momona_healthcare/screens/patient/components/bill_component.dart';
-import 'package:momona_healthcare/screens/shimmer/screen/bill_records_shimmer_screen.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
-import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/empty_error_state_component.dart';
+import 'package:kivicare_flutter/components/internet_connectivity_widget.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/bill_list_model.dart';
+import 'package:kivicare_flutter/network/bill_repository.dart';
+import 'package:kivicare_flutter/screens/patient/components/bill_component.dart';
+import 'package:kivicare_flutter/screens/shimmer/screen/bill_records_shimmer_screen.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/extensions/widget_extentions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class MyBillRecordsScreen extends StatefulWidget {

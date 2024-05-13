@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:momona_healthcare/components/price_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/utils/colors.dart';
+import 'package:kivicare_flutter/components/price_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DashBoardCountWidget extends StatelessWidget {

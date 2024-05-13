@@ -1,8 +1,8 @@
-import 'package:momona_healthcare/locale/base_language_key.dart';
+import 'package:kivicare_flutter/locale/base_language_key.dart';
 
 class LanguageFr extends BaseLanguage {
   @override
-  String get appName => 'Kivicare';
+  String get appName => 'Momona Healthcare';
 
   @override
   String get lblContinue => "Continuer";
@@ -805,16 +805,16 @@ class LanguageFr extends BaseLanguage {
   String get lblWalkThroughTitle4 => 'Parler avec les médecins';
   @override
   String get lblWalkThroughSubTitle1 =>
-      "«L'application Kivicare est la solution de dossiers de santé électronique (DSE) prêts à l'emploi et ultimes pour les médecins, les professionnels de la santé, la gestion des cliniques et des patients. Quatre modèles uniques pour les médecins, les administrateurs de la clinique, la réceptionniste et les patients.";
+      "«L'application Momona Healthcare est la solution de dossiers de santé électronique (DSE) prêts à l'emploi et ultimes pour les médecins, les professionnels de la santé, la gestion des cliniques et des patients. Quatre modèles uniques pour les médecins, les administrateurs de la clinique, la réceptionniste et les patients.";
   @override
   String get lblWalkThroughSubTitle2 =>
-      'Créez votre application mobile ingénieuse en répertoriant les médecins. Vous pouvez trouver un médecin le plus proche de vous avec ce modèle de médecins incroyable. Ajouter et gérer la liste des médecins avec Kivicare.';
+      'Créez votre application mobile ingénieuse en répertoriant les médecins. Vous pouvez trouver un médecin le plus proche de vous avec ce modèle de médecins incroyable. Ajouter et gérer la liste des médecins avec Momona Healthcare.';
   @override
   String get lblWalkThroughSubTitle3 =>
-      "Gérer les rendez-vous à la clinique ou à l'hôpital, planifiez les patients à l'avance avec l'interface intelligente de Kivicare. Évitez les retards ou l'attente plus longue dans les files d'attente";
+      "Gérer les rendez-vous à la clinique ou à l'hôpital, planifiez les patients à l'avance avec l'interface intelligente de Momona Healthcare. Évitez les retards ou l'attente plus longue dans les files d'attente";
   @override
   String get lblWalkThroughSubTitle4 =>
-      'Les patients peuvent avoir une consultation directe avec le médecin rendant le premier diagnostic précis et opportun. La notification SMS de Kivicare envoie des alertes sur le numéro enregistré du patient.';
+      'Les patients peuvent avoir une consultation directe avec le médecin rendant le premier diagnostic précis et opportun. La notification SMS de Momona Healthcare envoie des alertes sur le numéro enregistré du patient.';
   @override
   String get lblWalkThroughSkipButton => 'Sauter';
   @override
@@ -906,7 +906,7 @@ class LanguageFr extends BaseLanguage {
   @override
   String get lblDone => 'Fait';
   @override
-  String get lblSignUpAsPatient => 'Créez votre compte Kivicare';
+  String get lblSignUpAsPatient => 'Créez votre compte Momona Healthcare';
   @override
   String get lblAlreadyAMember => 'Déjà membre?';
   @override
@@ -1265,7 +1265,7 @@ class LanguageFr extends BaseLanguage {
   @override
   String get lblClinicTAndC => 'Clinique T&C';
   @override
-  String get lblAboutKiviCare => 'À propos de Kivicare';
+  String get lblAboutKiviCare => 'À propos de Momona Healthcare';
   @override
   String get lblYourReviewCounts => 'Votre avis compte';
   @override
@@ -1275,7 +1275,7 @@ class LanguageFr extends BaseLanguage {
   @override
   String get lblSubmitYourQueriesHere => 'Soumettez vos requêtes ici';
   @override
-  String get lblShareKiviCare => 'Partager Kivicare';
+  String get lblShareKiviCare => 'Partager Momona Healthcare';
   @override
   String get lblLogout => 'Se déconnecter';
   @override
@@ -1291,7 +1291,7 @@ class LanguageFr extends BaseLanguage {
   String get lblContactUs => 'Contactez-nous';
   @override
   String get lblAboutUsDes =>
-      "Kivicare est un rendez-vous en clinique / hôpital complet et une gestion des dossiers pour les médecins et les patients. Les informations, les rapports médicaux, les médicaments, les antécédents de visite, les notes cliniques, les antécédents du patient et d'autres notes. Jongler à travers les articles pour voir les antécédents précédents de vos patients, tout est facilement disponible pour votre diagnostic.";
+      "Momona Healthcare est un rendez-vous en clinique / hôpital complet et une gestion des dossiers pour les médecins et les patients. Les informations, les rapports médicaux, les médicaments, les antécédents de visite, les notes cliniques, les antécédents du patient et d'autres notes. Jongler à travers les articles pour voir les antécédents précédents de vos patients, tout est facilement disponible pour votre diagnostic.";
   @override
   String get lblPurchase => 'Achat';
   @override
@@ -1508,7 +1508,7 @@ class LanguageFr extends BaseLanguage {
   @override
   String get lblYouWillSeeAQRForAppOptionOnTheRightHandCorner => "Vous verrez une option QR pour l'application dans le coin droit,";
   @override
-  String get lblEnjoyTheFlawlessKivicareSystemWithEase => 'Apprécier! Le système Kivicare impeccable avec facilité.';
+  String get lblEnjoyTheFlawlessKivicareSystemWithEase => 'Apprécier! Le système Momona Healthcare impeccable avec facilité.';
   @override
   String get lblCamera => 'Caméra';
   @override
@@ -1630,11 +1630,13 @@ class LanguageFr extends BaseLanguage {
   @override
   String get lblFeb => 'Fév';
   @override
+  String get lblAmharic => "Amharique";
+  @override
   String get lblFrench => 'Français';
   @override
-  String get lblAmharic => 'Amharique';
+  String get lblGerman => 'Allemand';
   @override
-  String get lblTigrigna => 'ትግርኛ';
+  String get lblHindi => 'hindi';
   @override
   String get lblJan => 'Jan';
   @override

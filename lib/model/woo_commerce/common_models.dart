@@ -1,9 +1,9 @@
 import 'dart:ui';
 
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/woo_commerce/product_detail_model.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/woo_commerce/product_detail_model.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 
 class NonceModel {
   String? storeApiNonce;

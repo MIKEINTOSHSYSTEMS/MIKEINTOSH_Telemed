@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/components/app_setting_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/screens/doctor/screens/holiday/holiday_list_screen.dart';
-import 'package:momona_healthcare/screens/doctor/screens/service/service_list_screen.dart';
-import 'package:momona_healthcare/screens/doctor/screens/sessions/doctor_session_list_screen.dart';
-import 'package:momona_healthcare/screens/encounter/screen/encounter_list_screen.dart';
-import 'package:momona_healthcare/screens/patient/screens/my_bill_records_screen.dart';
-import 'package:momona_healthcare/screens/patient/screens/review/rating_view_all_screen.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/app_setting_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/screens/doctor/screens/holiday/holiday_list_screen.dart';
+import 'package:kivicare_flutter/screens/doctor/screens/service/service_list_screen.dart';
+import 'package:kivicare_flutter/screens/doctor/screens/sessions/doctor_session_list_screen.dart';
+import 'package:kivicare_flutter/screens/encounter/screen/encounter_list_screen.dart';
+import 'package:kivicare_flutter/screens/patient/screens/my_bill_records_screen.dart';
+import 'package:kivicare_flutter/screens/patient/screens/review/rating_view_all_screen.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DoctorReceptionistGeneralSettingComponent extends StatelessWidget {

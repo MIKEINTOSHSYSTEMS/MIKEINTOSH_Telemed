@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/app_bar_title_widget.dart';
-import 'package:momona_healthcare/components/dashboard_profile_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/colors.dart';
+import 'package:kivicare_flutter/components/app_bar_title_widget.dart';
+import 'package:kivicare_flutter/components/dashboard_profile_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class AppbarWidget extends StatelessWidget {

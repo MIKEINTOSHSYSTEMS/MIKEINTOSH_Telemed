@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/encounter_model.dart';
-import 'package:momona_healthcare/model/encounter_type_model.dart';
-import 'package:momona_healthcare/model/prescription_model.dart';
-import 'package:momona_healthcare/model/report_model.dart';
-import 'package:momona_healthcare/screens/doctor/screens/add_prescription_screen.dart';
-import 'package:momona_healthcare/screens/encounter/component/encounter_functions.dart';
-import 'package:momona_healthcare/screens/encounter/component/encounter_prescription_component.dart';
-import 'package:momona_healthcare/screens/encounter/component/encounter_type_%20component.dart';
-import 'package:momona_healthcare/screens/encounter/component/report_component.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/enums.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/encounter_model.dart';
+import 'package:kivicare_flutter/model/encounter_type_model.dart';
+import 'package:kivicare_flutter/model/prescription_model.dart';
+import 'package:kivicare_flutter/model/report_model.dart';
+import 'package:kivicare_flutter/screens/doctor/screens/add_prescription_screen.dart';
+import 'package:kivicare_flutter/screens/encounter/component/encounter_functions.dart';
+import 'package:kivicare_flutter/screens/encounter/component/encounter_prescription_component.dart';
+import 'package:kivicare_flutter/screens/encounter/component/encounter_type_%20component.dart';
+import 'package:kivicare_flutter/screens/encounter/component/report_component.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/enums.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class EncounterTypeList extends StatefulWidget {

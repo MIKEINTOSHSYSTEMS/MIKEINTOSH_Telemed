@@ -1,4 +1,4 @@
-import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
+import 'package:kivicare_flutter/model/upcoming_appointment_model.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ConfirmAppointmentResponseModel {

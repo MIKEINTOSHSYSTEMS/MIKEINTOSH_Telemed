@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/utils/colors.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../utils/common.dart';

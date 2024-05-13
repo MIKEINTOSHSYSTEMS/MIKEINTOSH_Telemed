@@ -1,18 +1,18 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/image_border_component.dart';
-import 'package:momona_healthcare/components/status_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/service_duration_model.dart';
-import 'package:momona_healthcare/model/user_model.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/image_border_component.dart';
+import 'package:kivicare_flutter/components/status_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/service_duration_model.dart';
+import 'package:kivicare_flutter/model/user_model.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import 'package:momona_healthcare/model/service_model.dart';
+import 'package:kivicare_flutter/model/service_model.dart';
 
 class ServiceWidget extends StatelessWidget {
   final ServiceData data;

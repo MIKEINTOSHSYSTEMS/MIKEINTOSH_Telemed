@@ -1,4 +1,4 @@
-import 'package:momona_healthcare/model/user_permission.dart';
+import 'package:kivicare_flutter/model/user_permission.dart';
 
 class ConfigurationModel {
   String? message;

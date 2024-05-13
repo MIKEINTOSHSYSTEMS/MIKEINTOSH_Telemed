@@ -672,11 +672,13 @@ abstract class BaseLanguage {
 
   String get lblEnglish;
 
+  String get lblAmharic;
+
   String get lblArabic;
 
-  String get lblTigrigna;
+  String get lblHindi;
 
-  String get lblAmharic;
+  String get lblGerman;
 
   String get lblFrench;
 

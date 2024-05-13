@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/no_data_found_widget.dart';
-import 'package:momona_healthcare/components/view_all_widget.dart';
-import 'package:momona_healthcare/model/service_model.dart';
-import 'package:momona_healthcare/screens/patient/components/category_widget.dart';
-import 'package:momona_healthcare/screens/patient/screens/patient_service_list_screen.dart';
+import 'package:kivicare_flutter/components/no_data_found_widget.dart';
+import 'package:kivicare_flutter/components/view_all_widget.dart';
+import 'package:kivicare_flutter/model/service_model.dart';
+import 'package:kivicare_flutter/screens/patient/components/category_widget.dart';
+import 'package:kivicare_flutter/screens/patient/screens/patient_service_list_screen.dart';
 
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/screens/patient/screens/view_service_detail_screen.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/screens/patient/screens/view_service_detail_screen.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DashboardFragmentDoctorServiceComponent extends StatelessWidget {

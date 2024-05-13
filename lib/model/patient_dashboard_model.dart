@@ -1,7 +1,7 @@
-import 'package:momona_healthcare/model/service_model.dart';
-import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
-import 'package:momona_healthcare/model/user_model.dart';
-import 'package:momona_healthcare/screens/patient/models/news_model.dart';
+import 'package:kivicare_flutter/model/service_model.dart';
+import 'package:kivicare_flutter/model/upcoming_appointment_model.dart';
+import 'package:kivicare_flutter/model/user_model.dart';
+import 'package:kivicare_flutter/screens/patient/models/news_model.dart';
 
 class PatientDashboardModel {
   List<UserModel>? doctor;

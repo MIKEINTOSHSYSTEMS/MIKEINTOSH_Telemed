@@ -14,9 +14,10 @@ class Language {
     return <Language>[
       Language(0, 'English', 'en', flagsIcUs),
       Language(1, 'Amharic', 'am', flagsIcEthiopia),
-      Language(2, 'Arabic', 'ar', flagsIcAr),
-      Language(3, 'French', 'fr', flagsIcFrench),
-      Language(4, 'Tigrigna', 'tg', flagsIcEthiopia),
+      Language(2, 'French', 'fr', flagsIcFrench),
+      Language(3, 'German', 'de', flagsIcGermany),
+      Language(4, 'Arabic', 'ar', flagsIcAr),
+      Language(5, 'Hindi', 'hi', flagsIcIndia),
     ];
   }
 

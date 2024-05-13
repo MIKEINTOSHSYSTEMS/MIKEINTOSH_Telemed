@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/service_duration_model.dart';
-import 'package:momona_healthcare/model/service_model.dart';
-import 'package:momona_healthcare/model/user_model.dart';
-import 'package:momona_healthcare/network/service_repository.dart';
-import 'package:momona_healthcare/screens/shimmer/screen/service_data_shimmer.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/service_duration_model.dart';
+import 'package:kivicare_flutter/model/service_model.dart';
+import 'package:kivicare_flutter/model/user_model.dart';
+import 'package:kivicare_flutter/network/service_repository.dart';
+import 'package:kivicare_flutter/screens/shimmer/screen/service_data_shimmer.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class AvailableClinicListComponent extends StatefulWidget {

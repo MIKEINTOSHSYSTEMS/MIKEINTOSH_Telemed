@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/utils/extensions/int_extensions.dart';
+import 'package:kivicare_flutter/utils/extensions/int_extensions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class SideDateWidget extends StatelessWidget {

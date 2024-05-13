@@ -1,7 +1,7 @@
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 Future<bool> handlePermission() async {

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/time_greeting_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/time_greeting_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import 'package:momona_healthcare/utils/common.dart';
+import 'package:kivicare_flutter/utils/common.dart';
 
 class AppBarTitleWidget extends StatelessWidget {
   const AppBarTitleWidget({Key? key}) : super(key: key);

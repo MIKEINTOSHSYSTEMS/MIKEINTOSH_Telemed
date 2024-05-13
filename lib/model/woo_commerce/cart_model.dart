@@ -1,6 +1,6 @@
-import 'package:momona_healthcare/model/woo_commerce/billing_address_model.dart';
-import 'package:momona_healthcare/model/woo_commerce/cart_item_model.dart';
-import 'package:momona_healthcare/model/woo_commerce/totals_final.dart';
+import 'package:kivicare_flutter/model/woo_commerce/billing_address_model.dart';
+import 'package:kivicare_flutter/model/woo_commerce/cart_item_model.dart';
+import 'package:kivicare_flutter/model/woo_commerce/totals_final.dart';
 
 class CartModel {
   BillingAddressModel? billingAddress;

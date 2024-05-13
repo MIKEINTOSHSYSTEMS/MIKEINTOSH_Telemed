@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/screens/auth/screens/map_screen.dart';
-import 'package:momona_healthcare/services/location_service.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/screens/auth/screens/map_screen.dart';
+import 'package:kivicare_flutter/services/location_service.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class AddressWidget extends StatefulWidget {

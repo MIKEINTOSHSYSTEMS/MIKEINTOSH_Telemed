@@ -1,11 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/config.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/config.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class QrInfoScreen extends StatefulWidget {
@@ -79,11 +79,11 @@ class _QrInfoScreenState extends State<QrInfoScreen> {
                   list: [
                     TextSpan(text: locale.lblOpenTheDemoUrlInWeb + '\n', style: primaryTextStyle()),
                     TextSpan(
-                      text: 'https://momonahealthcare.com/',
+                      text: 'https://demo.kivicare.io/',
                       style: primaryTextStyle(color: primaryColor, decoration: TextDecoration.underline),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          commonLaunchUrl("https://momonahealthcare.com/");
+                          commonLaunchUrl("https://demo.kivicare.io/");
                         },
                     ),
                   ],

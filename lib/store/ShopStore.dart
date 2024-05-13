@@ -1,5 +1,5 @@
-import 'package:momona_healthcare/model/woo_commerce/billing_address_model.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/model/woo_commerce/billing_address_model.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:mobx/mobx.dart';
 import 'package:nb_utils/nb_utils.dart';
 

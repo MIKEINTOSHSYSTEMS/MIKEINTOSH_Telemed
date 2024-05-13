@@ -3,15 +3,15 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart';
-import 'package:momona_healthcare/config.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/base_response.dart';
-import 'package:momona_healthcare/model/service_model.dart';
-import 'package:momona_healthcare/model/user_model.dart';
-import 'package:momona_healthcare/network/auth_repository.dart';
-import 'package:momona_healthcare/network/network_utils.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/common.dart';
+import 'package:kivicare_flutter/config.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/base_response.dart';
+import 'package:kivicare_flutter/model/service_model.dart';
+import 'package:kivicare_flutter/model/user_model.dart';
+import 'package:kivicare_flutter/network/auth_repository.dart';
+import 'package:kivicare_flutter/network/network_utils.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 Future<List<ServiceData>> getServiceListAPI({String? searchString, required int? id, required int page, int? perPages, Function(bool)? lastPageCallback}) async {

@@ -1,5 +1,5 @@
-import 'package:momona_healthcare/model/collection.dart';
-import 'package:momona_healthcare/model/woo_commerce/user.dart';
+import 'package:kivicare_flutter/model/collection.dart';
+import 'package:kivicare_flutter/model/woo_commerce/user.dart';
 
 class Links {
   List<Collection>? collection;

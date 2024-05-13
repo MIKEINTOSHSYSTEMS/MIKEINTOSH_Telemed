@@ -1,4 +1,4 @@
-import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
+import 'package:kivicare_flutter/model/upcoming_appointment_model.dart';
 
 class AppointmentListModel {
   List<UpcomingAppointmentModel>? upcomingAppointment;

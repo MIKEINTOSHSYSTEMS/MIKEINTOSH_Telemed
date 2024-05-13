@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/user_model.dart';
-import 'package:momona_healthcare/network/doctor_repository.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/user_model.dart';
+import 'package:kivicare_flutter/network/doctor_repository.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class SelectedDoctorWidget extends StatefulWidget {

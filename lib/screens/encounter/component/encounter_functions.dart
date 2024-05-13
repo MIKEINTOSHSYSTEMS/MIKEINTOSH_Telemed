@@ -1,7 +1,7 @@
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/encounter_model.dart';
-import 'package:momona_healthcare/model/encounter_type_model.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/encounter_model.dart';
+import 'package:kivicare_flutter/model/encounter_type_model.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 List<EncounterType> getEncounterOtherTypeList({required String encounterType, required EncounterModel encounterData}) {

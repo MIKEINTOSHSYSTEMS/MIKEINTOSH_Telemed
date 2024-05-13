@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/screens/shimmer/components/shimmer_component.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/colors.dart';
+import 'package:kivicare_flutter/screens/shimmer/components/shimmer_component.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class SelectServiceShimmerScreen extends StatelessWidget {

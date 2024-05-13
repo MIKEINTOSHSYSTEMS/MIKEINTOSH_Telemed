@@ -1,9 +1,9 @@
 import 'package:intl/intl.dart';
-import 'package:momona_healthcare/model/rating_model.dart';
-import 'package:momona_healthcare/model/tax_model.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/extensions/date_extensions.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/model/rating_model.dart';
+import 'package:kivicare_flutter/model/tax_model.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/extensions/date_extensions.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../utils/constants.dart';

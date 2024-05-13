@@ -1,5 +1,5 @@
-import 'package:momona_healthcare/model/links.dart';
-import 'package:momona_healthcare/model/order_response_model.dart';
+import 'package:kivicare_flutter/model/links.dart';
+import 'package:kivicare_flutter/model/order_response_model.dart';
 
 class CouponModel {
   Links? links;

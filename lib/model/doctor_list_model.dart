@@ -1,5 +1,5 @@
-import 'package:momona_healthcare/model/rating_model.dart';
-import 'package:momona_healthcare/model/user_model.dart';
+import 'package:kivicare_flutter/model/rating_model.dart';
+import 'package:kivicare_flutter/model/user_model.dart';
 
 class DoctorListModel {
   List<UserModel>? doctorList;

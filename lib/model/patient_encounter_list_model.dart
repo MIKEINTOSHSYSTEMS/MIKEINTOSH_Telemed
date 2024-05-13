@@ -1,4 +1,4 @@
-import 'package:momona_healthcare/model/encounter_model.dart';
+import 'package:kivicare_flutter/model/encounter_model.dart';
 
 class PatientEncounterListModel {
   List<EncounterModel>? patientEncounterData;

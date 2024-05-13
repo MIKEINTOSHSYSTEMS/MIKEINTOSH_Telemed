@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/no_data_found_widget.dart';
-import 'package:momona_healthcare/components/view_all_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/dashboard_model.dart';
-import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
-import 'package:momona_healthcare/screens/appointment/components/appointment_widget.dart';
-import 'package:momona_healthcare/utils/common.dart';
+import 'package:kivicare_flutter/components/no_data_found_widget.dart';
+import 'package:kivicare_flutter/components/view_all_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/dashboard_model.dart';
+import 'package:kivicare_flutter/model/upcoming_appointment_model.dart';
+import 'package:kivicare_flutter/screens/appointment/components/appointment_widget.dart';
+import 'package:kivicare_flutter/utils/common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DashboardFragmentAppointmentComponent extends StatelessWidget {

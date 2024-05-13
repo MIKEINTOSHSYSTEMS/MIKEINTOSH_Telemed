@@ -2,21 +2,21 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/components/empty_error_state_component.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/components/no_data_found_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
-import 'package:momona_healthcare/network/appointment_repository.dart';
-import 'package:momona_healthcare/screens/appointment/appointment_functions.dart';
-import 'package:momona_healthcare/screens/appointment/components/appointment_widget.dart';
-import 'package:momona_healthcare/screens/doctor/fragments/appointment_fragment.dart';
-import 'package:momona_healthcare/components/appointment_fragment_status_compoent.dart';
-import 'package:momona_healthcare/screens/shimmer/screen/appointment_fragment_shimmer.dart';
-import 'package:momona_healthcare/utils/cached_value.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/empty_error_state_component.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/components/no_data_found_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/upcoming_appointment_model.dart';
+import 'package:kivicare_flutter/network/appointment_repository.dart';
+import 'package:kivicare_flutter/screens/appointment/appointment_functions.dart';
+import 'package:kivicare_flutter/screens/appointment/components/appointment_widget.dart';
+import 'package:kivicare_flutter/screens/doctor/fragments/appointment_fragment.dart';
+import 'package:kivicare_flutter/components/appointment_fragment_status_compoent.dart';
+import 'package:kivicare_flutter/screens/shimmer/screen/appointment_fragment_shimmer.dart';
+import 'package:kivicare_flutter/utils/cached_value.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class RAppointmentFragment extends StatefulWidget {

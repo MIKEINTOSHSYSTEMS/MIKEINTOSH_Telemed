@@ -10,7 +10,7 @@ const DOMAIN_URL = 'https://momonahealthcare.com';
 
 const BASE_URL = '$DOMAIN_URL/wp-json/';
 
-const IQONIC_PACKAGE_NAME = "com.momona.healthcare"; // Do not change this Package Name.
+const IQONIC_PACKAGE_NAME = "com.iqonic.kivicare"; // Do not change this Package Name.com.iqonic.kivicare/com.momona.healthcare
 const DEFAULT_LANGUAGE = 'en';
 var COPY_RIGHT_TEXT = '© ${DateTime.now().year}. Momona ♡ Healthcare'; //MIKEINTOSH CopyRight
 

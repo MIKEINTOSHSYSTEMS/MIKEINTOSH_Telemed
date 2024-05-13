@@ -1,23 +1,23 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/empty_error_state_component.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/components/no_data_found_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/user_model.dart';
-import 'package:momona_healthcare/network/doctor_repository.dart';
-import 'package:momona_healthcare/screens/receptionist/screens/doctor/add_doctor_screen.dart';
-import 'package:momona_healthcare/screens/receptionist/screens/doctor/component/doctor_list_component.dart';
-import 'package:momona_healthcare/screens/receptionist/screens/doctor/doctor_details_screen.dart';
-import 'package:momona_healthcare/screens/shimmer/screen/doctor_fragment_shimmer.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/cached_value.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
-import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/empty_error_state_component.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/components/no_data_found_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/user_model.dart';
+import 'package:kivicare_flutter/network/doctor_repository.dart';
+import 'package:kivicare_flutter/screens/receptionist/screens/doctor/add_doctor_screen.dart';
+import 'package:kivicare_flutter/screens/receptionist/screens/doctor/component/doctor_list_component.dart';
+import 'package:kivicare_flutter/screens/receptionist/screens/doctor/doctor_details_screen.dart';
+import 'package:kivicare_flutter/screens/shimmer/screen/doctor_fragment_shimmer.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/cached_value.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/extensions/widget_extentions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DoctorListFragment extends StatefulWidget {

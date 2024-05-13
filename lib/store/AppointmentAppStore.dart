@@ -1,6 +1,6 @@
 import 'package:file_picker/file_picker.dart';
-import 'package:momona_healthcare/model/doctor_list_model.dart';
-import 'package:momona_healthcare/model/user_model.dart';
+import 'package:kivicare_flutter/model/doctor_list_model.dart';
+import 'package:kivicare_flutter/model/user_model.dart';
 import 'package:mobx/mobx.dart';
 
 import '../model/clinic_list_model.dart';

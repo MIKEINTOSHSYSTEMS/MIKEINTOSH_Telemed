@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:momona_healthcare/utils/colors.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
 
 extension doubleExt on num {
   Color getRatingBarColor() {

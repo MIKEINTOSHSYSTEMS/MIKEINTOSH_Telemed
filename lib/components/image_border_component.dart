@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/cached_image_widget.dart';
-import 'package:momona_healthcare/components/zoom_image_screen.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
+import 'package:kivicare_flutter/components/cached_image_widget.dart';
+import 'package:kivicare_flutter/components/zoom_image_screen.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/extensions/widget_extentions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ImageBorder extends StatelessWidget {

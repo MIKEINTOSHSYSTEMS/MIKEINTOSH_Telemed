@@ -1,5 +1,5 @@
 import 'package:intl/intl.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 
 class ReportModel {
   int? total;

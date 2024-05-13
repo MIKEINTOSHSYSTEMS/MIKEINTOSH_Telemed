@@ -2,29 +2,29 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/components/app_common_dialog.dart';
-import 'package:momona_healthcare/components/app_logo.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/config.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/demo_login_model.dart';
-import 'package:momona_healthcare/network/auth_repository.dart';
-import 'package:momona_healthcare/network/google_repository.dart';
-import 'package:momona_healthcare/screens/auth/components/login_register_widget.dart';
-import 'package:momona_healthcare/screens/auth/screens/sign_up_screen.dart';
-import 'package:momona_healthcare/screens/dashboard/screens/doctor_dashboard_screen.dart';
-import 'package:momona_healthcare/screens/dashboard/screens/patient_dashboard_screen.dart';
-import 'package:momona_healthcare/screens/dashboard/screens/receptionist_dashboard_screen.dart';
-import 'package:momona_healthcare/screens/demo_scanners/qr_info_screen.dart';
-import 'package:momona_healthcare/screens/demo_scanners/scanner_screen.dart';
-import 'package:momona_healthcare/utils/app_widgets.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
-import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
-import 'package:momona_healthcare/utils/images.dart';
-import 'package:momona_healthcare/utils/one_signal_notifications.dart';
+import 'package:kivicare_flutter/components/app_common_dialog.dart';
+import 'package:kivicare_flutter/components/app_logo.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/config.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/demo_login_model.dart';
+import 'package:kivicare_flutter/network/auth_repository.dart';
+import 'package:kivicare_flutter/network/google_repository.dart';
+import 'package:kivicare_flutter/screens/auth/components/login_register_widget.dart';
+import 'package:kivicare_flutter/screens/auth/screens/sign_up_screen.dart';
+import 'package:kivicare_flutter/screens/dashboard/screens/doctor_dashboard_screen.dart';
+import 'package:kivicare_flutter/screens/dashboard/screens/patient_dashboard_screen.dart';
+import 'package:kivicare_flutter/screens/dashboard/screens/receptionist_dashboard_screen.dart';
+import 'package:kivicare_flutter/screens/demo_scanners/qr_info_screen.dart';
+import 'package:kivicare_flutter/screens/demo_scanners/scanner_screen.dart';
+import 'package:kivicare_flutter/utils/app_widgets.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/extensions/widget_extentions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
+import 'package:kivicare_flutter/utils/one_signal_notifications.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../components/forgot_password_dailog_component.dart';
@@ -46,7 +46,7 @@ class _SignInScreenState extends State<SignInScreen> {
   bool isRemember = false;
   bool isFirstTime = true;
 
- // List<DemoLoginModel> demoLoginData = demoLoginList();
+  List<DemoLoginModel> demoLoginData = demoLoginList();
 
   int? selectedIndex;
 
@@ -161,7 +161,7 @@ class _SignInScreenState extends State<SignInScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
   }
-/*
+
   Widget buildIconicWidget() {
     return SnapHelperWidget<bool>(
       future: isIqonicProduct,
@@ -286,7 +286,7 @@ class _SignInScreenState extends State<SignInScreen> {
       },
     );
   }
-*/
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -389,7 +389,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       SignUpScreen().launch(context, pageRouteAnimation: pageAnimation, duration: pageAnimationDuration);
                     },
                   ),
-                  //buildIconicWidget(),
+                  buildIconicWidget(),
                 ],
               ),
             ),

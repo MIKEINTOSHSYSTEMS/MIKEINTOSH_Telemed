@@ -2,21 +2,21 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/components/empty_error_state_component.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/components/no_data_found_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/clinic_list_model.dart';
-import 'package:momona_healthcare/network/clinic_repository.dart';
-import 'package:momona_healthcare/screens/appointment/appointment_functions.dart';
-import 'package:momona_healthcare/screens/appointment/components/clinic_list_component.dart';
-import 'package:momona_healthcare/screens/shimmer/components/doctor_shimmer_component.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
-import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/empty_error_state_component.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/components/no_data_found_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/clinic_list_model.dart';
+import 'package:kivicare_flutter/network/clinic_repository.dart';
+import 'package:kivicare_flutter/screens/appointment/appointment_functions.dart';
+import 'package:kivicare_flutter/screens/appointment/components/clinic_list_component.dart';
+import 'package:kivicare_flutter/screens/shimmer/components/doctor_shimmer_component.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/extensions/widget_extentions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class Step1ClinicSelectionScreen extends StatefulWidget {

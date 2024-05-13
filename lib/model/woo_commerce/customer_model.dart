@@ -1,5 +1,5 @@
-import 'package:momona_healthcare/model/links.dart';
-import 'package:momona_healthcare/model/woo_commerce/billing_address_model.dart';
+import 'package:kivicare_flutter/model/links.dart';
+import 'package:kivicare_flutter/model/woo_commerce/billing_address_model.dart';
 
 class CustomerModel {
   Links? links;

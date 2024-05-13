@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/app_setting_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/screens/woocommerce/screens/coupon_list_screen.dart';
-import 'package:momona_healthcare/screens/woocommerce/screens/edit_shop_detail_screen.dart';
-import 'package:momona_healthcare/screens/woocommerce/screens/order_list_screen.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/app_setting_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/screens/woocommerce/screens/coupon_list_screen.dart';
+import 'package:kivicare_flutter/screens/woocommerce/screens/edit_shop_detail_screen.dart';
+import 'package:kivicare_flutter/screens/woocommerce/screens/order_list_screen.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class CommonShopSettingComponent extends StatelessWidget {

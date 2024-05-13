@@ -1,8 +1,8 @@
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/demo_login_model.dart';
-import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
-import 'package:momona_healthcare/model/woo_commerce/common_models.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/demo_login_model.dart';
+import 'package:kivicare_flutter/model/upcoming_appointment_model.dart';
+import 'package:kivicare_flutter/model/woo_commerce/common_models.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 
 List<DemoLoginModel> demoLoginList() {
   List<DemoLoginModel> demoLoginListData = [];

@@ -88,7 +88,7 @@ buildTypes {
     lint {
         disable 'InvalidPackage'
     }
-    namespace 'com.iqonic.momona_healthcare'
+    namespace 'com.iqonic.kivicare_flutter'
 }
 
 flutter {

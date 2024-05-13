@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/app_setting_component.dart';
-import 'package:momona_healthcare/components/other_settings_component.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/colors.dart';
+import 'package:kivicare_flutter/components/app_setting_component.dart';
+import 'package:kivicare_flutter/components/other_settings_component.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class CommonSettingsScreen extends StatefulWidget {

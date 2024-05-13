@@ -4,20 +4,20 @@ import 'dart:ui';
 
 import 'package:collection/src/iterable_extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/confirm_appointment_response_model.dart';
-import 'package:momona_healthcare/network/appointment_repository.dart';
-import 'package:momona_healthcare/screens/appointment/appointment_functions.dart';
-import 'package:momona_healthcare/screens/appointment/components/confirm_appointment_step1_component.dart';
-import 'package:momona_healthcare/screens/appointment/components/success_full_payment_component.dart';
-import 'package:momona_healthcare/screens/doctor/fragments/appointment_fragment.dart';
-import 'package:momona_healthcare/screens/patient/screens/web_view_payment_screen.dart';
-import 'package:momona_healthcare/services/razor_pay_service.dart';
-import 'package:momona_healthcare/services/stripe_pay_service.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/extensions/date_extensions.dart';
-import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/confirm_appointment_response_model.dart';
+import 'package:kivicare_flutter/network/appointment_repository.dart';
+import 'package:kivicare_flutter/screens/appointment/appointment_functions.dart';
+import 'package:kivicare_flutter/screens/appointment/components/confirm_appointment_step1_component.dart';
+import 'package:kivicare_flutter/screens/appointment/components/success_full_payment_component.dart';
+import 'package:kivicare_flutter/screens/doctor/fragments/appointment_fragment.dart';
+import 'package:kivicare_flutter/screens/patient/screens/web_view_payment_screen.dart';
+import 'package:kivicare_flutter/services/razor_pay_service.dart';
+import 'package:kivicare_flutter/services/stripe_pay_service.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/extensions/date_extensions.dart';
+import 'package:kivicare_flutter/utils/extensions/widget_extentions.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ConfirmAppointmentComponent extends StatefulWidget {

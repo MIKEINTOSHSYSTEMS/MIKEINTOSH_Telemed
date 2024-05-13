@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:momona_healthcare/components/disabled_rating_bar_widget.dart';
-import 'package:momona_healthcare/components/image_border_component.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/rating_model.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/components/disabled_rating_bar_widget.dart';
+import 'package:kivicare_flutter/components/image_border_component.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/rating_model.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ReviewWidget extends StatelessWidget {

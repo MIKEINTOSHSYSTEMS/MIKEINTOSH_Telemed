@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/empty_error_state_component.dart';
-import 'package:momona_healthcare/components/internet_connectivity_widget.dart';
-import 'package:momona_healthcare/components/no_data_found_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/screens/patient/components/news_feed_component.dart';
-import 'package:momona_healthcare/screens/patient/models/news_model.dart';
-import 'package:momona_healthcare/screens/shimmer/screen/feed_and_articles_shimmer_screen.dart';
-import 'package:momona_healthcare/utils/cached_value.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/empty_error_state_component.dart';
+import 'package:kivicare_flutter/components/internet_connectivity_widget.dart';
+import 'package:kivicare_flutter/components/no_data_found_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/screens/patient/components/news_feed_component.dart';
+import 'package:kivicare_flutter/screens/patient/models/news_model.dart';
+import 'package:kivicare_flutter/screens/shimmer/screen/feed_and_articles_shimmer_screen.dart';
+import 'package:kivicare_flutter/utils/cached_value.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import 'package:momona_healthcare/network/patient_list_repository.dart';
+import 'package:kivicare_flutter/network/patient_list_repository.dart';
 
 class FeedFragment extends StatefulWidget {
   @override

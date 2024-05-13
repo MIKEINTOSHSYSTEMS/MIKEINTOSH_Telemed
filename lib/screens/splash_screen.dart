@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/app_logo.dart';
-import 'package:momona_healthcare/config.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/network/clinic_repository.dart';
-import 'package:momona_healthcare/network/google_repository.dart';
-import 'package:momona_healthcare/network/network_utils.dart';
-import 'package:momona_healthcare/screens/auth/screens/sign_in_screen.dart';
-import 'package:momona_healthcare/screens/dashboard/screens/doctor_dashboard_screen.dart';
-import 'package:momona_healthcare/screens/dashboard/screens/patient_dashboard_screen.dart';
-import 'package:momona_healthcare/screens/dashboard/screens/receptionist_dashboard_screen.dart';
-import 'package:momona_healthcare/screens/walkThrough/walk_through_screen.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
-import 'package:momona_healthcare/utils/one_signal_notifications.dart';
+import 'package:kivicare_flutter/components/app_logo.dart';
+import 'package:kivicare_flutter/config.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/network/clinic_repository.dart';
+import 'package:kivicare_flutter/network/google_repository.dart';
+import 'package:kivicare_flutter/network/network_utils.dart';
+import 'package:kivicare_flutter/screens/auth/screens/sign_in_screen.dart';
+import 'package:kivicare_flutter/screens/dashboard/screens/doctor_dashboard_screen.dart';
+import 'package:kivicare_flutter/screens/dashboard/screens/patient_dashboard_screen.dart';
+import 'package:kivicare_flutter/screens/dashboard/screens/receptionist_dashboard_screen.dart';
+import 'package:kivicare_flutter/screens/walkThrough/walk_through_screen.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
+import 'package:kivicare_flutter/utils/one_signal_notifications.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class SplashScreen extends StatefulWidget {

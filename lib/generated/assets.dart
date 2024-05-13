@@ -9,10 +9,11 @@ class Assets {
   static const String filesFormatIcPng = 'images/filesFormat/ic_png.png';
   static const String filesFormatIcPpt = 'images/filesFormat/ic_ppt.png';
   static const String filesFormatIcTxt = 'images/filesFormat/ic_txt.png';
+  static const String flagsIcEthiopia = 'images/flags/icEthiopia.png';
   static const String flagsIcAr = 'images/flags/icAr.png';
   static const String flagsIcBangladesh = 'images/flags/icBangladesh.png';
   static const String flagsIcFrench = 'images/flags/icFrench.png';
-  static const String flagsIcEthiopia = 'images/flags/icEthiopia.png';
+  static const String flagsIcGermany = 'images/flags/icGermany.png';
   static const String flagsIcIndia = 'images/flags/icIndia.png';
   static const String flagsIcUS = 'images/flags/icUS.png';
   static const String iconsAboutus = 'images/icons/aboutus.png';

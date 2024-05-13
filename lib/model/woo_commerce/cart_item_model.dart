@@ -1,5 +1,5 @@
-import 'package:momona_healthcare/model/links.dart';
-import 'package:momona_healthcare/model/woo_commerce/common_models.dart';
+import 'package:kivicare_flutter/model/links.dart';
+import 'package:kivicare_flutter/model/woo_commerce/common_models.dart';
 
 class CartItemModel {
   Links? links;

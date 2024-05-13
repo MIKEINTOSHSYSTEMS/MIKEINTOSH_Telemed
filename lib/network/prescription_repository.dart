@@ -1,6 +1,6 @@
-import 'package:momona_healthcare/model/base_response.dart';
-import 'package:momona_healthcare/model/prescription_model.dart';
-import 'package:momona_healthcare/network/network_utils.dart';
+import 'package:kivicare_flutter/model/base_response.dart';
+import 'package:kivicare_flutter/model/prescription_model.dart';
+import 'package:kivicare_flutter/network/network_utils.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 //Prescription List

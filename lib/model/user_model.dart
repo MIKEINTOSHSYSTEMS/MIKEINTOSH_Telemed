@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:momona_healthcare/model/prescription_module.dart';
-import 'package:momona_healthcare/model/qualification_model.dart';
-import 'package:momona_healthcare/model/rating_model.dart';
-import 'package:momona_healthcare/model/restrict_appointment_model.dart';
-import 'package:momona_healthcare/model/service_model.dart';
-import 'package:momona_healthcare/model/speciality_model.dart';
+import 'package:kivicare_flutter/model/prescription_module.dart';
+import 'package:kivicare_flutter/model/qualification_model.dart';
+import 'package:kivicare_flutter/model/rating_model.dart';
+import 'package:kivicare_flutter/model/restrict_appointment_model.dart';
+import 'package:kivicare_flutter/model/service_model.dart';
+import 'package:kivicare_flutter/model/speciality_model.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import 'clinic_list_model.dart';

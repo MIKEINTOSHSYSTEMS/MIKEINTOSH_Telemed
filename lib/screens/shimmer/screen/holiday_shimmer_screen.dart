@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/screens/shimmer/components/holiday_shimmer_component.dart';
+import 'package:kivicare_flutter/screens/shimmer/components/holiday_shimmer_component.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class HolidayShimmerScreen extends StatelessWidget {

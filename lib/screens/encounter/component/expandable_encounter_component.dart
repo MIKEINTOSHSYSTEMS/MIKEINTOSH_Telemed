@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/model/encounter_model.dart';
-import 'package:momona_healthcare/screens/encounter/component/encounter_expandable_view.dart';
-import 'package:momona_healthcare/utils/extensions/enums.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
-import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/model/encounter_model.dart';
+import 'package:kivicare_flutter/screens/encounter/component/encounter_expandable_view.dart';
+import 'package:kivicare_flutter/utils/extensions/enums.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/extensions/widget_extentions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ExpandableEncounterComponent extends StatefulWidget {

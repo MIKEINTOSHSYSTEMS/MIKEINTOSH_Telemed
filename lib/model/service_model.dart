@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:momona_healthcare/model/clinic_list_model.dart';
-import 'package:momona_healthcare/model/user_model.dart';
+import 'package:kivicare_flutter/model/clinic_list_model.dart';
+import 'package:kivicare_flutter/model/user_model.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ServiceListModel {

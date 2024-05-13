@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/components/empty_error_state_component.dart';
-import 'package:momona_healthcare/components/internet_connectivity_widget.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/components/no_data_found_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/doctor_session_model.dart';
-import 'package:momona_healthcare/network/doctor_sessions_repository.dart';
-import 'package:momona_healthcare/screens/doctor/screens/sessions/add_session_screen.dart';
-import 'package:momona_healthcare/screens/doctor/screens/sessions/components/session_widget.dart';
-import 'package:momona_healthcare/screens/shimmer/screen/session_shimmer_screen.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/components/empty_error_state_component.dart';
+import 'package:kivicare_flutter/components/internet_connectivity_widget.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/components/no_data_found_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/doctor_session_model.dart';
+import 'package:kivicare_flutter/network/doctor_sessions_repository.dart';
+import 'package:kivicare_flutter/screens/doctor/screens/sessions/add_session_screen.dart';
+import 'package:kivicare_flutter/screens/doctor/screens/sessions/components/session_widget.dart';
+import 'package:kivicare_flutter/screens/shimmer/screen/session_shimmer_screen.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DoctorSessionListScreen extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/components/empty_error_state_component.dart';
-import 'package:momona_healthcare/main.dart';
+import 'package:kivicare_flutter/components/empty_error_state_component.dart';
+import 'package:kivicare_flutter/main.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class InternetConnectivityWidget extends StatelessWidget {

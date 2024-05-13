@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../model/upcoming_appointment_model.dart';
 
-const DEMO_URL = ''; //const DEMO_URL = 'https://momonahealthcare.com/';
+const DEMO_URL = ''; //const DEMO_URL = 'https://kivicare-demo.iqonic.design/';
 const RAZOR_URL = 'https://api.razorpay.com/v1';
 
 const DEFAULT_SERVICE_IMAGE_URL =
@@ -31,25 +31,21 @@ List<LanguageDataModel> languageList() {
   return [
     LanguageDataModel(id: 0, name: locale.lblEnglish, languageCode: 'en', fullLanguageCode: 'en-US', flag: flagsIcUs),
     LanguageDataModel(id: 1, name: locale.lblAmharic, languageCode: 'am', fullLanguageCode: 'am-ET', flag: flagsIcEthiopia),
-    LanguageDataModel(id: 2, name: locale.lblArabic, languageCode: 'ar', fullLanguageCode: 'ar-AR', flag: flagsIcAr),
-    LanguageDataModel(id: 3, name: locale.lblFrench, languageCode: 'fr', fullLanguageCode: 'fr-FR', flag: flagsIcFrench),
-    LanguageDataModel(id: 4, name: locale.lblTigrigna, languageCode: 'tg', fullLanguageCode: 'tg-ET', flag: flagsIcEthiopia),
+    LanguageDataModel(id: 2, name: locale.lblFrench, languageCode: 'fr', fullLanguageCode: 'fr-FR', flag: flagsIcFrench),
+    LanguageDataModel(id: 3, name: locale.lblGerman, languageCode: 'de', fullLanguageCode: 'de-DE', flag: flagsIcGermany),
+    LanguageDataModel(id: 4, name: locale.lblArabic, languageCode: 'ar', fullLanguageCode: 'ar-AR', flag: flagsIcAr),
+    LanguageDataModel(id: 5, name: locale.lblHindi, languageCode: 'hi', fullLanguageCode: 'hi-IN', flag: flagsIcIndia),
   ];
 }
 
 // local
-const receptionistEmail = "";
-const doctorEmail = "";
-const patientEmail = "";
-/*
-const receptionistEmail = "reception@gmail.com";
-const doctorEmail = "momonahealthcareplc@gmail.com";
-const patientEmail = "michaelktd@gmail.com";
-*/
+const receptionistEmail = "calvin@kivicare.com";
+const doctorEmail = "doctor@kivicare.com";
+const patientEmail = "mike@kivicare.com";
 
 //Demo Password
-const loginPassword = "";
-//const loginPassword = "01234567";
+const loginPassword = "123456";
+
 /* Theme Mode Type */
 const THEME_MODE_LIGHT = 0;
 const THEME_MODE_DARK = 1;
@@ -156,7 +152,7 @@ const DEMO_EMAILS = 'demoEmails';
 int titleTextSize = 18;
 int fragmentTextSize = 22;
 
-const packageName = "com.momona.healthcare";
+const packageName = "com.iqonic.kivicare";
 
 Future<bool> get isIqonicProduct async => await getPackageName() == packageName;
 ThemeMode get appThemeMode => appStore.isDarkModeOn ? ThemeMode.dark : ThemeMode.light;
@@ -235,7 +231,7 @@ class ApiEndPoints {
   static const appointmentEndPoint = 'kivicare/api/v1/appointment';
 
   static const saveLanguageApiEndPoint = '';
-  static const saveAppointmentEndPoint = 'kivicare/api/v2/appointment/save';
+  static const saveAppointmentEndPoint = 'kivicare/api/v2/appointment/save'; //static const saveAppointmentEndPoint = 'kivicare/api/v2/appointment/save';
 
   static const updateAppointmentStatusEndPoint = 'kivicare/api/v1/appointment/update-status';
 

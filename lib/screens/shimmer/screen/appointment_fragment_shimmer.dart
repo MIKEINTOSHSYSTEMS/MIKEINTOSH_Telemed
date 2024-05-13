@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/screens/shimmer/components/appointment_shimmer_component.dart';
+import 'package:kivicare_flutter/screens/shimmer/components/appointment_shimmer_component.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class AppointmentFragmentShimmer extends StatelessWidget {

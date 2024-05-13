@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/components/app_setting_component.dart';
-import 'package:momona_healthcare/components/app_setting_widget.dart';
-import 'package:momona_healthcare/components/common_shop_setting_component.dart';
-import 'package:momona_healthcare/components/doctor_recentionist_general_setting_component.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/components/other_settings_component.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/network/auth_repository.dart';
-import 'package:momona_healthcare/screens/auth/components/edit_profile_component.dart';
-import 'package:momona_healthcare/screens/dashboard/screens/common_settings_screen.dart';
-import 'package:momona_healthcare/screens/patient/components/general_setting_component.dart';
-import 'package:momona_healthcare/utils/colors.dart';
-import 'package:momona_healthcare/utils/common.dart';
-import 'package:momona_healthcare/utils/extensions/string_extensions.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/components/app_setting_component.dart';
+import 'package:kivicare_flutter/components/app_setting_widget.dart';
+import 'package:kivicare_flutter/components/common_shop_setting_component.dart';
+import 'package:kivicare_flutter/components/doctor_recentionist_general_setting_component.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/components/other_settings_component.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/network/auth_repository.dart';
+import 'package:kivicare_flutter/screens/auth/components/edit_profile_component.dart';
+import 'package:kivicare_flutter/screens/dashboard/screens/common_settings_screen.dart';
+import 'package:kivicare_flutter/screens/patient/components/general_setting_component.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
+import 'package:kivicare_flutter/utils/common.dart';
+import 'package:kivicare_flutter/utils/extensions/string_extensions.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class SettingFragment extends StatefulWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:momona_healthcare/utils/extensions/widget_extentions.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/prescription_model.dart';
+import 'package:kivicare_flutter/utils/extensions/widget_extentions.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/prescription_model.dart';
 
 class EncounterPrescriptionComponent extends StatelessWidget {
   final PrescriptionData prescriptionData;

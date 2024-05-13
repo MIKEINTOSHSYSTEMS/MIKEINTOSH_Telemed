@@ -1,9 +1,9 @@
-import 'package:momona_healthcare/model/clinic_list_model.dart';
-import 'package:momona_healthcare/model/dashboard_model.dart';
-import 'package:momona_healthcare/model/static_data_model.dart';
-import 'package:momona_healthcare/model/upcoming_appointment_model.dart';
-import 'package:momona_healthcare/model/user_model.dart';
-import 'package:momona_healthcare/screens/patient/models/news_model.dart';
+import 'package:kivicare_flutter/model/clinic_list_model.dart';
+import 'package:kivicare_flutter/model/dashboard_model.dart';
+import 'package:kivicare_flutter/model/static_data_model.dart';
+import 'package:kivicare_flutter/model/upcoming_appointment_model.dart';
+import 'package:kivicare_flutter/model/user_model.dart';
+import 'package:kivicare_flutter/screens/patient/models/news_model.dart';
 import 'dart:convert';
 
 import 'package:nb_utils/nb_utils.dart';

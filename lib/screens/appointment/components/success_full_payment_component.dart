@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/screens/patient/screens/web_view_payment_screen.dart';
-import 'package:momona_healthcare/utils/images.dart';
+import 'package:kivicare_flutter/screens/patient/screens/web_view_payment_screen.dart';
+import 'package:kivicare_flutter/utils/images.dart';
 import 'package:lottie/lottie.dart';
 import 'package:nb_utils/nb_utils.dart';
 

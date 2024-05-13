@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/network/clinic_repository.dart';
+import 'package:kivicare_flutter/network/clinic_repository.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/clinic_list_model.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/clinic_list_model.dart';
 
 class SelectedClinicComponent extends StatefulWidget {
   final int clinicId;

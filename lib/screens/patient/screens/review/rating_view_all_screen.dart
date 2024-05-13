@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/components/internet_connectivity_widget.dart';
-import 'package:momona_healthcare/components/loader_widget.dart';
-import 'package:momona_healthcare/components/no_data_found_widget.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/rating_model.dart';
-import 'package:momona_healthcare/network/review_repository.dart';
-import 'package:momona_healthcare/screens/patient/screens/review/component/review_widget.dart';
-import 'package:momona_healthcare/screens/shimmer/screen/review_rating_shimmer_screen.dart';
-import 'package:momona_healthcare/utils/app_common.dart';
-import 'package:momona_healthcare/utils/colors.dart';
+import 'package:kivicare_flutter/components/internet_connectivity_widget.dart';
+import 'package:kivicare_flutter/components/loader_widget.dart';
+import 'package:kivicare_flutter/components/no_data_found_widget.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/rating_model.dart';
+import 'package:kivicare_flutter/network/review_repository.dart';
+import 'package:kivicare_flutter/screens/patient/screens/review/component/review_widget.dart';
+import 'package:kivicare_flutter/screens/shimmer/screen/review_rating_shimmer_screen.dart';
+import 'package:kivicare_flutter/utils/app_common.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class RatingViewAllScreen extends StatefulWidget {

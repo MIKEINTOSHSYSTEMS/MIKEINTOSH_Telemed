@@ -1,6 +1,6 @@
-import 'package:momona_healthcare/model/woo_commerce/common_models.dart';
-import 'package:momona_healthcare/model/woo_commerce/product_list_model.dart';
-import 'package:momona_healthcare/model/woo_commerce/tags_model.dart';
+import 'package:kivicare_flutter/model/woo_commerce/common_models.dart';
+import 'package:kivicare_flutter/model/woo_commerce/product_list_model.dart';
+import 'package:kivicare_flutter/model/woo_commerce/tags_model.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ProductDetailModel {

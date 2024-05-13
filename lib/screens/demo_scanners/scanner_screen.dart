@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/utils/colors.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/utils/colors.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:scan/scan.dart';
 
@@ -68,9 +68,9 @@ class _ScannerScreenState extends State<ScannerScreen> {
 
                   userStore.setFirstName(username);
                   appStore.setBaseUrl("$url/wp-json/", initialize: true);
-                  appStore.setDemoDoctor("doctor_$username@momonahealthcare.com", initialize: true);
-                  appStore.setDemoReceptionist("receptionist_$username@momonahealthcare.com", initialize: true);
-                  appStore.setDemoPatient("patient_$username@momonahealthcare.com", initialize: true);
+                  appStore.setDemoDoctor("doctor_$username@kivicare.com", initialize: true);
+                  appStore.setDemoReceptionist("receptionist_$username@kivicare.com", initialize: true);
+                  appStore.setDemoPatient("patient_$username@kivicare.com", initialize: true);
                 }
                 finish(context, true);
               }

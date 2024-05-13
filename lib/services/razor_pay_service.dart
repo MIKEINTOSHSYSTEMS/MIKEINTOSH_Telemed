@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:momona_healthcare/config.dart';
-import 'package:momona_healthcare/main.dart';
-import 'package:momona_healthcare/model/confirm_appointment_response_model.dart';
-import 'package:momona_healthcare/network/bill_repository.dart';
-import 'package:momona_healthcare/screens/doctor/fragments/appointment_fragment.dart';
-import 'package:momona_healthcare/utils/constants.dart';
+import 'package:kivicare_flutter/config.dart';
+import 'package:kivicare_flutter/main.dart';
+import 'package:kivicare_flutter/model/confirm_appointment_response_model.dart';
+import 'package:kivicare_flutter/network/bill_repository.dart';
+import 'package:kivicare_flutter/screens/doctor/fragments/appointment_fragment.dart';
+import 'package:kivicare_flutter/utils/constants.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
@@ -79,7 +79,7 @@ class RazorPayService {
       'key': appointmentResponse.orderData!.razorKey,
       'amount': appointmentResponse.orderData!.amount.validate(),
       'name': appointmentResponse.orderData!.receiverName,
-      'image': 'https://momonahealthcare.com/wp-content/uploads/2022/09/footer-logo.png',
+      'image': 'https://kivicare.io/wp-content/uploads/2022/09/footer-logo.png',
       'theme.color': appointmentResponse.orderData!.themeData,
       'description': APP_NAME_TAG_LINE,
       'currency': appointmentResponse.orderData!.currencyCode,
